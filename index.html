@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SiteMaker — сайты для бизнеса от 5 000 ₸ за 1–3 дня</title>
+<style>
+:root{--bg:#f6f7fb;--card:rgba(255,255,255,.78);--hd:rgba(246,247,251,.88);--tx:#14162a;--mu:#5b6078;--bd:rgba(20,22,42,.1);--sh:0 8px 28px rgba(40,40,90,.12);--gr:#15803d;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0d0f1c;--card:rgba(255,255,255,.07);--hd:rgba(13,15,28,.88);--tx:#eef0ff;--mu:#a3a8c7;--bd:rgba(255,255,255,.13);--sh:0 8px 28px rgba(0,0,0,.45);--gr:#4ade80;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#0d0f1c;--card:rgba(255,255,255,.07);--hd:rgba(13,15,28,.88);--tx:#eef0ff;--mu:#a3a8c7;--bd:rgba(255,255,255,.13);--sh:0 8px 28px rgba(0,0,0,.45);--gr:#4ade80;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hd);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);z-index:10}
+[hidden]{display:none!important}
+.w{max-width:1100px;margin:auto;padding:0 18px}section{padding:48px 0}
+h1,h2,h3{line-height:1.15;margin:0 0 10px}h2{font-size:clamp(26px,5vw,38px);text-align:center;margin-bottom:26px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--hd);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+header .w{display:flex;align-items:center;gap:10px;height:58px}
+header nav{margin-left:auto;display:flex;gap:16px}header nav a{color:var(--mu);text-decoration:none;font-size:14px;font-weight:600}
+.lg{font-weight:800;font-size:19px;text-decoration:none;color:var(--tx)}
+.hr{margin-left:auto;display:flex;gap:8px;align-items:center}
+@media(min-width:800px){.hr{margin-left:0}}@media(max-width:799px){header nav{display:none}}
+#pb{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:linear-gradient(90deg,#6d5efc,#22d3ee)}
+.b{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border:0;border-radius:14px;font-family:inherit;font-weight:700;font-size:16px;color:#fff;background:linear-gradient(135deg,#6d5efc,#a855f7);text-decoration:none;cursor:pointer;transition:.2s;box-shadow:var(--sh)}
+.b:hover{transform:translateY(-2px) scale(1.03)}.wa{background:linear-gradient(135deg,#25d366,#0e9f6e)}
+.gh{background:var(--card);color:var(--tx);border:1px solid var(--bd)}.sm{padding:9px 14px;font-size:14px}
+.hero{padding:52px 0 36px;text-align:center;background:radial-gradient(640px 320px at 85% 0,rgba(109,94,252,.3),transparent),radial-gradient(520px 320px at 5% 40%,rgba(34,211,238,.22),transparent)}
+h1{font-size:clamp(32px,7.5vw,62px);letter-spacing:-.02em;margin-bottom:14px}
+h1 b,.tot b,.sn b{background:linear-gradient(135deg,#6d5efc,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mu);font-size:clamp(16px,2.6vw,20px);max-width:680px;margin:0 auto 20px}
+.sl{display:inline-block;padding:8px 16px;border-radius:99px;background:var(--card);border:1px solid var(--bd);font-weight:700;margin-bottom:12px}.sl b{color:#f43f5e;font-size:20px}
+.promo-banner{display:inline-block;padding:12px 20px;border-radius:14px;background:rgba(109,94,252,0.12);border:1px solid rgba(109,94,252,0.35);color:var(--tx);font-weight:700;margin-bottom:20px;font-size:15px}
+.promo-banner b{color:#6d5efc}
+.row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.bd{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px}.bd span{padding:6px 12px;border-radius:99px;border:1px solid var(--bd);background:var(--card);font-size:13px;color:var(--mu)}
+.g{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.g.s{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}.g.s .cd{padding:14px}.g.s h3{font-size:15px;margin:0}
+.cd{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:18px;box-shadow:var(--sh);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.cd h3{font-size:18px}.cd p{color:var(--mu);margin:0}.em{font-size:30px;display:block;margin-bottom:6px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}.cd.in:hover{transform:translateY(-4px)}
+ul{padding-left:18px;margin:8px 0;color:var(--mu);font-size:14px}
+.pr{position:relative;display:flex;flex-direction:column}.pr ul{flex:1}.pr.hot{border:2px solid #6d5efc}.tg{position:absolute;top:-12px;right:14px;background:#6d5efc;color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px}
+.pc{font-size:30px;font-weight:800;margin:4px 0}
+.cg,.ops{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}.ops{gap:8px;margin:16px 0}
+label{display:block;font-size:14px;font-weight:600;color:var(--mu)}
+select,input,textarea{width:100%;margin-top:4px;padding:12px;border-radius:12px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit}
+input[type=range]{padding:0;accent-color:#6d5efc}input[type=checkbox]{width:auto;margin:0}
+.ck{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--bd);border-radius:12px;cursor:pointer;color:var(--tx)}.ck i{margin-left:auto;font-style:normal;color:var(--mu);white-space:nowrap;font-size:13px}
+.pw{display:flex;gap:8px}.pw input{margin:0}#pm{min-height:24px;font-weight:700;margin:8px 0}
+.tot{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:8px 0 16px;font-size:18px;font-weight:700}.tot b{font-size:40px}.tot s{color:var(--mu)}
+.fl{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:14px}
+.ch{flex:none;padding:9px 16px;border-radius:99px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-family:inherit;font-weight:600;font-size:14px;cursor:pointer}.ch.on{background:#6d5efc;color:#fff;border-color:#6d5efc}
+.ng{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.th{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:26px;margin-bottom:10px;background:linear-gradient(135deg,hsl(var(--h) 85% 62%),hsl(calc(var(--h) + 40) 85% 52%))}
+.cd p.pf{color:var(--gr);font-weight:800;font-size:18px}.r2{display:flex;gap:8px;margin-top:10px}.r2 .b{flex:1;padding:10px 8px;font-size:14px}
+.nm{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#6d5efc;color:#fff;font-size:13px;margin-right:8px;vertical-align:middle}
+.car{display:flex;gap:14px;justify-content:center;padding:4px 2px 12px}.car>.cd{flex:0 0 min(480px,100%)}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;background:linear-gradient(135deg,#6d5efc,#22d3ee)}.ar{display:flex;gap:10px;justify-content:center;margin-top:6px}
+.sn{text-align:center}.sn b{display:block;font-size:34px}
+details{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px 16px;margin-bottom:10px}summary{cursor:pointer;font-weight:700}details p{margin:8px 0 0;color:var(--mu)}
+.fm{display:grid;gap:10px;max-width:620px;margin:auto}.fm input,.fm textarea{margin:0}
+footer{padding:30px 0;text-align:center;color:var(--mu);font-size:14px;border-top:1px solid var(--bd)}footer a{color:var(--tx)}
+.fx{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;width:58px;height:58px;border-radius:50%;padding:0;font-size:26px;animation:pl 2.2s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}100%{box-shadow:0 0 0 18px rgba(37,211,102,0)}}
+#up{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;opacity:0;pointer-events:none;transition:.3s}#up.on{opacity:1;pointer-events:auto}
+.ts{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:40;transform:translate(-50%,200%);transition:transform .4s;background:#111827;color:#fff;padding:12px 18px;border-radius:14px;box-shadow:var(--sh);max-width:calc(100% - 32px);font-weight:600;text-align:center}.ts.on{transform:translate(-50%,0)}
+.md{position:fixed;inset:0;z-index:50;background:rgba(5,6,15,.6);display:grid;place-items:center;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px));backdrop-filter:blur(4px)}
+.mb{position:relative;max-width:540px;width:100%;max-height:100%;overflow:auto;background:var(--bg);border:1px solid var(--bd);border-radius:18px;padding:22px;animation:pop .25s}@keyframes pop{from{opacity:0;transform:scale(.94)}}
+.x{position:absolute;right:10px;top:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);width:34px;height:34px;border-radius:50%;cursor:pointer;z-index:2}
+.mk{border:1px solid var(--bd);border-radius:14px;overflow:hidden;margin:26px 0 14px}.bar{padding:8px;background:var(--card);color:var(--mu);font-size:10px;letter-spacing:3px}
+.mh{padding:22px 16px;text-align:center;color:#fff;background:linear-gradient(135deg,hsl(var(--h) 80% 55%),hsl(calc(var(--h) + 50) 80% 45%))}.mh span{font-size:38px}.mh b{display:block;font-size:20px}
+.mh em{display:inline-block;margin-top:8px;padding:6px 14px;background:#fff;color:#111;border-radius:99px;font-style:normal;font-size:13px;font-weight:700}
+.mr{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px}.mr u{height:44px;border-radius:8px;background:var(--card);border:1px solid var(--bd)}
+.incl-box{margin:12px 0 18px;padding:14px 18px;background:rgba(37,211,102,0.08);border:1px solid rgba(37,211,102,0.25);border-radius:14px;color:var(--tx);font-size:14px}
+.incl-box b{color:var(--gr)}
+.google-box{margin-top:24px;padding:20px;background:linear-gradient(135deg,rgba(34,211,238,0.1),rgba(109,94,252,0.1));border:1px solid rgba(34,211,238,0.3);border-radius:18px;text-align:left}
+.google-box h3{color:#22d3ee;margin-bottom:8px;font-size:20px}
+.google-box p{margin:0 0 12px;color:var(--tx);font-size:15px}
+.facts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:14px}
+.fact-card{padding:14px;background:var(--card);border:1px solid var(--bd);border-radius:14px}
+.fact-card b{font-size:22px;color:#6d5efc;display:block;margin-bottom:4px}
+.legal-modal-content h3{margin-bottom:14px;font-size:20px}
+.legal-modal-content p{margin-bottom:12px;font-size:14px;color:var(--tx);line-height:1.5}
+.legal-modal-content p b{color:#6d5efc}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="w"><a class="lg" href="#">⚡ SiteMaker</a>
+<nav><a href="#plans" data-k="Тарифтер">Тарифы</a><a href="#calc" data-k="Калькулятор">Калькулятор</a><a href="#cat" data-k="Үлгілер">Примеры</a><a href="#rev" data-k="Пікірлер">Отзывы</a><a href="#faq" data-k="Сұрақтар">FAQ</a></nav>
+<div class="hr"><button class="b gh sm" id="lb">ҚАЗ</button><button class="b gh sm" id="tb" aria-label="Тема">🌓</button><a class="b sm" href="#order" data-k="Тапсырыс беру">Заказать</a></div></div><i id="pb"></i></header>
+
+<section class="hero"><div class="w">
+<div class="sl">🔥 <span data-k="Осы аптада бос орын:">Свободно мест на этой неделе:</span> <b id="sl">2</b></div>
+<br>
+<div class="promo-banner">🎁 <b>АКЦИЯ НЕДЕЛИ:</b> Закажи сайт на этой неделе — выбери любые <b>3 опции БЕСПЛАТНО</b> + <b>хостинг 24/7 на 3 месяца в подарок!</b></div>
+<h1 data-k="Бизнеске арналған сайттар <b>5 000 ₸</b>-ден, 1–3 күнде">Сайты для бизнеса от <b>5 000 ₸</b> за 1–3 дня</h1>
+<p data-k="Мобильді дизайн, сатуға арналған мәтіндер, Google-де көріну және 3 тегін опция — сыйлыққа">Мобильный дизайн, продающие тексты, индексация в Google и 3 бесплатные опции — в подарок</p>
+<div class="row"><a class="b" href="#calc">🧮 <span data-k="Бағасын есептеу">Рассчитать стоимость</span></a><a class="b wa" data-wa>💬 <span data-k="WhatsApp-қа жазу">Написать в WhatsApp</span></a></div>
+<div class="bd"><span>🔍 Видимость в Google поиске</span><span>🌍 Казахстан и СНГ</span><span>🏆 Реальные кейсы</span><span>⏱️ Срок 1–3 дня</span></div></div></section>
+
+<section id="why"><div class="w">
+<h2 data-k="Бізді неге таңдайды — және бұл қалай клиенттерді тартады">Почему мы — и как сайт будет привлекать вам клиентов</h2>
+<div class="g s" id="wg"></div>
+
+<div class="google-box rv">
+  <h3>🔍 Ваш сайт будет виден в Google — целевые клиенты найдут вас сами!</h3>
+  <p>Мы настраиваем базовую SEO-оптимизацию и индексацию поисковыми системами. Когда люди ищут ваши услуги, кафе или хостел через Google или карты, они сразу попадают на ваш сайт и делают заказ.</p>
+  
+  <div class="facts-grid">
+    <div class="fact-card">
+      <b>82% клиентов</b>
+      <span>Ищут кафе, товары и услуги через Google прямо с телефона.</span>
+    </div>
+    <div class="fact-card">
+      <b>в 3 раза больше</b>
+      <span>Обращений приходят благодаря прямой кнопке заказа в WhatsApp.</span>
+    </div>
+    <div class="fact-card">
+      <b>до 2-х секунд</b>
+      <span>Скорость загрузки сайта удерживает до 70% клиентов от ухода к конкурентам.</span>
+    </div>
+  </div>
+</div>
+
+</div></section>
+
+<section id="plans"><div class="w"><h2 data-k="Тарифтер">Тарифы</h2><div class="g" id="tgr"></div></div></section>
+
+<section id="calc"><div class="w"><h2 data-k="Құн калькуляторы">Калькулятор стоимости</h2><div class="cd rv">
+<div class="cg">
+<label>Тип сайта / Сфера бизнеса<select id="ty"></select></label>
+<label>Страниц: <b id="pgv">3</b> (до 3 включено, далее +500 ₸)<input id="pg" type="range" min="1" max="15" value="3"></label>
+<label>Срок<select id="ur"><option value="1.3">10 часов (+30%)</option><option value="1" selected>2 дня (стандарт)</option><option value=".7">4–5 дней (−30%)</option></select></label>
+<label>Язык<select id="lg"><option value="0">Русский (включено)</option><option value="0">Қазақша (включено)</option><option value="0">Два языка (Рус + Каз бесплатно)</option></select></label>
+</div>
+
+<div class="incl-box">
+  <b>✅ УЖЕ ВХОДИТ В СТОИМОСТЬ САЙТА БЕСПЛАТНО:</b><br>
+  • Видимость и индексация в Google • Онлайн-меню / QR-меню • Бронирование столиков • Каталог товаров и услуг • Форма заявки + CRM • Тёмная тема • Переключение языков
+</div>
+
+<div style="font-weight:700;margin-top:10px;color:var(--gr)">🎁 Акция: Отметьте любые 3 опции ниже — они будут БЕСПЛАТНО (0 ₸)! 4-я и следующие — платны.</div>
+
+<div class="ops" id="ops"></div>
+
+<div class="pw"><input id="pc" placeholder="Промокод" autocomplete="off"><button class="b gh" id="pa" data-k="Қолдану">Применить</button></div><div id="pm"></div>
+<div class="tot"><span data-k="Барлығы">Итого</span><s id="old"></s><b id="sum"></b></div>
+<a class="b wa" id="cw" target="_blank" rel="noopener">💬 <span data-k="Осы есепті тапсырыс беру">Заказать этот расчёт</span></a></div></div></section>
+
+<section id="cat"><div class="w"><h2 data-k="Сіздің саланызға арналған сайт үлгілері">Примеры сайтов для вашей ниши</h2><div class="fl" id="fl"></div><div class="g ng" id="ng"></div></div></section>
+<section><div class="w"><h2 data-k="Біз қалай жұмыс істейміз">Как мы работаем</h2><div class="g" id="st"></div></div></section>
+<section id="rev"><div class="w"><h2 data-k="Клиенттер пікірлері">Отзывы клиентов</h2><div class="car" id="car"></div></div></section>
+<section><div class="w"><h2 data-k="Кепілдіктер">Гарантии и безопасность</h2><div class="g" id="gu"></div></div></section>
+<section><div class="w"><div class="g s" id="sn"></div></div></section>
+<section id="faq"><div class="w"><h2 data-k="Жиі қойылатын сұрақтар">Частые вопросы</h2><div id="fq" style="max-width:760px;margin:auto"></div></div></section>
+
+<section id="order"><div class="w"><h2 data-k="Өтінім қалдыру">Оставить заявку</h2><div class="cd fm rv">
+<input id="nm" placeholder="Ваше имя"><input id="ph" type="tel" placeholder="Телефон"><input id="biz" placeholder="Тип бизнеса (кафе, салон…)"><input id="fp" placeholder="Промокод (если есть)" autocomplete="off"><textarea id="cm" rows="3" placeholder="Комментарий"></textarea>
+<a class="b wa" id="fw" target="_blank" rel="noopener">💬 <span data-k="WhatsApp-қа жіберу">Отправить в WhatsApp</span></a>
+<a class="b gh" href="https://t.me/Gg124255" target="_blank" rel="noopener">✈️ Telegram @Gg124255</a></div></div></section>
+
+<footer><div class="w">⚡ SiteMaker · <a href="tel:+77476128411">+7 747 612 84 11</a> · <a href="https://t.me/Gg124255" target="_blank" rel="noopener">Telegram</a> · <a href="#" onclick="openLegal();return false">Политика конфиденциальности и Условия</a><br>© 2026 SiteMaker</div></footer>
+
+<a class="b wa fx" data-wa aria-label="WhatsApp">💬</a><button class="b sm" id="up" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Наверх">↑</button>
+<div class="ts" id="ts"></div>
+<div class="md" id="md" hidden><div class="mb"><button class="x" onclick="cl()" aria-label="Закрыть">✕</button><div id="mc"></div></div></div>
+
+<script>
+const WA='https://wa.me/77476128411',SLOTS=2,$$=s=>document.querySelectorAll(s),U=n=>n.toLocaleString('ru-RU').replace(/\s/g,'\u00a0')+'\u00a0₸',
+li=a=>a.map(x=>`<li>${x}</li>`).join(''),
+W=[['⚡','Скорость от 10 часов'],['📱','Мобильный дизайн в первую очередь'],['✍️','Готовые продающие тексты'],['💬','WhatsApp и Telegram'],['🎁','3 доп. опции БЕСПЛАТНО'],['🔒','SSL-сертификат бесплатно'],['🛠️','5 бесплатных правок'],['🔍','Базовое SEO и Google'],['🚀','Загрузка быстрее 2 сек'],['🤝','Поддержка 30 дней'],['📈','Приток клиентов из поиска'],['🛡️','Защита от копирования']],
+T_base=[
+  ['Кафе / Общепит',5000,'1–2 дня',['Онлайн QR-меню','Бронирование столиков','Карта 2GIS / Google','WhatsApp-заказ']],
+  ['Визитка',6000,'1–2 дня',['1 страница','Мобильная версия','Кнопки WhatsApp и Telegram','Карта и контакты']],
+  ['Бизнес',10000,'2 дня',['До 5 страниц','Продающие тексты','Форма заявки','Базовое SEO','Отзывы и галерея']],
+  ['Каталог',15000,'3 дня',['Каталог товаров','Фильтры и поиск','Заказ через WhatsApp','Instagram и 2GIS']],
+  ['Магазин',20000,'4–5 дней',['Корзина и оплата (Kaspi, карта)','Админ-панель','Аналитика']],
+  ['Премиум',35000,'5+ дней',['Индивидуальный дизайн','Интеграции и CRM','Чат-бот','Приоритетная поддержка']]
+],
+O=[
+  ['Модуль доставки еды',1500],
+  ['Корзина и оплата (Kaspi, карта)',2000],
+  ['Instagram, 2GIS, Google Maps',500],
+  ['Блог и новости',800],
+  ['Анимации и микро-интеракции',500],
+  ['Чат-бот',1500],
+  ['SEO-продвижение в Google',1000]
+],
+C={food:'Еда',beauty:'Красота',health:'Здоровье и спорт',auto:'Авто и логистика',serv:'Услуги',edu:'Образование',shop:'Магазины'},
+H={food:20,beauty:320,health:170,auto:210,serv:260,edu:45,shop:140},
+F={food:['Меню и цены','Бронь и доставка','Карта и отзывы'],beauty:['Прайс и мастера','Галерея работ','Контакты'],health:['Специалисты','Цены и акции','Запись'],auto:['Расчёт стоимости','Онлайн-заявка','Акции'],serv:['Форма заявки','Кейсы и отзывы','Расчёт цены'],edu:['Программы','Пробное занятие','Отзывы'],shop:['Каталог','Корзина и Kaspi','Доставка']},
+N=`☕|Кофейни|5000|food
+🍽️|Кафе|5000|food
+🥂|Рестораны|5000|food
+🍣|Суши и доставка еды|6000|food
+🥐|Пекарни|5000|food
+🎉|Банкетные залы|10000|food
+💇|Салоны красоты|6000|beauty
+💈|Барбершопы|6000|beauty
+💅|Nail-студии|5000|beauty
+💆|Массажные салоны|6000|beauty
+👗|Свадебные салоны|8000|beauty
+🦷|Стоматологии|8000|health
+🏥|Клиники|10000|health
+🐕|Ветеринарные клиники|7000|health
+🧠|Психологи и коучи|6000|health
+🧘|Йога-студии|6000|health
+🏋️|Фитнес-клубы|10000|health
+💃|Танцевальные школы|7000|health
+🔧|Автосервисы|7000|auto
+🚿|Автомойки|5000|auto
+🛞|Шиномонтаж|5000|auto
+🚖|Такси и водители|6000|auto
+🚛|Грузоперевозки и логистика|8000|auto
+🏗️|Аренда спецтехники|7000|auto
+⚖️|Юридические услуги|8000|serv
+🏠|Недвижимость|10000|serv
+🧱|Строительство и ремонт|8000|serv
+🧹|Клининг|6000|serv
+📒|Бухгалтерия|6000|serv
+💻|IT-компании|10000|serv
+📣|Маркетинговые агентства|10000|serv
+📸|Фотостудии|6000|serv
+✈️|Турагентства|8000|serv
+🏨|Гостиницы и хостелы|8000|serv
+🎓|Онлайн-школы|10000|edu
+📚|Курсы|7000|edu
+🗣️|Языковые курсы|7000|edu
+🧸|Детские центры и садики|7000|edu
+🚗|Автошколы|7000|edu
+👕|Магазины одежды|10000|shop
+📱|Магазины техники|12000|shop
+💐|Цветочные магазины|7000|shop`.split('\n');
+
+const T_niches = N.map(item => {
+  const [e, n, p, c] = item.split('|');
+  return [`${e} ${n}`, +p, '1–2 дня', F[c] || ['Мобильная версия', 'WhatsApp и Карта']];
+});
+const T = [...T_base, ...T_niches];
+
+const S=[['💬','Заявка','Пишете в WhatsApp или оставляете заявку'],['🧮','Расчёт','Согласуем задачи, срок и цену'],['🎨','Дизайн и тексты','Готовим макет и продающие тексты'],['💻','Разработка','Адаптивная вёрстка, формы, базовое SEO'],['🔍','Проверка','Тестируем на телефоне, вносим правки'],['🚀','Запуск','Публикуем сайт, индексируем в Google, 3 опции бесплатно'],['🤝','Поддержка','30 дней помогаем после запуска']];
+
+const R=[
+  ['Хостел ATOM', 'Астана', 'Осталась довольна работой по созданию сайта. Дизайн получился аккуратным, структура — понятной и удобной. Пожелания учли, на вопросы отвечали, необходимые правки внесли. Спасибо за работу!', 'https://atom-hostel.github.io/Hostel-ATOM/']
+];
+
+const G=[['🛠️','5 бесплатных правок','Вносим правки после сдачи без доплат'],['🤝','Поддержка 30 дней','Поможем с вопросами после запуска'],['🔒','SSL и защита','Бесплатный SSL, защита от копирования'],['🎁','3 опции БЕСПЛАТНО','Выберите любые 3 доп. опции в подарок']];
+
+const Q=[['Будет ли сайт виден в Google?','Да! Мы проводим базовую индексацию, благодаря чему люди смогут находить ваш сайт в поиске Google и на картах, а вы будете получать новых клиентов.'],['Сколько стоит сайт?','От 5 000 ₸. Точную цену под вашу задачу покажет калькулятор выше.'],['Как быстро вы делаете?','От 10 часов. Стандартный срок — 2 дня, сложные проекты — до 5 дней.'],['Какая акция действует?','Вы можете выбрать любые 3 доп. опции БЕСПЛАТНО! Плюс хостинг-сервер 24/7 на 3 месяца в подарок.'],['Что входит в базовую стоимость?','Видимость в Google, онлайн-меню, бронирование столиков, каталог, форма заявки, тёмная тема и переключение языков — уже входят в стоимость!'],['Есть поддержка после сдачи?','Да, 30 дней бесплатной поддержки, дальше — развитие сайта по договорённости.']];
+
+let niche='',tt,kz=0;
+const wa=t=>WA+'?text='+encodeURIComponent(t);
+wg.innerHTML=W.map(w=>`<div class="cd rv"><span class="em">${w[0]}</span><h3>${w[1]}</h3></div>`).join('');
+
+tgr.innerHTML=T_base.map((t,i)=>`<div class="cd pr rv${i==0?' hot':''}">${i==0?'<span class="tg">Хит</span>':''}<h3>${t[0]}</h3><div class="pc">${i==5?'от ':''}${U(t[1])}</div><p>⏱ ${t[2]}</p><ul>${li(t[3])}</ul><a href="#calc" class="b${i==0?'':' gh'}" onclick="ty.value=${i};rc()">Выбрать</a></div>`).join('');
+
+ty.innerHTML=T.map((t,i)=>`<option value="${i}">${t[0]} — ${U(t[1])}</option>`).join('');ty.value=0;
+ops.innerHTML=O.map((o,i)=>`<label class="ck"><input type="checkbox" value="${o[1]}" data-n="${o[0]}"><span>${o[0]}</span><i id="op-tag-${i}">+${U(o[1])}</i></label>`).join('');
+
+function rc(chk){
+ let s=T[ty.value][1]+Math.max(0,+pg.value-3)*500+ +lg.value, o=[];
+ const checked = $$('#ops input:checked');
+ 
+ $$('#ops input').forEach((inp, idx) => {
+   const tag = $$(`#op-tag-${idx}`)[0];
+   if (!inp.checked) {
+     tag.textContent = '+' + U(+inp.value);
+     tag.style.color = 'var(--mu)';
+   }
+ });
+
+ let count = 0;
+ checked.forEach(inp => {
+   count++;
+   const labelIdx = Array.from($$('#ops input')).indexOf(inp);
+   const tag = $$(`#op-tag-${labelIdx}`)[0];
+   if (count <= 3) {
+     tag.textContent = '🎁 0 ₸ (Акция)';
+     tag.style.color = 'var(--gr)';
+     o.push(inp.dataset.n + ' (БЕСПЛАТНО)');
+   } else {
+     s += +inp.value;
+     tag.textContent = '+' + U(+inp.value);
+     tag.style.color = 'var(--tx)';
+     o.push(inp.dataset.n);
+   }
+ });
+
+ s=Math.round(s*ur.value/100)*100;
+ const ok=pc.value.trim().toUpperCase()=='PROWEB',f=ok?Math.round(s/200)*100:s,t=x=>x.selectedOptions[0].text.split(' (')[0];
+ pgv.textContent=pg.value;old.textContent=ok?U(s):'';sum.textContent=U(f);
+ pm.style.color=ok?'var(--gr)':'#e11d48';pm.textContent=ok?'✅ Промокод применён! Скидка 50%':chk&&pc.value?'Промокод не найден':'';
+ cw.href=wa(`Здравствуйте! Хочу сайт: «${T[ty.value][0]}»${niche?', ниша: '+niche:''}, страниц: ${pg.value}, срок: ${t(ur)}, язык: ${t(lg)}${o.length?', опции: '+o.join(', '):''}${ok?', промокод PROWEB':''}. Итого: ${U(f)} (Акция: 3 опции бесплатно + Google индексация)`);
+}
+
+['input','change'].forEach(e=>calc.addEventListener(e,()=>rc()));pa.onclick=()=>rc(1);rc();
+fl.innerHTML='<button class="ch on" data-f="">Все</button>'+Object.keys(C).map(k=>`<button class="ch" data-f="${k}">${C[k]}</button>`).join('');
+fl.onclick=e=>{const b=e.target.closest('.ch');if(!b)return;$$('.ch').forEach(x=>x.classList.toggle('on',x==b));$$('.nc').forEach(c=>c.hidden=!!b.dataset.f&&c.dataset.c!=b.dataset.f)};
+ng.innerHTML=N.map((s,i)=>{const[e,n,p,c]=s.split('|');return`<div class="cd nc rv" data-c="${c}"><div class="th" style="--h:${H[c]}">${e}</div><h3>${n}</h3><p class="pf">от ${U(+p)}</p><ul>${li(F[c])}</ul><div class="r2"><button class="b gh" onclick="ex(${i})">Пример</button><button class="b" onclick="want(${i})">Хочу такой же</button></div></div>`}).join('');
+st.innerHTML=S.map((s,i)=>`<div class="cd rv"><span class="em">${s[0]}</span><h3><span class="nm">${i+1}</span>${s[1]}</h3><p>${s[2]}</p></div>`).join('');
+
+car.innerHTML=R.map(r=>`<div class="cd"><div style="display:flex;gap:10px;align-items:center"><div class="av">${r[0][0]}</div><div><b>${r[0]}</b><br><small>${r[1]}</small></div></div><p style="margin-top:10px;font-style:italic">«${r[2]}»</p><a href="${r[3]}" target="_blank" rel="noopener" class="b gh sm" style="margin-top:12px;width:100%">🔗 Перейти на сайт заказчика</a></div>`).join('');
+
+gu.innerHTML=G.map(g=>`<div class="cd rv"><span class="em">${g[0]}</span><h3>${g[1]}</h3><p>${g[2]}</p></div>`).join('');
+sn.innerHTML=[['100%','гарантия качества'],['4.9/5','оценка клиентов'],['от 10 ч','срочный запуск'],['100%','видимость в Google']].map(s=>`<div class="cd sn rv"><b>${s[0]}</b>${s[1]}</div>`).join('');
+fq.innerHTML=Q.map(q=>`<details class="rv"><summary>${q[0]}</summary><p>${q[1]}</p></details>`).join('');
+function openM(h){mc.innerHTML=h;md.hidden=false}function cl(){md.hidden=true}
+md.onclick=e=>{if(e.target==md)cl()};addEventListener('keydown',e=>{if(e.key=='Escape')cl()});
+
+function openLegal(){
+  openM(`<div class="legal-modal-content">
+    <h3>Политика конфиденциальности и Условия оказания услуг</h3>
+    <p><b>1. Конфиденциальность данных:</b> Имя, номер телефона и комментарии из заявки используются исключительно для связи по заказу, согласования макета и выполнения работ. Мы не передаем данные третьим лицам.</p>
+    <p><b>2. Сроки и материалы:</b> Сроки разработки (от 10 часов до 5 дней) отсчитываются с момента предоставления Заказчиком всех необходимых материалов (тексты, фото, контактные данные, логотип).</p>
+    <p><b>3. Правки и доработки:</b> В стоимость входит до 5 бесплатных правок по первоначальному техническому заданию (ТЗ) в течение 14 дней после сдачи сайта. Смена концепции, новые страницы или добавление новых функций оплачиваются отдельно.</p>
+    <p><b>4. Хостинг и акционные опции:</b> Акция «Хостинг 24/7 на 3 месяца» предполагает бесплатное размещение сайта на сервере Исполнителя. По истечении 3 месяцев Заказчик может продлить услугу или перенести сайт. Доменное имя оплачивается Заказчиком отдельно либо предоставляется технический поддомен.</p>
+    <p><b>5. Авторские права на контент:</b> Заказчик гарантирует, что предоставленные им фото, логотипы, тексты и товарные знаки не нарушают авторских прав третьих лиц и берет на себя полную ответственность за их размещение.</p>
+    <p><b>6. Порядок оплаты и возвратов:</b> Оплата происходит после утверждения условий работы. За фактически выполненный объем работ по разработке и верстке сайта денежные средства возврату не подлежат.</p>
+  </div>`);
+}
+
+function ex(i){const[e,n,p,c]=N[i].split('|');openM(`<div class="mk" style="--h:${H[c]}"><div class="bar">● ● ●</div><div class="mh"><span>${e}</span><b>${n}</b><em>Оставить заявку</em></div><div class="mr"><u></u><u></u><u></u></div></div><h3>Пример сайта: ${n}</h3><p class="pf" style="color:var(--gr);font-weight:800">от ${U(+p)}</p><ul>${li(F[c])}<li>Мобильная версия, WhatsApp, карта</li></ul><button class="b" style="width:100%" onclick="want(${i})">Хочу такой же</button>`)}
+
+function want(i){
+  const parts = N[i].split('|');
+  niche = parts[1];
+  biz.value = niche;
+  const matchIdx = T.findIndex(t => t[0].includes(niche));
+  if(matchIdx !== -1) ty.value = matchIdx;
+  cl();
+  rc();
+  toast('✅ Ниша выбрана: '+niche);
+  document.getElementById('calc').scrollIntoView({behavior:'smooth'});
+}
+
+function toast(m){ts.textContent=m;ts.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>ts.classList.remove('on'),4500)}
+setTimeout(()=>toast(`🔥 Осталось всего ${SLOTS} ${SLOTS==1?'место':SLOTS<5?'места':'мест'} на этой неделе!`),18000);
+sl.textContent=SLOTS;
+$$('[data-wa]').forEach(a=>{a.target='_blank';a.rel='noopener';a.href=wa(a.dataset.wa||'Здравствуйте! Хочу заказать сайт.')});
+fw.onclick=()=>{fw.href=wa('Здравствуйте! Хочу заказать сайт. '+[['Меня зовут',nm],['Телефон',ph],['Бизнес',biz],['Комментарий',cm],['Промокод',fp]].filter(x=>x[1].value.trim()).map(x=>x[0]+': '+x[1].value.trim()).join('. '))};
+tb.onclick=()=>{const d=document.documentElement,dk=(d.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'))=='dark';d.dataset.theme=dk?'light':'dark'};
+lb.onclick=()=>{kz=!kz;document.documentElement.lang=kz?'kk':'ru';$$('[data-k]').forEach(e=>{if(!e.dataset.r)e.dataset.r=e.innerHTML;e.innerHTML=kz?e.dataset.k:e.dataset.r});lb.textContent=kz?'РУС':'ҚАЗ'};
+addEventListener('scroll',()=>{const h=document.documentElement;pb.style.width=scrollY/Math.max(1,h.scrollHeight-innerHeight)*100+'%';up.classList.toggle('on',scrollY>600)},{passive:true});
+$$('h2').forEach(h=>h.classList.add('rv'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});$$('.rv').forEach(e=>io.observe(e));
+</script>
+</body>
+</html>
