@@ -488,10 +488,9 @@ $('#faqList').innerHTML = FAQ.map(function (q) { return '<details><summary>' + e
 
 /* ---------- клики ---------- */
 document.addEventListener('click', function (e) {
-  var t = e.target.closest('[data-cat],[data-pick],[data-admin],[data-type],[data-term],[data-pg],#cAdm,[data-wa]');
+  var t = e.target.closest('[data-cat],[data-pick],[data-admin],[data-type],[data-term],[data-pg],#cAdm');
   if (!t) return;
   if (t.dataset.cat) return openCat(+t.dataset.cat);
-  if (t.dataset.wa !== undefined && t.hasAttribute('data-wa')) { e.preventDefault(); var u = waUrl(t.dataset.wa); var w = window.open(u, '_blank'); if (!w) location.href = u; return; }
   if (t.dataset.pick) { S.type = t.dataset.pick; paintCalc(); return $('#calc').scrollIntoView({ behavior: 'smooth' }); }
   if (t.hasAttribute('data-admin')) { if (T().noAdmin) S.type = 'cafe'; S.admin = true; paintCalc(); return $('#calc').scrollIntoView({ behavior: 'smooth' }); }
   if (t.dataset.type) { S.type = t.dataset.type; return paintCalc(); }
@@ -499,6 +498,7 @@ document.addEventListener('click', function (e) {
   if (t.dataset.pg) { S.pages = Math.max(1, Math.min(40, S.pages + (+t.dataset.pg))); return paintCalc(); }
   if (t.id === 'cAdm') { S.admin = !S.admin; return paintCalc(); }
 });
+document.querySelectorAll('[data-wa]').forEach(function (a) { a.href = waUrl(a.dataset.wa); a.target = '_blank'; a.rel = 'noopener'; });
 var nav = $('#nav');
 addEventListener('scroll', function () { nav.classList.toggle('sc', scrollY > 30); }, { passive: true });
 $('#yr').textContent = new Date().getFullYear();
