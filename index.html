@@ -196,6 +196,23 @@ section{position:relative;padding:110px 0}
 .total p{color:var(--muted);font-size:12.5px}
 .sum .acts{display:grid;gap:8px;margin-top:18px}
 .sum .acts .pill{width:100%}
+.sum .acts.two{grid-template-columns:1fr 1fr;margin-top:10px}
+.lead{display:grid;gap:8px;margin-top:22px}
+.lead .lbl{margin:0 0 4px}
+.lead input{height:50px;border-radius:14px;border:1px solid var(--line2);background:rgba(255,255,255,.03);padding:0 16px;font-size:16px;width:100%;transition:border-color .2s}
+.lead input:focus{outline:0;border-color:var(--cream)}
+.lead input.bad{border-color:#ff8b8b}
+.lead .pill{width:100%;margin-top:4px}
+.lead .pill[disabled]{opacity:.6;pointer-events:none}
+.lmsg{font-size:12.5px;color:var(--muted);text-align:center}
+.lmsg.bad{color:#ff9d9d}
+.lead-ok{display:flex;gap:14px;align-items:center;margin-top:22px;padding:16px;border-radius:18px;background:rgba(159,240,192,.07);border:1px solid rgba(159,240,192,.3)}
+.lead-ok b{flex:none;width:40px;height:40px;border-radius:50%;background:#9ff0c0;color:#0b0b0e;display:grid;place-items:center;font-size:18px}
+.lead-ok strong{display:block;font-size:15px}
+.lead-ok span{display:block;color:var(--muted);font-size:13px}
+.sep{display:flex;align-items:center;gap:10px;margin-top:18px;color:var(--muted2);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.sep:before,.sep:after{content:"";flex:1;height:1px;background:var(--line)}
+.foot .adm{color:var(--muted2)}
 
 /* шаги */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
@@ -263,9 +280,9 @@ section{position:relative;padding:110px 0}
 <section class="hero" aria-label="sitemaker">
   <canvas id="field" aria-hidden="true"></canvas>
   <div class="hero-in">
-    <span class="offer"><b>акция</b><span class="l">Все доп. опции бесплатно + хостинг 3 месяца в подарок</span><span class="s">Опции бесплатно + хостинг в подарок</span></span>
+    <span class="offer" id="offer"><b>акция</b><span class="l" id="offL">Все доп. опции бесплатно + хостинг 3 месяца в подарок</span><span class="s" id="offS">Опции бесплатно + хостинг в подарок</span></span>
     <h1 class="disp">sitemaker</h1>
-    <p>Сайты для бизнеса, которые приносят заявки.<br>От 5 000 ₸ · запуск от 10 часов · с админкой.</p>
+    <p id="heroSub">Сайты для бизнеса, которые приносят заявки.<br>От 5 000 ₸ · запуск от 10 часов · с админкой.</p>
     <div class="acts">
       <a class="pill big" href="#calc">Рассчитать сайт</a>
       <a class="pill big gh" href="#works">Смотреть работы</a>
@@ -276,7 +293,7 @@ section{position:relative;padding:110px 0}
 
 <section id="works">
   <div class="wrap">
-    <div class="head rv"><h2 class="h2 disp">мои работы</h2><p>15 живых сайтов в Петропавловске, Астане, Кокшетау и Актобе. Откройте любой — всё работает по-настоящему.</p></div>
+    <div class="head rv"><h2 class="h2 disp">мои работы</h2><p><span id="wCount">15 живых сайтов</span> в Петропавловске, Астане, Кокшетау и Актобе. Откройте любой — всё работает по-настоящему.</p></div>
     <div class="cats" id="cats"></div>
   </div>
 </section>
@@ -285,13 +302,13 @@ section{position:relative;padding:110px 0}
   <div class="wrap">
     <div class="head rv"><h2 class="h2 disp">сколько стоит</h2><p>Цена «от» — точную скажу после короткого разговора. Нажмите на строку — она подставится в калькулятор.</p></div>
     <div class="rows rv" id="rows"></div>
-    <div class="pnote rv"><span class="chip">до 10 страниц — бесплатно</span><span class="chip">все доп. опции — в подарок</span><span class="chip">русский и казахский — без доплаты</span><span class="chip">хостинг 3 месяца — в подарок</span></div>
+    <div class="pnote rv"><span class="chip" id="pFree">до 10 страниц — бесплатно</span><span class="chip">все доп. опции — в подарок</span><span class="chip">русский и казахский — без доплаты</span><span class="chip">хостинг 3 месяца — в подарок</span></div>
   </div>
 </section>
 
 <section id="calc">
   <div class="wrap">
-    <div class="head rv"><h2 class="h2 disp">калькулятор</h2><p>Выберите тип сайта, срок и опции — цена считается сразу. Расчёт уйдёт мне в WhatsApp или Telegram.</p></div>
+    <div class="head rv"><h2 class="h2 disp">калькулятор</h2><p>Выберите тип сайта, срок и опции — цена считается сразу. Оставьте заявку или отправьте расчёт в WhatsApp.</p></div>
     <div class="calc rv">
       <div class="box">
         <div class="lbl">01 <i>/</i> тип сайта</div>
@@ -310,9 +327,18 @@ section{position:relative;padding:110px 0}
         <div class="lbl">ваш расчёт</div>
         <div class="lines" id="cLines"></div>
         <div class="total"><small>итого</small><b id="cTotal">0 ₸</b><s id="cOld"></s><p id="cDays"></p></div>
-        <div class="acts">
-          <a class="pill big" href="#" id="cWa"><svg><use href="#i-wa"/></svg>Отправить в WhatsApp</a>
-          <a class="pill big gh" href="#" id="cTg" target="_blank" rel="noopener"><svg><use href="#i-tg"/></svg>Отправить в Telegram</a>
+        <form class="lead" id="lead" novalidate>
+          <div class="lbl">оставить заявку</div>
+          <input id="lName" placeholder="Ваше имя" autocomplete="name" maxlength="60" aria-label="Ваше имя">
+          <input id="lPhone" placeholder="+7 7__ ___ __ __" inputmode="tel" autocomplete="tel" maxlength="18" aria-label="Телефон">
+          <button class="pill big" type="submit" id="lBtn">Оставить заявку</button>
+          <p class="lmsg" id="lMsg">Перезвоню или напишу в WhatsApp в течение 15 минут.</p>
+        </form>
+        <div class="lead-ok" id="leadOk" hidden><b>✓</b><div><strong id="okT">Заявка отправлена</strong><span>Свяжусь с вами в течение 15 минут.</span></div></div>
+        <div class="sep">или сразу в мессенджер</div>
+        <div class="acts two">
+          <a class="pill gh" href="#" id="cWa" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+          <a class="pill gh" href="#" id="cTg" target="_blank" rel="noopener"><svg><use href="#i-tg"/></svg>Telegram</a>
         </div>
       </aside>
     </div>
@@ -329,7 +355,7 @@ section{position:relative;padding:110px 0}
 
 <section id="review" style="padding-top:40px">
   <div class="wrap">
-    <div class="quote rv"><div class="q">“</div><div><blockquote>Осталась довольна работой по созданию сайта. Дизайн получился аккуратным, структура — понятной и удобной. Пожелания учли, на вопросы отвечали, необходимые правки внесли. Спасибо за работу!</blockquote><cite><b>Хостел ATOM</b> · Астана · <a href="https://atom-hostel.github.io/Hostel-ATOM/" target="_blank" rel="noopener">смотреть сайт ↗</a></cite></div></div>
+    <div class="quote rv"><div class="q">“</div><div><blockquote id="rvText">Осталась довольна работой по созданию сайта. Дизайн получился аккуратным, структура — понятной и удобной. Пожелания учли, на вопросы отвечали, необходимые правки внесли. Спасибо за работу!</blockquote><cite id="rvCite"><b>Хостел ATOM</b> · Астана · <a href="https://atom-hostel.github.io/Hostel-ATOM/" target="_blank" rel="noopener">смотреть сайт ↗</a></cite></div></div>
   </div>
 </section>
 
@@ -346,64 +372,83 @@ section{position:relative;padding:110px 0}
     <p>Напишите, что нужно, — отвечу с идеей, ценой и сроком. Можно просто прислать ссылку на ваш Instagram.</p>
     <div class="acts">
       <a class="pill big" href="#" data-wa="Здравствуйте! Хочу сайт для своего бизнеса."><svg><use href="#i-wa"/></svg>WhatsApp</a>
-      <a class="pill big gh" href="https://t.me/Gg124255" target="_blank" rel="noopener"><svg><use href="#i-tg"/></svg>Telegram ↗</a>
-      <a class="pill big gh" href="tel:+77476128411"><svg><use href="#i-ph"/></svg>+7 747 612 84 11</a>
+      <a class="pill big gh" href="https://t.me/Gg124255" data-tg target="_blank" rel="noopener"><svg><use href="#i-tg"/></svg>Telegram ↗</a>
+      <a class="pill big gh" href="tel:+77476128411" data-tel><svg><use href="#i-ph"/></svg><span data-phone>+7 747 612 84 11</span></a>
     </div>
   </div>
 </section>
 </main>
 
 <footer class="foot">
-  <div class="wrap"><span>© <span id="yr"></span> sitemaker · сайты для бизнеса · Казахстан</span><span><a href="https://t.me/Gg124255" target="_blank" rel="noopener">telegram</a> · <a href="tel:+77476128411">+7 747 612 84 11</a></span></div>
+  <div class="wrap"><span>© <span id="yr"></span> sitemaker · сайты для бизнеса · Казахстан</span><span><a href="https://t.me/Gg124255" data-tg target="_blank" rel="noopener">telegram</a> · <a href="tel:+77476128411" data-tel><span data-phone>+7 747 612 84 11</span></a> · <a href="admin.html" class="adm">админка</a></span></div>
 </footer>
 
 <div class="dlg" id="dlg" role="dialog" aria-modal="true" aria-labelledby="dlgT"><div class="p" id="dlgP"></div></div>
 
+<script src="js/store.js"></script>
 <script>
 (function () {
 'use strict';
-var CFG = { wa: '77476128411', tg: 'Gg124255', pagesFree: 10, pagePrice: 500, admin: 5000, promo: { PROWEB: 0.5, SITE10: 0.1 } };
+var DEF = {"rev":1,"settings":{"wa":"77476128411","tg":"Gg124255","phone":"+7 747 612 84 11","offer":{"on":true,"text":"Все доп. опции бесплатно + хостинг 3 месяца в подарок","short":"Опции бесплатно + хостинг в подарок"},"heroSub":"Сайты для бизнеса, которые приносят заявки.\nОт 5 000 ₸ · запуск от 10 часов · с админкой."},"calc":{"admin":5000,"pagePrice":500,"pagesFree":10,"terms":[{"k":1.3,"name":"10 часов","tag":"+30%"},{"k":1,"name":"стандарт","tag":"по сроку тарифа"},{"k":0.7,"name":"4–5 дней","tag":"−30%"}],"adminWhy":{"q":"Зачем нужна админка?","why":["Меняете цены, меню, фото и тексты сами с телефона — не нужно ждать разработчика и платить за каждую правку.","Все заявки и заказы в одном месте со статусами — видно, кто ещё ждёт ответа.","Отчёт за день в Excel — удобно считать выручку и заказы.","Уведомления о новых заявках в Telegram — отвечаете клиенту быстрее конкурентов."],"fit":["кафе с меняющимся меню","магазины","доставка","банкетные залы"]}},"types":[{"id":"cafe","name":"кафе и общепит","price":5000,"days":"1–2 дня","desc":"Онлайн-меню и QR-меню, бронь столиков, карта 2GIS, заказ в WhatsApp.","hit":true,"q":"Зачем это бизнесу?","why":["Гость открывает меню с фото и ценами по QR-коду на столе или по ссылке из 2GIS и Instagram — не нужно печатать меню.","Брони и заказы на вынос приходят в WhatsApp — меньше звонков в час пик.","Цены и блюда меняете сами за минуту, когда что-то закончилось или подорожало.","Сайт находят в Google и 2GIS, когда ищут «где поесть» рядом, — это новые гости без рекламы."],"fit":["кафе","кофейни","рестораны","столовые","фастфуд"]},{"id":"land","name":"лендинг / визитка","price":6000,"days":"1–2 дня","desc":"Одна страница о вас: услуги, цены, отзывы, кнопки WhatsApp и Telegram.","q":"Зачем это бизнесу?","why":["Одна ссылка вместо долгой переписки: услуги, цены, примеры и контакты на одной странице.","Ставите ссылку в Instagram, 2GIS и WhatsApp — клиент сразу видит всё и пишет уже готовым.","Вызывает доверие: с сайтом вы выглядите серьёзнее конкурентов «только из Instagram».","Реклама ведёт на страницу с кнопкой заявки — больше обращений за те же деньги."],"fit":["мастера","салоны","частные специалисты","автосервисы","курсы"]},{"id":"bot","name":"telegram-бот","price":12000,"days":"2–3 дня","desc":"Меню и кнопки, запись или заказы, уведомления администратору 24/7.","noPages":true,"noAdmin":true,"q":"Зачем бизнесу бот?","why":["Работает 24/7 без администратора: отвечает на частые вопросы, показывает цены, принимает записи и заказы.","Заявки приходят вам в Telegram сразу с именем и телефоном — ничего не теряется в переписке.","Клиенту не нужно ничего скачивать: открыл бота и записался за минуту.","Можно делать рассылки: акции и новинки сразу всем, кто пользовался ботом."],"fit":["салоны и барберы","клиники","доставка","курсы","онлайн-школы"]},{"id":"cat","name":"каталог","price":15000,"days":"3 дня","desc":"Товары с фильтрами и поиском, заказ через WhatsApp, Instagram и 2GIS.","q":"Зачем это бизнесу?","why":["Весь ассортимент с фото и ценами — клиент выбирает сам и пишет уже готовый заказ.","Фильтры и поиск: нужное находят за секунды, а не листая сотни постов в Instagram.","Меньше одинаковых вопросов «сколько стоит?» и «есть в наличии?» — экономит часы каждый день.","Ссылку на конкретный товар удобно отправить клиенту в WhatsApp."],"fit":["магазины","мебель","косметика","запчасти","стройматериалы"]},{"id":"biz","name":"бизнес-сайт","price":17500,"days":"2 дня","desc":"До 10 страниц, продающие тексты, форма заявки, базовое SEO, галерея.","q":"Зачем это бизнесу?","why":["Полноценное лицо компании: о вас, услуги, цены, работы, отзывы и контакты — до 10 страниц.","Заявки с сайта приходят в WhatsApp или Telegram 24/7 — даже ночью и в выходные.","Вас находят в Google по запросам вроде «натяжные потолки Петропавловск» — клиенты без затрат на рекламу.","Серьёзные клиенты и партнёры проверяют компанию по сайту, прежде чем позвонить."],"fit":["услуги","строительство","производство","клиники","B2B"]},{"id":"shop","name":"интернет-магазин","price":20000,"days":"4–5 дней","desc":"Корзина и оплата Kaspi / картой, админ-панель, аналитика.","adminIn":true,"q":"Зачем это бизнесу?","why":["Продажи 24/7: клиент кладёт товары в корзину и оплачивает Kaspi или картой без вашего участия.","Админ-панель уже внутри: сами добавляете товары, меняете цены и видите заказы.","Видно, что покупают чаще и сколько заказов за день, — проще планировать закупки.","Можно продавать не только в своём городе, а по всему Казахстану с доставкой."],"fit":["одежда","косметика","техника","подарки","продукты"]},{"id":"prem","name":"премиум","price":35000,"days":"от 5 дней","desc":"Индивидуальный дизайн, интеграции и CRM, чат-бот, приоритетная поддержка.","from":true,"adminIn":true,"q":"Зачем это бизнесу?","why":["Уникальный дизайн под ваш бренд — сайт не похож на шаблоны конкурентов.","Интеграции: CRM, онлайн-оплата, рассылки, чат-бот — заявки и клиенты в одной системе.","Сложная логика: калькуляторы, личные кабинеты, бронирование, несколько языков.","Приоритетная поддержка и доработки — сайт растёт вместе с бизнесом."],"fit":["сети заведений","отели","клиники","застройщики","крупные компании"]}],"promo":[{"code":"PROWEB","pct":50},{"code":"SITE10","pct":10}],"cats":[{"id":"food","title":"рестораны и банкеты","desc":"Меню, бронь столов и свободные даты, калькулятор банкета, админка.","works":[{"id":"emirat","name":"Emirat","city":"Петропавловск · банкетный ресторан","desc":"Календарь свободных дат, корпоративы, заявки и уведомления в Telegram, админка с отчётом в Excel.","tags":["Бронь дат","Админка","Telegram"],"url":"https://emirat-restaunrant.github.io/Emirat/","m":"img/w/emirat-m.webp","d":"img/w/emirat-d.webp","fan":true},{"id":"sezim","name":"Sezim Family Restobar","city":"Петропавловск · семейный рестобар","desc":"Полное меню и барная карта, заказ с сайта, бронь стола, детская игровая, админка.","tags":["Меню","Заказ","Бронь"],"url":"https://tamerlankajrolla2-a11y.github.io/Sezim/","m":"img/w/sezim-m.webp","d":"img/w/sezim-d.webp","fan":true},{"id":"tumar","name":"Тумар","city":"Пресновка · ресторан","desc":"Тои и банкеты, обеды, выпечка, свободные даты и бронь, админка для владельца.","tags":["Банкеты","Бронь","Админка"],"url":"https://tamerlankajrolla2-a11y.github.io/TUMAR-/","m":"img/w/tumar-m.webp","d":"img/w/tumar-d.webp","fan":false},{"id":"moon","name":"The Moon","city":"Астана · restobar & karaoke","desc":"Меню, «мой стол» с подсчётом суммы, бронь столов, отзывы.","tags":["Меню","Бронь","Караоке"],"url":"https://tamerlankajrolla2-a11y.github.io/The-Moon/","m":"img/w/moon-m.webp","d":"img/w/moon-d.webp","fan":true},{"id":"jamaica","name":"Jamaica Bar","city":"Кокшетау · караоке-лаундж","desc":"Меню, VIP-комнаты, бронь столов на компанию.","tags":["Меню","Бронь","VIP"],"url":"https://tamerlankajrolla2-a11y.github.io/Jamaica/","m":"img/w/jamaica-m.webp","d":"img/w/jamaica-d.webp","fan":false},{"id":"han","name":"Han Dastarhan","city":"Актобе · банкетный кейтеринг","desc":"Банкетное меню с ценами и подбор стола под количество гостей.","tags":["Меню","Подбор стола"],"url":"https://tamerlankajrolla2-a11y.github.io/han-dastarhan/","m":"img/w/han-m.webp","d":"img/w/han-d.webp","fan":false},{"id":"petro","name":"PETRO.POVAR","city":"Петропавловск · выездной шеф-повар","desc":"Банкеты под ключ: меню, калькулятор банкета на гостя, RU/KZ.","tags":["Калькулятор","2 языка"],"url":"https://tamerlankajrolla2-a11y.github.io/RETRO-POVAR/","m":"img/w/petro-m.webp","d":"img/w/petro-d.webp","fan":false}]},{"id":"shop","title":"доставка и магазины","desc":"Корзина, акции, заказ в WhatsApp, цены и меню меняются в админке.","works":[{"id":"sushi","name":"Sensei Sushi","city":"Петропавловск · доставка суши и пиццы","desc":"Сеты и роллы, «мега выгода», корзина и заказ в WhatsApp, админка с заказами.","tags":["Корзина","Акции","Админка"],"url":"https://tamerlankajrolla2-a11y.github.io/SUSHI/","m":"img/w/sushi-m.webp","d":"img/w/sushi-d.webp","fan":true},{"id":"chicken","name":"Chicken Hot","city":"Петропавловск · курочка, пицца, роллы","desc":"Меню с фото, корзина, доставка и акции, админка.","tags":["Доставка","Корзина"],"url":"https://tamerlankajrolla2-a11y.github.io/Chicken-Petropavlock/","m":"img/w/chicken-m.webp","d":"img/w/chicken-d.webp","fan":true},{"id":"proyxod","name":"PRO_YXOD_KZ","city":"Петропавловск · корейская косметика","desc":"Каталог с фильтрами, подбор ухода и заказ в WhatsApp.","tags":["Каталог","Фильтры"],"url":"https://tamerlankajrolla2-a11y.github.io/Pro-yxod/","m":"img/w/proyxod-m.webp","d":"img/w/proyxod-d.webp","fan":true}]},{"id":"serv","title":"услуги и отели","desc":"Калькуляторы, заявки на замер и бронь, личные кабинеты, 2–3 языка.","works":[{"id":"five","name":"FiveHotel","city":"Астана · отель","desc":"Бронирование с календарём, личный кабинет, RU/KZ/EN, тёмная тема.","tags":["Бронирование","3 языка"],"url":"https://tamerlankajrolla2-a11y.github.io/Five-Hostel/","m":"img/w/five-m.webp","d":"img/w/five-d.webp","fan":true},{"id":"ag","name":"AG проект","city":"Петропавловск · проектирование и узаконение","desc":"Услуги с ценами, заявки на консультацию, уведомления в Telegram, админка.","tags":["Услуги","Telegram"],"url":"https://tamerlankajrolla2-a11y.github.io/AG-project/","m":"img/w/ag-m.webp","d":"img/w/ag-d.webp","fan":true},{"id":"potolki","name":"PotolkiSK","city":"Петропавловск · натяжные потолки","desc":"Калькулятор площади по комнатам, заявка на замер, работы, админка.","tags":["Калькулятор","Админка"],"url":"https://potolkisk.github.io/","m":"img/w/potolki-m.webp","d":"","fan":true},{"id":"atom","name":"Хостел ATOM","city":"Астана · хостел","desc":"Калькулятор проживания, бронь и переключатель языков. Есть отзыв владельца.","tags":["Калькулятор","3 языка"],"url":"https://atom-hostel.github.io/Hostel-ATOM/","m":"img/w/atom-m.webp","d":"img/w/atom-d.webp","fan":false},{"id":"astoria","name":"Astoria Hotel","city":"Астана · гостиница","desc":"Номера, расчёт брони, услуги и отзывы, RU/KZ.","tags":["Номера","Расчёт"],"url":"https://astoria-hotel.github.io/Astoria-Hotel/","m":"img/w/astoria-m.webp","d":"img/w/astoria-d.webp","fan":false}]}],"steps":[{"t":"Заявка","d":"Пишете в WhatsApp или Telegram, что нужно. Можно просто прислать ссылку на ваш Instagram."},{"t":"Расчёт и договор","d":"Считаю цену и срок, фиксируем всё заранее. Предоплата — на Kaspi."},{"t":"Дизайн и правки","d":"Показываю первый вариант. До 5 правок — бесплатно, пока не понравится."},{"t":"Запуск","d":"Публикую сайт, подключаю заявки и админку, индексирую в Google. Остаток — после запуска."}],"faq":[{"q":"Будет ли сайт виден в Google?","a":"Да. Делаю базовую SEO-настройку и индексацию — люди находят ваш сайт в поиске Google и на картах."},{"q":"Смогу менять цены и меню сам?","a":"Да, если подключить админ-панель (+5 000 ₸): меняете цены, меню, фото и тексты с телефона, видите заявки, скачиваете отчёт в Excel, получаете уведомления в Telegram. В интернет-магазине и премиуме админка уже входит."},{"q":"Почему так недорого? Где подвох?","a":"Подвоха нет. Пишу на чистом коде по отработанным решениям и не содержу офис студии — поэтому без студийных наценок и абонплаты. Платите один раз — сайт ваш."},{"q":"Нужно ли платить за хостинг и домен?","a":"Хостинг 24/7 на первые 3 месяца — в подарок. Потом его можно продлить или перенести сайт. Свой домен (.kz или .com) — по желанию, подскажу, как купить."},{"q":"Что нужно от меня для старта?","a":"Название, контакты, список услуг или меню с ценами, фото и логотип, если есть. Срок отсчитывается с момента, когда всё это у меня."},{"q":"Работаете только с Казахстаном?","a":"Нет, работаю с клиентами из Казахстана и стран СНГ. Всё общение — в WhatsApp или Telegram."}],"review":{"on":true,"text":"Осталась довольна работой по созданию сайта. Дизайн получился аккуратным, структура — понятной и удобной. Пожелания учли, на вопросы отвечали, необходимые правки внесли. Спасибо за работу!","author":"Хостел ATOM","city":"Астана","url":"https://atom-hostel.github.io/Hostel-ATOM/"}};
+var D = DEF;
 var $ = function (s) { return document.querySelector(s); };
 var esc = function (t) { return String(t == null ? '' : t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
-var money = function (n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₸'; };
-var waUrl = function (t) { return 'https://wa.me/' + CFG.wa + (t ? '?text=' + encodeURIComponent(t) : ''); };
-var GH = 'https://tamerlankajrolla2-a11y.github.io/';
+var money = function (n) { return String(Math.round(+n || 0)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₸'; };
+var cap = function (t) { t = String(t || ''); return t.charAt(0).toUpperCase() + t.slice(1); };
+function pl(n, f) { n = Math.abs(n) % 100; var m = n % 10; return n > 10 && n < 20 ? f[2] : m === 1 ? f[0] : m >= 2 && m <= 4 ? f[1] : f[2]; }
+function waUrl(t) { return 'https://wa.me/' + D.settings.wa + (t ? '?text=' + encodeURIComponent(t) : ''); }
+function tgUrl() { return 'https://t.me/' + D.settings.tg; }
+function telUrl() { var d = String(D.settings.phone).replace(/\D/g, ''); if (d.length === 11 && d[0] === '8') d = '7' + d.slice(1); return 'tel:+' + d; }
+function img(p) { return window.Store ? Store.img(p) : p; }
+var obs = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); obs.unobserve(en.target); } }); }, { rootMargin: '0px 0px -60px 0px' }) : null;
+function observe() { document.querySelectorAll('.rv:not(.in)').forEach(function (el) { if (obs) obs.observe(el); else el.classList.add('in'); }); }
+
+/* ---------- тексты и контакты ---------- */
+function renderTexts() {
+  var s = D.settings, o = s.offer || {};
+  $('#offer').hidden = !o.on || !o.text;
+  $('#offL').textContent = o.text; $('#offS').textContent = o.short || o.text;
+  if (s.heroSub) $('#heroSub').innerHTML = esc(s.heroSub).replace(/\n/g, '<br>');
+  document.querySelectorAll('[data-wa]').forEach(function (a) { a.href = waUrl(a.dataset.wa); a.target = '_blank'; a.rel = 'noopener'; });
+  document.querySelectorAll('[data-tg]').forEach(function (a) { a.href = tgUrl(); });
+  document.querySelectorAll('[data-tel]').forEach(function (a) { a.href = telUrl(); });
+  document.querySelectorAll('[data-phone]').forEach(function (a) { a.textContent = s.phone; });
+  $('#pFree').textContent = 'до ' + D.calc.pagesFree + ' ' + pl(D.calc.pagesFree, ['страницы', 'страниц', 'страниц']) + ' — бесплатно';
+  var r = D.review || {};
+  $('#review').hidden = !r.on || !r.text;
+  $('#rvText').textContent = r.text || '';
+  $('#rvCite').innerHTML = '<b>' + esc(r.author) + '</b>' + (r.city ? ' · ' + esc(r.city) : '') + (r.url ? ' · <a href="' + esc(r.url) + '" target="_blank" rel="noopener">смотреть сайт ↗</a>' : '');
+  $('#steps').innerHTML = D.steps.map(function (st, i) { return '<div class="step rv" style="transition-delay:' + (i * .1) + 's"><div class="n">' + (i < 9 ? '0' : '') + (i + 1) + '</div><b>' + esc(st.t) + '</b><p>' + esc(st.d) + '</p></div>'; }).join('');
+  $('#faqList').innerHTML = D.faq.map(function (q) { return '<details><summary>' + esc(q.q) + '</summary><p>' + esc(q.a) + '</p></details>'; }).join('');
+}
 
 /* ---------- работы ---------- */
-var CATS = [
-  { id: 'food', title: 'рестораны и банкеты', desc: 'Меню, бронь столов и свободные даты, калькулятор банкета, админка.', fan: ['sezim', 'emirat', 'moon'], works: [
-    { k: 'emirat', name: 'Emirat', city: 'Петропавловск · банкетный ресторан', desc: 'Календарь свободных дат, корпоративы, заявки и уведомления в Telegram, админка с отчётом в Excel.', tags: ['Бронь дат', 'Админка', 'Telegram'], url: 'https://emirat-restaunrant.github.io/Emirat/' },
-    { k: 'sezim', name: 'Sezim Family Restobar', city: 'Петропавловск · семейный рестобар', desc: 'Полное меню и барная карта, заказ с сайта, бронь стола, детская игровая, админка.', tags: ['Меню', 'Заказ', 'Бронь'], url: GH + 'Sezim/' },
-    { k: 'tumar', name: 'Тумар', city: 'Пресновка · ресторан', desc: 'Тои и банкеты, обеды, выпечка, свободные даты и бронь, админка для владельца.', tags: ['Банкеты', 'Бронь', 'Админка'], url: GH + 'TUMAR-/' },
-    { k: 'moon', name: 'The Moon', city: 'Астана · restobar & karaoke', desc: 'Меню, «мой стол» с подсчётом суммы, бронь столов, отзывы.', tags: ['Меню', 'Бронь', 'Караоке'], url: GH + 'The-Moon/' },
-    { k: 'jamaica', name: 'Jamaica Bar', city: 'Кокшетау · караоке-лаундж', desc: 'Меню, VIP-комнаты, бронь столов на компанию.', tags: ['Меню', 'Бронь', 'VIP'], url: GH + 'Jamaica/' },
-    { k: 'han', name: 'Han Dastarhan', city: 'Актобе · банкетный кейтеринг', desc: 'Банкетное меню с ценами и подбор стола под количество гостей.', tags: ['Меню', 'Подбор стола'], url: GH + 'han-dastarhan/' },
-    { k: 'petro', name: 'PETRO.POVAR', city: 'Петропавловск · выездной шеф-повар', desc: 'Банкеты под ключ: меню, калькулятор банкета на гостя, RU/KZ.', tags: ['Калькулятор', '2 языка'], url: GH + 'RETRO-POVAR/' }] },
-  { id: 'shop', title: 'доставка и магазины', desc: 'Корзина, акции, заказ в WhatsApp, цены и меню меняются в админке.', fan: ['chicken', 'sushi', 'proyxod'], works: [
-    { k: 'sushi', name: 'Sensei Sushi', city: 'Петропавловск · доставка суши и пиццы', desc: 'Сеты и роллы, «мега выгода», корзина и заказ в WhatsApp, админка с заказами.', tags: ['Корзина', 'Акции', 'Админка'], url: GH + 'SUSHI/' },
-    { k: 'chicken', name: 'Chicken Hot', city: 'Петропавловск · курочка, пицца, роллы', desc: 'Меню с фото, корзина, доставка и акции, админка.', tags: ['Доставка', 'Корзина'], url: GH + 'Chicken-Petropavlock/' },
-    { k: 'proyxod', name: 'PRO_YXOD_KZ', city: 'Петропавловск · корейская косметика', desc: 'Каталог с фильтрами, подбор ухода и заказ в WhatsApp.', tags: ['Каталог', 'Фильтры'], url: GH + 'Pro-yxod/' }] },
-  { id: 'serv', title: 'услуги и отели', desc: 'Калькуляторы, заявки на замер и бронь, личные кабинеты, 2–3 языка.', fan: ['ag', 'five', 'potolki'], works: [
-    { k: 'potolki', mob: true, name: 'PotolkiSK', city: 'Петропавловск · натяжные потолки', desc: 'Калькулятор площади по комнатам, заявка на замер, работы, админка.', tags: ['Калькулятор', 'Админка'], url: 'https://potolkisk.github.io/' },
-    { k: 'ag', name: 'AG проект', city: 'Петропавловск · проектирование и узаконение', desc: 'Услуги с ценами, заявки на консультацию, уведомления в Telegram, админка.', tags: ['Услуги', 'Telegram'], url: GH + 'AG-project/' },
-    { k: 'five', name: 'FiveHotel', city: 'Астана · отель', desc: 'Бронирование с календарём, личный кабинет, RU/KZ/EN, тёмная тема.', tags: ['Бронирование', '3 языка'], url: GH + 'Five-Hostel/' },
-    { k: 'atom', name: 'Хостел ATOM', city: 'Астана · хостел', desc: 'Калькулятор проживания, бронь и переключатель языков. Есть отзыв владельца.', tags: ['Калькулятор', '3 языка'], url: 'https://atom-hostel.github.io/Hostel-ATOM/' },
-    { k: 'astoria', name: 'Astoria Hotel', city: 'Астана · гостиница', desc: 'Номера, расчёт брони, услуги и отзывы, RU/KZ.', tags: ['Номера', 'Расчёт'], url: 'https://astoria-hotel.github.io/Astoria-Hotel/' }] }
-];
-function img(k, kind) { return 'img/w/' + k + '-' + kind + '.webp'; }
-var plural = function (n) { return n % 10 === 1 && n % 100 !== 11 ? 'работа' : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 'работы' : 'работ'; };
-$('#cats').innerHTML = CATS.map(function (c, i) {
-  return '<button type="button" class="cat rv" data-cat="' + i + '" style="transition-delay:' + (i * .08) + 's"><div class="fan">' + c.fan.map(function (k) { return '<img src="' + img(k, 'm') + '" alt="" loading="lazy" decoding="async">'; }).join('') + '</div>' +
-    '<small>' + c.works.length + ' ' + plural(c.works.length) + ' · смотреть все</small><h3>' + esc(c.title) + '</h3><p>' + esc(c.desc) + '</p><span class="arrow"><svg><use href="#i-arr"/></svg></span></button>';
-}).join('');
+function vis(c) { return c.works.filter(function (w) { return !w.hide; }); }
+function cats() { return D.cats.filter(function (c) { return vis(c).length; }); }
+function fanOf(c) {
+  var ws = vis(c), f = ws.filter(function (w) { return w.fan && w.m; });
+  if (f.length < 3) f = f.concat(ws.filter(function (w) { return !w.fan && w.m; }));
+  f = f.slice(0, 3);
+  return f.length === 3 ? [f[1], f[0], f[2]] : f.length === 2 ? [f[1], f[0], null] : [null, f[0], null];
+}
+function renderWorks() {
+  var C = cats(), n = C.reduce(function (a, c) { return a + vis(c).length; }, 0);
+  $('#wCount').textContent = n + ' ' + pl(n, ['живой сайт', 'живых сайта', 'живых сайтов']);
+  $('#cats').innerHTML = C.map(function (c, i) {
+    var k = vis(c).length;
+    return '<button type="button" class="cat rv" data-cat="' + i + '" style="transition-delay:' + (i * .08) + 's"><div class="fan">' + fanOf(c).map(function (w) { return w ? '<img src="' + esc(img(w.m)) + '" alt="" loading="lazy" decoding="async">' : '<img alt="" style="visibility:hidden">'; }).join('') + '</div>' +
+      '<small>' + k + ' ' + pl(k, ['работа', 'работы', 'работ']) + ' · смотреть все</small><h3>' + esc(c.title) + '</h3><p>' + esc(c.desc) + '</p><span class="arrow"><svg><use href="#i-arr"/></svg></span></button>';
+  }).join('');
+}
 var dlg = $('#dlg');
 function openCat(i) {
-  var c = CATS[i];
+  var c = cats()[i]; if (!c) return;
   $('#dlgP').innerHTML = '<div class="top"><h3 id="dlgT">' + esc(c.title) + '</h3><button class="x" type="button" data-close aria-label="Закрыть">×</button></div>' +
-    c.works.map(function (w) {
-      return '<div class="work"><a class="th' + (w.mob ? ' m' : '') + '" href="' + esc(w.url) + '" target="_blank" rel="noopener" aria-label="Открыть сайт ' + esc(w.name) + '"><img src="' + img(w.k, w.mob ? 'm' : 'd') + '" alt="Сайт ' + esc(w.name) + '" loading="lazy"></a>' +
+    vis(c).map(function (w) {
+      var mob = !w.d;
+      return '<div class="work"><a class="th' + (mob ? ' m' : '') + '" href="' + esc(w.url) + '" target="_blank" rel="noopener" aria-label="Открыть сайт ' + esc(w.name) + '"><img src="' + esc(img(w.d || w.m)) + '" alt="Сайт ' + esc(w.name) + '" loading="lazy"></a>' +
         '<div><b>' + esc(w.name) + '</b><div class="c">' + esc(w.city) + '</div><p>' + esc(w.desc) + '</p><div class="tags">' + w.tags.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('') + '</div>' +
-        '<a class="go" href="' + esc(w.url) + '" target="_blank" rel="noopener">открыть сайт ↗</a></div></div>';
+        (w.url ? '<a class="go" href="' + esc(w.url) + '" target="_blank" rel="noopener">открыть сайт ↗</a>' : '') + '</div></div>';
     }).join('') +
     '<div style="margin-top:22px"><a class="pill big" href="' + esc(waUrl('Здравствуйте! Посмотрел ваши работы («' + c.title + '») — хочу похожий сайт.')) + '" target="_blank" rel="noopener" style="width:100%"><svg><use href="#i-wa"/></svg>Хочу такой же сайт</a></div>';
   dlg.classList.add('on'); document.documentElement.style.overflow = 'hidden';
@@ -414,105 +459,119 @@ dlg.addEventListener('click', function (e) { if (e.target === dlg || e.target.cl
 addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDlg(); });
 
 /* ---------- цены ---------- */
-var TYPES = [
-  { id: 'cafe', name: 'кафе и общепит', price: 5000, days: '1–2 дня', desc: 'Онлайн-меню и QR-меню, бронь столиков, карта 2GIS, заказ в WhatsApp.', hit: true, q: "Зачем это бизнесу?", why: ["Гость открывает меню с фото и ценами по QR-коду на столе или по ссылке из 2GIS и Instagram — не нужно печатать меню.", "Брони и заказы на вынос приходят в WhatsApp — меньше звонков в час пик.", "Цены и блюда меняете сами за минуту, когда что-то закончилось или подорожало.", "Сайт находят в Google и 2GIS, когда ищут «где поесть» рядом, — это новые гости без рекламы."], fit: ["кафе", "кофейни", "рестораны", "столовые", "фастфуд"] },
-  { id: 'land', name: 'лендинг / визитка', price: 6000, days: '1–2 дня', desc: 'Одна страница о вас: услуги, цены, отзывы, кнопки WhatsApp и Telegram.', q: "Зачем это бизнесу?", why: ["Одна ссылка вместо долгой переписки: услуги, цены, примеры и контакты на одной странице.", "Ставите ссылку в Instagram, 2GIS и WhatsApp — клиент сразу видит всё и пишет уже готовым.", "Вызывает доверие: с сайтом вы выглядите серьёзнее конкурентов «только из Instagram».", "Реклама ведёт на страницу с кнопкой заявки — больше обращений за те же деньги."], fit: ["мастера", "салоны", "частные специалисты", "автосервисы", "курсы"] },
-  { id: 'bot', name: 'telegram-бот', price: 12000, days: '2–3 дня', desc: 'Меню и кнопки, запись или заказы, уведомления администратору 24/7.', noPages: true, noAdmin: true, q: "Зачем бизнесу бот?", why: ["Работает 24/7 без администратора: отвечает на частые вопросы, показывает цены, принимает записи и заказы.", "Заявки приходят вам в Telegram сразу с именем и телефоном — ничего не теряется в переписке.", "Клиенту не нужно ничего скачивать: открыл бота и записался за минуту.", "Можно делать рассылки: акции и новинки сразу всем, кто пользовался ботом."], fit: ["салоны и барберы", "клиники", "доставка", "курсы", "онлайн-школы"] },
-  { id: 'cat', name: 'каталог', price: 15000, days: '3 дня', desc: 'Товары с фильтрами и поиском, заказ через WhatsApp, Instagram и 2GIS.', q: "Зачем это бизнесу?", why: ["Весь ассортимент с фото и ценами — клиент выбирает сам и пишет уже готовый заказ.", "Фильтры и поиск: нужное находят за секунды, а не листая сотни постов в Instagram.", "Меньше одинаковых вопросов «сколько стоит?» и «есть в наличии?» — экономит часы каждый день.", "Ссылку на конкретный товар удобно отправить клиенту в WhatsApp."], fit: ["магазины", "мебель", "косметика", "запчасти", "стройматериалы"] },
-  { id: 'biz', name: 'бизнес-сайт', price: 17500, days: '2 дня', desc: 'До 10 страниц, продающие тексты, форма заявки, базовое SEO, галерея.', q: "Зачем это бизнесу?", why: ["Полноценное лицо компании: о вас, услуги, цены, работы, отзывы и контакты — до 10 страниц.", "Заявки с сайта приходят в WhatsApp или Telegram 24/7 — даже ночью и в выходные.", "Вас находят в Google по запросам вроде «натяжные потолки Петропавловск» — клиенты без затрат на рекламу.", "Серьёзные клиенты и партнёры проверяют компанию по сайту, прежде чем позвонить."], fit: ["услуги", "строительство", "производство", "клиники", "B2B"] },
-  { id: 'shop', name: 'интернет-магазин', price: 20000, days: '4–5 дней', desc: 'Корзина и оплата Kaspi / картой, админ-панель, аналитика.', adminIn: true, q: "Зачем это бизнесу?", why: ["Продажи 24/7: клиент кладёт товары в корзину и оплачивает Kaspi или картой без вашего участия.", "Админ-панель уже внутри: сами добавляете товары, меняете цены и видите заказы.", "Видно, что покупают чаще и сколько заказов за день, — проще планировать закупки.", "Можно продавать не только в своём городе, а по всему Казахстану с доставкой."], fit: ["одежда", "косметика", "техника", "подарки", "продукты"] },
-  { id: 'prem', name: 'премиум', price: 35000, days: 'от 5 дней', desc: 'Индивидуальный дизайн, интеграции и CRM, чат-бот, приоритетная поддержка.', from: true, adminIn: true, q: "Зачем это бизнесу?", why: ["Уникальный дизайн под ваш бренд — сайт не похож на шаблоны конкурентов.", "Интеграции: CRM, онлайн-оплата, рассылки, чат-бот — заявки и клиенты в одной системе.", "Сложная логика: калькуляторы, личные кабинеты, бронирование, несколько языков.", "Приоритетная поддержка и доработки — сайт растёт вместе с бизнесом."], fit: ["сети заведений", "отели", "клиники", "застройщики", "крупные компании"] }
-];
-var ADMIN_WHY = { q: 'Зачем нужна админка?', why: ['Меняете цены, меню, фото и тексты сами с телефона — не нужно ждать разработчика и платить за каждую правку.', 'Все заявки и заказы в одном месте со статусами — видно, кто ещё ждёт ответа.', 'Отчёт за день в Excel — удобно считать выручку и заказы.', 'Уведомления о новых заявках в Telegram — отвечаете клиенту быстрее конкурентов.'], fit: ['кафе с меняющимся меню', 'магазины', 'доставка', 'банкетные залы'] };
-var TERMS = [{ k: 1.3, name: '10 часов', tag: '+30%' }, { k: 1, name: 'стандарт', tag: 'по сроку тарифа' }, { k: 0.7, name: '4–5 дней', tag: '−30%' }];
-var S = { type: 'cafe', term: 1, admin: false, pages: 3, promo: '' };
+function TYPES() { return D.types.filter(function (t) { return !t.hide; }); }
+function TERMS() { return D.calc.terms; }
 function whyBox(t, pickAttr, label) {
   var ask = waUrl('Здравствуйте! Интересует: ' + t.name + '. Расскажите подробнее, как это поможет моему бизнесу.');
   return '<div class="wx" data-stop><div><div class="in"><h4>' + esc(t.q) + '</h4><ul>' + t.why.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
-    '<div class="fit">Подходит:' + t.fit.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</div>' +
+    (t.fit.length ? '<div class="fit">Подходит:' + t.fit.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</div>' : '') +
     '<div class="ac"><button type="button" class="pill" ' + pickAttr + '>' + label + '</button><a class="pill gh" href="' + esc(ask) + '" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Спросить в WhatsApp</a></div></div></div></div>';
 }
 function rowHtml(t, attr, pre, price, act, label) {
+  var hasWhy = t.why && t.why.length;
   return '<div class="row" ' + attr + '><b>' + esc(t.name) + (t.hit ? '<em>хит</em>' : '') + '</b><div class="d">' + esc(t.desc) +
-    '<br><button type="button" class="why" data-why aria-expanded="false"><i>+</i>' + esc(t.q) + '</button></div>' +
-    '<span class="pr"><small>' + pre + '</small>' + money(price) + '</span><button type="button" class="or" ' + attr + '>' + act + ' <svg width="14" height="14"><use href="#i-arr"/></svg></button>' + whyBox(t, attr, label) + '</div>';
+    (hasWhy ? '<br><button type="button" class="why" data-why aria-expanded="false"><i>+</i>' + esc(t.q) + '</button>' : '') + '</div>' +
+    '<span class="pr"><small>' + pre + '</small>' + money(price) + '</span><button type="button" class="or" ' + attr + '>' + act + ' <svg width="14" height="14"><use href="#i-arr"/></svg></button>' + (hasWhy ? whyBox(t, attr, label) : '') + '</div>';
 }
-$('#rows').innerHTML = TYPES.map(function (t) { return rowHtml(t, 'data-pick="' + t.id + '"', 'от', t.price, 'заказать', 'Рассчитать ' + (t.id === 'bot' ? 'бота' : 'сайт')); }).join('') +
-  rowHtml({ name: 'админ-панель', desc: 'Добавка к любому сайту: сами меняете цены, меню, фото и тексты, видите заявки, отчёт за день в Excel, уведомления в Telegram.', q: ADMIN_WHY.q, why: ADMIN_WHY.why, fit: ADMIN_WHY.fit }, 'data-admin', '+', CFG.admin, 'добавить', 'Добавить в расчёт');
+function renderRows() {
+  var aw = D.calc.adminWhy;
+  $('#rows').innerHTML = TYPES().map(function (t) { return rowHtml(t, 'data-pick="' + esc(t.id) + '"', 'от', t.price, 'заказать', 'Рассчитать ' + (/бот/i.test(t.name) ? 'бота' : 'сайт')); }).join('') +
+    (D.calc.admin ? rowHtml({ name: 'админ-панель', desc: 'Добавка к любому сайту: сами меняете цены, меню, фото и тексты, видите заявки, отчёт за день в Excel, уведомления в Telegram.', q: aw.q, why: aw.why, fit: aw.fit }, 'data-admin', '+', D.calc.admin, 'добавить', 'Добавить в расчёт') : '');
+}
 
 /* ---------- калькулятор ---------- */
-function T() { return TYPES.filter(function (t) { return t.id === S.type; })[0]; }
+var S = { type: '', term: -1, admin: false, pages: 3, promo: '' };
+function T() { var L = TYPES(); return L.filter(function (t) { return t.id === S.type; })[0] || L[0]; }
+function stdTerm() { var i = -1; TERMS().forEach(function (x, j) { if (i < 0 && x.k === 1) i = j; }); return i < 0 ? 0 : i; }
+function termName(t) { var x = TERMS()[S.term]; return x.k === 1 ? (t.days || x.name) : x.name; }
+function promoPct(code) { var p = D.promo.filter(function (x) { return x.code === code; })[0]; return p ? p.pct / 100 : 0; }
 function calc() {
-  var t = T(), base = t.price, pagesExtra = t.noPages ? 0 : Math.max(0, S.pages - CFG.pagesFree) * CFG.pagePrice;
-  var adm = (!t.noAdmin && !t.adminIn && S.admin) ? CFG.admin : 0, k = TERMS[S.term].k;
-  var sub = (base + pagesExtra) * k + adm, d = CFG.promo[S.promo] || 0, total = Math.round(sub * (1 - d) / 100) * 100;
+  var t = T(), base = t.price, pagesExtra = t.noPages ? 0 : Math.max(0, S.pages - D.calc.pagesFree) * D.calc.pagePrice;
+  var adm = (!t.noAdmin && !t.adminIn && S.admin) ? D.calc.admin : 0, k = TERMS()[S.term].k;
+  var sub = (base + pagesExtra) * k + adm, d = promoPct(S.promo), total = Math.round(sub * (1 - d) / 100) * 100;
   return { t: t, base: base, pagesExtra: pagesExtra, adm: adm, k: k, sub: sub, d: d, total: total };
 }
 function paintCalc() {
+  if (!TYPES().length) return;
+  if (!T() || T().id !== S.type) S.type = T().id;
+  if (!TERMS()[S.term]) S.term = stdTerm();
+  if (S.promo && !promoPct(S.promo)) S.promo = '';
   var r = calc(), t = r.t;
-  $('#cType').innerHTML = TYPES.map(function (x) { return '<button type="button" data-type="' + x.id + '" aria-pressed="' + (x.id === S.type) + '">' + esc(x.name.charAt(0).toUpperCase() + x.name.slice(1)) + '<small>' + (x.from ? 'от ' : '') + money(x.price) + '</small></button>'; }).join('');
-  $('#cTerm').innerHTML = TERMS.map(function (x, i) { return '<button type="button" data-term="' + i + '" aria-pressed="' + (i === S.term) + '">' + (i === 1 ? esc(t.days) : esc(x.name)) + '<small>' + esc(x.tag) + '</small></button>'; }).join('');
-  var admBtn = $('#cAdm');
-  admBtn.hidden = !!t.noAdmin;
+  $('#cType').innerHTML = TYPES().map(function (x) { return '<button type="button" data-type="' + esc(x.id) + '" aria-pressed="' + (x.id === S.type) + '">' + esc(cap(x.name)) + '<small>' + (x.from ? 'от ' : '') + money(x.price) + '</small></button>'; }).join('');
+  $('#cTerm').innerHTML = TERMS().map(function (x, i) { return '<button type="button" data-term="' + i + '" aria-pressed="' + (i === S.term) + '">' + esc(x.k === 1 ? (t.days || x.name) : x.name) + '<small>' + esc(x.tag) + '</small></button>'; }).join('');
+  var admBtn = $('#cAdm'), noAdm = !!t.noAdmin || !D.calc.admin;
+  admBtn.hidden = noAdm; admBtn.previousElementSibling.hidden = noAdm;
   admBtn.setAttribute('aria-pressed', String(!!(t.adminIn || S.admin)));
   admBtn.disabled = !!t.adminIn;
-  $('#cAdmP').textContent = t.adminIn ? 'входит' : '+' + money(CFG.admin);
-  admBtn.previousElementSibling.hidden = !!t.noAdmin;
+  $('#cAdmP').textContent = t.adminIn ? 'входит' : '+' + money(D.calc.admin);
   $('#pagesBox').hidden = !!t.noPages;
   $('#cPages').textContent = S.pages;
-  $('#cPagesN').textContent = S.pages <= CFG.pagesFree ? 'до 10 страниц — бесплатно' : '+' + money((S.pages - CFG.pagesFree) * CFG.pagePrice) + ' за страницы сверх 10';
-  var L = '<div><span>' + esc(t.name.charAt(0).toUpperCase() + t.name.slice(1)) + '</span><span>' + (t.from ? 'от ' : '') + money(r.base) + '</span></div>';
-  if (r.pagesExtra) L += '<div><span>Страницы сверх 10</span><span>+' + money(r.pagesExtra) + '</span></div>';
-  if (r.k !== 1) L += '<div><span>Срок ' + esc(TERMS[S.term].name) + '</span><span>' + esc(TERMS[S.term].tag) + '</span></div>';
+  $('#cPagesN').textContent = S.pages <= D.calc.pagesFree ? 'до ' + D.calc.pagesFree + ' страниц — бесплатно' : '+' + money((S.pages - D.calc.pagesFree) * D.calc.pagePrice) + ' за страницы сверх ' + D.calc.pagesFree;
+  var L = '<div><span>' + esc(cap(t.name)) + '</span><span>' + (t.from ? 'от ' : '') + money(r.base) + '</span></div>';
+  if (r.pagesExtra) L += '<div><span>Страницы сверх ' + D.calc.pagesFree + '</span><span>+' + money(r.pagesExtra) + '</span></div>';
+  if (r.k !== 1) L += '<div><span>Срок ' + esc(TERMS()[S.term].name) + '</span><span>' + esc(TERMS()[S.term].tag) + '</span></div>';
   if (t.adminIn) L += '<div><span>Админ-панель</span><span>входит</span></div>'; else if (r.adm) L += '<div><span>Админ-панель</span><span>+' + money(r.adm) + '</span></div>';
-  L += '<div><span>Доп. опции и хостинг 3 мес.</span><span>в подарок</span></div>';
+  if (D.settings.offer.on) L += '<div><span>Доп. опции и хостинг 3 мес.</span><span>в подарок</span></div>';
   if (r.d) L += '<div class="disc"><span>Промокод ' + esc(S.promo) + '</span><span>−' + Math.round(r.d * 100) + '%</span></div>';
   $('#cLines').innerHTML = L;
   $('#cTotal').textContent = (t.from ? 'от ' : '') + money(r.total);
   $('#cOld').textContent = r.d ? money(Math.round(r.sub / 100) * 100) : '';
-  $('#cDays').textContent = 'Срок: ' + (S.term === 1 ? t.days : TERMS[S.term].name) + '. Предоплата на Kaspi, остаток — после запуска.';
-  var txt = calcText(r);
-  $('#cWa').href = waUrl(txt); $('#cWa').target = '_blank'; $('#cWa').rel = 'noopener';
-  $('#cTg').href = 'https://t.me/' + CFG.tg;
-  $('#cTg').dataset.text = txt;
+  $('#cDays').textContent = 'Срок: ' + termName(t) + '. Предоплата на Kaspi, остаток — после запуска.';
+  $('#cWa').href = waUrl('Здравствуйте! Хочу заказать сайт.\n\n' + plan(r).text);
+  $('#cTg').href = tgUrl();
+  $('#cTg').dataset.text = 'Здравствуйте! Хочу заказать сайт.\n\n' + plan(r).text;
 }
-function calcText(r) {
-  var t = r.t, L = ['Здравствуйте! Хочу заказать сайт.', '', 'Тип: ' + t.name, 'Срок: ' + (S.term === 1 ? t.days : TERMS[S.term].name)];
+function plan(r) {
+  var t = r.t, L = ['Тип: ' + t.name, 'Срок: ' + termName(t)];
   if (!t.noPages) L.push('Страниц: ' + S.pages);
-  if (!t.noAdmin) L.push('Админ-панель: ' + (t.adminIn ? 'входит' : S.admin ? 'да' : 'нет'));
+  if (!t.noAdmin && D.calc.admin) L.push('Админ-панель: ' + (t.adminIn ? 'входит' : S.admin ? 'да' : 'нет'));
   if (r.d) L.push('Промокод: ' + S.promo);
   L.push('Итого по калькулятору: ' + (t.from ? 'от ' : '') + money(r.total));
-  return L.join('\n');
+  return { text: L.join('\n'), data: { id: t.id, name: t.name, term: termName(t), pages: t.noPages ? null : S.pages, admin: t.noAdmin ? null : (t.adminIn ? 'входит' : S.admin), promo: r.d ? S.promo : '', total: r.total, from: !!t.from } };
 }
 function applyPromo() {
   var v = $('#cPromo').value.trim().toUpperCase(), m = $('#cPromoMsg');
   if (!v) { S.promo = ''; m.className = 'msg'; m.textContent = ''; return paintCalc(); }
-  if (CFG.promo[v]) { S.promo = v; m.className = 'msg ok'; m.textContent = 'Промокод применён: −' + Math.round(CFG.promo[v] * 100) + '%'; }
+  if (promoPct(v)) { S.promo = v; m.className = 'msg ok'; m.textContent = 'Промокод применён: −' + Math.round(promoPct(v) * 100) + '%'; }
   else { S.promo = ''; m.className = 'msg bad'; m.textContent = 'Такого промокода нет'; }
   paintCalc();
 }
 $('#cPromoBtn').addEventListener('click', applyPromo);
 $('#cPromo').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); applyPromo(); } });
-$('#cTg').addEventListener('click', function () { try { navigator.clipboard.writeText(this.dataset.text || ''); } catch (e) {} });
-paintCalc();
 
-/* ---------- шаги и вопросы ---------- */
-var STEPS = [
-  ['Заявка', 'Пишете в WhatsApp или Telegram, что нужно. Можно просто прислать ссылку на ваш Instagram.'],
-  ['Расчёт и договор', 'Считаю цену и срок, фиксируем всё заранее. Предоплата — на Kaspi.'],
-  ['Дизайн и правки', 'Показываю первый вариант. До 5 правок — бесплатно, пока не понравится.'],
-  ['Запуск', 'Публикую сайт, подключаю заявки и админку, индексирую в Google. Остаток — после запуска.']
-];
-$('#steps').innerHTML = STEPS.map(function (s, i) { return '<div class="step rv" style="transition-delay:' + (i * .1) + 's"><div class="n">0' + (i + 1) + '</div><b>' + esc(s[0]) + '</b><p>' + esc(s[1]) + '</p></div>'; }).join('');
-var FAQ = [
-  ['Будет ли сайт виден в Google?', 'Да. Делаю базовую SEO-настройку и индексацию — люди находят ваш сайт в поиске Google и на картах.'],
-  ['Смогу менять цены и меню сам?', 'Да, если подключить админ-панель (+5 000 ₸): меняете цены, меню, фото и тексты с телефона, видите заявки, скачиваете отчёт в Excel, получаете уведомления в Telegram. В интернет-магазине и премиуме админка уже входит.'],
-  ['Почему так недорого? Где подвох?', 'Подвоха нет. Пишу на чистом коде по отработанным решениям и не содержу офис студии — поэтому без студийных наценок и абонплаты. Платите один раз — сайт ваш.'],
-  ['Нужно ли платить за хостинг и домен?', 'Хостинг 24/7 на первые 3 месяца — в подарок. Потом его можно продлить или перенести сайт. Свой домен (.kz или .com) — по желанию, подскажу, как купить.'],
-  ['Что нужно от меня для старта?', 'Название, контакты, список услуг или меню с ценами, фото и логотип, если есть. Срок отсчитывается с момента, когда всё это у меня.'],
-  ['Работаете только с Казахстаном?', 'Нет, работаю с клиентами из Казахстана и стран СНГ. Всё общение — в WhatsApp или Telegram.']
-];
-$('#faqList').innerHTML = FAQ.map(function (q) { return '<details><summary>' + esc(q[0]) + '</summary><p>' + esc(q[1]) + '</p></details>'; }).join('');
+/* заявка с сайта → админка + Telegram */
+var sent = {};
+function logClick(via) {
+  if (!window.Store || sent[via] > Date.now() - 60000) return;
+  sent[via] = Date.now();
+  var p = plan(calc());
+  Store.createOrder({ kind: 'lead', via: via, comment: p.text, plan: p.data, total: p.data.total });
+}
+$('#cWa').addEventListener('click', function () { logClick('wa'); });
+$('#cTg').addEventListener('click', function () { try { navigator.clipboard.writeText(this.dataset.text || ''); } catch (e) {} logClick('tg'); });
+function fmtPhone(v) {
+  var d = v.replace(/\D/g, ''); if (d[0] === '8') d = '7' + d.slice(1); if (d && d[0] !== '7') d = '7' + d; d = d.slice(0, 11);
+  var o = '+7'; if (d.length > 1) o += ' ' + d.slice(1, 4); if (d.length > 4) o += ' ' + d.slice(4, 7); if (d.length > 7) o += ' ' + d.slice(7, 9); if (d.length > 9) o += ' ' + d.slice(9, 11);
+  return d ? o : '';
+}
+$('#lPhone').addEventListener('input', function () { var a = this.value; this.value = fmtPhone(a); this.classList.remove('bad'); });
+$('#lName').addEventListener('input', function () { this.classList.remove('bad'); });
+$('#lead').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var name = $('#lName').value.trim(), ph = $('#lPhone').value, digits = ph.replace(/\D/g, ''), m = $('#lMsg'), b = $('#lBtn');
+  $('#lName').classList.toggle('bad', !name); $('#lPhone').classList.toggle('bad', digits.length !== 11);
+  if (!name || digits.length !== 11) { m.className = 'lmsg bad'; m.textContent = !name ? 'Напишите, как к вам обращаться' : 'Проверьте номер телефона'; return; }
+  b.disabled = true; b.textContent = 'Отправляю…';
+  var p = plan(calc());
+  var done = function (r) {
+    b.disabled = false; b.textContent = 'Оставить заявку';
+    if (!r) { m.className = 'lmsg bad'; m.innerHTML = 'Не получилось отправить. Напишите, пожалуйста, в <a href="' + esc(waUrl('Здравствуйте! Хочу заказать сайт.\n\n' + p.text)) + '" target="_blank" rel="noopener" style="text-decoration:underline">WhatsApp</a>.'; return; }
+    $('#lead').hidden = true; $('#leadOk').hidden = false;
+    $('#okT').textContent = 'Заявка' + (r.id ? ' №' + r.id : '') + ' отправлена, ' + name + '!';
+  };
+  if (!window.Store) return done(false);
+  Store.createOrder({ kind: 'lead', via: 'site', name: name, phone: ph, comment: p.text, plan: p.data, total: p.data.total }).then(done);
+});
 
 /* ---------- клики ---------- */
 document.addEventListener('click', function (e) {
@@ -522,18 +581,19 @@ document.addEventListener('click', function (e) {
   if (t.hasAttribute('data-why')) { var row = t.closest('.row'), on = !row.classList.contains('open'); row.classList.toggle('open', on); t.setAttribute('aria-expanded', String(on)); return; }
   if (t.dataset.cat) return openCat(+t.dataset.cat);
   if (t.dataset.pick) { S.type = t.dataset.pick; paintCalc(); return $('#calc').scrollIntoView({ behavior: 'smooth' }); }
-  if (t.hasAttribute('data-admin')) { if (T().noAdmin) S.type = 'cafe'; S.admin = true; paintCalc(); return $('#calc').scrollIntoView({ behavior: 'smooth' }); }
+  if (t.hasAttribute('data-admin')) { if (T().noAdmin) S.type = (TYPES().filter(function (x) { return !x.noAdmin; })[0] || T()).id; S.admin = true; paintCalc(); return $('#calc').scrollIntoView({ behavior: 'smooth' }); }
   if (t.dataset.type) { S.type = t.dataset.type; return paintCalc(); }
   if (t.dataset.term) { S.term = +t.dataset.term; return paintCalc(); }
-  if (t.dataset.pg) { S.pages = Math.max(1, Math.min(40, S.pages + (+t.dataset.pg))); return paintCalc(); }
+  if (t.dataset.pg) { S.pages = Math.max(1, Math.min(60, S.pages + (+t.dataset.pg))); return paintCalc(); }
   if (t.id === 'cAdm') { S.admin = !S.admin; return paintCalc(); }
 });
-document.querySelectorAll('[data-wa]').forEach(function (a) { a.href = waUrl(a.dataset.wa); a.target = '_blank'; a.rel = 'noopener'; });
+
+function renderAll() { renderTexts(); renderWorks(); renderRows(); paintCalc(); observe(); }
+renderAll();
+if (window.Store) Store.load().then(function (d) { if (d && JSON.stringify(d) !== JSON.stringify(D)) { D = d; renderAll(); } }).catch(function () {});
 var nav = $('#nav');
 addEventListener('scroll', function () { nav.classList.toggle('sc', scrollY > 30); }, { passive: true });
 $('#yr').textContent = new Date().getFullYear();
-var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }); }, { rootMargin: '0px 0px -60px 0px' }) : null;
-document.querySelectorAll('.rv').forEach(function (el) { if (io) io.observe(el); else el.classList.add('in'); });
 
 /* ---------- поле цветов ---------- */
 var cv = $('#field'), ctx = cv.getContext('2d');
