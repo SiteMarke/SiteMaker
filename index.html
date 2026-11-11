@@ -117,16 +117,33 @@ section{position:relative;padding:110px 0}
 
 /* цены */
 .rows{border-top:1px solid var(--line)}
-.row{position:relative;display:grid;grid-template-columns:minmax(220px,1.1fr) 1.6fr 140px 120px;gap:22px;align-items:center;padding:22px 14px;border-bottom:1px solid var(--line);transition:background .25s,padding .25s;cursor:pointer;text-align:left;width:100%}
+.row{position:relative;display:grid;grid-template-columns:minmax(220px,1.1fr) 1.6fr 140px 120px;column-gap:22px;align-items:center;padding:22px 14px;border-bottom:1px solid var(--line);transition:background .25s,padding .25s;cursor:pointer;text-align:left;width:100%}
 .row:hover{background:rgba(255,255,255,.035);padding-left:22px}
 .row b{font-family:Unbounded,system-ui,sans-serif;font-weight:700;font-size:clamp(16px,1.9vw,21px);letter-spacing:-.025em;text-transform:lowercase;color:var(--cream)}
 .row b em{font-style:normal;font-family:Manrope,sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0b0b0e;background:var(--cream);border-radius:99px;padding:3px 8px;margin-left:8px;vertical-align:middle;position:relative;top:-2px}
-.row span.d{color:var(--muted);font-size:13.8px}
+.row .d{color:var(--muted);font-size:13.8px}
+.why{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:5px 13px 5px 5px;border-radius:99px;border:1px solid var(--line2);background:rgba(255,255,255,.03);font-size:12.5px;font-weight:700;color:var(--cream);transition:background .2s,border-color .2s}
+.why:hover{border-color:var(--cream);background:rgba(242,235,223,.07)}
+.why i{width:20px;height:20px;border-radius:50%;background:var(--cream);color:#0b0b0e;display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:800;transition:transform .3s}
+.row.open .why i{transform:rotate(45deg)}
+.wx{grid-column:1/-1;display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1);cursor:default}
+.wx>div{overflow:hidden;min-height:0}
+.row.open .wx{grid-template-rows:1fr}
+.row.open{background:rgba(255,255,255,.025)}
+.wx .in{margin-top:18px;padding:22px;border-radius:20px;background:linear-gradient(180deg,#14141b,#0f0f14);border:1px solid var(--line2)}
+.wx h4{font-family:Unbounded,system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:-.02em;text-transform:lowercase;color:var(--cream);margin-bottom:16px}
+.wx ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px}
+.wx li{position:relative;padding-left:32px;color:#d7d1c8;font-size:14px;line-height:1.5}
+.wx li:before{content:"";position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;background:rgba(242,235,223,.1) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 12.5 4 4 8-9' fill='none' stroke='%23f2ebdf' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+.wx .fit{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.wx .fit span{color:#d7d1c8;padding:4px 10px;border-radius:99px;border:1px solid var(--line)}
+.wx .ac{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.wx .ac .pill{height:42px;font-size:13.5px}
 .row .pr{font-weight:700;font-size:15px;white-space:nowrap}
 .row .pr small{color:var(--muted);font-weight:500;font-size:12px;margin-right:4px}
-.row .or{justify-self:end;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:lowercase;color:#bdb8b0;display:inline-flex;align-items:center;gap:6px;transition:color .2s,gap .2s}
+.row .or{justify-self:end;padding:8px 0;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:lowercase;color:#bdb8b0;display:inline-flex;align-items:center;gap:6px;transition:color .2s,gap .2s}
 .row:hover .or{color:var(--cream);gap:10px}
-@media(max-width:860px){.row{grid-template-columns:1fr auto;gap:6px 14px;padding:18px 6px}.row:hover{padding-left:10px}.row span.d{grid-column:1/-1;grid-row:2}.row .or{display:none}}
+@media(max-width:860px){.row{grid-template-columns:1fr auto;gap:6px 14px;padding:18px 6px}.row:hover{padding-left:10px}.row .d{grid-column:1/-1;grid-row:2}.row .or{display:none}.wx ul{grid-template-columns:1fr}.wx .in{padding:18px 16px}}
 .pnote{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .chip{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:#c9c4bb;padding:7px 12px;border-radius:99px;border:1px solid var(--line)}
 .chip:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cream);box-shadow:0 0 10px rgba(242,235,223,.7)}
@@ -398,19 +415,30 @@ addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDlg(); }
 
 /* ---------- цены ---------- */
 var TYPES = [
-  { id: 'cafe', name: 'кафе и общепит', price: 5000, days: '1–2 дня', desc: 'Онлайн-меню и QR-меню, бронь столиков, карта 2GIS, заказ в WhatsApp.', hit: true },
-  { id: 'land', name: 'лендинг / визитка', price: 6000, days: '1–2 дня', desc: 'Одна страница о вас: услуги, цены, отзывы, кнопки WhatsApp и Telegram.' },
-  { id: 'bot', name: 'telegram-бот', price: 12000, days: '2–3 дня', desc: 'Меню и кнопки, запись или заказы, уведомления администратору 24/7.', noPages: true, noAdmin: true },
-  { id: 'cat', name: 'каталог', price: 15000, days: '3 дня', desc: 'Товары с фильтрами и поиском, заказ через WhatsApp, Instagram и 2GIS.' },
-  { id: 'biz', name: 'бизнес-сайт', price: 17500, days: '2 дня', desc: 'До 10 страниц, продающие тексты, форма заявки, базовое SEO, галерея.' },
-  { id: 'shop', name: 'интернет-магазин', price: 20000, days: '4–5 дней', desc: 'Корзина и оплата Kaspi / картой, админ-панель, аналитика.', adminIn: true },
-  { id: 'prem', name: 'премиум', price: 35000, days: 'от 5 дней', desc: 'Индивидуальный дизайн, интеграции и CRM, чат-бот, приоритетная поддержка.', from: true, adminIn: true }
+  { id: 'cafe', name: 'кафе и общепит', price: 5000, days: '1–2 дня', desc: 'Онлайн-меню и QR-меню, бронь столиков, карта 2GIS, заказ в WhatsApp.', hit: true, q: "Зачем это бизнесу?", why: ["Гость открывает меню с фото и ценами по QR-коду на столе или по ссылке из 2GIS и Instagram — не нужно печатать меню.", "Брони и заказы на вынос приходят в WhatsApp — меньше звонков в час пик.", "Цены и блюда меняете сами за минуту, когда что-то закончилось или подорожало.", "Сайт находят в Google и 2GIS, когда ищут «где поесть» рядом, — это новые гости без рекламы."], fit: ["кафе", "кофейни", "рестораны", "столовые", "фастфуд"] },
+  { id: 'land', name: 'лендинг / визитка', price: 6000, days: '1–2 дня', desc: 'Одна страница о вас: услуги, цены, отзывы, кнопки WhatsApp и Telegram.', q: "Зачем это бизнесу?", why: ["Одна ссылка вместо долгой переписки: услуги, цены, примеры и контакты на одной странице.", "Ставите ссылку в Instagram, 2GIS и WhatsApp — клиент сразу видит всё и пишет уже готовым.", "Вызывает доверие: с сайтом вы выглядите серьёзнее конкурентов «только из Instagram».", "Реклама ведёт на страницу с кнопкой заявки — больше обращений за те же деньги."], fit: ["мастера", "салоны", "частные специалисты", "автосервисы", "курсы"] },
+  { id: 'bot', name: 'telegram-бот', price: 12000, days: '2–3 дня', desc: 'Меню и кнопки, запись или заказы, уведомления администратору 24/7.', noPages: true, noAdmin: true, q: "Зачем бизнесу бот?", why: ["Работает 24/7 без администратора: отвечает на частые вопросы, показывает цены, принимает записи и заказы.", "Заявки приходят вам в Telegram сразу с именем и телефоном — ничего не теряется в переписке.", "Клиенту не нужно ничего скачивать: открыл бота и записался за минуту.", "Можно делать рассылки: акции и новинки сразу всем, кто пользовался ботом."], fit: ["салоны и барберы", "клиники", "доставка", "курсы", "онлайн-школы"] },
+  { id: 'cat', name: 'каталог', price: 15000, days: '3 дня', desc: 'Товары с фильтрами и поиском, заказ через WhatsApp, Instagram и 2GIS.', q: "Зачем это бизнесу?", why: ["Весь ассортимент с фото и ценами — клиент выбирает сам и пишет уже готовый заказ.", "Фильтры и поиск: нужное находят за секунды, а не листая сотни постов в Instagram.", "Меньше одинаковых вопросов «сколько стоит?» и «есть в наличии?» — экономит часы каждый день.", "Ссылку на конкретный товар удобно отправить клиенту в WhatsApp."], fit: ["магазины", "мебель", "косметика", "запчасти", "стройматериалы"] },
+  { id: 'biz', name: 'бизнес-сайт', price: 17500, days: '2 дня', desc: 'До 10 страниц, продающие тексты, форма заявки, базовое SEO, галерея.', q: "Зачем это бизнесу?", why: ["Полноценное лицо компании: о вас, услуги, цены, работы, отзывы и контакты — до 10 страниц.", "Заявки с сайта приходят в WhatsApp или Telegram 24/7 — даже ночью и в выходные.", "Вас находят в Google по запросам вроде «натяжные потолки Петропавловск» — клиенты без затрат на рекламу.", "Серьёзные клиенты и партнёры проверяют компанию по сайту, прежде чем позвонить."], fit: ["услуги", "строительство", "производство", "клиники", "B2B"] },
+  { id: 'shop', name: 'интернет-магазин', price: 20000, days: '4–5 дней', desc: 'Корзина и оплата Kaspi / картой, админ-панель, аналитика.', adminIn: true, q: "Зачем это бизнесу?", why: ["Продажи 24/7: клиент кладёт товары в корзину и оплачивает Kaspi или картой без вашего участия.", "Админ-панель уже внутри: сами добавляете товары, меняете цены и видите заказы.", "Видно, что покупают чаще и сколько заказов за день, — проще планировать закупки.", "Можно продавать не только в своём городе, а по всему Казахстану с доставкой."], fit: ["одежда", "косметика", "техника", "подарки", "продукты"] },
+  { id: 'prem', name: 'премиум', price: 35000, days: 'от 5 дней', desc: 'Индивидуальный дизайн, интеграции и CRM, чат-бот, приоритетная поддержка.', from: true, adminIn: true, q: "Зачем это бизнесу?", why: ["Уникальный дизайн под ваш бренд — сайт не похож на шаблоны конкурентов.", "Интеграции: CRM, онлайн-оплата, рассылки, чат-бот — заявки и клиенты в одной системе.", "Сложная логика: калькуляторы, личные кабинеты, бронирование, несколько языков.", "Приоритетная поддержка и доработки — сайт растёт вместе с бизнесом."], fit: ["сети заведений", "отели", "клиники", "застройщики", "крупные компании"] }
 ];
+var ADMIN_WHY = { q: 'Зачем нужна админка?', why: ['Меняете цены, меню, фото и тексты сами с телефона — не нужно ждать разработчика и платить за каждую правку.', 'Все заявки и заказы в одном месте со статусами — видно, кто ещё ждёт ответа.', 'Отчёт за день в Excel — удобно считать выручку и заказы.', 'Уведомления о новых заявках в Telegram — отвечаете клиенту быстрее конкурентов.'], fit: ['кафе с меняющимся меню', 'магазины', 'доставка', 'банкетные залы'] };
 var TERMS = [{ k: 1.3, name: '10 часов', tag: '+30%' }, { k: 1, name: 'стандарт', tag: 'по сроку тарифа' }, { k: 0.7, name: '4–5 дней', tag: '−30%' }];
 var S = { type: 'cafe', term: 1, admin: false, pages: 3, promo: '' };
-$('#rows').innerHTML = TYPES.map(function (t) {
-  return '<button type="button" class="row" data-pick="' + t.id + '"><b>' + esc(t.name) + (t.hit ? '<em>хит</em>' : '') + '</b><span class="d">' + esc(t.desc) + '</span><span class="pr"><small>от</small>' + money(t.price) + '</span><span class="or">заказать <svg width="14" height="14"><use href="#i-arr"/></svg></span></button>';
-}).join('') + '<button type="button" class="row" data-admin><b>админ-панель</b><span class="d">Добавка к любому сайту: сами меняете цены, меню, фото и тексты, видите заявки, отчёт за день в Excel, уведомления в Telegram.</span><span class="pr"><small>+</small>' + money(CFG.admin) + '</span><span class="or">добавить <svg width="14" height="14"><use href="#i-arr"/></svg></span></button>';
+function whyBox(t, pickAttr, label) {
+  var ask = waUrl('Здравствуйте! Интересует: ' + t.name + '. Расскажите подробнее, как это поможет моему бизнесу.');
+  return '<div class="wx" data-stop><div><div class="in"><h4>' + esc(t.q) + '</h4><ul>' + t.why.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
+    '<div class="fit">Подходит:' + t.fit.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</div>' +
+    '<div class="ac"><button type="button" class="pill" ' + pickAttr + '>' + label + '</button><a class="pill gh" href="' + esc(ask) + '" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Спросить в WhatsApp</a></div></div></div></div>';
+}
+function rowHtml(t, attr, pre, price, act, label) {
+  return '<div class="row" ' + attr + '><b>' + esc(t.name) + (t.hit ? '<em>хит</em>' : '') + '</b><div class="d">' + esc(t.desc) +
+    '<br><button type="button" class="why" data-why aria-expanded="false"><i>+</i>' + esc(t.q) + '</button></div>' +
+    '<span class="pr"><small>' + pre + '</small>' + money(price) + '</span><button type="button" class="or" ' + attr + '>' + act + ' <svg width="14" height="14"><use href="#i-arr"/></svg></button>' + whyBox(t, attr, label) + '</div>';
+}
+$('#rows').innerHTML = TYPES.map(function (t) { return rowHtml(t, 'data-pick="' + t.id + '"', 'от', t.price, 'заказать', 'Рассчитать ' + (t.id === 'bot' ? 'бота' : 'сайт')); }).join('') +
+  rowHtml({ name: 'админ-панель', desc: 'Добавка к любому сайту: сами меняете цены, меню, фото и тексты, видите заявки, отчёт за день в Excel, уведомления в Telegram.', q: ADMIN_WHY.q, why: ADMIN_WHY.why, fit: ADMIN_WHY.fit }, 'data-admin', '+', CFG.admin, 'добавить', 'Добавить в расчёт');
 
 /* ---------- калькулятор ---------- */
 function T() { return TYPES.filter(function (t) { return t.id === S.type; })[0]; }
@@ -488,8 +516,10 @@ $('#faqList').innerHTML = FAQ.map(function (q) { return '<details><summary>' + e
 
 /* ---------- клики ---------- */
 document.addEventListener('click', function (e) {
-  var t = e.target.closest('[data-cat],[data-pick],[data-admin],[data-type],[data-term],[data-pg],#cAdm');
+  var t = e.target.closest('[data-why],[data-stop],[data-cat],[data-pick],[data-admin],[data-type],[data-term],[data-pg],#cAdm');
   if (!t) return;
+  if (t.hasAttribute('data-stop')) return;
+  if (t.hasAttribute('data-why')) { var row = t.closest('.row'), on = !row.classList.contains('open'); row.classList.toggle('open', on); t.setAttribute('aria-expanded', String(on)); return; }
   if (t.dataset.cat) return openCat(+t.dataset.cat);
   if (t.dataset.pick) { S.type = t.dataset.pick; paintCalc(); return $('#calc').scrollIntoView({ behavior: 'smooth' }); }
   if (t.hasAttribute('data-admin')) { if (T().noAdmin) S.type = 'cafe'; S.admin = true; paintCalc(); return $('#calc').scrollIntoView({ behavior: 'smooth' }); }
