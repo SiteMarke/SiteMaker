@@ -55,6 +55,7 @@ window.Store = (function () {
 
   function arr(x) { return Array.isArray(x) ? x : []; }
   function str(x, d) { return x == null || x === '' ? (d || '') : String(x); }
+  var PRESS_DEF = {"on": true, "title": "отзывы и реклама", "items": [{"id": "p-chef-talk", "type": "video", "src": "img/press/chef-talk.mp4", "poster": "img/press/chef-talk.webp", "tag": "видео-отзыв", "name": "Қайыржан · @petro.povar", "who": "Выездной шеф-повар · 40 тыс. подписчиков", "text": "«Делает очень красиво, креативно, всё доступно и понятно. Мне очень понравилось — всем советую. Такие сайты делает, которые даже некоторые компании не делают»", "url": "https://tamerlankajrolla2-a11y.github.io/RETRO-POVAR/", "hide": false}, {"id": "p-chef-story", "type": "video", "src": "img/press/chef-story.mp4", "poster": "img/press/chef-story.webp", "tag": "сторис", "name": "@petro.povar", "who": "Показал в сторис сайт ресторана Emirat", "text": "«@sitemarkertam разработал сайт для @restoran.emirat и многих других бизнесов. Если вы владелец бизнеса — однозначно рекомендую создать свой сайт»", "url": "https://emirat-restaunrant.github.io/Emirat/", "hide": false}, {"id": "p-zhanara", "type": "img", "src": "img/press/zhanara.webp", "poster": "", "tag": "сторис", "name": "Жанара", "who": "Магазин корейской косметики", "text": "«Чтобы онлайн-продаж было больше, я заказала сайт 😍 Всё чётко, оперативно, и цена очень приятная!»", "url": "https://tamerlankajrolla2-a11y.github.io/Pro-yxod/", "hide": false}, {"id": "p-ag", "type": "img", "src": "img/press/agproject.webp", "poster": "", "tag": "сторис", "name": "AG проект · @ag_project.kz", "who": "Проектирование и узаконение, Петропавловск", "text": "«Обращайтесь @sitemarkertam — быстро, красиво, по доступным ценам 🤝»", "url": "https://tamerlankajrolla2-a11y.github.io/AG-project/", "hide": false}, {"id": "p-kaspi", "type": "img", "src": "img/press/kaspi.webp", "poster": "", "tag": "реклама", "name": "Каспи находки", "who": "WhatsApp-канал · 100 тыс. подписчиков", "text": "Рассказали о sitemaker в статусе канала.", "url": "", "hide": false}]};
   function normalize(d) {
     d = d || {};
     var s = d.settings = d.settings || {};
@@ -81,6 +82,13 @@ window.Store = (function () {
     });
     d.steps = arr(d.steps); d.faq = arr(d.faq);
     d.review = d.review || {}; d.review.on = d.review.on !== false;
+    if (!d.press || !Array.isArray(d.press.items)) d.press = JSON.parse(JSON.stringify(PRESS_DEF));
+    d.press.on = d.press.on !== false; d.press.title = str(d.press.title, 'отзывы и реклама');
+    d.press.items = arr(d.press.items).map(function (x, i) {
+      return { id: str(x.id, 'p' + Date.now().toString(36) + i), type: x.type === 'video' ? 'video' : 'img', src: str(x.src), poster: str(x.poster),
+        tag: str(x.tag), name: str(x.name), who: str(x.who), text: str(x.text), url: str(x.url), hide: !!x.hide };
+    });
+    d.cats.forEach(function (c3) { c3.works.forEach(function (w) { if (w.url === 'https://tamerlankajrolla2-a11y.github.io/Sezim/') w.url = 'https://sezim-restaurant.github.io/Sezim/'; }); });
     d.rev = +d.rev || 1;
     return d;
   }

@@ -318,7 +318,7 @@ var ST = { new: { t: 'Новая', c: '#ffd479' }, ok: { t: 'В работе', c
 var VIA = { site: 'с сайта', wa: 'WhatsApp', tg: 'Telegram' };
 var PAGES = [
   { id: 'dash', t: 'Обзор', i: 'home' }, { id: 'orders', t: 'Заявки', i: 'inbox' }, { id: 'prices', t: 'Цены', i: 'tag' }, { id: 'promo', t: 'Промокоды', i: 'pct' },
-  { id: 'works', t: 'Работы', i: 'grid' }, { id: 'texts', t: 'Тексты', i: 'text' }, { id: 'contacts', t: 'Контакты', i: 'phone' }, { id: 'tg', t: 'Telegram', i: 'tg' }, { id: 'sec', t: 'Безопасность', i: 'lock' }
+  { id: 'works', t: 'Работы', i: 'grid' }, { id: 'press', t: 'Отзывы', i: 'eye' }, { id: 'texts', t: 'Тексты', i: 'text' }, { id: 'contacts', t: 'Контакты', i: 'phone' }, { id: 'tg', t: 'Telegram', i: 'tg' }, { id: 'sec', t: 'Безопасность', i: 'lock' }
 ];
 var TABS = ['dash', 'orders', 'prices', 'works'];
 
@@ -385,7 +385,7 @@ function go(id, noScroll) {
 }
 function head(t, sub, tools) { return '<div class="top"><div><h1 class="disp">' + t + '</h1>' + (sub ? '<div class="sub">' + sub + '</div>' : '') + '</div>' + (tools ? '<div class="tools">' + tools + '</div>' : '') + '</div>'; }
 function render() {
-  var f = { dash: pgDash, orders: pgOrders, prices: pgPrices, promo: pgPromo, works: pgWorks, texts: pgTexts, contacts: pgContacts, tg: pgTg, sec: pgSec }[page];
+  var f = { dash: pgDash, orders: pgOrders, prices: pgPrices, promo: pgPromo, works: pgWorks, press: pgPress, texts: pgTexts, contacts: pgContacts, tg: pgTg, sec: pgSec }[page];
   $('#page').innerHTML = f();
   if (page === 'tg' && !tgState) loadTg();
   syncSave();
@@ -694,6 +694,26 @@ function upload(inp) {
     .catch(function (er) { toast('Фото: ' + er.message, 'bad'); lab.firstChild.nodeValue = txt; });
 }
 
+/* ---------- отзывы и реклама ---------- */
+function pgPress() {
+  if (!W.press) W.press = { on: true, title: 'отзывы и реклама', items: [] };
+  var html = head('отзывы', 'Блок «отзывы и реклама»: видео и скрины сторис, где вас рекомендуют. Новое фото — кнопкой «Загрузить скрин», видео присылайте разработчику.', '<a class="btn gh sm" href="./#press" target="_blank" rel="noopener">' + ic('ext') + 'На сайте</a>');
+  html += '<div class="card"><div class="stack">' + toggle('Показывать блок на сайте', 'press.on') + field('Заголовок блока', 'press.title') + '</div></div>';
+  W.press.items.forEach(function (x, i) {
+    var b = 'press.items.' + i, pic = x.type === 'video' ? x.poster : x.src;
+    html += '<div class="card" style="margin-top:12px"><div class="pics" style="margin-bottom:12px"><div class="pic m"><div class="ph">' + (pic ? '<img src="' + esc(thumb(pic)) + '" alt="">' : 'нет фото') + '</div>' +
+      (x.type === 'video' ? '<span class="hint">🎬 видео</span>' : '<label class="btn gh sm up">Загрузить скрин<input type="file" accept="image/*" data-up="' + b + '.src" data-mw="720" data-r="1.78"></label>') + '</div></div>' +
+      '<div class="grid2">' + field('Имя', b + '.name', { ph: 'Айгерим · @insta' }) + field('Кто это', b + '.who', { ph: 'Кафе, Астана' }) + '</div>' +
+      field('Отзыв', b + '.text', { area: true, rows: 3 }) +
+      '<div class="grid2">' + field('Ссылка на его сайт', b + '.url', { t: 'url', ph: 'https://…' }) + field('Метка на фото', b + '.tag', { ph: 'сторис / видео-отзыв / реклама' }) + '</div>' +
+      '<div class="grid2">' + toggle('Показывать на сайте', b + '.hide', { neg: true }) + '</div>' +
+      '<div class="row-acts"><button class="ib" type="button" data-pmv="' + i + '" data-d="-1"' + (i ? '' : ' disabled') + ' aria-label="Выше">' + ic('up') + '</button><button class="ib" type="button" data-pmv="' + i + '" data-d="1"' + (i < W.press.items.length - 1 ? '' : ' disabled') + ' aria-label="Ниже">' + ic('down') + '</button>' +
+      '<span class="sp"></span><button class="btn red sm" type="button" data-pdel="' + i + '">' + ic('del') + 'Удалить</button></div></div>';
+  });
+  html += '<button class="add" type="button" data-act="addpress" style="margin-top:14px">+ Добавить отзыв (скрин или фото)</button>';
+  return html;
+}
+
 /* ---------- тексты ---------- */
 function pgTexts() {
   var html = head('тексты', 'Первый экран, акция, «как я работаю», отзыв и вопросы.');
@@ -774,6 +794,8 @@ document.addEventListener('click', function (e) {
   if (d.delt) return arm(t, 'Точно удалить?', function () { W.types.splice(+d.delt, 1); keepScroll(render); });
   if (d.delterm) { W.calc.terms.splice(+d.delterm, 1); return keepScroll(render); }
   if (d.delpromo) { W.promo.splice(+d.delpromo, 1); return keepScroll(render); }
+  if (d.pmv) { move(W.press.items, +d.pmv, +d.d); return keepScroll(render); }
+  if (d.pdel) return arm(t, 'Точно удалить?', function () { W.press.items.splice(+d.pdel, 1); keepScroll(render); });
   if (d.mw2) { var a = d.mw2.split('.'); move(W.cats[+a[0]].works, +a[1], +d.d); return keepScroll(render); }
   if (d.delw) return arm(t, 'Точно удалить?', function () { var a2 = d.delw.split('.'); W.cats[+a2[0]].works.splice(+a2[1], 1); keepScroll(render); });
   if (d.addw) { var nw = { id: uid('w'), name: 'Новый сайт', city: '', desc: '', tags: [], url: '', m: '', d: '', fan: false }; W.cats[+d.addw].works.push(nw); openW[W.cats[+d.addw].id + ':' + nw.id] = true; return keepScroll(render); }
@@ -794,6 +816,7 @@ document.addEventListener('click', function (e) {
     case 'addpromo': W.promo.push({ code: '', pct: 10 }); keepScroll(render); var ins = $$('[data-t=upper]'); if (ins.length) ins[ins.length - 1].focus(); return;
     case 'addcat': W.cats.push({ id: uid('c'), title: 'новая категория', desc: '', works: [] }); return keepScroll(render);
     case 'addstep': W.steps.push({ t: 'Новый шаг', d: '' }); return keepScroll(render);
+    case 'addpress': if (!W.press) W.press = { on: true, title: 'отзывы и реклама', items: [] }; W.press.items.push({ id: uid('p'), type: 'img', src: '', poster: '', tag: 'сторис', name: 'Новый отзыв', who: '', text: '', url: '', hide: false }); return keepScroll(render);
     case 'addfaq': W.faq.push({ q: 'Новый вопрос?', a: '' }); return keepScroll(render);
     case 'tgref': tgState = null; tgUrl = ''; return render();
     case 'tglink': t.disabled = true; return Store.tgLink().then(function (r) { tgUrl = r.url; render(); var w = window.open(r.url, '_blank'); if (w) toast('Нажмите «Запустить» в Telegram, потом «Обновить»'); setTimeout(function () { tgUrl = ''; }, 14 * 60e3); }).catch(function (er) { toast(er.message, 'bad'); t.disabled = false; });
