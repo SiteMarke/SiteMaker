@@ -89,6 +89,16 @@ window.Store = (function () {
         tag: str(x.tag), name: str(x.name), who: str(x.who), text: str(x.text), url: str(x.url), hide: !!x.hide };
     });
     d.cats.forEach(function (c3) { c3.works.forEach(function (w) { if (w.url === 'https://tamerlankajrolla2-a11y.github.io/Sezim/') w.url = 'https://sezim-restaurant.github.io/Sezim/'; }); });
+    // цены 14.11: кафе 10 000, премиум 30 000 «всё включено», бизнес-сайт без админки
+    if ((+d.pv || 0) < 1) {
+      d.types.forEach(function (x) {
+        if (x.id === 'cafe' && x.price === 5000) x.price = 10000;
+        if (x.id === 'prem') { if (x.price === 35000) x.price = 30000; if (x.desc === 'Индивидуальный дизайн, интеграции и CRM, чат-бот, приоритетная поддержка.') x.desc = 'Всё включено: индивидуальный дизайн, админ-панель, заказы и брони в Telegram-бот, интеграция с Frontpad, промокоды, SEO для Google.'; if (x.why.indexOf('Всё уже в цене: админ-панель, заказы и брони в Telegram-бот, интеграция с Frontpad для учёта заказов, промокоды и настройка для Google — без доплат.') < 0) x.why.unshift('Всё уже в цене: админ-панель, заказы и брони в Telegram-бот, интеграция с Frontpad для учёта заказов, промокоды и настройка для Google — без доплат.'); }
+        if (x.id === 'biz' && x.desc === 'До 10 страниц, продающие тексты, форма заявки, базовое SEO, галерея.') x.desc = 'Попроще: до 10 страниц, продающие тексты, форма заявки, галерея, базовое SEO. Без админ-панели — правки вношу я.';
+      });
+      d.settings.heroSub = d.settings.heroSub.replace('От 5 000 ₸', 'От 6 000 ₸');
+      d.pv = 1;
+    }
     d.rev = +d.rev || 1;
     return d;
   }
