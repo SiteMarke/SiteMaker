@@ -114,6 +114,12 @@ window.Store = (function () {
       if (fc2 && !d.cats.some(function (c7) { return c7.works.some(function (w) { return w.id === 'samal'; }); })) fc2.works.push({"id":"samal","name":"Самал","city":"Астана · выездной шеф-повар","desc":"Банкеты и фуршеты под ключ: услуги, меню, работы, отзывы и заявка на мероприятие прямо в WhatsApp.","tags":["Заявка","Услуги","WhatsApp"],"url":"https://tamerlankajrolla2-a11y.github.io/samal-chef-astana/","m":"img/w/samal-m.webp","d":"img/w/samal-d.webp","fan":false});
       d.pv = 3;
     }
+    // 14.11: новая работа — TURAN-EL, ресторан тюркских народов (Караганда)
+    if ((+d.pv || 0) < 4) {
+      var fc3 = d.cats.filter(function (c8) { return c8.id === 'food'; })[0];
+      if (fc3 && !d.cats.some(function (c9) { return c9.works.some(function (w) { return w.id === 'turan'; }); })) fc3.works.push({"id":"turan","name":"TURAN-EL","city":"Караганда · ресторан тюркских народов","desc":"Меню с фото и ценами, галерея залов, отзывы гостей и бронь стола прямо в WhatsApp.","tags":["Меню","Галерея","WhatsApp"],"url":"https://tamerlankajrolla2-a11y.github.io/Turan-El/","m":"img/w/turan-m.webp","d":"img/w/turan-d.webp","fan":false});
+      d.pv = 4;
+    }
     d.rev = +d.rev || 1;
     return d;
   }

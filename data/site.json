@@ -352,6 +352,21 @@
      "m": "img/w/samal-m.webp",
      "d": "img/w/samal-d.webp",
      "fan": false
+    },
+    {
+     "id": "turan",
+     "name": "TURAN-EL",
+     "city": "Караганда · ресторан тюркских народов",
+     "desc": "Меню с фото и ценами, галерея залов, отзывы гостей и бронь стола прямо в WhatsApp.",
+     "tags": [
+      "Меню",
+      "Галерея",
+      "WhatsApp"
+     ],
+     "url": "https://tamerlankajrolla2-a11y.github.io/Turan-El/",
+     "m": "img/w/turan-m.webp",
+     "d": "img/w/turan-d.webp",
+     "fan": false
     }
    ]
   },
@@ -600,5 +615,5 @@
    }
   ]
  },
- "pv": 3
+ "pv": 4
 }
