@@ -337,6 +337,21 @@
      "m": "img/w/petro-m.webp",
      "d": "img/w/petro-d.webp",
      "fan": false
+    },
+    {
+     "id": "samal",
+     "name": "Самал",
+     "city": "Астана · выездной шеф-повар",
+     "desc": "Банкеты и фуршеты под ключ: услуги, меню, работы, отзывы и заявка на мероприятие прямо в WhatsApp.",
+     "tags": [
+      "Заявка",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://tamerlankajrolla2-a11y.github.io/samal-chef-astana/",
+     "m": "img/w/samal-m.webp",
+     "d": "img/w/samal-d.webp",
+     "fan": false
     }
    ]
   },
@@ -585,5 +600,5 @@
    }
   ]
  },
- "pv": 2
+ "pv": 3
 }

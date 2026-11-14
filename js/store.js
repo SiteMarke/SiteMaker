@@ -108,6 +108,12 @@ window.Store = (function () {
       }
       d.pv = 2;
     }
+    // 14.11: новая работа — Самал, выездной шеф-повар
+    if ((+d.pv || 0) < 3) {
+      var fc2 = d.cats.filter(function (c6) { return c6.id === 'food'; })[0];
+      if (fc2 && !d.cats.some(function (c7) { return c7.works.some(function (w) { return w.id === 'samal'; }); })) fc2.works.push({"id":"samal","name":"Самал","city":"Астана · выездной шеф-повар","desc":"Банкеты и фуршеты под ключ: услуги, меню, работы, отзывы и заявка на мероприятие прямо в WhatsApp.","tags":["Заявка","Услуги","WhatsApp"],"url":"https://tamerlankajrolla2-a11y.github.io/samal-chef-astana/","m":"img/w/samal-m.webp","d":"img/w/samal-d.webp","fan":false});
+      d.pv = 3;
+    }
     d.rev = +d.rev || 1;
     return d;
   }
