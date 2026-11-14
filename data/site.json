@@ -251,6 +251,21 @@
      "fan": true
     },
     {
+     "id": "pinocchio",
+     "name": "Pinocchio",
+     "city": "Астана · lounge & resto bar",
+     "desc": "Меню и бизнес-ланч с сетами, статус «открыто сейчас», бронь стола в WhatsApp с выбором блюд, карта.",
+     "tags": [
+      "Бронь",
+      "Меню",
+      "Бизнес-ланч"
+     ],
+     "url": "https://tamerlankajrolla2-a11y.github.io/Pinocchio-Restobar/",
+     "m": "img/w/pinocchio-m.webp",
+     "d": "img/w/pinocchio-d.webp",
+     "fan": false
+    },
+    {
      "id": "tumar",
      "name": "Тумар",
      "city": "Пресновка · ресторан",
@@ -570,5 +585,5 @@
    }
   ]
  },
- "pv": 1
+ "pv": 2
 }

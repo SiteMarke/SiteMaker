@@ -99,6 +99,15 @@ window.Store = (function () {
       d.settings.heroSub = d.settings.heroSub.replace('От 5 000 ₸', 'От 6 000 ₸');
       d.pv = 1;
     }
+    // 14.11: новая работа — Pinocchio (один раз для данных, уже сохранённых на сервере)
+    if ((+d.pv || 0) < 2) {
+      var fc = d.cats.filter(function (c4) { return c4.id === 'food'; })[0];
+      if (fc && !d.cats.some(function (c5) { return c5.works.some(function (w) { return w.id === 'pinocchio'; }); })) {
+        var at = 0; fc.works.forEach(function (w, i) { if (w.id === 'sezim') at = i + 1; });
+        fc.works.splice(at, 0, {"id":"pinocchio","name":"Pinocchio","city":"Астана · lounge & resto bar","desc":"Меню и бизнес-ланч с сетами, статус «открыто сейчас», бронь стола в WhatsApp с выбором блюд, карта.","tags":["Бронь","Меню","Бизнес-ланч"],"url":"https://tamerlankajrolla2-a11y.github.io/Pinocchio-Restobar/","m":"img/w/pinocchio-m.webp","d":"img/w/pinocchio-d.webp","fan":false});
+      }
+      d.pv = 2;
+    }
     d.rev = +d.rev || 1;
     return d;
   }
