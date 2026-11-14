@@ -271,6 +271,8 @@ button.kpi:hover{border-color:var(--line2)}
   <symbol id="i-del" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6m4-6v6M6 7l1 13h10l1-13M9 7V4h6v3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8 8h12v12H8zM16 8V4H4v12h4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></symbol>
   <symbol id="i-xls" viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8zM14 3v5h5M9 12l4 5m0-5-4 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-stat" viewBox="0 0 24 24"><path d="M4 20V10m6 10V4m6 16v-7m4 7H2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1M9.5 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM21 20v-1a4 4 0 0 0-3-3.9M15.5 4.2a3.5 3.5 0 0 1 0 6.6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24"><path d="M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm9 3-4.3-4.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12zm10 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="none" stroke="currentColor" stroke-width="1.9"/></symbol>
   <symbol id="i-fl" viewBox="0 0 24 24"><g fill="currentColor" transform="translate(12 12)"><ellipse rx="3" ry="6" cy="-5"/><ellipse rx="3" ry="6" cy="-5" transform="rotate(72)"/><ellipse rx="3" ry="6" cy="-5" transform="rotate(144)"/><ellipse rx="3" ry="6" cy="-5" transform="rotate(216)"/><ellipse rx="3" ry="6" cy="-5" transform="rotate(288)"/></g><circle cx="12" cy="12" r="2.4" fill="#0b0b0e"/></symbol>
@@ -317,7 +319,7 @@ var ic = function (id, cls) { return '<svg class="' + (cls || 'ic') + '"><use hr
 var ST = { new: { t: 'Новая', c: '#ffd479' }, ok: { t: 'В работе', c: '#8fc7ff' }, paid: { t: 'Предоплата', c: '#c7a6ff' }, done: { t: 'Сдан', c: '#9ff0c0' }, cancel: { t: 'Отказ', c: '#ff9d9d' } };
 var VIA = { site: 'с сайта', wa: 'WhatsApp', tg: 'Telegram' };
 var PAGES = [
-  { id: 'dash', t: 'Обзор', i: 'home' }, { id: 'orders', t: 'Заявки', i: 'inbox' }, { id: 'prices', t: 'Цены', i: 'tag' }, { id: 'promo', t: 'Промокоды', i: 'pct' },
+  { id: 'dash', t: 'Обзор', i: 'home' }, { id: 'orders', t: 'Заявки', i: 'inbox' }, { id: 'clients', t: 'Клиенты', i: 'users' }, { id: 'stats', t: 'Аналитика', i: 'stat' }, { id: 'prices', t: 'Цены', i: 'tag' }, { id: 'promo', t: 'Промокоды', i: 'pct' },
   { id: 'works', t: 'Работы', i: 'grid' }, { id: 'press', t: 'Отзывы', i: 'eye' }, { id: 'texts', t: 'Тексты', i: 'text' }, { id: 'contacts', t: 'Контакты', i: 'phone' }, { id: 'tg', t: 'Telegram', i: 'tg' }, { id: 'sec', t: 'Безопасность', i: 'lock' }
 ];
 var TABS = ['dash', 'orders', 'prices', 'works'];
@@ -385,7 +387,7 @@ function go(id, noScroll) {
 }
 function head(t, sub, tools) { return '<div class="top"><div><h1 class="disp">' + t + '</h1>' + (sub ? '<div class="sub">' + sub + '</div>' : '') + '</div>' + (tools ? '<div class="tools">' + tools + '</div>' : '') + '</div>'; }
 function render() {
-  var f = { dash: pgDash, orders: pgOrders, prices: pgPrices, promo: pgPromo, works: pgWorks, press: pgPress, texts: pgTexts, contacts: pgContacts, tg: pgTg, sec: pgSec }[page];
+  var f = { dash: pgDash, orders: pgOrders, clients: pgClients, stats: pgStats, prices: pgPrices, promo: pgPromo, works: pgWorks, press: pgPress, texts: pgTexts, contacts: pgContacts, tg: pgTg, sec: pgSec }[page];
   $('#page').innerHTML = f();
   if (page === 'tg' && !tgState) loadTg();
   syncSave();
@@ -437,6 +439,71 @@ function planBits(o) {
   return b;
 }
 function phoneDigits(p) { var d = String(p || '').replace(/\D/g, ''); if (d.length === 11 && d[0] === '8') d = '7' + d.slice(1); if (d.length === 10) d = '7' + d; return d; }
+
+
+/* ---------- согласие, клиенты, аналитика ---------- */
+function agreed(o) { return !!(o.agreed || o.agreed_at || /принял пользовательское соглашение/.test(o.comment || '')); }
+function hbars(rows, empty) {
+  var mx = rows.reduce(function (m, r) { return Math.max(m, r[1]); }, 1);
+  return rows.length ? '<div class="hb">' + rows.map(function (r) { return '<div><span>' + esc(r[0]) + '</span><span>' + (r[2] || r[1]) + '</span><em><i style="width:' + (r[1] / mx * 100) + '%"></i></em></div>'; }).join('') + '</div>' : '<div class="empty">' + empty + '</div>';
+}
+function pgClients() {
+  var L = O.filter(isLead), by = {};
+  L.forEach(function (o) {
+    var k = phoneDigits(o.phone) || ('n' + o.id), c = by[k] = by[k] || { k: k, phone: o.phone, name: o.name, n: 0, sum: 0, done: 0, last: 0, orders: [] };
+    c.n++; c.orders.push(o); if (ts(o) > c.last) { c.last = ts(o); c.name = o.name || c.name; }
+    if (o.status !== 'cancel') c.sum += (+o.total || 0); if (o.status === 'done') c.done++;
+  });
+  var list = Object.keys(by).map(function (k) { return by[k]; }).sort(function (a, b) { return b.last - a.last; });
+  var rep = list.filter(function (c) { return c.n > 1; }).length, q = (F.cq || '').toLowerCase();
+  if (q) list = list.filter(function (c) { return (c.name || '').toLowerCase().indexOf(q) >= 0 || String(c.phone || '').replace(/\D/g, '').indexOf(q.replace(/\D/g, '') || '~') >= 0; });
+  var html = head('клиенты', list.length + ' ' + pl(list.length, ['клиент', 'клиента', 'клиентов']) + ', повторных: ' + rep);
+  html += '<div class="bar2"><div class="search">' + ic('search') + '<input class="in" id="fcq" placeholder="Имя или телефон" value="' + esc(F.cq || '') + '"></div></div>';
+  html += list.length ? list.map(function (c) {
+    var ph = phoneDigits(c.phone);
+    return '<div class="card" style="margin-bottom:10px"><div class="ch"><h3>' + esc(c.name || 'Без имени') + '</h3><span class="hint">' + (c.n > 1 ? 'повторный · ' : '') + c.n + ' ' + pl(c.n, ['заявка', 'заявки', 'заявок']) + '</span></div>' +
+      '<div class="plan"><span>' + (c.phone ? esc(c.phone) : 'без телефона') + '</span><span>' + money(c.sum) + ' по расчёту</span><span>сдано: ' + c.done + '</span><span>последняя: ' + new Date(c.last).toLocaleDateString('ru-RU') + '</span></div>' +
+      (ph ? '<div class="acts" style="margin-top:10px"><a class="btn sm" href="https://wa.me/' + ph + '" target="_blank" rel="noopener">' + ic('wa') + 'WhatsApp</a><a class="btn gh sm" href="tel:+' + ph + '">' + ic('phone') + 'Позвонить</a></div>' : '') + '</div>';
+  }).join('') : '<div class="card empty"><b>клиентов пока нет</b>Появятся после первых заявок.</div>';
+  return html;
+}
+function pgStats() {
+  var L = O.filter(isLead), n = L.length, cnt = function (st) { return L.filter(function (o) { return o.status === st; }).length; };
+  var done = L.filter(function (o) { return o.status === 'done'; }), sumDone = done.reduce(function (a, o) { return a + (+o.total || 0); }, 0);
+  var live = L.filter(function (o) { return o.status !== 'cancel' && o.total; }), avg = live.length ? Math.round(live.reduce(function (a, o) { return a + (+o.total || 0); }, 0) / live.length) : 0;
+  var conv = n ? Math.round(done.length / n * 100) : 0, ag = L.filter(agreed).length;
+  var html = head('аналитика', 'Всё по заявкам за всё время: воронка, деньги, источники.');
+  html += '<div class="kpis"><div class="kpi"><small>Всего заявок</small><b>' + n + '</b><span>' + L.filter(function (o) { return ts(o) >= since(30); }).length + ' за 30 дней</span></div>' +
+    '<div class="kpi"><small>Конверсия в сдачу</small><b>' + conv + '%</b><span>' + done.length + ' из ' + n + '</span></div>' +
+    '<div class="kpi"><small>Средний чек</small><b>' + money(avg) + '</b><span>по расчёту, без отказов</span></div>' +
+    '<div class="kpi"><small>Сдано на сумму</small><b>' + money(sumDone) + '</b><span>' + done.length + ' ' + pl(done.length, ['проект', 'проекта', 'проектов']) + '</span></div></div>';
+  // выручка по месяцам (6 мес.)
+  var ms = [], mx = 1, now = new Date();
+  for (var i = 5; i >= 0; i--) {
+    var d0 = new Date(now.getFullYear(), now.getMonth() - i, 1), d1 = new Date(now.getFullYear(), now.getMonth() - i + 1, 1);
+    var inM = L.filter(function (o) { return ts(o) >= d0.getTime() && ts(o) < d1.getTime(); });
+    var v = inM.filter(function (o) { return o.status === 'done'; }).reduce(function (a, o) { return a + (+o.total || 0); }, 0);
+    mx = Math.max(mx, v); ms.push({ d: d0, v: v, n: inM.length });
+  }
+  var chart = '<div class="chart">' + ms.map(function (m, i) {
+    return '<div class="c' + (i === 5 ? ' today' : '') + '" title="' + m.d.toLocaleDateString('ru-RU', { month: 'long', year: 'numeric' }) + ': ' + money(m.v) + ', заявок ' + m.n + '"><b>' + (m.v ? Math.round(m.v / 1000) + 'к' : '') + '</b><div class="bar" style="height:' + Math.max(m.v / mx * 100, 2) + '%"><i style="height:100%"></i></div><small>' + m.d.toLocaleDateString('ru-RU', { month: 'short' }) + '</small></div>';
+  }).join('') + '</div>';
+  html += '<div class="two"><div class="card"><div class="ch"><h3>сдано по месяцам</h3><span class="hint">тыс. ₸</span></div>' + chart + '</div>' +
+    '<div class="card"><div class="ch"><h3>воронка</h3></div>' + hbars(Object.keys(ST).map(function (k) { return [ST[k].t, cnt(k)]; }), 'Пока пусто') + '</div></div>';
+  // источники, тарифы, часы
+  var src = {}, tar = {}, hrs = []; for (var h = 0; h < 24; h++) hrs.push(0);
+  O.forEach(function (o) { src[VIA[o.via] || 'с сайта'] = (src[VIA[o.via] || 'с сайта'] || 0) + 1; if (o.plan && o.plan.name) tar[cap(o.plan.name)] = (tar[cap(o.plan.name)] || 0) + 1; });
+  L.forEach(function (o) { hrs[new Date(o.created_at).getHours()]++; });
+  var srows = Object.keys(src).map(function (k) { return [k, src[k]]; }).sort(function (a, b) { return b[1] - a[1]; });
+  var trows = Object.keys(tar).map(function (k) { return [k, tar[k]]; }).sort(function (a, b) { return b[1] - a[1]; }).slice(0, 7);
+  var hm = Math.max.apply(null, hrs.concat(1)), peak = hrs.indexOf(hm);
+  html += '<div class="two" style="margin-top:14px"><div class="card"><div class="ch"><h3>тарифы</h3><span class="hint">что считают и заказывают</span></div>' + hbars(trows, 'Пока пусто') + '</div>' +
+    '<div class="card"><div class="ch"><h3>откуда приходят</h3></div>' + hbars(srows, 'Пока пусто') + '</div></div>';
+  html += '<div class="card" style="margin-top:14px"><div class="ch"><h3>в какое время пишут</h3><span class="hint">' + (n ? 'пик: ' + peak + ':00–' + (peak + 1) + ':00' : '') + '</span></div><div class="chart" style="height:120px">' +
+    hrs.map(function (v, h) { return '<div class="c" title="' + h + ':00 — ' + v + '"><div class="bar" style="height:' + Math.max(v / hm * 100, 3) + '%"><i style="height:100%"></i></div>' + (h % 3 === 0 ? '<small>' + h + '</small>' : '<small>&nbsp;</small>') + '</div>'; }).join('') + '</div></div>';
+  html += '<div class="card" style="margin-top:14px"><div class="ch"><h3>соглашение</h3></div><p class="hint">' + ag + ' из ' + n + ' ' + pl(n, ['заявки', 'заявок', 'заявок']) + ' пришли с принятым пользовательским соглашением. Старые заявки (до добавления галочки) считаются без отметки.</p></div>';
+  return html;
+}
 
 /* ---------- обзор ---------- */
 function pgDash() {
@@ -496,7 +563,7 @@ function ordHtml(o) {
   }
   var waText = 'Здравствуйте' + (first ? ', ' + first : '') + '! Это SiteMaker — по вашей заявке' + (o.plan ? ' на ' + o.plan.name + ' (' + money(o.total) + ')' : '') + '. Удобно обсудить детали?';
   return '<div class="ord' + (o.status === 'new' ? ' new' : '') + (o._flash ? ' flash' : '') + '" id="o' + o.id + '">' +
-    '<div class="h"><b>№' + o.id + '</b> · ' + when(o) + ' <span class="tag">' + (VIA[o.via] || 'с сайта') + '</span><span class="tag st" style="color:' + st.c + ';border-color:' + st.c + '55"><i></i>' + st.t + '</span></div>' +
+    '<div class="h"><b>№' + o.id + '</b> · ' + when(o) + ' <span class="tag">' + (VIA[o.via] || 'с сайта') + '</span>' + (agreed(o) ? '<span class="tag" style="color:#9ff0c0;border-color:#9ff0c055" title="Принял пользовательское соглашение">✓ соглашение</span>' : '') + '<span class="tag st" style="color:' + st.c + ';border-color:' + st.c + '55"><i></i>' + st.t + '</span></div>' +
     '<div class="who"><div><strong>' + esc(o.name || 'Без имени') + '</strong>' + (o.phone ? '<a class="ph" href="tel:+' + ph + '">' + esc(o.phone) + '</a>' : '') + '</div><div class="sum">' + (o.plan && o.plan.from ? '<small style="font-size:12px;color:var(--muted)">от </small>' : '') + money(o.total) + '</div></div>' +
     '<div class="plan">' + planBits(o).map(function (b) { return '<span>' + esc(b) + '</span>'; }).join('') + '</div>' +
     '<div class="seg">' + Object.keys(ST).map(function (k) { return '<button type="button" data-st="' + k + '" data-id="' + o.id + '" class="' + (o.status === k ? 'on' : '') + '"' + (o.status === k ? ' style="background:' + ST[k].c + '"' : '') + '>' + ST[k].t + '</button>'; }).join('') + '</div>' +
@@ -825,7 +892,8 @@ document.addEventListener('click', function (e) {
   }
 });
 $('#sheet').addEventListener('click', function (e) { if (e.target.id === 'sheet') $('#sheet').classList.remove('on'); });
-document.addEventListener('input', function (e) { if (e.target.id === 'fq') { F.q = e.target.value; F.lim = 40; var pos = e.target.selectionStart; render(); var q = $('#fq'); q.focus(); try { q.setSelectionRange(pos, pos); } catch (er) {} } });
+document.addEventListener('input', function (e) { if (e.target.id === 'fcq') { F.cq = e.target.value; var pos2 = e.target.selectionStart; render(); var q2 = $('#fcq'); q2.focus(); try { q2.setSelectionRange(pos2, pos2); } catch (x) {} return; }
+  if (e.target.id === 'fq') { F.q = e.target.value; F.lim = 40; var pos = e.target.selectionStart; render(); var q = $('#fq'); q.focus(); try { q.setSelectionRange(pos, pos); } catch (er) {} } });
 addEventListener('hashchange', function () { var h = location.hash.slice(1); if (D && h && h !== page) go(h); });
 addEventListener('keydown', function (e) { if ((e.ctrlKey || e.metaKey) && e.key === 's' && D) { e.preventDefault(); if (dirty()) save(); } });
 
