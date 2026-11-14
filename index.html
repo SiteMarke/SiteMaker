@@ -212,6 +212,14 @@ section{position:relative;padding:110px 0}
 .lead input.bad{border-color:#ff8b8b}
 .lead .pill{width:100%;margin-top:4px}
 .lead .pill[disabled]{opacity:.6;pointer-events:none}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);line-height:1.45;cursor:pointer;margin-top:2px}
+.agree input{flex:none;width:20px;height:20px;margin-top:1px;padding:0;accent-color:var(--cream);cursor:pointer}
+.agree a,.agree button{color:var(--cream);text-decoration:underline;text-underline-offset:2px;font:inherit;cursor:pointer}
+.agree.bad{color:#ff9d9d}
+.agree.bad input{outline:2px solid #ff8b8b;outline-offset:2px;border-radius:4px}
+.terms h4{font-family:Unbounded,system-ui,sans-serif;font-weight:700;font-size:15px;margin:20px 0 6px;letter-spacing:-.01em}
+.terms p,.terms li{font-size:14.5px;line-height:1.6;color:var(--muted)}
+.terms ul{padding-left:20px;display:grid;gap:4px}
 .lmsg{font-size:12.5px;color:var(--muted);text-align:center}
 .lmsg.bad{color:#ff9d9d}
 .lead-ok{display:flex;gap:14px;align-items:center;margin-top:22px;padding:16px;border-radius:18px;background:rgba(159,240,192,.07);border:1px solid rgba(159,240,192,.3)}
@@ -412,6 +420,7 @@ section{position:relative;padding:110px 0}
           <div class="lbl">оставить заявку</div>
           <input id="lName" placeholder="Ваше имя" autocomplete="name" maxlength="60" aria-label="Ваше имя">
           <input id="lPhone" placeholder="+7 7__ ___ __ __" inputmode="tel" autocomplete="tel" maxlength="18" aria-label="Телефон">
+          <label class="agree" id="lAgreeBox"><input type="checkbox" id="lAgree"><span>Я прочитал(а) и принимаю <button type="button" data-terms>пользовательское соглашение</button> и согласен(на) на обработку моего имени и телефона для связи по заказу</span></label>
           <button class="pill big" type="submit" id="lBtn">Заказать сайт</button>
           <p class="lmsg" id="lMsg">Перезвоню или напишу в WhatsApp в течение 15 минут.</p>
         </form>
@@ -482,7 +491,7 @@ section{position:relative;padding:110px 0}
 </main>
 
 <footer class="foot">
-  <div class="wrap"><span>© <span id="yr"></span> sitemaker · сайты для бизнеса · Казахстан</span><span><a href="https://t.me/Gg124255" data-tg target="_blank" rel="noopener">telegram</a> · <a href="tel:+77476128411" data-tel><span data-phone>+7 747 612 84 11</span></a> · <a href="admin.html" class="adm">админка</a></span></div>
+  <div class="wrap"><span>© <span id="yr"></span> sitemaker · сайты для бизнеса · Казахстан</span><span><a href="https://t.me/Gg124255" data-tg target="_blank" rel="noopener">telegram</a> · <a href="tel:+77476128411" data-tel><span data-phone>+7 747 612 84 11</span></a> · <a href="#" data-terms>соглашение</a> · <a href="admin.html" class="adm">админка</a></span></div>
 </footer>
 
 <div class="dlg" id="dlg" role="dialog" aria-modal="true" aria-labelledby="dlgT"><div class="p" id="dlgP"></div></div>
@@ -558,6 +567,36 @@ function openCat(i) {
   dlg.classList.add('on'); document.documentElement.style.overflow = 'hidden';
   setTimeout(function () { var x = dlg.querySelector('.x'); if (x) x.focus(); }, 50);
 }
+function openTerms() {
+  var ph = (D.settings && D.settings.phone) || '', tg = (D.settings && D.settings.tg) || '';
+  $('#dlgP').innerHTML = '<div class="top"><h3 id="dlgT">соглашение</h3><button class="x" type="button" data-close aria-label="Закрыть">×</button></div>' +
+    '<div class="terms">' +
+    '<p>Это пользовательское соглашение между вами (Заказчик) и sitemaker (Исполнитель). Оставляя заявку на сайте или заказывая через WhatsApp / Telegram, вы подтверждаете, что прочитали и приняли условия ниже.</p>' +
+    '<h4>1. Что вы заказываете</h4><p>Разработка сайта или Telegram-бота по выбранному в калькуляторе типу, сроку и опциям. Итоговая цена и срок фиксируются в переписке до начала работы. Расчёт на сайте — предварительный.</p>' +
+    '<h4>2. Что нужно от Заказчика</h4><p>Название, контакты, услуги или меню с ценами, фото и логотип (если есть). Срок отсчитывается с момента, когда Заказчик передал все материалы. Заказчик отвечает за то, что передаёт тексты и фото, на которые у него есть права.</p>' +
+    '<h4>3. Оплата</h4><ul><li>Предоплата вносится до начала работы (Kaspi), остаток — после запуска сайта.</li><li>Предоплата — это оплата начала работ: резервирование времени, дизайн и вёрстка.</li><li>Цена не меняется после согласования, если Заказчик не добавляет новые задачи.</li></ul>' +
+    '<h4>4. Правки</h4><p>До 5 правок к согласованному заданию — бесплатно. Новые функции и страницы сверх согласованного оцениваются отдельно.</p>' +
+    '<h4>5. Отказ и возврат предоплаты</h4><ul><li>Если работа ещё не начата — предоплата возвращается полностью.</li><li>Если работа начата — предоплата удерживается за уже выполненную часть (дизайн, страницы, функции), остаток возвращается.</li><li>Если Исполнитель не сдал работу в согласованный срок по своей вине — Заказчик вправе отказаться и вернуть предоплату.</li><li>Мнение «не понравилось» без претензий по согласованному заданию не отменяет оплату уже выполненной работы. Исполнитель предлагает исправить недочёты в рамках правок из п. 4.</li></ul>' +
+    '<h4>6. Хостинг, домен, права</h4><p>Хостинг на первые 3 месяца включён, далее его можно продлить или перенести сайт. После полной оплаты сайт принадлежит Заказчику. Исполнитель вправе показывать сайт в своём портфолио, если Заказчик не против.</p>' +
+    '<h4>7. Персональные данные</h4><p>Имя и телефон из заявки используются только чтобы связаться с вами по заказу и не передаются третьим лицам. Данные приходят Исполнителю в Telegram и в админ-панель. Вы можете попросить удалить свои данные, написав на контакты ниже.</p>' +
+    '<h4>8. Связь и споры</h4><p>Все вопросы решаются в WhatsApp или Telegram. Если договориться не удалось — по законодательству Республики Казахстан.</p>' +
+    '<p style="margin-top:18px">Контакты: ' + esc(ph) + (tg ? ' · Telegram @' + esc(tg) : '') + '</p>' +
+    '<div style="margin-top:22px"><button class="pill big" type="button" data-agree-ok style="width:100%">Принимаю условия</button></div></div>';
+  dlg.classList.add('on'); document.documentElement.style.overflow = 'hidden';
+  setTimeout(function () { var x = dlg.querySelector('.x'); if (x) x.focus(); }, 50);
+}
+document.addEventListener('click', function (e) {
+  var t = e.target.closest('[data-terms]'); if (t) { e.preventDefault(); return openTerms(); }
+  if (e.target.closest('[data-agree-ok]')) { $('#lAgree').checked = true; $('#lAgreeBox').classList.remove('bad'); closeDlg(); }
+});
+function needAgree() {
+  if ($('#lAgree').checked) return false;
+  $('#lAgreeBox').classList.add('bad');
+  var m = $('#lMsg'); m.className = 'lmsg bad'; m.textContent = 'Чтобы заказать, примите пользовательское соглашение';
+  if (!$('#lead').hidden) $('#lAgreeBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  return true;
+}
+$('#lAgree').addEventListener('change', function () { $('#lAgreeBox').classList.remove('bad'); });
 function closeDlg() { dlg.classList.remove('on'); document.documentElement.style.overflow = ''; }
 dlg.addEventListener('click', function (e) { if (e.target === dlg || e.target.closest('[data-close]')) closeDlg(); });
 addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDlg(); });
@@ -651,8 +690,8 @@ function logClick(via) {
   var p = plan(calc());
   Store.createOrder({ kind: 'lead', via: via, comment: p.text, plan: p.data, total: p.data.total });
 }
-$('#cWa').addEventListener('click', function () { logClick('wa'); });
-$('#cTg').addEventListener('click', function () { try { navigator.clipboard.writeText(this.dataset.text || ''); } catch (e) {} logClick('tg'); });
+$('#cWa').addEventListener('click', function (e) { if (needAgree()) return e.preventDefault(); logClick('wa'); });
+$('#cTg').addEventListener('click', function (e) { if (needAgree()) return e.preventDefault(); try { navigator.clipboard.writeText(this.dataset.text || ''); } catch (e) {} logClick('tg'); });
 function fmtPhone(v) {
   var d = v.replace(/\D/g, ''); if (d[0] === '8') d = '7' + d.slice(1); if (d && d[0] !== '7') d = '7' + d; d = d.slice(0, 11);
   var o = '+7'; if (d.length > 1) o += ' ' + d.slice(1, 4); if (d.length > 4) o += ' ' + d.slice(4, 7); if (d.length > 7) o += ' ' + d.slice(7, 9); if (d.length > 9) o += ' ' + d.slice(9, 11);
@@ -665,6 +704,7 @@ $('#lead').addEventListener('submit', function (e) {
   var name = $('#lName').value.trim(), ph = $('#lPhone').value, digits = ph.replace(/\D/g, ''), m = $('#lMsg'), b = $('#lBtn');
   $('#lName').classList.toggle('bad', !name); $('#lPhone').classList.toggle('bad', digits.length !== 11);
   if (!name || digits.length !== 11) { m.className = 'lmsg bad'; m.textContent = !name ? 'Напишите, как к вам обращаться' : 'Проверьте номер телефона'; return; }
+  if (needAgree()) return;
   b.disabled = true; b.textContent = 'Отправляю…';
   var p = plan(calc());
   var done = function (r) {
