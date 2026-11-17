@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Автошкола «Тұлпар» — права категории A и B в Петропавловске</title>
+<meta name="description" content="Автошкола «Тұлпар» в Петропавловске: категории A и B, обучение 2–2,5 месяца, теория и практика офлайн, подготовка к экзамену в СпецЦОНе. 5,0 в 2ГИС.">
+<meta name="theme-color" content="#0d2a55">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d2a55; --navy2:#123a73; --blue:#1f6ff2; --sky:#eaf2ff; --sky2:#d6e5ff;
+  --yel:#ffd23f; --ink:#0f1b2d; --muted:#5d6b80; --line:#dfe6f1; --bg:#f6f8fc; --ok:#1bb07a;
+  --hf:'Unbounded',system-ui,sans-serif; --bf:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; --r:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--bf);background:var(--bg);color:var(--ink);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:var(--hf);font-weight:700;line-height:1.12;letter-spacing:-.01em}
+h2{font-size:clamp(26px,4.6vw,40px)}
+.kicker{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--blue);margin-bottom:10px}
+.sec{padding:60px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.head p{color:var(--muted);max-width:440px}
+
+.demo{background:var(--ink);color:#cfd8e6;font-size:12.5px;text-align:center;padding:7px 12px}
+.demo b{color:#fff}
+
+header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo .mk{width:40px;height:40px;border-radius:12px;background:var(--navy);display:grid;place-items:center}
+.logo b{font-family:var(--hf);font-size:18px;color:var(--navy);display:block;line-height:1}
+.logo small{font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+nav{display:flex;gap:24px;font-weight:700;font-size:14px}
+nav a{text-decoration:none;color:var(--navy)}
+nav a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:50px;padding:0 24px;border-radius:14px;font-weight:800;font-size:15px;text-decoration:none;transition:transform .15s,filter .2s}
+.btn:active{transform:scale(.97)}
+.btn-y{background:var(--yel);color:#1d1600}
+.btn-y:hover{filter:brightness(1.05)}
+.btn-b{background:var(--blue);color:#fff}
+.btn-n{background:var(--navy);color:#fff}
+.btn-w{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn-sm{height:42px;padding:0 16px;font-size:14px;border-radius:12px}
+@media(max-width:880px){nav{display:none}}
+
+/* hero */
+.hero{background:linear-gradient(160deg,#16418a 0%,var(--navy) 55%,#081c3b 100%);color:#fff;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 46px,rgba(255,255,255,.035) 46px 48px);pointer-events:none}
+.road{position:absolute;left:-10%;right:-10%;bottom:-2px;height:70px;background:#0a1f40;transform:skewY(-2deg);transform-origin:left}
+.road:after{content:"";position:absolute;left:0;right:0;top:32px;height:5px;background:repeating-linear-gradient(90deg,var(--yel) 0 46px,transparent 46px 92px);opacity:.85}
+.hero-in{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding-top:50px;padding-bottom:110px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;margin-bottom:20px}
+.pill i{font-style:normal;color:var(--yel)}
+.hero h1{font-size:clamp(34px,6.4vw,62px);margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--yel)}
+.hero .lead{color:#c9d6ee;font-size:16.5px;max-width:520px;margin-bottom:26px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.nums{display:grid;grid-template-columns:repeat(3,auto);gap:26px;justify-content:start}
+.nums b{font-family:var(--hf);font-size:28px;display:block;line-height:1.1}
+.nums span{font-size:12.5px;color:#a9bbdb}
+.hero-card{background:#fff;color:var(--ink);border-radius:26px;overflow:hidden;box-shadow:0 30px 70px -25px rgba(0,0,0,.6);transform:rotate(1.5deg)}
+.hero-card img{width:100%;aspect-ratio:16/11;object-fit:cover}
+.hc-b{padding:18px 20px 20px}
+.hc-b small{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.hc-b b{display:block;font-family:var(--hf);font-size:20px;margin:6px 0 10px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:12.5px;font-weight:700;background:var(--sky);color:var(--navy);border-radius:999px;padding:5px 11px}
+@media(max-width:880px){.hero-in{grid-template-columns:1fr;padding-top:34px;padding-bottom:100px}.hero-card{transform:none}.nums{gap:18px}}
+
+/* features */
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feat{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.ic{width:46px;height:46px;border-radius:14px;background:var(--sky);display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+.feat h3{font-size:16px;margin-bottom:6px}
+.feat p{color:var(--muted);font-size:14px}
+@media(max-width:880px){.feats{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.feats{grid-template-columns:1fr}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+.step{position:relative;background:var(--navy);color:#fff;border-radius:var(--r);padding:22px 20px 24px;overflow:hidden}
+.step:before{counter-increment:s;content:counter(s);font-family:var(--hf);font-size:64px;line-height:1;position:absolute;right:12px;top:6px;color:rgba(255,255,255,.08)}
+.step b{display:block;font-family:var(--hf);font-size:16px;margin:8px 0 6px}
+.step p{font-size:13.5px;color:#b9c8e3}
+.step .t{font-size:12px;font-weight:800;color:var(--yel);letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:880px){.steps{grid-template-columns:1fr 1fr}}
+
+/* categories */
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cat{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;display:flex;flex-direction:column}
+.cat .lt{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.cat .lt span{width:64px;height:64px;border-radius:18px;background:var(--navy);color:var(--yel);font-family:var(--hf);font-size:32px;display:grid;place-items:center}
+.cat h3{font-size:20px}
+.cat .sub{color:var(--muted);font-size:13.5px}
+.cat ul{list-style:none;margin:6px 0 18px;display:grid;gap:8px}
+.cat li{padding-left:28px;position:relative;font-size:14.5px}
+.cat li:before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:#dff6ec;color:var(--ok);font-size:12px;font-weight:800;display:grid;place-items:center}
+.price{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px dashed var(--line);padding-top:16px}
+.price b{font-family:var(--hf);font-size:20px}
+.price small{display:block;color:var(--muted);font-size:12px}
+@media(max-width:760px){.cats{grid-template-columns:1fr}}
+
+/* promo */
+.promo{background:var(--yel);border-radius:28px;padding:28px;display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center}
+.promo .gift{width:78px;height:78px;border-radius:22px;background:var(--navy);display:grid;place-items:center;font-size:38px}
+.promo h3{font-size:clamp(20px,3.4vw,28px);color:#1d1600}
+.promo p{color:#4a3d00;font-weight:600;margin-top:4px}
+@media(max-width:760px){.promo{grid-template-columns:1fr;text-align:left}}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mem{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.mem .ph{aspect-ratio:4/3;background:linear-gradient(140deg,var(--navy2),var(--navy));display:grid;place-items:center;color:var(--yel);font-family:var(--hf);font-size:44px}
+.mem .ph img{width:100%;height:100%;object-fit:cover}
+.mem .b{padding:16px 18px 18px}
+.mem h3{font-size:15.5px;margin-bottom:4px}
+.mem .role{color:var(--blue);font-weight:800;font-size:13px;margin-bottom:6px}
+.mem p{font-size:13.5px;color:var(--muted)}
+@media(max-width:880px){.team{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.mem .ph{font-size:34px}}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:12px}
+.gal figure{border-radius:18px;overflow:hidden;position:relative;background:var(--sky)}
+.gal img{width:100%;height:100%;object-fit:cover}
+.gal figcaption{position:absolute;left:10px;bottom:10px;background:rgba(13,42,85,.85);color:#fff;font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:999px}
+.gal .big{grid-row:span 2;min-height:360px}
+@media(max-width:700px){.gal{grid-template-columns:1fr 1fr}.gal .big{grid-column:span 2;grid-row:auto;min-height:240px}.gal figure{min-height:150px}}
+
+/* reviews */
+.revs{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+.rev{flex:0 0 min(360px,84%);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column}
+.rev .res{display:inline-block;align-self:flex-start;background:#dff6ec;color:#0e7a52;font-weight:800;font-size:12.5px;border-radius:999px;padding:4px 10px;margin-bottom:10px}
+.rev .st{color:#f5a400;letter-spacing:2px;margin-bottom:8px}
+.rev p{font-size:14.5px;margin-bottom:14px}
+.rev b{margin-top:auto;font-size:13px;color:var(--navy)}
+.gis{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 16px 8px 8px;text-decoration:none;font-weight:700;font-size:14px}
+.gis i{font-style:normal;background:var(--ok);color:#fff;border-radius:10px;padding:6px 10px;font-family:var(--hf);font-size:16px}
+
+/* faq */
+.faq{display:grid;gap:10px;max-width:820px}
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 20px}
+summary{list-style:none;cursor:pointer;padding:18px 30px 18px 0;font-weight:800;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:0;top:14px;font-size:24px;color:var(--blue);transition:transform .2s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{color:var(--muted);padding-bottom:18px;font-size:14.5px}
+
+/* form */
+.book{background:var(--navy);color:#fff}
+.bk{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.book h2{color:#fff}
+.book .lead{color:#b9c8e3;margin:12px 0 18px}
+.ticks{display:grid;gap:10px}
+.ticks div{display:flex;gap:10px;align-items:center;color:#dbe5f6;font-weight:600}
+.ticks span{width:26px;height:26px;border-radius:50%;background:var(--yel);color:#1d1600;display:grid;place-items:center;font-weight:800;font-size:13px;flex:0 0 auto}
+form{background:#fff;color:var(--ink);border-radius:26px;padding:24px}
+label{display:block;font-size:12.5px;font-weight:800;color:var(--muted);margin:12px 0 6px}
+label:first-of-type{margin-top:0}
+input,select,textarea{width:100%;height:50px;border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:0 14px;font:inherit;font-size:15px;color:var(--ink);outline:none}
+textarea{height:76px;padding:12px 14px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--blue)}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg button{height:48px;border-radius:14px;border:1.5px solid var(--line);font-weight:800;color:var(--navy)}
+.seg button.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.bad{border-color:#d9483b!important}
+.submit{width:100%;margin-top:18px;height:56px;font-size:16px}
+.legal{font-size:12px;color:var(--muted);text-align:center;margin-top:10px}
+@media(max-width:880px){.bk{grid-template-columns:1fr}}
+
+/* contacts */
+.ct{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.cc small{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-weight:800;margin-bottom:8px}
+.cc b{font-size:15.5px;display:block}
+.cc .sch{font-size:14px;color:var(--muted);margin-top:4px}
+.cc a{display:inline-block;margin-top:10px;font-weight:800;color:var(--navy)}
+@media(max-width:760px){.ct{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:#9fb0c8;padding:30px 0 110px;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--yel)}
+
+.fab{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:none;gap:8px}
+.fab a{flex:1;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:800;text-decoration:none;box-shadow:0 16px 36px -12px rgba(0,0,0,.45)}
+.fab .f1{background:var(--yel);color:#1d1600}
+.fab .f2{background:#25d366;color:#fff;flex:0 0 56px;font-size:22px}
+@media(max-width:880px){.fab.show{display:flex}}
+
+.modal{position:fixed;inset:0;z-index:80;background:rgba(8,20,40,.6);display:none;align-items:center;justify-content:center;padding:18px}
+.modal.show{display:flex}
+.mbox{background:#fff;border-radius:24px;padding:28px 22px;max-width:420px;width:100%;text-align:center}
+.mbox h3{font-size:24px;margin-bottom:8px}
+.mbox p{color:var(--muted);margin-bottom:18px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div class="demo">Демо-сайт от <b>SiteMaker</b> для автошколы «Тұлпар»</div>
+
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#top">
+      <span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 14.5l1.6-4.6A2.5 2.5 0 0 1 8 8.2h8a2.5 2.5 0 0 1 2.4 1.7l1.6 4.6" stroke="#ffd23f" stroke-width="2" stroke-linecap="round"/><rect x="3" y="14" width="18" height="4.5" rx="1.6" stroke="#fff" stroke-width="2"/><circle cx="7.5" cy="19" r="1.6" fill="#fff"/><circle cx="16.5" cy="19" r="1.6" fill="#fff"/></svg></span>
+      <span><b>ТҰЛПАР</b><small>автошкола</small></span>
+    </a>
+    <nav>
+      <a href="#about">Обучение</a>
+      <a href="#price">Категории</a>
+      <a href="#team">Преподаватели</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn-n btn-sm" href="#book">Записаться</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-in">
+    <div>
+      <div class="pill"><i>★ 5,0</i> 142 отзыва в 2ГИС · больше 10 лет обучаем водителей</div>
+      <h1>Права категории A и B за <em>2–2,5 месяца</em></h1>
+      <p class="lead">Автошкола «Тұлпар» в Петропавловске. Теория и вождение офлайн, автотренажёр и разбор всех тестов — чтобы сдать экзамен в СпецЦОНе с первого раза.</p>
+      <div class="cta">
+        <a class="btn btn-y" href="#book">Записаться в группу</a>
+        <a class="btn btn-w" id="heroWa" href="#" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      </div>
+      <div class="nums">
+        <div><b>10+</b><span>лет работы</span></div>
+        <div><b>A и B</b><span>категории</span></div>
+        <div><b>5,0</b><span>рейтинг в 2ГИС</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="img/autodrom.jpg" alt="Учебный автомобиль автошколы Тұлпар на площадке">
+      <div class="hc-b">
+        <small>Набор в новые группы</small>
+        <b>Старт каждый месяц</b>
+        <div class="chips"><span class="chip">Теория + практика</span><span class="chip">Пн · Ср · Пт вечером</span><span class="chip">Места ограничены</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="road"></div>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><span class="kicker">Почему «Тұлпар»</span><h2>Учим так, чтобы вы сдали и водили уверенно</h2></div>
+      <p>Ученики пишут в отзывах, что сдали теорию и практику с первой попытки. Вот как мы этого добиваемся.</p>
+    </div>
+    <div class="feats">
+      <div class="feat reveal"><div class="ic">📘</div><h3>Теория, которая запоминается</h3><p>Разбираем ПДД простым языком, с примерами и юмором. Прорешиваем базу тестов, как на экзамене.</p></div>
+      <div class="feat reveal"><div class="ic">🎮</div><h3>Автотренажёр</h3><p>Первые навыки за рулём без стресса: сначала тренажёр, потом настоящая машина.</p></div>
+      <div class="feat reveal"><div class="ic">🚗</div><h3>Практика с инструктором</h3><p>Спокойные терпеливые инструкторы. Отработка упражнений на площадке и лайфхаки к экзамену.</p></div>
+      <div class="feat reveal"><div class="ic">🏫</div><h3>Только офлайн</h3><p>Живые занятия в классе, а не видеоуроки. Можно задать любой вопрос преподавателю.</p></div>
+      <div class="feat reveal"><div class="ic">🗓</div><h3>Удобное расписание</h3><p>Занятия вечером — можно совмещать с работой или учёбой. Индивидуальный подход к каждому.</p></div>
+      <div class="feat reveal"><div class="ic">💳</div><h3>Удобная оплата</h3><p>Наличные, перевод с карты, оплата через банк или по QR-коду.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal"><div><span class="kicker">Как проходит обучение</span><h2>4 шага до прав</h2></div></div>
+    <div class="steps">
+      <div class="step reveal"><span class="t">День 1</span><b>Запись</b><p>Оставляете заявку, мы подбираем группу и рассказываем, какие документы нужны.</p></div>
+      <div class="step reveal"><span class="t">Теория</span><b>ПДД и тесты</b><p>Занятия в классе и разбор билетов. Решаем тесты до уверенного результата.</p></div>
+      <div class="step reveal"><span class="t">Практика</span><b>Тренажёр и вождение</b><p>Сначала автотренажёр, затем вождение с инструктором и отработка упражнений.</p></div>
+      <div class="step reveal"><span class="t">Финиш</span><b>Экзамен в СпецЦОНе</b><p>Готовим к экзамену и подсказываем, на что обратить внимание на автодроме.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="price" style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><span class="kicker">Категории и стоимость</span><h2>Выберите категорию</h2></div>
+      <p>Срок обучения — от 2 до 2,5 месяцев. Точную цену и даты старта подскажем в WhatsApp.</p>
+    </div>
+    <div class="cats">
+      <div class="cat reveal">
+        <div class="lt"><span>B</span><div><h3>Легковой автомобиль</h3><div class="sub">Самая популярная категория</div></div></div>
+        <ul><li>Теория ПДД и разбор всех тестов</li><li>Автотренажёр</li><li>Вождение с инструктором</li><li>Подготовка к экзамену в СпецЦОНе</li></ul>
+        <div class="price"><div><small>Стоимость обучения</small><b>по запросу</b></div><a class="btn btn-b btn-sm" href="#book" data-cat="B">Записаться</a></div>
+      </div>
+      <div class="cat reveal">
+        <div class="lt"><span>A</span><div><h3>Мотоцикл</h3><div class="sub">Для тех, кто хочет на двух колёсах</div></div></div>
+        <ul><li>Теория ПДД и разбор всех тестов</li><li>Практика с инструктором</li><li>Отработка упражнений на площадке</li><li>Подготовка к экзамену в СпецЦОНе</li></ul>
+        <div class="price"><div><small>Стоимость обучения</small><b>по запросу</b></div><a class="btn btn-b btn-sm" href="#book" data-cat="A">Записаться</a></div>
+      </div>
+    </div>
+    <p style="font-size:12.5px;color:var(--muted);margin-top:12px">Демо: здесь будут ваши цены и даты ближайших групп.</p>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="promo reveal">
+      <div class="gift">🎁</div>
+      <div><h3>Приводи друга — получай подарок</h3><p>Ты уже учишься в «Тұлпар»? Приведи друга и получи 1 бесплатное практическое вождение.</p></div>
+      <a class="btn btn-n" id="promoWa" href="#" target="_blank" rel="noopener">Узнать подробнее</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="team" style="padding-top:10px">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><span class="kicker">Команда</span><h2>Преподаватели и инструкторы</h2></div>
+      <p>Их имена чаще всего встречаются в отзывах учеников.</p>
+    </div>
+    <div class="team" id="team-list"></div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:10px">
+  <div class="wrap">
+    <div class="gal">
+      <figure class="big reveal"><img src="img/classroom.jpg" alt="Класс теории"><figcaption>Класс теории</figcaption></figure>
+      <figure class="reveal"><img src="img/sim.jpg" alt="Автотренажёр"><figcaption>Автотренажёр</figcaption></figure>
+      <figure class="reveal"><img src="img/car.jpg" alt="Учебный автомобиль"><figcaption>Учебные авто</figcaption></figure>
+      <figure class="reveal" style="grid-column:span 2"><img src="img/autodrom.jpg" alt="Площадка" style="object-position:center 70%"><figcaption>Отработка упражнений</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews" style="padding-top:10px">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><span class="kicker">Отзывы</span><h2>Сдали с первого раза</h2></div>
+      <a class="gis" href="https://2gis.kz/petropavlovsk/firm/70000001090395320/tab/reviews" target="_blank" rel="noopener"><i>5,0</i><span>Все 142 отзыва в 2ГИС →</span></a>
+    </div>
+    <div class="revs" id="rev-list"></div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:10px">
+  <div class="wrap">
+    <div class="head reveal"><div><span class="kicker">Вопросы</span><h2>Частые вопросы</h2></div></div>
+    <div class="faq">
+      <details><summary>Сколько длится обучение?</summary><p>От 2 до 2,5 месяцев: теория, автотренажёр и практическое вождение с инструктором.</p></details>
+      <details><summary>Есть ли онлайн-обучение?</summary><p>Нет, занятия проходят только офлайн — так материал усваивается лучше, и можно сразу задать вопрос преподавателю.</p></details>
+      <details><summary>Когда стартует ближайшая группа?</summary><p>Набор в новые группы идёт каждый месяц, занятия по понедельникам, средам и пятницам вечером. Напишите нам — скажем точную дату и сколько осталось мест.</p></details>
+      <details><summary>Никогда не водил(а). Справлюсь?</summary><p>Да. Многие приходят с нуля: сначала автотренажёр, потом вождение со спокойным инструктором, который всё объяснит и не будет нервничать.</p></details>
+      <details><summary>Как можно оплатить?</summary><p>Наличными, переводом с карты, через банк или по QR-коду.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec book" id="book">
+  <div class="wrap bk">
+    <div class="reveal">
+      <span class="kicker" style="color:var(--yel)">Запись</span>
+      <h2>Запишитесь в ближайшую группу</h2>
+      <p class="lead">Оставьте имя и телефон — заявка сразу придёт администратору в WhatsApp. Перезвоним, расскажем про цену, даты и документы.</p>
+      <div class="ticks"><div><span>1</span>Заявка за 30 секунд</div><div><span>2</span>Администратор свяжется с вами</div><div><span>3</span>Приходите на первое занятие</div></div>
+    </div>
+    <form id="form" novalidate>
+      <label>Категория</label>
+      <div class="seg" id="seg"><button type="button" class="on" data-v="B">Категория B</button><button type="button" data-v="A">Категория A</button></div>
+      <label for="fName">Имя</label>
+      <input id="fName" autocomplete="name" placeholder="Как к вам обращаться">
+      <label for="fPhone">Телефон</label>
+      <input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 7__ ___ __ __">
+      <label for="fExp">Опыт вождения</label>
+      <select id="fExp"><option>Никогда не водил(а)</option><option>Немного умею</option><option>Вожу, нужны права</option></select>
+      <label for="fNote">Вопрос (необязательно)</label>
+      <textarea id="fNote" placeholder="Например, когда старт и можно ли оплатить частями"></textarea>
+      <button class="btn btn-y submit" type="submit">Отправить заявку</button>
+      <div class="legal">Заявка откроется в WhatsApp автошколы</div>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="contacts">
+  <div class="wrap">
+    <div class="head reveal"><div><span class="kicker">Контакты</span><h2>Ждём вас в автошколе</h2></div></div>
+    <div class="ct">
+      <div class="cc"><small>Адрес</small><b>Петропавловск, проезд Шажимбаева, 10</b><div class="sch">2 этаж, кабинет 2 · рядом 16 парковок</div><a href="https://2gis.kz/petropavlovsk/firm/70000001090395320" target="_blank" rel="noopener">Маршрут в 2ГИС →</a></div>
+      <div class="cc"><small>Офис работает</small><b>Пн–Пт 09:00–17:30</b><div class="sch">обед 13:00–14:00 · Сб 09:00–13:00 · Вс выходной</div><a href="#book">Оставить заявку →</a></div>
+      <div class="cc"><small>Связь</small><b>+7 747 649 80 60</b><div class="sch">WhatsApp и Instagram @tulpar_avtoshkola</div><a id="ctWa" href="#" target="_blank" rel="noopener">Написать в WhatsApp →</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="yr"></span> Автошкола «Тұлпар», Петропавловск</div>
+    <div>Хотите похожий сайт для бизнеса? <a href="https://wa.me/77476128411" target="_blank" rel="noopener">SiteMaker · 8 747 612 84 11</a></div>
+  </div>
+</footer>
+
+<div class="fab" id="fab"><a class="f1" href="#book">Записаться в группу</a><a class="f2" id="fabWa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a></div>
+
+<div class="modal" id="ok"><div class="mbox">
+  <h3>Заявка готова!</h3>
+  <p>Отправьте её в WhatsApp — администратор ответит и расскажет про ближайшую группу.</p>
+  <a class="btn btn-y" id="okWa" href="#" target="_blank" rel="noopener" style="width:100%">Открыть WhatsApp</a>
+  <button class="btn" style="width:100%;margin-top:6px;color:var(--muted)" onclick="document.getElementById('ok').classList.remove('show')">Закрыть</button>
+</div></div>
+
+<script>
+(function(){
+  var WA = '77476498060';
+  var wa = function(t){ return 'https://wa.me/' + WA + (t ? '?text=' + encodeURIComponent(t) : ''); };
+  var $ = function(id){ return document.getElementById(id); };
+  $('heroWa').href = wa('Здравствуйте! Хочу узнать про обучение в автошколе «Тұлпар».');
+  $('ctWa').href = wa(''); $('fabWa').href = wa('Здравствуйте! Хочу записаться в автошколу.');
+  $('promoWa').href = wa('Здравствуйте! Хочу узнать про акцию «Приведи друга».');
+  $('yr').textContent = new Date().getFullYear();
+
+  var TEAM = [
+    { n:'Ерсаин Амантаевич', r:'Преподаватель теории', t:'«Очень легко и доступно объясняет даже сложные темы, делает занятия интересными благодаря юмору»' },
+    { n:'Руслан Павлович', r:'Инструктор по вождению', t:'Стаж преподавания 8 лет. «Очень спокойный, терпеливый, всё объясняет без лишней нервозности»', img:'img/ruslan.jpg' },
+    { n:'Ринат Азатович', r:'Инструктор', t:'«Благодаря вашим объяснениям и практическим занятиям шла на экзамен уверенной в себе и без страха»' },
+    { n:'Едил Сейтович', r:'Инструктор по практике', t:'«На вождении всё прошло безупречно и на автоматизме»' }
+  ];
+  $('team-list').innerHTML = TEAM.map(function(m){
+    return '<div class="mem reveal"><div class="ph">'+(m.img?'<img src="'+m.img+'" alt="'+m.n+'">':m.n.charAt(0))+'</div><div class="b"><h3>'+m.n+'</h3><div class="role">'+m.r+'</div><p>'+m.t+'</p></div></div>';
+  }).join('');
+
+  var REV = [
+    { n:'Дария', res:'Теория 37/40 с первого раза', t:'Благодаря вам я сдала и теорию, и практику с первого раза! Ерсаин Амантаевич очень доступно объясняет, а Руслан Павлович научил меня водить с нуля.' },
+    { n:'Виталлина С.', res:'Сдала с первого раза', t:'Экзамен сдавала вечером, в полной темноте — было страшновато, но подготовка не подвела! Спасибо за знания, терпение и профессионализм.' },
+    { n:'Giga_56', res:'Сдал с первой попытки', t:'Подготовили на все 100, сдал с первой попытки. Отличные учителя и условия.' },
+    { n:'Даяна М.', res:'Инструктор с большой буквы', t:'Очень грамотный, спокойный, всё объясняет простым языком. Никогда не ругается, поддерживает. Каждое занятие ждала с удовольствием.' },
+    { n:'Камилла Ц.', res:'Рекомендует', t:'Самая лучшая автошкола! Лучший преподаватель и очень хорошие инструкторы, всё объясняли понятно.' }
+  ];
+  $('rev-list').innerHTML = REV.map(function(r){
+    return '<div class="rev"><span class="res">'+r.res+'</span><div class="st">★★★★★</div><p>'+r.t+'</p><b>'+r.n+' · 2ГИС</b></div>';
+  }).join('');
+
+  var cat = 'B';
+  function setCat(v){ cat = v; document.querySelectorAll('#seg button').forEach(function(b){ b.classList.toggle('on', b.dataset.v === v); }); }
+  document.querySelectorAll('#seg button').forEach(function(b){ b.addEventListener('click', function(){ setCat(b.dataset.v); }); });
+  document.querySelectorAll('[data-cat]').forEach(function(a){ a.addEventListener('click', function(){ setCat(a.dataset.cat); }); });
+
+  $('fPhone').addEventListener('input', function(){
+    var v = this.value.replace(/\D/g,''); if (v[0]==='8') v = '7'+v.slice(1); if (v && v[0]!=='7') v = '7'+v; v = v.slice(0,11);
+    var f = v ? '+7' : ''; if (v.length>1) f += ' '+v.slice(1,4); if (v.length>4) f += ' '+v.slice(4,7); if (v.length>7) f += ' '+v.slice(7,9); if (v.length>9) f += ' '+v.slice(9,11);
+    this.value = f;
+  });
+  $('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var ok = true;
+    function chk(id, g){ $(id).classList.toggle('bad', !g); if (!g) ok = false; }
+    chk('fName', $('fName').value.trim().length > 1);
+    chk('fPhone', $('fPhone').value.replace(/\D/g,'').length === 11);
+    if (!ok) { document.querySelector('.bad').focus(); return; }
+    var t = ['Здравствуйте! Хочу записаться в автошколу «Тұлпар» 🚗', '', 'Категория: ' + cat, 'Опыт: ' + $('fExp').value, 'Имя: ' + $('fName').value.trim(), 'Телефон: ' + $('fPhone').value];
+    if ($('fNote').value.trim()) t.push('Вопрос: ' + $('fNote').value.trim());
+    $('okWa').href = wa(t.join('\n'));
+    $('ok').classList.add('show');
+  });
+
+  var fab = $('fab'), hero = document.querySelector('.hero'), book = $('book');
+  function onScroll(){ var y = window.scrollY, hb = hero.offsetTop + hero.offsetHeight, bt = book.offsetTop - window.innerHeight + 120, be = book.offsetTop + book.offsetHeight;
+    fab.classList.toggle('show', y > hb - 200 && !(y > bt && y < be)); }
+  window.addEventListener('scroll', onScroll, { passive:true }); onScroll();
+
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){ es.forEach(function(x){ if (x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target); } }); }, { threshold:.1 }) : null;
+  document.querySelectorAll('.reveal').forEach(function(el){ io ? io.observe(el) : el.classList.add('in'); });
+})();
+</script>
+</body>
+</html>
