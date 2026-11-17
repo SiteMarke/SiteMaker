@@ -509,6 +509,51 @@
      "m": "img/w/astoria-m.webp",
      "d": "img/w/astoria-d.webp",
      "fan": false
+    },
+    {
+     "id": "tulpar",
+     "name": "Тұлпар",
+     "city": "Петропавловск · автошкола",
+     "desc": "Категории A и B, программа обучения, преподаватели, отзывы, запись в группу через WhatsApp.",
+     "tags": [
+      "Запись",
+      "Отзывы",
+      "WhatsApp"
+     ],
+     "url": "https://sitemarke.github.io/SiteMaker/demo/tulpar/",
+     "m": "img/w/tulpar-m.webp",
+     "d": "img/w/tulpar-d.webp",
+     "fan": false
+    },
+    {
+     "id": "kinderland",
+     "name": "Kinder Land",
+     "city": "Петропавловск · детский центр",
+     "desc": "Зоны и цены, комната именинника, новогодняя программа, отзывы, заявка на праздник в WhatsApp.",
+     "tags": [
+      "Цены",
+      "Праздники",
+      "WhatsApp"
+     ],
+     "url": "https://sitemarke.github.io/SiteMaker/demo/kinderland/",
+     "m": "img/w/kinderland-m.webp",
+     "d": "img/w/kinderland-d.webp",
+     "fan": false
+    },
+    {
+     "id": "woman",
+     "name": "WOMAN beauty space",
+     "city": "Петропавловск · салон красоты",
+     "desc": "Услуги и цены, мастера, работы, онлайн-запись в WhatsApp и админка для салона.",
+     "tags": [
+      "Запись",
+      "Админка",
+      "WhatsApp"
+     ],
+     "url": "https://sitemarke.github.io/SiteMaker/demo/woman/",
+     "m": "img/w/woman-m.webp",
+     "d": "img/w/woman-d.webp",
+     "fan": false
     }
    ]
   }
@@ -630,5 +675,5 @@
    }
   ]
  },
- "pv": 5
+ "pv": 6
 }
