@@ -84,13 +84,41 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold)}
 .info{display:grid;gap:8px}
 .info .card b{display:block;margin-bottom:2px}
 .info .card p{font-size:13.5px;color:var(--muted)}
+.login{position:fixed;inset:0;z-index:100;background:radial-gradient(120% 90% at 85% 0%,#55543c 0%,var(--olive) 55%,#2c2b1e 100%);display:flex;align-items:center;justify-content:center;padding:20px}
+.lbox{width:100%;max-width:380px;background:var(--cream);border-radius:24px;padding:28px 22px;box-shadow:0 30px 70px -20px rgba(0,0,0,.6)}
+.lbox .logo{text-align:center;margin-bottom:18px}
+.lbox .logo b{color:var(--olive);font-size:34px}
+.lbox .logo small{color:var(--gold2)}
+.lbox p{color:var(--muted);font-size:14px;text-align:center;margin-bottom:6px}
+.pw{position:relative}
+.pw input{padding-right:52px}
+.pw button{position:absolute;right:4px;top:4px;width:44px;height:38px;border-radius:10px;font-size:18px;color:var(--muted)}
+.err{color:var(--bad);font-size:13.5px;font-weight:600;text-align:center;min-height:20px;margin-top:8px}
+.shake{animation:sh .35s}
+@keyframes sh{0%,100%{transform:none}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.logout{font-size:13px;font-weight:700;color:#cfc8b3;margin-left:8px}
+.ad{display:flex;align-items:center;gap:12px;background:var(--olive);color:var(--cream);border-radius:16px;padding:14px;margin-top:14px;text-decoration:none}
+.ad b{display:block;font-size:14.5px}
+.ad span{font-size:12.5px;color:#d8d2c0}
+.ad i{font-style:normal;margin-left:auto;background:var(--gold);color:#241e12;border-radius:999px;padding:8px 12px;font-weight:700;font-size:13px;white-space:nowrap}
 </style>
 </head>
 <body>
+<div class="login" id="login">
+  <form class="lbox" id="loginForm" autocomplete="off">
+    <div class="logo"><b>WOMAN</b><small>панель управления</small></div>
+    <p>Введите пароль, чтобы войти в админку</p>
+    <label for="pwd">Пароль</label>
+    <div class="pw"><input id="pwd" type="password" autocomplete="current-password" placeholder="••••••••"><button type="button" id="eye" aria-label="Показать пароль">👁</button></div>
+    <div class="err" id="err"></div>
+    <button class="btn btn-p btn-w" type="submit" style="margin-top:6px">Войти</button>
+    <a href="index.html" style="display:block;text-align:center;margin-top:14px;font-size:13.5px;color:var(--muted)">← Вернуться на сайт</a>
+  </form>
+</div>
 <div class="top"><div class="top-in">
   <div class="row1">
     <div class="logo"><b>WOMAN</b><small>панель управления</small></div>
-    <a class="view" href="index.html" target="_blank" rel="noopener">Открыть сайт ↗</a>
+    <div><a class="view" href="index.html" target="_blank" rel="noopener">Открыть сайт ↗</a><button class="logout" id="logout">Выйти</button></div>
   </div>
   <div class="tabs" id="tabs">
     <button class="tab on" data-t="bk">Записи <em id="newCount" style="display:none"></em></button>
@@ -104,7 +132,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold)}
 </div></div>
 
 <main>
-  <div class="demo"><b>Демо-режим.</b> Попробуйте: поменяйте цену или акцию, нажмите «Сохранить» и откройте сайт — изменения уже там. В демо всё хранится в этом браузере. В рабочей версии — вход по паролю, данные в облаке, а новые записи сразу приходят в Telegram.</div>
+  <div class="demo"><b>Демо-режим.</b> Попробуйте: поменяйте цену или акцию, нажмите «Сохранить» и откройте сайт — изменения уже там. В демо изменения хранятся в этом браузере. В рабочей версии данные в облаке, а новые записи сразу приходят в Telegram.</div>
   <div id="view"></div>
 </main>
 
@@ -112,6 +140,27 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold)}
 <div class="toast" id="toast"></div>
 
 <script src="js/data.js"></script>
+<script>
+(function(){
+  var HASH = '174ed5c361d8212bb2116dd42ddc68ae7a9632194c858357944c4cd72eef3903', KEY = 'woman_admin_auth';
+  var login = document.getElementById('login');
+  function hex(buf){ return Array.prototype.map.call(new Uint8Array(buf), function(b){ return ('0'+b.toString(16)).slice(-2); }).join(''); }
+  function sha(t){ return crypto.subtle.digest('SHA-256', new TextEncoder().encode(t)).then(hex); }
+  function authed(){ try { return localStorage.getItem(KEY) === HASH; } catch(e){ return false; } }
+  if (authed()) login.style.display = 'none'; else setTimeout(function(){ document.getElementById('pwd').focus(); }, 50);
+  document.getElementById('eye').addEventListener('click', function(){ var i = document.getElementById('pwd'); i.type = i.type === 'password' ? 'text' : 'password'; });
+  document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = document.getElementById('pwd').value.trim(), err = document.getElementById('err'), box = this;
+    if (!v) { err.textContent = 'Введите пароль'; return; }
+    sha('woman:' + v).then(function(h){
+      if (h === HASH) { try { localStorage.setItem(KEY, HASH); } catch(x){} login.style.display = 'none'; err.textContent = ''; }
+      else { err.textContent = 'Неверный пароль'; box.classList.remove('shake'); void box.offsetWidth; box.classList.add('shake'); document.getElementById('pwd').select(); }
+    });
+  });
+  document.getElementById('logout').addEventListener('click', function(){ try { localStorage.removeItem(KEY); } catch(e){} document.getElementById('pwd').value = ''; login.style.display = 'flex'; });
+})();
+</script>
 <script>
 (function(){
   var D = WM.load(), esc = WM.esc, money = WM.money;
@@ -202,9 +251,10 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold)}
     var f = function(k,l,ph){ return '<label>'+l+'</label><input data-s="'+k+'" value="'+esc(S[k]||'')+'" placeholder="'+(ph||'')+'">'; };
     return '<h2>Контакты</h2><div class="sub">Эти данные показываются на сайте, а на WhatsApp приходят заявки.</div><div class="card">'+
       f('slogan','Слоган на главной')+f('wa','WhatsApp для заявок','77761411171')+f('phone','Телефон на сайте')+f('address','Адрес')+f('hours','Время работы (текст)')+
-      '<div class="two">'+f('open','Открытие','09:00')+f('close','Закрытие','22:00')+'</div>'+f('instagram','Instagram')+f('rating','Рейтинг 2ГИС')+f('reviews','Отзывов в 2ГИС')+
+      '<div class="two"><div>'+f('open','Открытие','09:00')+'</div><div>'+f('close','Закрытие','22:00')+'</div></div>'+f('instagram','Instagram')+f('rating','Рейтинг 2ГИС')+f('reviews','Отзывов в 2ГИС')+
       '<button class="btn btn-p btn-w" style="margin-top:14px" data-save-s="1">Сохранить</button></div>'+
-      '<button class="btn btn-d btn-w" style="margin-top:6px" data-reset="1">Сбросить демо к начальному виду</button>';
+      '<button class="btn btn-d btn-w" style="margin-top:6px" data-reset="1">Сбросить демо к начальному виду</button>'+
+      '<a class="ad" href="https://wa.me/77476128411?text='+encodeURIComponent('Здравствуйте! Хочу похожий сайт для бизнеса')+'" target="_blank" rel="noopener"><div><b>Хотите похожий сайт для бизнеса?</b><span>SiteMaker · 8 747 612 84 11</span></div><i>Написать</i></a>';
   }
 
   function vAbout(){
@@ -214,7 +264,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold)}
       ['Статусы записей','Подтвердили, клиент пришёл, отменил — видно, сколько записей и на какую сумму.'],
       ['Ответ в один клик','Кнопка WhatsApp с готовым текстом подтверждения и кнопка «Позвонить».'],
       ['Мастера, фото, акции','Новый мастер, свежие работы, акция на понедельник — меняете с телефона за минуту.'],
-      ['Вход по паролю','В рабочей версии админка закрыта паролем, данные хранятся в облаке.']
+      ['Вход по паролю','Админка закрыта паролем — зайти можете только вы и ваш администратор.']
     ];
     return '<h2>Что умеет админка</h2><div class="sub">Это входит в стоимость сайта.</div><div class="info">'+it.map(function(x){ return '<div class="card"><b>'+x[0]+'</b><p>'+x[1]+'</p></div>'; }).join('')+'</div>';
   }
