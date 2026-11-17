@@ -391,6 +391,21 @@
      "fan": true
     },
     {
+     "id": "bigsushi",
+     "name": "Big Sushi",
+     "city": "Петропавловск · доставка суши и пиццы",
+     "desc": "Свой дизайн в стиле бренда: сеты до 100 роллов, роллы, пиццы и крылышки; корзина и заказ в WhatsApp, админка, заказы в Telegram-бот.",
+     "tags": [
+      "Корзина",
+      "Админка",
+      "Telegram"
+     ],
+     "url": "https://tamerlankajrolla2-a11y.github.io/BigSushi/",
+     "m": "img/w/bigsushi-m.webp",
+     "d": "img/w/bigsushi-d.webp",
+     "fan": true
+    },
+    {
      "id": "chicken",
      "name": "Chicken Hot",
      "city": "Петропавловск · курочка, пицца, роллы",
@@ -615,5 +630,5 @@
    }
   ]
  },
- "pv": 4
+ "pv": 5
 }

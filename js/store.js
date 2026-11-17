@@ -120,6 +120,15 @@ window.Store = (function () {
       if (fc3 && !d.cats.some(function (c9) { return c9.works.some(function (w) { return w.id === 'turan'; }); })) fc3.works.push({"id":"turan","name":"TURAN-EL","city":"Караганда · ресторан тюркских народов","desc":"Меню с фото и ценами, галерея залов, отзывы гостей и бронь стола прямо в WhatsApp.","tags":["Меню","Галерея","WhatsApp"],"url":"https://tamerlankajrolla2-a11y.github.io/Turan-El/","m":"img/w/turan-m.webp","d":"img/w/turan-d.webp","fan":false});
       d.pv = 4;
     }
+    // 17.11: новая работа — Big Sushi (доставка суши и пиццы, Петропавловск)
+    if ((+d.pv || 0) < 5) {
+      var sc = d.cats.filter(function (c10) { return c10.id === 'shop'; })[0];
+      if (sc && !d.cats.some(function (c11) { return c11.works.some(function (w) { return w.id === 'bigsushi'; }); })) {
+        var at2 = 0; sc.works.forEach(function (w, i) { if (w.id === 'sushi') at2 = i + 1; });
+        sc.works.splice(at2, 0, {"id": "bigsushi", "name": "Big Sushi", "city": "Петропавловск · доставка суши и пиццы", "desc": "Свой дизайн в стиле бренда: сеты до 100 роллов, роллы, пиццы и крылышки; корзина и заказ в WhatsApp, админка, заказы в Telegram-бот.", "tags": ["Корзина", "Админка", "Telegram"], "url": "https://tamerlankajrolla2-a11y.github.io/BigSushi/", "m": "img/w/bigsushi-m.webp", "d": "img/w/bigsushi-d.webp", "fan": true});
+      }
+      d.pv = 5;
+    }
     d.rev = +d.rev || 1;
     return d;
   }
