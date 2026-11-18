@@ -1,11 +1,11 @@
 /* Vertebra Medical — слой данных.
-   Цены, тексты, заявки и вход в админку хранятся на сервере sites-api (Cloudflare Worker + D1), код сайта — vertebra.
+   Цены, тексты, заявки и вход в админку хранятся на отдельном сервере vertebra-api (Cloudflare Worker + D1).
    Если сервер недоступен, сайт берёт данные из data/site.json (или из последней сохранённой копии).
 */
 window.Store = (function () {
   'use strict';
 
-  var API = 'https://sites-api.tamerlankajrolla2.workers.dev', SITE = 'vertebra';
+  var API = 'https://vertebra-api.tamerlankajrolla2.workers.dev', SITE = 'vertebra';
   var LS_DATA = 'vm_data', LS_TOK = 'vm_token';
 
   function ls(k, v) {
@@ -104,17 +104,11 @@ window.Store = (function () {
   }
   function logout() { token = null; ls(LS_TOK, null); }
   function changePassword(pw) { return req('/password', { method: 'POST', auth: true, body: { password: pw } }); }
-  // первый запуск: подключить сайт к серверу (нужен ключ разработчика) и задать пароль админки
-  function register(master, pw) { return req('/register', { method: 'POST', body: { master: master, password: pw } }); }
-  // подключён ли сайт к серверу: true / false / null (нет связи)
-  function connected() {
-    return req('/menu').then(function () { return true; }).catch(function (e) { return e.status === 404 ? false : null; });
-  }
 
   return {
     load: load, save: save, reset: reset, fromFile: fromFile, normalize: normalize,
     createOrder: createOrder, listOrders: listOrders, setStatus: setStatus, tgInfo: tgInfo, tgLink: tgLink, tgOff: tgOff,
-    login: login, logout: logout, authed: authed, changePassword: changePassword, register: register, connected: connected,
+    login: login, logout: logout, authed: authed, changePassword: changePassword,
     api: API, site: SITE
   };
 })();
