@@ -98,13 +98,24 @@ h3.c{font-size:16px;margin-bottom:10px}
     <button class="btn p" id="gateBtn" type="button">Войти</button>
   </div>
   <div id="gSetup" hidden>
-    <div class="box">
-      <h3>Первый запуск: подключение к серверу</h3>
-      <p class="muted">Сайт ещё не подключён к серверу заявок. Это делается один раз: введите ключ разработчика и придумайте пароль для админки.</p>
+    <div class="box" id="sForm">
+      <h3>Подключение к серверу (один раз)</h3>
+      <p class="muted">Сайт ещё не подключён к серверу заявок. Вставьте ключ разработчика — пароль для клиента уже придуман, его можно заменить.</p>
       <label class="fld">Ключ разработчика<input id="sMaster" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"></label>
-      <label class="fld">Пароль для админки <span class="muted">английские буквы и цифры, от 6 символов</span><input id="sP1" type="password" autocomplete="new-password" autocapitalize="off" spellcheck="false"></label>
-      <label class="fld">Пароль ещё раз<input id="sP2" type="password" autocomplete="new-password" autocapitalize="off" spellcheck="false"></label>
-      <button class="btn p" id="setupBtn" type="button">Подключить</button>
+      <label class="fld">Пароль для админки клиента <span class="muted">английские буквы и цифры, от 6 символов</span><input id="sP1" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"></label>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn p" id="setupBtn" type="button">Подключить</button>
+        <button class="btn s" id="genBtn" type="button">Другой пароль</button>
+      </div>
+    </div>
+    <div class="box" id="sDone" hidden>
+      <h3>Готово, сайт подключён к серверу</h3>
+      <p class="muted">Заявки, цены и тексты теперь хранятся на сервере. Отправьте клиенту доступ:</p>
+      <pre id="sMsg" style="white-space:pre-wrap;word-break:break-word;background:rgba(255,255,255,.06);border-radius:10px;padding:12px;font:inherit;font-size:14px;margin:0 0 12px"></pre>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn p" id="copyBtn" type="button">Скопировать для клиента</button>
+        <button class="btn s" id="openBtn" type="button">Открыть админку</button>
+      </div>
     </div>
   </div>
   <p style="margin-top:16px"><a href="index.html">← вернуться на сайт</a></p>
@@ -148,7 +159,6 @@ function gate(){
   $('#app').hidden=true; $('#gate').hidden=false; $('#gPass').focus();
   Store.connected().then(function(c){ if(c===false) showSetup(); });
 }
-function showSetup(){ $('#gLogin').hidden=true; $('#gSetup').hidden=false; }
 function login(){
   var p=$('#gPass').value.trim(); if(!p) return toast('Введите пароль');
   $('#gateBtn').disabled=true;
@@ -159,15 +169,36 @@ function login(){
 }
 $('#gateBtn').onclick=login;
 $('#gPass').addEventListener('keydown',function(e){if(e.key==='Enter')login();});
+function genPass(){
+  var al='abcdefghjkmnpqrstuvwxyz23456789', a=new Uint32Array(8), o='';
+  (window.crypto||window.msCrypto).getRandomValues(a);
+  for(var i=0;i<a.length;i++) o+=al[a[i]%al.length];
+  return o;
+}
+function showSetup(){ $('#gLogin').hidden=true; $('#gSetup').hidden=false; if(!$('#sP1').value) $('#sP1').value=genPass(); }
+$('#genBtn').onclick=function(){ $('#sP1').value=genPass(); };
 $('#setupBtn').onclick=function(){
-  var m=$('#sMaster').value.trim(), p1=$('#sP1').value.trim(), p2=$('#sP2').value.trim();
-  if(!m) return toast('Введите ключ разработчика');
-  var bad=okPass(p1,p2); if(bad) return toast(bad);
+  var m=$('#sMaster').value.trim(), p1=$('#sP1').value.trim();
+  if(!m) return toast('Вставьте ключ разработчика');
+  var bad=okPass(p1,p1); if(bad) return toast(bad);
   var b=this; b.disabled=true; b.textContent='Подключаю…';
-  Store.register(m,p1).then(function(){ return Store.login(p1); }).then(function(){ toast('Готово! Сайт подключён'); boot(); })
-    .catch(function(e){ toast(e.status===403?'Неверный ключ разработчика':'Не вышло: '+e.message); })
-    .then(function(){ b.disabled=false; b.textContent='Подключить'; });
+  Store.register(m,p1).then(function(){ return Store.login(p1); }).then(function(){
+    $('#sMaster').value='';
+    var url=location.href.split('#')[0].split('?')[0];
+    $('#sMsg').textContent='Админка вашего сайта: '+url+'\nПароль: '+p1+'\n\nЗаявки с сайта приходят во вкладку «Заявки». Цены и акции меняются во вкладках «Цены» и «Акция и тексты». Пароль можно сменить во вкладке «Админка».';
+    $('#sForm').hidden=true; $('#sDone').hidden=false;
+  }).catch(function(e){
+    toast(e.status===403?'Неверный ключ разработчика':(e.status===409?'Сайт уже подключён, войдите по паролю':'Не вышло: '+e.message));
+    if(e.status===409){ $('#gSetup').hidden=true; $('#gLogin').hidden=false; }
+  }).then(function(){ b.disabled=false; b.textContent='Подключить'; });
 };
+$('#copyBtn').onclick=function(){
+  var t=$('#sMsg').textContent;
+  (navigator.clipboard&&navigator.clipboard.writeText?navigator.clipboard.writeText(t):Promise.reject()).then(function(){toast('Скопировано');}).catch(function(){
+    var r=document.createRange(); r.selectNodeContents($('#sMsg')); var sel=getSelection(); sel.removeAllRanges(); sel.addRange(r); toast('Выделено, скопируйте вручную');
+  });
+};
+$('#openBtn').onclick=boot;
 function boot(){
   $('#gate').hidden=true; $('#app').hidden=false;
   Store.load(true).then(function(d){D=d;render();}).catch(function(e){toast('Не загрузилось: '+e.message);});
