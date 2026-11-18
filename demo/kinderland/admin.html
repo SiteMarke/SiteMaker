@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Админка Kinder Land</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#2b2a6b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#ef3e45;--orange:#ff8c1a;--yel:#ffc82c;--green:#35b44b;--blue:#2d7ff9;--purple:#7c4dff;--ink:#232260;--ink2:#2b2a6b;--muted:#66658f;--line:#ece6f6;--bg:#fffaf2;--lav:#f3efff;--ok:#2f9a44;--bad:#d2403f;--hf:'Unbounded',system-ui,sans-serif;--bf:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--bf);background:var(--bg);color:var(--ink);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:40px}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+a{color:inherit}
+.top{background:var(--ink2);color:#fff;position:sticky;top:0;z-index:20}
+.top-in{max-width:880px;margin:0 auto;padding:14px 16px 0}
+.row1{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.logo b{font-family:var(--hf);font-size:19px;letter-spacing:-.02em;display:block}
+.logo b i{font-style:normal}
+.logo b .l1{color:var(--red)}.logo b .l2{color:var(--orange)}.logo b .l3{color:var(--yel)}.logo b .l4{color:var(--green)}.logo b .l5{color:var(--blue)}.logo b .l6{color:#b79bff}
+.logo small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#bdb9ee;margin-top:2px}
+.view{font-size:13px;font-weight:800;color:var(--yel);text-decoration:none;border:1.5px solid rgba(255,200,44,.45);border-radius:999px;padding:8px 14px}
+.logout{font-size:13px;font-weight:700;color:#bdb9ee;margin-left:8px}
+.tabs{display:flex;gap:4px;overflow-x:auto;margin-top:12px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;padding:11px 14px;font-weight:800;font-size:14px;color:#bdb9ee;border-bottom:3px solid transparent}
+.tab.on{color:#fff;border-color:var(--yel)}
+.tab em{font-style:normal;background:var(--orange);color:#fff;border-radius:999px;padding:0 7px;font-size:12px;margin-left:4px}
+main{max-width:880px;margin:0 auto;padding:16px}
+.demo{background:#fff4d6;border:1px solid #f1dc9c;border-radius:14px;padding:12px 14px;font-size:13px;color:#5e4c22;margin-bottom:16px}
+.demo b{color:#3f3214}
+h2{font-family:var(--hf);font-size:24px;font-weight:700;margin:6px 0 4px;color:var(--ink2);letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:13.5px;margin-bottom:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:10px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px}
+.stat b{font-family:var(--hf);font-size:20px;font-weight:700;display:block;line-height:1.15;color:var(--ink2)}
+.stat span{font-size:12px;color:var(--muted)}
+.bk-h{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.bk-h b{font-size:16px}
+.badge{font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.b-new{background:#ffe5c2;color:#8a4a06}.b-ok{background:#d9f1de;color:#22642f}.b-done{background:#e8e6f5;color:#4a4880}.b-no{background:#fbd9d9;color:#9a2c2c}
+.meta{font-size:13.5px;color:var(--muted);margin:6px 0}
+.meta div{margin:2px 0}
+.ex{display:inline-block;font-size:11px;font-weight:800;color:var(--purple);background:var(--lav);border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:middle}
+.acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:40px;padding:0 15px;border-radius:999px;font-weight:800;font-size:13.5px;text-decoration:none;border:2px solid var(--line);background:#fff;color:var(--ink2)}
+.btn-p{background:var(--ink2);border-color:var(--ink2);color:#fff}
+.btn-g{background:#25d366;border-color:#25d366;color:#fff}
+.btn-o{background:linear-gradient(135deg,var(--red),var(--orange));border-color:transparent;color:#fff}
+.btn-d{color:var(--bad);border-color:#f4c9c9}
+.btn-w{width:100%;height:48px;font-size:15px}
+.empty{text-align:center;color:var(--muted);padding:30px 14px;border:2px dashed var(--line);border-radius:18px;background:#fff}
+.chips{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px;scrollbar-width:none}
+.chip{flex:0 0 auto;height:36px;padding:0 14px;border-radius:999px;border:2px solid var(--line);font-weight:700;font-size:13.5px;background:#fff}
+.chip.on{background:var(--ink2);color:#fff;border-color:var(--ink2)}
+.svc{display:flex;align-items:center;gap:10px}
+.svc .nm{flex:1;min-width:0;cursor:pointer}
+.svc .nm b{display:block;font-size:15px}
+.svc .nm small{color:var(--muted);font-size:12.5px;display:block;line-height:1.35;margin-top:2px}
+.svc .pr{font-weight:800;white-space:nowrap;cursor:pointer;color:var(--ink2)}
+.tg{font-size:11px;font-weight:800;color:var(--purple);background:var(--lav);border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:middle}
+.off{opacity:.45}
+.sw{position:relative;width:46px;height:26px;border-radius:999px;background:#d9d4ea;flex:0 0 auto;transition:background .2s}
+.sw:after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.sw.on{background:var(--ok)}.sw.on:after{left:23px}
+label{display:block;font-size:12.5px;font-weight:800;color:var(--muted);margin:10px 0 5px}
+input,select,textarea{width:100%;height:46px;border:2px solid var(--line);background:#fff;border-radius:12px;padding:0 12px;font:inherit;font-size:15px;outline:none;color:var(--ink)}
+textarea{height:84px;padding:10px 12px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--purple)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.check{display:flex;align-items:center;gap:10px;margin-top:12px;font-weight:700;font-size:14px;color:var(--ink)}
+.check input{width:20px;height:20px}
+.sheet{position:fixed;inset:0;background:rgba(25,24,70,.55);z-index:50;display:none;align-items:flex-end;justify-content:center}
+.sheet.show{display:flex}
+.sheet-in{background:var(--bg);width:100%;max-width:560px;border-radius:24px 24px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom));max-height:92vh;overflow:auto}
+.sheet-in h3{font-family:var(--hf);font-size:20px;margin-bottom:4px;color:var(--ink2)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;font-size:14px;z-index:90;transition:transform .3s;white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.info{display:grid;gap:8px}
+.info .card b{display:block;margin-bottom:2px}
+.info .card p{font-size:13.5px;color:var(--muted)}
+.login{position:fixed;inset:0;z-index:100;background:radial-gradient(120% 90% at 85% 0%,#4a46b0 0%,var(--ink2) 55%,#1c1b4d 100%);display:flex;align-items:center;justify-content:center;padding:20px}
+.lbox{width:100%;max-width:380px;background:var(--bg);border-radius:26px;padding:28px 22px;box-shadow:0 30px 70px -20px rgba(0,0,0,.6)}
+.lbox .logo{text-align:center;margin-bottom:18px}
+.lbox .logo b{font-size:28px;color:var(--ink2)}
+.lbox .logo small{color:var(--purple)}
+.lbox p{color:var(--muted);font-size:14px;text-align:center;margin-bottom:6px}
+.pw{position:relative}
+.pw input{padding-right:52px}
+.pw button{position:absolute;right:4px;top:4px;width:44px;height:38px;border-radius:10px;font-size:18px;color:var(--muted)}
+.err{color:var(--bad);font-size:13.5px;font-weight:700;text-align:center;min-height:20px;margin-top:8px}
+.shake{animation:sh .35s}
+@keyframes sh{0%,100%{transform:none}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.ad{display:flex;align-items:center;gap:12px;background:var(--ink2);color:#fff;border-radius:18px;padding:14px;margin-top:14px;text-decoration:none}
+.ad b{display:block;font-size:14.5px}
+.ad span{font-size:12.5px;color:#cfccf5}
+.ad i{font-style:normal;margin-left:auto;background:var(--yel);color:#2a2000;border-radius:999px;padding:8px 12px;font-weight:800;font-size:13px;white-space:nowrap}
+</style>
+</head>
+<body>
+
+<div class="login" id="login">
+  <form class="lbox" id="loginForm" autocomplete="off">
+    <div class="logo"><b><i class="l1">K</i><i class="l2">i</i><i class="l3">n</i><i class="l4">d</i><i class="l5">e</i><i class="l6">r</i> Land</b><small>панель управления</small></div>
+    <p>Введите пароль, чтобы войти в админку</p>
+    <label for="pwd">Пароль</label>
+    <div class="pw"><input id="pwd" type="password" autocomplete="current-password" placeholder="••••••••"><button type="button" id="eye" aria-label="Показать пароль">👁</button></div>
+    <div class="err" id="err"></div>
+    <button class="btn btn-p btn-w" type="submit" style="margin-top:6px">Войти</button>
+    <a href="index.html" style="display:block;text-align:center;margin-top:14px;font-size:13.5px;color:var(--muted)">← Вернуться на сайт</a>
+  </form>
+</div>
+
+<div class="top"><div class="top-in">
+  <div class="row1">
+    <div class="logo"><b><i class="l1">K</i><i class="l2">i</i><i class="l3">n</i><i class="l4">d</i><i class="l5">e</i><i class="l6">r</i> Land</b><small>панель управления</small></div>
+    <div><a class="view" href="index.html" target="_blank" rel="noopener">Открыть сайт ↗</a><button class="logout" id="logout">Выйти</button></div>
+  </div>
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-t="rq">Заявки <em id="newCount" style="display:none"></em></button>
+    <button class="tab" data-t="pr">Цены</button>
+    <button class="tab" data-t="promo">Акция</button>
+    <button class="tab" data-t="st">Контакты</button>
+    <button class="tab" data-t="about">Что умеет</button>
+  </div>
+</div></div>
+
+<main>
+  <div class="demo"><b>Демо-режим.</b> Поменяйте цену или акцию, нажмите «Сохранить» и откройте сайт: изменения уже там. В демо данные хранятся в этом браузере, в рабочей версии они сохраняются на сервере и видны всем посетителям.</div>
+  <div id="view"></div>
+</main>
+
+<div class="sheet" id="sheet"><div class="sheet-in" id="sheetIn"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script>
+(function(){
+  var HASH = 'bd63ce368fac970077ab047b37f281e58d74eb7fb37020a0a2ab5e04fccff31a', KEY = 'kinderland_admin_auth';
+  var login = document.getElementById('login');
+  function hex(buf){ return Array.prototype.map.call(new Uint8Array(buf), function(b){ return ('0'+b.toString(16)).slice(-2); }).join(''); }
+  function sha(t){ return crypto.subtle.digest('SHA-256', new TextEncoder().encode(t)).then(hex); }
+  function authed(){ try { return localStorage.getItem(KEY) === HASH; } catch(e){ return false; } }
+  if (authed()) login.style.display = 'none'; else setTimeout(function(){ document.getElementById('pwd').focus(); }, 50);
+  document.getElementById('eye').addEventListener('click', function(){ var i = document.getElementById('pwd'); i.type = i.type === 'password' ? 'text' : 'password'; });
+  document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = document.getElementById('pwd').value.trim(), err = document.getElementById('err'), box = this;
+    if (!v) { err.textContent = 'Введите пароль'; return; }
+    sha('kinderland:' + v).then(function(h){
+      if (h === HASH) { try { localStorage.setItem(KEY, HASH); } catch(x){} login.style.display = 'none'; err.textContent = ''; }
+      else { err.textContent = 'Неверный пароль'; box.classList.remove('shake'); void box.offsetWidth; box.classList.add('shake'); document.getElementById('pwd').select(); }
+    });
+  });
+  document.getElementById('logout').addEventListener('click', function(){ try { localStorage.removeItem(KEY); } catch(e){} document.getElementById('pwd').value = ''; login.style.display = 'flex'; });
+})();
+</script>
+<script>
+(function(){
+  var D = KL.load(), esc = KL.esc, money = KL.money;
+  var $ = function(id){ return document.getElementById(id); };
+  var tab = 'rq', cat = 'passes', rqFilter = 'all';
+  var CATS = [['passes','Безлимит'],['extras','Доп. услуги'],['bday','Дни рождения']];
+
+  function toast(t){ var e = $('toast'); e.textContent = t; e.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(function(){ e.classList.remove('show'); }, 2200); }
+  function persist(msg){ if (KL.save(D)) toast(msg || 'Сохранено. Уже на сайте ✓'); else toast('Не удалось сохранить'); }
+  function openSheet(html){ $('sheetIn').innerHTML = html; $('sheet').classList.add('show'); }
+  function closeSheet(){ $('sheet').classList.remove('show'); }
+  $('sheet').addEventListener('click', function(e){ if (e.target === this) closeSheet(); });
+
+  var ST = { 'new':['Новая','b-new'], ok:['Подтверждена','b-ok'], done:['Прошла','b-done'], no:['Отменена','b-no'] };
+
+  function newCount(){ var n = KL.requests().filter(function(r){ return r.status === 'new'; }).length; var e = $('newCount'); e.style.display = n ? 'inline' : 'none'; e.textContent = n; }
+
+  /* ---------- Заявки ---------- */
+  function vRequests(){
+    var all = KL.requests();
+    var today = new Date().toISOString().slice(0,10);
+    var list = all.filter(function(r){ return rqFilter === 'all' || (rqFilter === 'soon' ? (r.date >= today && r.status !== 'no') : r.status === rqFilter); });
+    var sum = all.filter(function(r){ return r.status !== 'no'; }).reduce(function(a,r){ return a + (r.price || 0); }, 0);
+    var h = '<h2>Заявки</h2><div class="sub">Каждая заявка на день рождения с сайта попадает сюда. В рабочей версии она ещё и приходит вам в Telegram.</div>' +
+      '<div class="stats"><div class="stat"><b>' + all.length + '</b><span>всего заявок</span></div>' +
+      '<div class="stat"><b>' + all.filter(function(r){ return r.status === 'new'; }).length + '</b><span>ждут ответа</span></div>' +
+      '<div class="stat"><b>' + money(sum) + '</b><span>сумма заявок</span></div></div>' +
+      '<div class="chips">' + [['all','Все'],['soon','Скоро'],['new','Новые'],['ok','Подтверждены'],['done','Прошли'],['no','Отменены']].map(function(f){
+        return '<button class="chip' + (rqFilter === f[0] ? ' on' : '') + '" data-rf="' + f[0] + '">' + f[1] + '</button>'; }).join('') + '</div>';
+    if (!list.length) h += '<div class="empty">' + (all.length ? 'Здесь пусто' : 'Пока нет заявок.') + '<br><br><a class="btn btn-o" href="index.html#birthday" target="_blank" rel="noopener">Сделать тестовую заявку на сайте</a></div>';
+    list.forEach(function(r){
+      var s = ST[r.status] || ST['new'], d = r.date ? new Date(r.date + 'T12:00') : null;
+      var phone = String(r.phone || '').replace(/\D/g, '');
+      h += '<div class="card"><div class="bk-h"><b>' + esc(r.name || 'Без имени') + (r.example ? '<span class="ex">пример</span>' : '') + '</b><span class="badge ' + s[1] + '">' + s[0] + '</span></div>' +
+        '<div class="meta">' +
+        '<div>📅 ' + (d ? d.toLocaleDateString('ru-RU', { weekday:'short', day:'numeric', month:'long' }) : 'дата не указана') + '</div>' +
+        '<div>🎂 ' + esc(r.pack || '') + (r.price ? ' · ' + money(r.price) : '') + '</div>' +
+        (r.kids ? '<div>👧 детей: ' + esc(r.kids) + '</div>' : '') +
+        (r.note ? '<div>✏️ ' + esc(r.note) + '</div>' : '') +
+        '<div>📞 ' + esc(r.phone || '') + '</div></div>' +
+        '<div class="acts">' +
+        (r.status === 'new' ? '<button class="btn btn-p" data-st="ok" data-id="' + r.id + '">Подтвердить</button>' : '') +
+        (r.status === 'ok' ? '<button class="btn btn-p" data-st="done" data-id="' + r.id + '">Праздник прошёл</button>' : '') +
+        '<a class="btn btn-g" target="_blank" rel="noopener" href="https://wa.me/' + phone + '?text=' + encodeURIComponent('Здравствуйте, ' + (r.name || '') + '! Это Kinder Land 🎈 Подтверждаем вашу заявку на день рождения' + (d ? ' ' + d.toLocaleDateString('ru-RU', { day:'numeric', month:'long' }) : '') + '. Всё в силе?') + '">Написать в WhatsApp</a>' +
+        '<a class="btn" href="tel:+' + phone + '">Позвонить</a>' +
+        (r.status !== 'no' ? '<button class="btn btn-d" data-st="no" data-id="' + r.id + '">Отменить</button>' : '') + '</div></div>';
+    });
+    return h;
+  }
+
+  /* ---------- Цены ---------- */
+  function vPrices(){
+    var list = D[cat] || [];
+    var h = '<h2>Цены</h2><div class="sub">Нажмите на строку, чтобы изменить название, цену или описание. Переключатель скрывает позицию с сайта, не удаляя её.</div>' +
+      '<div class="chips">' + CATS.map(function(c){ return '<button class="chip' + (c[0] === cat ? ' on' : '') + '" data-cat="' + c[0] + '">' + c[1] + '</button>'; }).join('') + '</div>';
+    list.forEach(function(x, i){
+      var on = x.on !== false;
+      h += '<div class="card svc' + (on ? '' : ' off') + '"><div class="nm" data-edit="' + i + '"><b>' + esc(x.name) + (x.tag ? '<span class="tg">' + esc(x.tag) + '</span>' : '') + (x.pack ? '<span class="tg">пакет</span>' : '') + '</b><small>' + esc(x.desc || '') + '</small></div>' +
+        '<div class="pr" data-edit="' + i + '">' + money(x.price) + '</div><button class="sw' + (on ? ' on' : '') + '" data-sw="' + i + '" aria-label="Показывать на сайте"></button></div>';
+    });
+    h += '<button class="btn btn-o btn-w" data-add="1">+ Добавить позицию</button>';
+    return h;
+  }
+  function editItem(i){
+    var isNew = i === 'new';
+    var x = isNew ? { name:'', desc:'', price:0, tag:'', pack:false } : D[cat][+i];
+    openSheet('<h3>' + (isNew ? 'Новая позиция' : 'Изменить позицию') + '</h3>' +
+      '<label>Название</label><input id="eName" value="' + esc(x.name) + '" placeholder="Например, Безлимит на 2 часа">' +
+      '<label>Цена, ₸</label><input id="ePrice" type="number" inputmode="numeric" value="' + (x.price || '') + '">' +
+      '<label>Описание</label><textarea id="eDesc">' + esc(x.desc || '') + '</textarea>' +
+      (cat === 'passes' ? '<label>Метка (необязательно)</label><input id="eTag" value="' + esc(x.tag || '') + '" placeholder="Например, Хит или Будни">' : '') +
+      (cat === 'bday' ? '<label class="check"><input type="checkbox" id="ePack"' + (x.pack ? ' checked' : '') + '> Выделить как «пакет»</label>' : '') +
+      '<div class="acts" style="margin-top:16px"><button class="btn btn-p" style="flex:1;height:48px" data-save-item="' + i + '">Сохранить</button>' +
+      (isNew ? '' : '<button class="btn btn-d" style="height:48px" data-del-item="' + i + '">Удалить</button>') + '</div>');
+  }
+
+  /* ---------- Акция ---------- */
+  function vPromo(){
+    var p = D.promo || {};
+    return '<h2>Акция</h2><div class="sub">Яркая полоса с акцией в верхней части сайта. Включайте и меняйте в любой момент.</div><div class="card">' +
+      '<label class="check" style="margin-top:0"><input type="checkbox" id="pOn"' + (p.on ? ' checked' : '') + '> Показывать акцию на сайте</label>' +
+      '<label>Текст акции</label><textarea id="pText">' + esc(p.text || '') + '</textarea>' +
+      '<button class="btn btn-p btn-w" style="margin-top:14px" data-save-p="1">Сохранить</button></div>';
+  }
+
+  /* ---------- Контакты ---------- */
+  function vSettings(){
+    var S = D.settings;
+    var f = function(k, l, ph){ return '<label>' + l + '</label><input data-s="' + k + '" value="' + esc(S[k] || '') + '" placeholder="' + (ph || '') + '">'; };
+    return '<h2>Контакты</h2><div class="sub">Эти данные показываются на сайте, а на WhatsApp приходят заявки.</div><div class="card">' +
+      f('wa', 'WhatsApp для заявок', '77059610677') + f('insta', 'Instagram (без @)', 'kinder_land_2015') + f('city', 'Город') + f('address', 'Адрес') + f('hours', 'Время работы') +
+      '<button class="btn btn-p btn-w" style="margin-top:14px" data-save-s="1">Сохранить</button></div>' +
+      '<button class="btn btn-d btn-w" style="margin-top:6px" data-reset="1">Сбросить демо к начальному виду</button>' +
+      '<a class="ad" href="https://wa.me/77476128411?text=' + encodeURIComponent('Здравствуйте! Хочу похожий сайт для бизнеса') + '" target="_blank" rel="noopener"><div><b>Хотите похожий сайт для бизнеса?</b><span>Напишите Тамерлану в WhatsApp: 8 747 612 84 11</span></div><i>Написать</i></a>';
+  }
+
+  /* ---------- Что умеет ---------- */
+  function vAbout(){
+    var items = [
+      ['💰 Цены', 'Меняете цены безлимитов, доп. услуг и дней рождения. Любую позицию можно скрыть и вернуть одним нажатием.'],
+      ['🎂 Заявки', 'Родители оставляют заявку на день рождения на сайте. Она появляется здесь, и одним нажатием вы подтверждаете её в WhatsApp.'],
+      ['🔥 Акция', 'Включаете и меняете акцию на сайте, когда нужно: малышковые часы, скидки, новогодняя программа.'],
+      ['📍 Контакты', 'Адрес, время работы, WhatsApp и Instagram меняются сами, без программиста.'],
+      ['📲 Telegram', 'По желанию подключаем Telegram-бота: каждая заявка сразу приходит вам в Telegram.'],
+      ['🔒 Доступ', 'Вход по паролю. Пароль знаете только вы.']
+    ];
+    return '<h2>Что умеет админка</h2><div class="sub">Всё, что нужно менять на сайте, без звонков разработчику.</div><div class="info">' +
+      items.map(function(a){ return '<div class="card"><b>' + a[0] + '</b><p>' + a[1] + '</p></div>'; }).join('') + '</div>';
+  }
+
+  function render(){
+    var v = $('view');
+    v.innerHTML = tab === 'rq' ? vRequests() : tab === 'pr' ? vPrices() : tab === 'promo' ? vPromo() : tab === 'st' ? vSettings() : vAbout();
+    [].forEach.call(document.querySelectorAll('.tab'), function(t){ t.classList.toggle('on', t.getAttribute('data-t') === tab); });
+    newCount();
+  }
+
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('[data-t],[data-rf],[data-st],[data-cat],[data-edit],[data-sw],[data-add],[data-save-item],[data-del-item],[data-save-p],[data-save-s],[data-reset]');
+    if (!t) return;
+    if (t.hasAttribute('data-t')) { tab = t.getAttribute('data-t'); render(); window.scrollTo(0, 0); return; }
+    if (t.hasAttribute('data-rf')) { rqFilter = t.getAttribute('data-rf'); render(); return; }
+    if (t.hasAttribute('data-st')) {
+      var arr = KL.requests(), id = t.getAttribute('data-id');
+      arr.forEach(function(r){ if (r.id === id) r.status = t.getAttribute('data-st'); });
+      KL.saveRequests(arr); toast('Статус обновлён'); render(); return;
+    }
+    if (t.hasAttribute('data-cat')) { cat = t.getAttribute('data-cat'); render(); return; }
+    if (t.hasAttribute('data-edit')) { editItem(t.getAttribute('data-edit')); return; }
+    if (t.hasAttribute('data-add')) { editItem('new'); return; }
+    if (t.hasAttribute('data-sw')) { var it = D[cat][+t.getAttribute('data-sw')]; it.on = it.on === false; persist(it.on ? 'Позиция показана на сайте ✓' : 'Позиция скрыта с сайта'); render(); return; }
+    if (t.hasAttribute('data-save-item')) {
+      var i = t.getAttribute('data-save-item'), name = $('eName').value.trim();
+      if (!name) { toast('Введите название'); return; }
+      var obj = { name: name, desc: $('eDesc').value.trim(), price: Math.max(0, Math.round(Number($('ePrice').value) || 0)) };
+      if (cat === 'passes') obj.tag = $('eTag').value.trim();
+      if (cat === 'bday') obj.pack = $('ePack').checked;
+      if (i === 'new') D[cat].push(obj); else { obj.on = D[cat][+i].on; D[cat][+i] = obj; }
+      persist(); closeSheet(); render(); return;
+    }
+    if (t.hasAttribute('data-del-item')) { if (confirm('Удалить эту позицию?')) { D[cat].splice(+t.getAttribute('data-del-item'), 1); persist('Удалено'); closeSheet(); render(); } return; }
+    if (t.hasAttribute('data-save-p')) { D.promo = { on: $('pOn').checked, text: $('pText').value.trim() }; persist(); return; }
+    if (t.hasAttribute('data-save-s')) {
+      [].forEach.call(document.querySelectorAll('[data-s]'), function(inp){ D.settings[inp.getAttribute('data-s')] = inp.value.trim(); });
+      D.settings.wa = String(D.settings.wa).replace(/\D/g, '');
+      D.settings.insta = String(D.settings.insta).replace(/^@/, '');
+      persist(); return;
+    }
+    if (t.hasAttribute('data-reset')) { if (confirm('Сбросить все изменения демо?')) { KL.reset(); D = KL.load(); toast('Демо сброшено'); render(); } return; }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

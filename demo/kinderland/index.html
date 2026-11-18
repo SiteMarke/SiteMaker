@@ -425,19 +425,21 @@ footer .logo{font-size:22px}
   else pr.style.display = 'none';
 
   /* prices */
+  function vis(list){ return list.filter(function(x){ return x.on !== false; }); }
   function rows(list, withTag){
-    return list.map(function(x){
+    return vis(list).map(function(x){
       return '<div class="row-p"><div><div class="n">' + esc(x.name) + (withTag && x.tag ? '<span class="tag">' + esc(x.tag) + '</span>' : '') + '</div><div class="d">' + esc(x.desc) + '</div></div><div class="p">' + money(x.price) + '</div></div>';
     }).join('');
   }
   document.getElementById('passes').innerHTML = rows(D.passes, true);
   document.getElementById('extras').innerHTML = rows(D.extras, false);
-  document.getElementById('bday').innerHTML = D.bday.map(function(x){
+  var BD = vis(D.bday);
+  document.getElementById('bday').innerHTML = BD.map(function(x){
     return '<div class="bdp' + (x.pack ? ' pack' : '') + '"><b>' + esc(x.name) + '</b><span class="pr">' + money(x.price) + '</span><span class="d">' + esc(x.desc) + '</span></div>';
   }).join('');
   var sel = document.getElementById('bPack');
-  sel.innerHTML = D.bday.map(function(x, i){ return '<option value="' + i + '">' + esc(x.name) + ' — ' + money(x.price) + '</option>'; }).join('');
-  sel.value = D.bday[1] ? '1' : '0';
+  sel.innerHTML = BD.map(function(x, i){ return '<option value="' + i + '">' + esc(x.name) + ' — ' + money(x.price) + '</option>'; }).join('');
+  sel.value = BD[1] ? '1' : '0';
 
   /* contacts */
   document.getElementById('cAddr').textContent = S.city + ', ' + S.address;
@@ -452,11 +454,12 @@ footer .logo{font-size:22px}
   dt.min = today.toISOString().slice(0, 10);
   document.getElementById('bdForm').addEventListener('submit', function(e){
     e.preventDefault();
-    var p = D.bday[+sel.value] || D.bday[0];
+    var p = BD[+sel.value] || BD[0];
     var d = dt.value ? dt.value.split('-').reverse().join('.') : '—';
     var t = 'Здравствуйте! Хочу забронировать день рождения в Kinder Land.\n' +
       'Дата: ' + d + '\nФормат: ' + p.name + ' (' + money(p.price) + ')\nДетей: ' + (document.getElementById('bKids').value || '—') +
       '\nИмя: ' + document.getElementById('bName').value + '\nТелефон: ' + document.getElementById('bPhone').value;
+    try { KL.addRequest({ name: document.getElementById('bName').value, phone: document.getElementById('bPhone').value, date: dt.value, pack: p.name, price: p.price, kids: document.getElementById('bKids').value || '', note: '' }); } catch (e) {}
     var a = document.getElementById('bdWa'); a.href = wa(t);
     document.getElementById('bdOk').classList.add('show');
     this.querySelectorAll('.f,.two,.hint,button[type=submit]').forEach(function(n){ n.style.display = 'none'; });
