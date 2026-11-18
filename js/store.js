@@ -162,7 +162,15 @@ window.Store = (function () {
   }
   function reset() { return fromFile().then(normalize).then(function (d) { return save(d); }); }
 
-  function createOrder(o) { return req('/order', { method: 'POST', body: o }).then(function (r) { return r || true; }).catch(function () { return false; }); }
+  var CRM = 'https://sitemaker-crm.tamerlankajrolla2.workers.dev';
+  function toCrm(o) { // копия заявки в CRM (только если оставили телефон)
+    try {
+      if (!o || !o.phone) return;
+      fetch(CRM + '/site-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
+        body: JSON.stringify({ name: o.name, phone: o.phone, comment: o.comment, plan: o.plan, total: o.total }) }).catch(function () {});
+    } catch (e) {}
+  }
+  function createOrder(o) { toCrm(o); return req('/order', { method: 'POST', body: o }).then(function (r) { return r || true; }).catch(function () { return false; }); }
   function listOrders(limit) { return req('/orders?limit=' + (limit || 500), { auth: true }); }
   function setStatus(id, status) { return req('/order?id=' + encodeURIComponent(id), { method: 'PATCH', auth: true, body: { status: status } }); }
   function tgInfo() { return req('/tg', { auth: true }); }
