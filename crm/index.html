@@ -465,7 +465,7 @@ function vToday() {
   h += '<div class="kpis">' +
     '<div class="kpi g"><small>Заработал в ' + MONP[+mon.slice(5, 7) - 1] + '</small><b>' + money(earned) + '</b><div class="sub">все оплаты за месяц</div></div>' +
     '<div class="kpi"><small>Должны доплатить</small><b>' + money(sum(debts, debt)) + '</b><div class="sub">' + debts.length + ' клиент(а)</div></div>' +
-    '<div class="kpi"><small>Хостинг в месяц</small><b>' + money(mrr) + '</b><div class="sub">' + clients.length + ' сайт(ов)</div></div>' +
+    '<div class="kpi"><small>Хостинг в месяц</small><b>' + money(mrr) + '</b><div class="sub">платят ' + clients.filter(function (l) { return l.hosting_fee > 0; }).length + ' из ' + clients.length + ' клиентов</div></div>' +
     '<div class="kpi"><small>В переговорах</small><b>' + talks.length + '</b><div class="sub">ответили, ждут пример</div></div></div>';
   h += '<div class="twocol"><div>';
   h += '<div class="h2"><h2>Сделать сегодня</h2><small>' + rem.length + '</small></div><div class="card">';
@@ -484,9 +484,10 @@ function vToday() {
       }).join('') + '</div>';
   }
   h += '</div><div>';
-  h += '<div class="h2"><h2>Хостинг</h2><small>' + (hs.length ? hs.length + ' требуют внимания' : 'всё оплачено') + '</small></div><div class="card">' +
+  var payers = clients.filter(function (l) { return l.hosting_fee > 0; }).length;
+  h += '<div class="h2"><h2>Хостинг</h2><small>' + (hs.length ? hs.length + ' требуют внимания' : payers ? 'всё оплачено' : '') + '</small></div><div class="card">' +
     (hs.length ? hs.map(function (x) { return rowLead(x[0], '<b class="' + x[1].cls + '">' + (x[1].k === 'late' ? x[1].d + ' дн.' : x[1].k === 'soon' ? rel(x[0].hosting_until) : 'нет даты') + '</b><small class="muted">' + money(x[0].hosting_fee) + '/мес</small>'); }).join('')
-      : '<div class="empty" style="padding:18px">' + (clients.length ? 'У всех клиентов хостинг оплачен' : 'Клиентов пока нет') + '</div>') + '</div>';
+      : '<div class="empty" style="padding:18px">' + (!clients.length ? 'Клиентов пока нет' : payers ? 'У всех клиентов хостинг оплачен' : 'Ни у кого не указана плата за хостинг. Впишите её в карточке клиента: «Хостинг ₸/мес»') + '</div>') + '</div>';
   h += '<div class="h2"><h2>Должны доплатить</h2><small>' + money(sum(debts, debt)) + '</small></div><div class="card">' +
     (debts.length ? debts.map(function (l) { return rowLead(l, '<b class="soon">' + money(debt(l)) + '</b><small class="muted">из ' + money(l.price) + '</small>'); }).join('')
       : '<div class="empty" style="padding:18px">Долгов нет</div>') + '</div>';
