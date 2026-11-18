@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ABRAMENKO studio — окрашивание, стрижки, эпиляция в Петропавловске</title>
+<meta name="description" content="Студия красоты Марии Абраменко в Петропавловске: сложное окрашивание, стрижки, лазерная эпиляция и обучение колористике. Две студии, онлайн-запись.">
+<meta name="theme-color" content="#14110d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --olive:#15110d; --olive2:#211b14; --olive3:#2f271c;
+  --cream:#f6f1e8; --sand:#ebe2d2; --sand2:#ded2bd;
+  --gold:#c4a165; --gold2:#a9844a; --brown:#6e5340;
+  --ink:#24221a; --muted:#7a7462; --line:#e3d9c7;
+  --hf:'Cormorant Garamond',Georgia,serif; --bf:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--bf);background:var(--cream);color:var(--ink);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:var(--hf);font-weight:600;letter-spacing:.01em;line-height:1.08}
+h2{font-size:clamp(34px,6vw,52px)}
+.kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:10px}
+.sec{padding:64px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.sec-head p{color:var(--muted);max-width:440px}
+
+/* demo bar */
+.demo{background:var(--ink);color:#e9e1cf;font-size:12.5px;text-align:center;padding:7px 12px}
+.demo a{color:var(--gold);font-weight:700}
+
+/* header */
+header{position:sticky;top:0;z-index:40;background:rgba(246,241,232,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;flex-direction:column;line-height:1;text-decoration:none}
+.logo b{font-family:var(--hf);font-size:28px;letter-spacing:.18em;color:var(--olive);font-weight:700}
+.logo small{font-size:9.5px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold2);margin-top:3px;padding-left:2px}
+nav{display:flex;gap:26px;font-size:14px;font-weight:600}
+nav a{text-decoration:none;color:var(--olive)}
+nav a:hover{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:var(--gold);color:#221d12}
+.btn-gold:hover{background:#d0ae72}
+.btn-olive{background:var(--olive);color:var(--cream)}
+.btn-line{border:1.5px solid rgba(246,241,232,.45);color:var(--cream)}
+.btn-sm{height:40px;padding:0 18px;font-size:14px}
+@media(max-width:860px){nav{display:none}}
+
+/* hero */
+.hero{background:radial-gradient(120% 90% at 85% 0%,#3b2f1c 0%,var(--olive) 55%,#0b0907 100%);color:var(--cream);overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;inset:auto -10% -40% auto;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(196,161,101,.18),transparent 65%);pointer-events:none}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:64px}
+.award{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(196,161,101,.5);border-radius:999px;padding:7px 14px 7px 8px;font-size:12.5px;color:#eadcbf;margin-bottom:22px}
+.award i{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#e7cf98,#a9844a);display:grid;place-items:center;font-style:normal;color:#2a2416;font-size:13px}
+.hero h1{font-size:clamp(64px,13vw,128px);letter-spacing:.14em;font-weight:600;background:linear-gradient(180deg,#f3e2b8 0%,#c4a165 55%,#9c7a43 100%);-webkit-background-clip:text;background-clip:text;color:transparent;margin-left:-4px}
+.hero .sub{font-size:12px;letter-spacing:.55em;text-transform:uppercase;color:#d9c7a1;margin:4px 0 22px 4px}
+.hero .slogan{font-family:var(--hf);font-style:italic;font-size:clamp(26px,4.4vw,36px);color:#fbf6ec;margin-bottom:12px}
+.hero p.lead{color:#d8d2c0;max-width:470px;margin-bottom:26px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.facts{display:flex;gap:22px;flex-wrap:wrap}
+.fact b{display:block;font-family:var(--hf);font-size:30px;color:#f3e2b8;line-height:1}
+.fact span{font-size:12.5px;color:#cfc7b2}
+.stack{position:relative;height:520px}
+.stack figure{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.08)}
+.stack img{width:100%;height:100%;object-fit:cover}
+.stack .p1{width:58%;height:78%;right:0;top:0}
+.stack .p2{width:46%;height:52%;left:0;top:14%}
+.stack .p3{width:40%;height:38%;left:20%;bottom:0}
+.stack .tag{position:absolute;right:6%;bottom:6%;background:var(--cream);color:var(--ink);border-radius:16px;padding:12px 16px;box-shadow:0 20px 40px -15px rgba(0,0,0,.5);z-index:3}
+.stack .tag b{font-family:var(--hf);font-size:26px;display:block;line-height:1}
+.stack .tag span{font-size:12px;color:var(--muted)}
+@media(max-width:860px){
+  .hero-in{grid-template-columns:1fr;padding-top:36px;padding-bottom:48px;gap:30px}
+  .stack{height:380px}
+}
+
+/* promo */
+.promo{background:var(--gold);color:#241e12}
+.promo .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.promo b{font-family:var(--hf);font-size:26px;font-weight:700}
+.promo span{font-size:14px;font-weight:600}
+
+/* services */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:18px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;height:42px;padding:0 18px;border-radius:999px;border:1.5px solid var(--sand2);font-weight:600;font-size:14px;color:var(--olive);background:#fff8}
+.tab.on{background:var(--olive);border-color:var(--olive);color:var(--cream)}
+.svc{background:#fffdf8;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.row{display:flex;align-items:center;gap:14px;padding:16px 18px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row .nm{flex:1;min-width:0}
+.row .nm b{font-weight:600;font-size:15.5px;display:block}
+.row .nm small{color:var(--muted);font-size:12.5px}
+.hit{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--sand);color:var(--brown);border-radius:6px;padding:2px 7px;margin-left:6px;vertical-align:2px}
+.row .pr{font-weight:700;white-space:nowrap;font-size:15.5px}
+.add{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--olive);color:var(--olive);font-size:22px;line-height:1;display:grid;place-items:center;flex:0 0 auto;transition:all .15s}
+.add.on{background:var(--olive);color:var(--cream)}
+.note{font-size:12.5px;color:var(--muted);margin-top:12px}
+
+/* masters */
+.masters{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mcard{background:#fffdf8;border:1px solid var(--line);border-radius:var(--r);padding:22px 18px}
+.mono{width:62px;height:62px;border-radius:50%;background:linear-gradient(140deg,var(--olive3),var(--olive));color:#f1dfb2;font-family:var(--hf);font-size:28px;display:grid;place-items:center;margin-bottom:14px}
+.mcard h3{font-size:26px}
+.mcard .role{font-size:13px;color:var(--gold2);font-weight:700;margin-bottom:8px}
+.mcard p{font-size:13.5px;color:var(--muted)}
+@media(max-width:860px){.masters{grid-template-columns:1fr 1fr}}
+
+/* works */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.work{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:var(--sand)}
+.work img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.work:hover img{transform:scale(1.04)}
+.work span{position:absolute;left:10px;bottom:10px;background:rgba(36,34,26,.72);color:#f6f1e8;font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px}
+@media(max-width:600px){.works{grid-template-columns:1fr 1fr}}
+
+/* atmosphere */
+.atm{background:var(--olive);color:var(--cream)}
+.atm-in{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.atm h2{color:#f3e2b8}
+.atm p{color:#d8d2c0;margin:14px 0 22px}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.perk{border:1px solid rgba(196,161,101,.35);border-radius:14px;padding:14px}
+.perk b{display:block;font-size:14.5px;color:#f6efdf}
+.perk span{font-size:12.5px;color:#c9c2ad}
+.atm-pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.atm-pics img{border-radius:16px;aspect-ratio:3/4;object-fit:cover;width:100%}
+.atm-pics img:nth-child(2){margin-top:40px}
+@media(max-width:860px){.atm-in{grid-template-columns:1fr}}
+
+/* cert */
+.cert{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:center;background:var(--sand);border-radius:28px;padding:28px}
+.cert img{border-radius:18px;aspect-ratio:1;object-fit:cover;width:100%}
+.cert p{color:var(--muted);margin:12px 0 20px}
+@media(max-width:700px){.cert{grid-template-columns:1fr}}
+
+/* reviews */
+.revs{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin}
+.rev{flex:0 0 min(340px,82%);scroll-snap-align:start;background:#fffdf8;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.stars{color:var(--gold2);letter-spacing:2px;font-size:15px;margin-bottom:10px}
+.rev p{font-size:14.5px;margin-bottom:14px}
+.rev b{font-size:13px;color:var(--olive)}
+.gis{display:inline-flex;align-items:center;gap:12px;background:#fffdf8;border:1px solid var(--line);border-radius:999px;padding:8px 18px 8px 8px;text-decoration:none;font-weight:600;font-size:14px}
+.gis i{font-style:normal;background:var(--olive);color:#f3e2b8;border-radius:999px;padding:6px 12px;font-family:var(--hf);font-size:20px;font-weight:700}
+
+/* booking */
+.book{background:linear-gradient(180deg,var(--cream),var(--sand))}
+.bk{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
+.panel{background:#fffdf8;border:1px solid var(--line);border-radius:24px;padding:22px}
+.chosen{display:flex;flex-direction:column;gap:8px;margin:14px 0}
+.ch{display:flex;align-items:center;gap:10px;background:var(--cream);border-radius:12px;padding:10px 12px;font-size:14px}
+.ch span{flex:1}
+.ch b{white-space:nowrap}
+.ch button{width:28px;height:28px;border-radius:50%;background:var(--sand);font-size:16px;line-height:1}
+.empty{color:var(--muted);font-size:14px;padding:14px;border:1.5px dashed var(--sand2);border-radius:12px;text-align:center}
+.total{display:flex;justify-content:space-between;font-weight:700;font-size:16px;border-top:1px solid var(--line);padding-top:12px;margin-top:4px}
+label{display:block;font-size:12.5px;font-weight:700;color:var(--muted);margin:12px 0 6px}
+input,select,textarea{width:100%;height:48px;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:0 14px;font:inherit;font-size:15px;color:var(--ink);outline:none}
+textarea{height:80px;padding:12px 14px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bad{border-color:#c0533b!important}
+.hint{font-size:12.5px;color:var(--brown);background:var(--sand);border-radius:10px;padding:8px 12px;margin-top:10px;display:none}
+.submit{width:100%;margin-top:18px;height:54px;font-size:16px}
+.legal{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+@media(max-width:860px){.bk{grid-template-columns:1fr}}
+
+/* contacts */
+.ct{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cc{background:#fffdf8;border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.cc small{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.cc b{font-size:16px}
+.cc a{display:inline-block;margin-top:10px;font-weight:700;color:var(--olive)}
+@media(max-width:760px){.ct{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:#bdb6a2;padding:34px 0 110px;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer .logo b{color:#e9d6a8}
+footer a{color:var(--gold)}
+
+/* sticky bar */
+.bar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:none}
+.bar a{display:flex;align-items:center;justify-content:space-between;height:58px;padding:0 10px 0 22px;border-radius:999px;background:var(--olive);color:var(--cream);text-decoration:none;font-weight:700;box-shadow:0 18px 40px -12px rgba(0,0,0,.45)}
+.bar a i{font-style:normal;background:var(--gold);color:#241e12;border-radius:999px;padding:10px 16px}
+.bar.show{display:block}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:80;background:rgba(20,19,14,.6);display:none;align-items:center;justify-content:center;padding:18px}
+.modal.show{display:flex}
+.mbox{background:var(--cream);border-radius:24px;padding:28px 24px;max-width:420px;width:100%;text-align:center}
+.mbox h3{font-size:34px;margin-bottom:8px}
+.mbox p{color:var(--muted);margin-bottom:18px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+.hero h1{font-size:clamp(44px,8vw,68px)}
+</style>
+</head>
+<body>
+
+<div class="demo">Демо-сайт от <b>SiteMaker</b> для студии Abramenko · цены в примере ориентировочные · <a href="admin.html">открыть админку →</a></div>
+
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#top"><b>ABRAMENKO</b><small>studio</small></a>
+    <nav>
+      <a href="#services">Услуги и цены</a>
+      <a href="#masters">Мастера</a>
+      <a href="#works">Работы</a>
+      <a href="#edu">Обучение</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn-olive btn-sm" href="#book">Записаться</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-in">
+    <div>
+      <div class="award"><i>★</i> Мария Абраменко · чемпион Азии</div>
+      <h1 id="hName">ABRAMENKO</h1>
+      <div class="sub">studio · Петропавловск</div>
+      <div class="slogan" id="hSlogan">Место, где тебя ценят</div>
+      <p class="lead">Студия красоты в Петропавловске: сложное окрашивание, стрижки, лазерная эпиляция и обучение колористике. Две студии — на Букетова и на Жабаева.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#book">Записаться онлайн</a>
+        <a class="btn btn-line" href="#services">Цены</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><b id="hRating">4,9</b><span>рейтинг в 2ГИС</span></div>
+        <div class="fact"><b id="hRevs">514</b><span>отзывов</span></div>
+        <div class="fact"><b>2</b><span>студии в городе</span></div>
+      </div>
+    </div>
+    <div class="stack">
+      <figure class="p1"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNzUwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBzbGljZSI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZjBkOWE4Ii8+PHN0b3Agb2Zmc2V0PSIuNTUiIHN0b3AtY29sb3I9IiNjOTlhNWIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM3YTRmMmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9Ijc1MCIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGQ9Ik0gLTMwIDQyMyBDIDE2MCA1NDksIDM4MCA1MDEsIDY0MCA0MTgiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMTMiIHN0cm9rZS13aWR0aD0iNiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0gLTMwIDE1NCBDIDE2MCA4OCwgMzgwIDI1NiwgNjQwIDE1NSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xNSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgNTYgQyAxNjAgMTI0LCAzODAgNTEsIDY0MCAtMjgiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDciIHN0cm9rZS13aWR0aD0iNyIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0gLTMwIDYwOSBDIDE2MCA0NzAsIDM4MCA3NTMsIDY0MCA1OTAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMjAiIHN0cm9rZS13aWR0aD0iNyIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0gLTMwIDcxNiBDIDE2MCA4NzEsIDM4MCA2MzYsIDY0MCA3NTUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDYiIHN0cm9rZS13aWR0aD0iNiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0gLTMwIDI0IEMgMTYwIC0xMDYsIDM4MCAtMTE4LCA2NDAgLTQ4IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjE4IiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCAtMTAgQyAxNjAgNjcsIDM4MCAtMywgNjQwIC0xOCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xNCIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgNDkxIEMgMTYwIDQ1MCwgMzgwIDQ4MSwgNjQwIDQ5OCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4wNiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgNDI4IEMgMTYwIDQxMCwgMzgwIDQ3NiwgNjQwIDQ0OSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgNjg0IEMgMTYwIDY1NCwgMzgwIDY4NSwgNjQwIDc1OCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4wOSIgc3Ryb2tlLXdpZHRoPSI0IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgLTEwIEMgMTYwIC0xMzUsIDM4MCAxMTgsIDY0MCA2NiIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4wOCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PC9zdmc+" alt="Тёплый блонд"></figure>
+      <figure class="p2"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNzUwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBzbGljZSI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjNWEzYTJhIi8+PHN0b3Agb2Zmc2V0PSIuNTUiIHN0b3AtY29sb3I9IiMyZTFjMTQiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM4YTViM2MiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9Ijc1MCIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGQ9Ik0gLTMwIDQ0NSBDIDE2MCA0MjIsIDM4MCA1NTUsIDY0MCA0OTUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMTEiIHN0cm9rZS13aWR0aD0iNSIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0gLTMwIC0yOSBDIDE2MCAyLCAzODAgNTgsIDY0MCAtNzkiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMTUiIHN0cm9rZS13aWR0aD0iNSIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0gLTMwIDY2NyBDIDE2MCA4MTQsIDM4MCA2MjMsIDY0MCA2ODkiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDYiIHN0cm9rZS13aWR0aD0iNiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0gLTMwIDEwOCBDIDE2MCAxNzMsIDM4MCAxMzYsIDY0MCAyOSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xMSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgMjAgQyAxNjAgMTU1LCAzODAgLTM4LCA2NDAgLTgxIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjEzIiBzdHJva2Utd2lkdGg9IjQiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA2NTcgQyAxNjAgNzA0LCAzODAgNTQxLCA2NDAgNTQxIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjE5IiBzdHJva2Utd2lkdGg9IjciIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA0ODEgQyAxNjAgNDM1LCAzODAgMzY3LCA2NDAgNDY5IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjE5IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA2MzYgQyAxNjAgNjkyLCAzODAgNTQ1LCA2NDAgNjU0IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjEwIiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA1MzEgQyAxNjAgNDU0LCAzODAgMzk3LCA2NDAgNTUzIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjA4IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCAzNzAgQyAxNjAgNTIxLCAzODAgNDI0LCA2NDAgNDIxIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjE0IiBzdHJva2Utd2lkdGg9IjUiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA1ODMgQyAxNjAgNjE5LCAzODAgNzAwLCA2NDAgNDcwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjE1IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48L3N2Zz4=" alt="Шоколад"></figure>
+      <figure class="p3"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNzUwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBzbGljZSI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZDlkNmQyIi8+PHN0b3Agb2Zmc2V0PSIuNTUiIHN0b3AtY29sb3I9IiM5YTk3OTUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM0YzRhNDkiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9Ijc1MCIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGQ9Ik0gLTMwIDIyNSBDIDE2MCAyMTMsIDM4MCAxNjAsIDY0MCAyNzEiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDkiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0gLTMwIDE5MCBDIDE2MCAxMjUsIDM4MCA5NiwgNjQwIDg4IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjEzIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA3MjIgQyAxNjAgNzEyLCAzODAgNTc3LCA2NDAgNzEyIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjA4IiBzdHJva2Utd2lkdGg9IjciIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA1ODMgQyAxNjAgNDMwLCAzODAgNTY0LCA2NDAgNjc2IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjA4IiBzdHJva2Utd2lkdGg9IjQiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA0MjEgQyAxNjAgNDg0LCAzODAgMzMyLCA2NDAgNTA0IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjE4IiBzdHJva2Utd2lkdGg9IjQiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCAxOTkgQyAxNjAgMjg4LCAzODAgMzIwLCA2NDAgMjIzIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjIwIiBzdHJva2Utd2lkdGg9IjciIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCAzMzIgQyAxNjAgMzkyLCAzODAgMzMyLCA2NDAgMzc5IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjA4IiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA3NzcgQyAxNjAgNzUxLCAzODAgODQ2LCA2NDAgNzk4IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjE1IiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA0MTAgQyAxNjAgNDc3LCAzODAgNTI0LCA2NDAgMzM1IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjEwIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA0OTUgQyAxNjAgNTE3LCAzODAgNDY0LCA2NDAgNDcwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjEyIiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCAyNDYgQyAxNjAgMjg4LCAzODAgMTUyLCA2NDAgMjczIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjEzIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48L3N2Zz4=" alt="Пепельный"></figure>
+      <div class="tag"><b>18 лет</b><span>опыта в профессии</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="promo" id="promo"><div class="wrap"><b id="pTitle"></b><span id="pText"></span><a class="btn btn-olive btn-sm" href="#book">Записаться</a></div></div>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="kicker">Услуги и цены</div><h2>Выберите, что хотите</h2></div>
+      <p>Нажмите «+», чтобы добавить услугу в запись. Можно выбрать несколько.</p>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div class="svc" id="svc"></div>
+    <div class="note">Демо: цены ориентировочные. Студия меняет их сама в админке за минуту.</div>
+  </div>
+</section>
+
+<section class="sec" id="masters" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="kicker">Команда</div><h2>Мастера</h2></div>
+      <p>Можно записаться к своему мастеру или выбрать «любой свободный».</p>
+    </div>
+    <div class="masters" id="masterList"></div>
+  </div>
+</section>
+
+<section class="sec" id="works" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="kicker">Портфолио</div><h2>Наши работы</h2></div>
+      <p>Оттенки для примера, свои фото студия загружает сама в админке. Больше работ в Instagram <a id="igLink" href="https://instagram.com/studio_abramenkomariia" target="_blank" rel="noopener">@studio_abramenkomariia</a></p>
+    </div>
+    <div class="works" id="workList"></div>
+  </div>
+</section>
+
+<section class="sec atm">
+  <div class="wrap atm-in">
+    <div class="reveal">
+      <div class="kicker" style="color:var(--gold)">Студия</div>
+      <h2>Здоровье волос на первом месте</h2>
+      <p>Колористика, которая сохраняет волосы здоровыми: подбираем оттенок под вас и ведём результат от консультации до ухода дома.</p>
+      <div class="perks">
+        <div class="perk"><b>2 студии</b><span>Букетова, 61 · Жабаева, 127</span></div>
+        <div class="perk"><b>Чемпион Азии</b><span>Мария Абраменко</span></div>
+        <div class="perk"><b>Судья конкурсов</b><span>парикмахерское искусство</span></div>
+        <div class="perk"><b>Instagram</b><span id="menLink">@studio_abramenkomariia</span></div>
+      </div>
+    </div>
+    <div class="atm-pics">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNzUwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBzbGljZSI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZThjZGJmIi8+PHN0b3Agb2Zmc2V0PSIuNTUiIHN0b3AtY29sb3I9IiNjNzlhODYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM4ZTVmNGYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9Ijc1MCIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGQ9Ik0gLTMwIDEyOCBDIDE2MCAxODIsIDM4MCAxODIsIDY0MCAxNzAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMTAiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0gLTMwIDc3MSBDIDE2MCA4NTQsIDM4MCA4NzMsIDY0MCA2OTciIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMTMiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0gLTMwIDc2NyBDIDE2MCA2MDgsIDM4MCA2MTQsIDY0MCA3NDEiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMTkiIHN0cm9rZS13aWR0aD0iNSIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0gLTMwIDMwIEMgMTYwIC01NiwgMzgwIC0xMiwgNjQwIDE0NSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4wOSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgNDA3IEMgMTYwIDQ1NSwgMzgwIDU2MiwgNjQwIDQwMCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4wNiIgc3Ryb2tlLXdpZHRoPSI0IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgNTEzIEMgMTYwIDYwNywgMzgwIDQxMiwgNjQwIDU1OSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xOSIgc3Ryb2tlLXdpZHRoPSI0IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgLTE3IEMgMTYwIC05OCwgMzgwIC0xMzIsIDY0MCAtMTA2IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjE3IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA0MjQgQyAxNjAgMzQ2LCAzODAgNTQ2LCA2NDAgNDkwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjExIiBzdHJva2Utd2lkdGg9IjUiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCAxMTQgQyAxNjAgNDksIDM4MCAtMjcsIDY0MCAxMTQiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMTgiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0gLTMwIDM2IEMgMTYwIC0yMywgMzgwIC0xOCwgNjQwIDg4IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjIwIiBzdHJva2Utd2lkdGg9IjciIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA3MzIgQyAxNjAgODY5LCAzODAgNjA4LCA2NDAgNjQzIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjE0IiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiLz48L3N2Zz4=" alt="Оттенок">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNzUwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBzbGljZSI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZjJlM2MyIi8+PHN0b3Agb2Zmc2V0PSIuNTUiIHN0b3AtY29sb3I9IiNkMWFlNmUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM4YTZhMzUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9Ijc1MCIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGQ9Ik0gLTMwIDEwMyBDIDE2MCA2NywgMzgwIC00NSwgNjQwIDEzOSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4yMCIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgNjc4IEMgMTYwIDU3OSwgMzgwIDY5NCwgNjQwIDc2MCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xOCIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgMjM1IEMgMTYwIDEwMCwgMzgwIDIzOCwgNjQwIDI2OCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4wOSIgc3Ryb2tlLXdpZHRoPSI2IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgNjYxIEMgMTYwIDcyMSwgMzgwIDUyNSwgNjQwIDY4OCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xOCIgc3Ryb2tlLXdpZHRoPSI2IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgMjMwIEMgMTYwIDIyOSwgMzgwIDI4NSwgNjQwIDE1OCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4wOSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgNTU2IEMgMTYwIDY2NywgMzgwIDY4NSwgNjQwIDQ1MSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xNiIgc3Ryb2tlLXdpZHRoPSI2IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgMzAyIEMgMTYwIDI3NCwgMzgwIDIzNiwgNjQwIDI4MiIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xMCIgc3Ryb2tlLXdpZHRoPSI3IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgNDg3IEMgMTYwIDM5OSwgMzgwIDQ3MCwgNjQwIDU3OCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xMCIgc3Ryb2tlLXdpZHRoPSI3IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgMTQ5IEMgMTYwIDIxMCwgMzgwIDE0LCA2NDAgMTE2IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjEzIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCAzODkgQyAxNjAgMzU3LCAzODAgNDg4LCA2NDAgMzQxIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjEzIiBzdHJva2Utd2lkdGg9IjUiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCAzNjYgQyAxNjAgMzAwLCAzODAgMzYzLCA2NDAgMzkwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjExIiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiLz48L3N2Zz4=" alt="Оттенок">
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="cert reveal" id="edu">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNzUwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBzbGljZSI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMmEyMTE2Ii8+PHN0b3Agb2Zmc2V0PSIuNTUiIHN0b3AtY29sb3I9IiM3YTVjMmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNlMWMwN2EiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9Ijc1MCIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGQ9Ik0gLTMwIC0yOCBDIDE2MCA1MiwgMzgwIC0xMzEsIDY0MCA0NyIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xMSIgc3Ryb2tlLXdpZHRoPSI3IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgNCBDIDE2MCAtODUsIDM4MCAtOTksIDY0MCAyMSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4wOSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgMTEwIEMgMTYwIC0zNCwgMzgwIC0xOSwgNjQwIDI0IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjA5IiBzdHJva2Utd2lkdGg9IjciIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA0MTggQyAxNjAgNTI3LCAzODAgNDY5LCA2NDAgMzUwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjIwIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA4MCBDIDE2MCAtNzAsIDM4MCAxMjYsIDY0MCA0NyIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4wOSIgc3Ryb2tlLXdpZHRoPSI0IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgMzYxIEMgMTYwIDM4NywgMzgwIDUwNiwgNjQwIDMwNCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4wOSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgMzg2IEMgMTYwIDUyNSwgMzgwIDUwNiwgNjQwIDI4MSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xOSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgMzI0IEMgMTYwIDIzMiwgMzgwIDI2OCwgNjQwIDI0MSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xOCIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTSAtMzAgLTkgQyAxNjAgLTEyNSwgMzgwIDEwMiwgNjQwIDkzIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjEyIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCAxNzIgQyAxNjAgMjMzLCAzODAgMjAwLCA2NDAgMTAxIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjExIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIC0zMCA0NTMgQyAxNjAgMzE0LCAzODAgNDI3LCA2NDAgNDE5IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjEwIiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiLz48L3N2Zz4=" alt="Обучение колористике">
+      <div>
+        <div class="kicker">Обучение</div>
+        <h2>Курс колористики</h2>
+        <p>Мария Абраменко, чемпион Азии и судья парикмахерских конкурсов, обучает мастеров колористике. Расскажем про программу и ближайший поток.</p>
+        <a class="btn btn-olive" id="certBtn" href="#" target="_blank" rel="noopener">Узнать про курс</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews" style="padding-top:10px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="kicker">Отзывы</div><h2>Что говорят гости</h2></div>
+      <a class="gis" id="gisLink" href="#" target="_blank" rel="noopener"><i id="gRate">4,9</i><span>Все <span id="gRevs">514</span> отзывов в 2ГИС →</span></a>
+    </div>
+    <div class="revs" id="revList"></div>
+  </div>
+</section>
+
+<section class="sec book" id="book">
+  <div class="wrap bk">
+    <div class="reveal">
+      <div class="kicker">Онлайн-запись</div>
+      <h2>Запишитесь за минуту</h2>
+      <p style="color:var(--muted);margin:14px 0 18px">Выберите услуги, мастера и удобное время. Администратор подтвердит запись в WhatsApp.</p>
+      <div class="panel">
+        <b>Ваши услуги</b>
+        <div class="chosen" id="chosen"></div>
+        <div class="total" id="totalRow" style="display:none"><span>Итого примерно</span><span id="total"></span></div>
+        <a class="btn btn-line" href="#services" style="color:var(--olive);border-color:var(--sand2);margin-top:12px;height:42px;font-size:14px">+ Добавить услугу</a>
+      </div>
+    </div>
+    <form class="panel" id="form" novalidate>
+      <label for="fMaster">Мастер</label>
+      <select id="fMaster"></select>
+      <div class="two">
+        <div><label for="fDate">Дата</label><input type="date" id="fDate"></div>
+        <div><label for="fTime">Время</label><select id="fTime"></select></div>
+      </div>
+      <div class="hint" id="monHint">Точную стоимость и время колорист назовёт после консультации</div>
+      <label for="fName">Ваше имя</label>
+      <input id="fName" autocomplete="name" placeholder="Например, Айгерим">
+      <label for="fPhone">Телефон</label>
+      <input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 7__ ___ __ __">
+      <label for="fNote">Пожелания (необязательно)</label>
+      <textarea id="fNote" placeholder="Длина волос, желаемый оттенок, фото-референс…"></textarea>
+      <button class="btn btn-gold submit" type="submit">Отправить запись</button>
+      <div class="legal">Нажимая кнопку, вы отправляете заявку в WhatsApp студии</div>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="contacts">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><div class="kicker">Контакты</div><h2>Ждём вас</h2></div></div>
+    <div class="ct">
+      <div class="cc"><small>Адрес</small><b id="cAddr"></b><br><a id="cMap" href="#" target="_blank" rel="noopener">Маршрут в 2ГИС →</a></div>
+      <div class="cc"><small>Время работы</small><b id="cHours"></b><br><a href="#book">Записаться →</a></div>
+      <div class="cc"><small>Связь</small><b id="cPhone"></b><br><a id="cWa" href="#" target="_blank" rel="noopener">Написать в WhatsApp →</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#top"><b>ABRAMENKO</b><small>studio</small></a>
+      <div style="margin-top:12px">© <span id="yr"></span> Abramenko Studio, Петропавловск</div>
+    </div>
+    <div style="max-width:320px">Хотите похожий сайт для бизнеса? <a href="https://wa.me/77476128411" target="_blank" rel="noopener">SiteMaker · 8 747 612 84 11</a></div>
+  </div>
+</footer>
+
+<div class="bar" id="bar"><a href="#book"><span id="barTxt">Записаться</span><i id="barSum"></i></a></div>
+
+<div class="modal" id="ok"><div class="mbox">
+  <h3>Спасибо!</h3>
+  <p>Заявка собрана. Отправьте её в WhatsApp, и администратор подтвердит время.</p>
+  <a class="btn btn-gold" id="okWa" href="#" target="_blank" rel="noopener" style="width:100%">Открыть WhatsApp</a>
+  <button class="btn" style="margin-top:8px;width:100%;color:var(--muted)" onclick="document.getElementById('ok').classList.remove('show')">Закрыть</button>
+</div></div>
+
+<script src="js/data.js"></script>
+<script>
+(function(){
+  var D = WM.load(), S = D.settings, esc = WM.esc, money = WM.money;
+  var cart = [];
+  try { cart = JSON.parse(sessionStorage.getItem('abramenko_cart') || '[]'); } catch(e){}
+  var $ = function(id){ return document.getElementById(id); };
+  var cur = (D.cats[0] || {}).id;
+
+  // chrome
+  $('hName').textContent = S.name || 'ABRAMENKO';
+  $('hSlogan').textContent = S.slogan || '';
+  $('hRating').textContent = S.rating; $('hRevs').textContent = S.reviews;
+  $('gRate').textContent = S.rating; $('gRevs').textContent = S.reviews;
+  $('gisLink').href = S.gis; $('cMap').href = S.gis;
+  $('cAddr').textContent = S.address; $('cHours').textContent = S.hours; $('cPhone').textContent = S.phone;
+  var wa = 'https://wa.me/' + String(S.wa).replace(/\D/g,'');
+  $('cWa').href = wa;
+  $('certBtn').href = wa + '?text=' + encodeURIComponent('Здравствуйте! Хочу узнать про обучение колористике.');
+  $('igLink').href = 'https://instagram.com/' + S.instagram; $('igLink').textContent = '@' + S.instagram;
+  $('menLink').textContent = '@' + S.men;
+  $('yr').textContent = new Date().getFullYear();
+  if (D.promo && D.promo.on) { $('pTitle').textContent = D.promo.title; $('pText').textContent = D.promo.text; }
+  else $('promo').style.display = 'none';
+
+  function save(){ try { sessionStorage.setItem('abramenko_cart', JSON.stringify(cart)); } catch(e){} }
+  function svc(id){ for (var i=0;i<D.services.length;i++) if (D.services[i].id===id) return D.services[i]; }
+  cart = cart.filter(function(id){ var s = svc(id); return s && s.on; });
+
+  function renderTabs(){
+    $('tabs').innerHTML = D.cats.filter(function(c){ return D.services.some(function(s){ return s.cat===c.id && s.on; }); })
+      .map(function(c){ return '<button class="tab'+(c.id===cur?' on':'')+'" data-c="'+esc(c.id)+'">'+esc(c.name)+'</button>'; }).join('');
+  }
+  function renderSvc(){
+    var list = D.services.filter(function(s){ return s.cat===cur && s.on; });
+    $('svc').innerHTML = list.map(function(s){
+      var on = cart.indexOf(s.id) > -1;
+      return '<div class="row"><div class="nm"><b>'+esc(s.name)+(s.hit?'<span class="hit">хит</span>':'')+'</b>'+(s.time?'<small>'+esc(s.time)+'</small>':'')+'</div>'+
+        '<div class="pr">'+(s.from?'от ':'')+money(s.price)+'</div>'+
+        '<button class="add'+(on?' on':'')+'" data-s="'+esc(s.id)+'" aria-label="Добавить">'+(on?'✓':'+')+'</button></div>';
+    }).join('') || '<div class="row"><div class="nm"><small>Скоро здесь появятся услуги</small></div></div>';
+  }
+  function renderCart(){
+    var sum = 0;
+    $('chosen').innerHTML = cart.length ? cart.map(function(id){ var s = svc(id); sum += s.price;
+      return '<div class="ch"><span>'+esc(s.name)+'</span><b>'+(s.from?'от ':'')+money(s.price)+'</b><button type="button" data-x="'+esc(id)+'" aria-label="Убрать">×</button></div>'; }).join('')
+      : '<div class="empty">Пока ничего не выбрано. Добавьте услугу из прайса или просто напишите пожелание.</div>';
+    $('totalRow').style.display = cart.length ? 'flex' : 'none';
+    $('total').textContent = money(sum);
+    $('bar').classList.toggle('show', cart.length > 0);
+    $('barTxt').textContent = 'Записаться · ' + cart.length + ' ' + plural(cart.length, ['услуга','услуги','услуг']);
+    $('barSum').textContent = money(sum);
+    save();
+  }
+  function plural(n, f){ n = Math.abs(n) % 100; var n1 = n % 10; if (n>10&&n<20) return f[2]; if (n1>1&&n1<5) return f[1]; if (n1===1) return f[0]; return f[2]; }
+
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('[data-c],[data-s],[data-x]'); if (!t) return;
+    if (t.dataset.c) { cur = t.dataset.c; renderTabs(); renderSvc(); }
+    if (t.dataset.s) { var i = cart.indexOf(t.dataset.s); if (i>-1) cart.splice(i,1); else cart.push(t.dataset.s); renderSvc(); renderCart(); }
+    if (t.dataset.x) { cart.splice(cart.indexOf(t.dataset.x),1); renderSvc(); renderCart(); }
+  });
+
+  // masters, works, reviews
+  $('masterList').innerHTML = D.masters.map(function(m){
+    return '<div class="mcard reveal"><div class="mono">'+esc((m.name||'?').charAt(0))+'</div><h3>'+esc(m.name)+'</h3><div class="role">'+esc(m.role)+'</div><p>'+esc(m.note||'')+'</p></div>'; }).join('');
+  $('workList').innerHTML = D.works.map(function(w){
+    return '<div class="work reveal"><img src="'+esc(w.img)+'" alt="'+esc(w.cap)+'"><span>'+esc(w.cap)+'</span></div>'; }).join('');
+  $('revList').innerHTML = D.reviews.map(function(r){
+    return '<div class="rev"><div class="stars">★★★★★</div><p>'+esc(r.text)+'</p><b>'+esc(r.name)+' · 2ГИС</b></div>'; }).join('');
+
+  // form
+  $('fMaster').innerHTML = '<option value="">Любой свободный мастер</option>' + D.masters.map(function(m){ return '<option>'+esc(m.name)+' — '+esc(m.role)+'</option>'; }).join('');
+  function mins(t){ var p = String(t).split(':'); return (+p[0])*60 + (+p[1]||0); }
+  function pad(n){ return (n<10?'0':'')+n; }
+  function times(){
+    var o = mins(S.open||'09:00'), c = mins(S.close||'22:00'), out = [];
+    var d = $('fDate').value, now = new Date(), today = now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate());
+    var nowM = now.getHours()*60 + now.getMinutes() + 60;
+    for (var m = o; m <= c - 60; m += 30) { if (d === today && m < nowM) continue; out.push(pad(Math.floor(m/60))+':'+pad(m%60)); }
+    $('fTime').innerHTML = out.length ? out.map(function(t){ return '<option>'+t+'</option>'; }).join('') : '<option value="">На сегодня мест нет — выберите другой день</option>';
+  }
+  var t0 = new Date(); var iso = t0.getFullYear()+'-'+pad(t0.getMonth()+1)+'-'+pad(t0.getDate());
+  $('fDate').min = iso; $('fDate').value = iso;
+  $('fDate').addEventListener('change', function(){ times(); var d = new Date($('fDate').value+'T12:00'); $('monHint').style.display = 'block'; });
+  times(); (function(){ var d=new Date(); $('monHint').style.display = 'block'; })();
+
+  $('fPhone').addEventListener('input', function(){
+    var v = this.value.replace(/\D/g,''); if (v[0]==='8') v = '7'+v.slice(1); if (v && v[0]!=='7') v = '7'+v; v = v.slice(0,11);
+    var f = v ? '+7' : ''; if (v.length>1) f += ' ' + v.slice(1,4); if (v.length>4) f += ' ' + v.slice(4,7); if (v.length>7) f += ' ' + v.slice(7,9); if (v.length>9) f += ' ' + v.slice(9,11);
+    this.value = f;
+  });
+
+  $('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var ok = true;
+    function chk(id, good){ $(id).classList.toggle('bad', !good); if (!good) ok = false; }
+    chk('fName', $('fName').value.trim().length > 1);
+    chk('fPhone', $('fPhone').value.replace(/\D/g,'').length === 11);
+    chk('fDate', !!$('fDate').value);
+    chk('fTime', !!$('fTime').value);
+    if (!ok) { var b = document.querySelector('.bad'); if (b) b.focus(); return; }
+    var items = cart.map(svc), sum = items.reduce(function(a,s){ return a + s.price; }, 0);
+    var d = new Date($('fDate').value+'T12:00');
+    var dstr = d.toLocaleDateString('ru-RU', { weekday:'short', day:'numeric', month:'long' });
+    var lines = ['Здравствуйте! Хочу записаться в студию Abramenko ✨', ''];
+    if (items.length) { lines.push('Услуги:'); items.forEach(function(s){ lines.push('• '+s.name+' — '+(s.from?'от ':'')+money(s.price)); }); lines.push('Итого примерно: '+money(sum), ''); }
+    lines.push('Мастер: ' + ($('fMaster').value || 'любой свободный'));
+    lines.push('Дата и время: ' + dstr + ', ' + $('fTime').value);
+    lines.push('Имя: ' + $('fName').value.trim());
+    lines.push('Телефон: ' + $('fPhone').value);
+    if ($('fNote').value.trim()) lines.push('Пожелания: ' + $('fNote').value.trim());
+    var text = lines.join('\n');
+    WM.addBooking({ id: Date.now(), at: new Date().toISOString(), name: $('fName').value.trim(), phone: $('fPhone').value, master: $('fMaster').value || 'Любой', date: $('fDate').value, time: $('fTime').value, items: items.map(function(s){ return s.name; }), sum: sum, note: $('fNote').value.trim(), status: 'new' });
+    var url = wa + '?text=' + encodeURIComponent(text);
+    $('okWa').href = url;
+    $('ok').classList.add('show');
+    cart = []; renderSvc(); renderCart();
+  });
+
+  renderTabs(); renderSvc(); renderCart();
+
+  // reveal
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){ es.forEach(function(x){ if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }); }, { threshold: .12 }) : null;
+  document.querySelectorAll('.reveal').forEach(function(el){ io ? io.observe(el) : el.classList.add('in'); });
+})();
+</script>
+</body>
+</html>

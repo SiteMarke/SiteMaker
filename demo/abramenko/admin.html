@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Админка Abramenko</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#3a3928">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--olive:#3a3928;--olive2:#4a4934;--cream:#f6f1e8;--sand:#ebe2d2;--sand2:#ded2bd;--gold:#c4a165;--gold2:#a9844a;--ink:#24221a;--muted:#7a7462;--line:#e3d9c7;--ok:#4f7a4a;--bad:#b4533c;--hf:'Cormorant Garamond',Georgia,serif;--bf:'Manrope',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--bf);background:var(--cream);color:var(--ink);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:40px}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+a{color:inherit}
+.top{background:var(--olive);color:var(--cream);position:sticky;top:0;z-index:20}
+.top-in{max-width:880px;margin:0 auto;padding:14px 16px 0}
+.row1{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.logo b{font-family:var(--hf);font-size:24px;letter-spacing:.16em;color:#efd9a6}
+.logo small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#cfc5ab}
+.view{font-size:13px;font-weight:700;color:#efd9a6;text-decoration:none;border:1px solid rgba(239,217,166,.4);border-radius:999px;padding:8px 14px}
+.tabs{display:flex;gap:4px;overflow-x:auto;margin-top:12px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;padding:11px 14px;font-weight:700;font-size:14px;color:#cfc8b3;border-bottom:3px solid transparent}
+.tab.on{color:#fff;border-color:var(--gold)}
+.tab em{font-style:normal;background:var(--gold);color:#241e12;border-radius:999px;padding:0 7px;font-size:12px;margin-left:4px}
+main{max-width:880px;margin:0 auto;padding:16px}
+.demo{background:#fff8e6;border:1px solid #ecd9a8;border-radius:14px;padding:12px 14px;font-size:13px;color:#5e4c22;margin-bottom:16px}
+.demo b{color:#3f3214}
+h2{font-family:var(--hf);font-size:30px;font-weight:700;margin:6px 0 4px}
+.sub{color:var(--muted);font-size:13.5px;margin-bottom:14px}
+.card{background:#fffdf8;border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.stat{background:#fffdf8;border:1px solid var(--line);border-radius:14px;padding:12px}
+.stat b{font-size:22px;font-weight:700;display:block;line-height:1.1}
+.stat span{font-size:12px;color:var(--muted)}
+.bk-h{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.bk-h b{font-size:16px}
+.badge{font-size:11.5px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.b-new{background:#fde9c4;color:#7a5410}.b-ok{background:#dcebd6;color:#355b31}.b-done{background:#e6e2d8;color:#5b5648}.b-no{background:#f5d8cf;color:#8a3a26}
+.meta{font-size:13.5px;color:var(--muted);margin:6px 0}
+.meta div{margin:2px 0}
+.acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:40px;padding:0 14px;border-radius:999px;font-weight:700;font-size:13.5px;text-decoration:none;border:1.5px solid var(--sand2);background:#fff}
+.btn-p{background:var(--olive);border-color:var(--olive);color:var(--cream)}
+.btn-g{background:var(--gold);border-color:var(--gold);color:#241e12}
+.btn-d{color:var(--bad);border-color:#efc9bd}
+.btn-w{width:100%;height:48px;font-size:15px}
+.empty{text-align:center;color:var(--muted);padding:30px 14px;border:1.5px dashed var(--sand2);border-radius:16px}
+.chips{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px;scrollbar-width:none}
+.chip{flex:0 0 auto;height:36px;padding:0 14px;border-radius:999px;border:1.5px solid var(--sand2);font-weight:600;font-size:13.5px;background:#fff}
+.chip.on{background:var(--olive);color:var(--cream);border-color:var(--olive)}
+.svc{display:flex;align-items:center;gap:10px}
+.svc .nm{flex:1;min-width:0}
+.svc .nm b{display:block;font-size:15px}
+.svc .nm small{color:var(--muted);font-size:12.5px}
+.svc .pr{font-weight:700;white-space:nowrap}
+.off{opacity:.45}
+.sw{position:relative;width:46px;height:26px;border-radius:999px;background:#d6cdbb;flex:0 0 auto;transition:background .2s}
+.sw:after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.sw.on{background:var(--ok)}.sw.on:after{left:23px}
+.ib{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--sand2);display:grid;place-items:center;flex:0 0 auto;background:#fff}
+label{display:block;font-size:12.5px;font-weight:700;color:var(--muted);margin:10px 0 5px}
+input,select,textarea{width:100%;height:46px;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:0 12px;font:inherit;font-size:15px;outline:none}
+textarea{height:76px;padding:10px 12px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.check{display:flex;align-items:center;gap:10px;margin-top:12px;font-weight:600;font-size:14px}
+.check input{width:20px;height:20px}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ph{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/5;background:var(--sand)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph button{position:absolute;top:6px;right:6px;width:30px;height:30px;border-radius:50%;background:rgba(36,34,26,.75);color:#fff;font-size:16px}
+.ph input{position:absolute;left:6px;right:6px;bottom:6px;height:32px;font-size:12px;border-radius:8px;padding:0 8px;background:rgba(255,255,255,.92)}
+.upl{border:1.5px dashed var(--sand2);border-radius:12px;aspect-ratio:4/5;display:grid;place-items:center;text-align:center;color:var(--muted);font-weight:700;font-size:13px;background:#fff;cursor:pointer}
+.sheet{position:fixed;inset:0;background:rgba(20,19,14,.55);z-index:50;display:none;align-items:flex-end;justify-content:center}
+.sheet.show{display:flex}
+.sheet-in{background:var(--cream);width:100%;max-width:560px;border-radius:22px 22px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom));max-height:92vh;overflow:auto}
+.sheet-in h3{font-family:var(--hf);font-size:28px;margin-bottom:4px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:999px;font-weight:600;font-size:14px;z-index:90;transition:transform .3s}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.info{display:grid;gap:8px}
+.info .card b{display:block;margin-bottom:2px}
+.info .card p{font-size:13.5px;color:var(--muted)}
+.login{position:fixed;inset:0;z-index:100;background:radial-gradient(120% 90% at 85% 0%,#55543c 0%,var(--olive) 55%,#2c2b1e 100%);display:flex;align-items:center;justify-content:center;padding:20px}
+.lbox{width:100%;max-width:380px;background:var(--cream);border-radius:24px;padding:28px 22px;box-shadow:0 30px 70px -20px rgba(0,0,0,.6)}
+.lbox .logo{text-align:center;margin-bottom:18px}
+.lbox .logo b{color:var(--olive);font-size:34px}
+.lbox .logo small{color:var(--gold2)}
+.lbox p{color:var(--muted);font-size:14px;text-align:center;margin-bottom:6px}
+.pw{position:relative}
+.pw input{padding-right:52px}
+.pw button{position:absolute;right:4px;top:4px;width:44px;height:38px;border-radius:10px;font-size:18px;color:var(--muted)}
+.err{color:var(--bad);font-size:13.5px;font-weight:600;text-align:center;min-height:20px;margin-top:8px}
+.shake{animation:sh .35s}
+@keyframes sh{0%,100%{transform:none}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.logout{font-size:13px;font-weight:700;color:#cfc8b3;margin-left:8px}
+.ad{display:flex;align-items:center;gap:12px;background:var(--olive);color:var(--cream);border-radius:16px;padding:14px;margin-top:14px;text-decoration:none}
+.ad b{display:block;font-size:14.5px}
+.ad span{font-size:12.5px;color:#d8d2c0}
+.ad i{font-style:normal;margin-left:auto;background:var(--gold);color:#241e12;border-radius:999px;padding:8px 12px;font-weight:700;font-size:13px;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="login" id="login">
+  <form class="lbox" id="loginForm" autocomplete="off">
+    <div class="logo"><b>ABRAMENKO</b><small>панель управления</small></div>
+    <p>Введите пароль, чтобы войти в админку</p>
+    <label for="pwd">Пароль</label>
+    <div class="pw"><input id="pwd" type="password" autocomplete="current-password" placeholder="••••••••"><button type="button" id="eye" aria-label="Показать пароль">👁</button></div>
+    <div class="err" id="err"></div>
+    <button class="btn btn-p btn-w" type="submit" style="margin-top:6px">Войти</button>
+    <a href="index.html" style="display:block;text-align:center;margin-top:14px;font-size:13.5px;color:var(--muted)">← Вернуться на сайт</a>
+  </form>
+</div>
+<div class="top"><div class="top-in">
+  <div class="row1">
+    <div class="logo"><b>ABRAMENKO</b><small>панель управления</small></div>
+    <div><a class="view" href="index.html" target="_blank" rel="noopener">Открыть сайт ↗</a><button class="logout" id="logout">Выйти</button></div>
+  </div>
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-t="bk">Записи <em id="newCount" style="display:none"></em></button>
+    <button class="tab" data-t="svc">Услуги и цены</button>
+    <button class="tab" data-t="ms">Мастера</button>
+    <button class="tab" data-t="ph">Фото работ</button>
+    <button class="tab" data-t="pr">Акция</button>
+    <button class="tab" data-t="st">Контакты</button>
+    <button class="tab" data-t="about">Что умеет</button>
+  </div>
+</div></div>
+
+<main>
+  <div class="demo"><b>Демо-режим.</b> Попробуйте: поменяйте цену или акцию, нажмите «Сохранить» и откройте сайт — изменения уже там. В демо изменения хранятся в этом браузере. В рабочей версии данные в облаке, а новые записи сразу приходят в Telegram.</div>
+  <div id="view"></div>
+</main>
+
+<div class="sheet" id="sheet"><div class="sheet-in" id="sheetIn"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script>
+(function(){
+  var HASH = '1c260bfd700777a70736929ac3b72698e78638168bdb4b6d4c85000237aeb18b', KEY = 'abramenko_admin_auth';
+  var login = document.getElementById('login');
+  function hex(buf){ return Array.prototype.map.call(new Uint8Array(buf), function(b){ return ('0'+b.toString(16)).slice(-2); }).join(''); }
+  function sha(t){ return crypto.subtle.digest('SHA-256', new TextEncoder().encode(t)).then(hex); }
+  function authed(){ try { return localStorage.getItem(KEY) === HASH; } catch(e){ return false; } }
+  if (authed()) login.style.display = 'none'; else setTimeout(function(){ document.getElementById('pwd').focus(); }, 50);
+  document.getElementById('eye').addEventListener('click', function(){ var i = document.getElementById('pwd'); i.type = i.type === 'password' ? 'text' : 'password'; });
+  document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = document.getElementById('pwd').value.trim(), err = document.getElementById('err'), box = this;
+    if (!v) { err.textContent = 'Введите пароль'; return; }
+    sha('abramenko:' + v).then(function(h){
+      if (h === HASH) { try { localStorage.setItem(KEY, HASH); } catch(x){} login.style.display = 'none'; err.textContent = ''; }
+      else { err.textContent = 'Неверный пароль'; box.classList.remove('shake'); void box.offsetWidth; box.classList.add('shake'); document.getElementById('pwd').select(); }
+    });
+  });
+  document.getElementById('logout').addEventListener('click', function(){ try { localStorage.removeItem(KEY); } catch(e){} document.getElementById('pwd').value = ''; login.style.display = 'flex'; });
+})();
+</script>
+<script>
+(function(){
+  var D = WM.load(), esc = WM.esc, money = WM.money;
+  var $ = function(id){ return document.getElementById(id); };
+  var tab = 'bk', curCat = (D.cats[0]||{}).id, bkFilter = 'all';
+  function toast(t){ var e = $('toast'); e.textContent = t; e.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(function(){ e.classList.remove('show'); }, 2200); }
+  function persist(msg){ if (WM.save(D)) toast(msg || 'Сохранено. Уже на сайте ✓'); else toast('Не хватает места в браузере'); }
+  function uid(p){ return p + Date.now().toString(36) + Math.random().toString(36).slice(2,5); }
+  function openSheet(html){ $('sheetIn').innerHTML = html; $('sheet').classList.add('show'); }
+  function closeSheet(){ $('sheet').classList.remove('show'); }
+  $('sheet').addEventListener('click', function(e){ if (e.target === this) closeSheet(); });
+
+  var ST = { new:['Новая','b-new'], ok:['Подтверждена','b-ok'], done:['Пришла','b-done'], no:['Отменена','b-no'] };
+
+  function newCount(){ var n = WM.bookings().filter(function(b){ return b.status==='new'; }).length; var e = $('newCount'); e.style.display = n ? 'inline' : 'none'; e.textContent = n; }
+
+  function vBookings(){
+    var all = WM.bookings();
+    var today = new Date().toISOString().slice(0,10);
+    var list = all.filter(function(b){ return bkFilter==='all' || (bkFilter==='today' ? b.date===today : b.status===bkFilter); });
+    var sum = all.filter(function(b){ return b.status!=='no'; }).reduce(function(a,b){ return a+(b.sum||0); },0);
+    var h = '<h2>Записи</h2><div class="sub">Каждая заявка с сайта попадает сюда. В рабочей версии она ещё и приходит в Telegram салона.</div>'+
+      '<div class="stats"><div class="stat"><b>'+all.length+'</b><span>всего заявок</span></div><div class="stat"><b>'+all.filter(function(b){return b.status==='new';}).length+'</b><span>ждут ответа</span></div><div class="stat"><b>'+money(sum).replace(' ₸','')+'</b><span>₸ в записях</span></div></div>'+
+      '<div class="chips">'+[['all','Все'],['today','Сегодня'],['new','Новые'],['ok','Подтверждены'],['done','Пришли'],['no','Отменены']].map(function(f){ return '<button class="chip'+(bkFilter===f[0]?' on':'')+'" data-bf="'+f[0]+'">'+f[1]+'</button>'; }).join('')+'</div>';
+    if (!list.length) h += '<div class="empty">'+(all.length ? 'Здесь пусто' : 'Пока нет записей.<br><br><a class="btn btn-p" href="index.html#services" target="_blank">Сделать тестовую запись на сайте ↗</a><br><br><button class="btn" data-demo="1">Или добавить пример записи</button>')+'</div>';
+    list.forEach(function(b){
+      var s = ST[b.status] || ST.new, d = new Date(b.date+'T12:00');
+      var phone = String(b.phone||'').replace(/\D/g,'');
+      h += '<div class="card"><div class="bk-h"><b>'+esc(b.name)+'</b><span class="badge '+s[1]+'">'+s[0]+'</span></div>'+
+        '<div class="meta"><div>📅 '+d.toLocaleDateString('ru-RU',{weekday:'short',day:'numeric',month:'long'})+', '+esc(b.time)+' · '+esc(b.master)+'</div>'+
+        (b.items&&b.items.length?'<div>💅 '+esc(b.items.join(', '))+'</div>':'')+(b.sum?'<div>💰 примерно '+money(b.sum)+'</div>':'')+(b.note?'<div>✏️ '+esc(b.note)+'</div>':'')+'<div>📞 '+esc(b.phone)+'</div></div>'+
+        '<div class="acts">'+(b.status==='new'?'<button class="btn btn-p" data-st="ok" data-id="'+b.id+'">Подтвердить</button>':'')+
+        (b.status==='ok'?'<button class="btn btn-p" data-st="done" data-id="'+b.id+'">Клиент пришёл</button>':'')+
+        '<a class="btn btn-g" target="_blank" rel="noopener" href="https://wa.me/'+phone+'?text='+encodeURIComponent('Здравствуйте, '+b.name+'! Это студия Abramenko ✨ Подтверждаем вашу запись: '+d.toLocaleDateString('ru-RU',{day:'numeric',month:'long'})+' в '+b.time+'. Ждём вас по адресу '+D.settings.address+'.')+'">WhatsApp</a>'+
+        '<a class="btn" href="tel:+'+phone+'">Позвонить</a>'+
+        (b.status!=='no'?'<button class="btn btn-d" data-st="no" data-id="'+b.id+'">Отменить</button>':'')+'</div></div>';
+    });
+    return h;
+  }
+
+  function vServices(){
+    var h = '<h2>Услуги и цены</h2><div class="sub">Нажмите на услугу, чтобы изменить название, цену или длительность. Переключатель — скрыть или показать на сайте.</div>'+
+      '<div class="chips">'+D.cats.map(function(c){ return '<button class="chip'+(c.id===curCat?' on':'')+'" data-cat="'+esc(c.id)+'">'+esc(c.name)+'</button>'; }).join('')+'<button class="chip" data-newcat="1">+ Раздел</button></div>';
+    D.services.filter(function(s){ return s.cat===curCat; }).forEach(function(s){
+      h += '<div class="card svc'+(s.on?'':' off')+'"><div class="nm" data-edit="'+esc(s.id)+'" style="cursor:pointer"><b>'+esc(s.name)+(s.hit?' · хит':'')+'</b><small>'+esc(s.time||'')+'</small></div><div class="pr" data-edit="'+esc(s.id)+'" style="cursor:pointer">'+(s.from?'от ':'')+money(s.price)+'</div><button class="sw'+(s.on?' on':'')+'" data-tog="'+esc(s.id)+'" aria-label="Показывать"></button></div>';
+    });
+    h += '<button class="btn btn-p btn-w" data-add="1">+ Добавить услугу</button>';
+    return h;
+  }
+  function editService(id){
+    var s = id ? D.services.filter(function(x){ return x.id===id; })[0] : { id:'', cat:curCat, name:'', time:'', price:0, on:true };
+    openSheet('<h3>'+(id?'Изменить услугу':'Новая услуга')+'</h3>'+
+      '<label>Название</label><input id="eName" value="'+esc(s.name)+'" placeholder="Например, Мелирование">'+
+      '<div class="two"><div><label>Цена, ₸</label><input id="ePrice" type="number" inputmode="numeric" value="'+(s.price||'')+'"></div><div><label>Длительность</label><input id="eTime" value="'+esc(s.time||'')+'" placeholder="1 ч 30 мин"></div></div>'+
+      '<label>Раздел</label><select id="eCat">'+D.cats.map(function(c){ return '<option value="'+esc(c.id)+'"'+(c.id===s.cat?' selected':'')+'>'+esc(c.name)+'</option>'; }).join('')+'</select>'+
+      '<label class="check"><input type="checkbox" id="eFrom"'+(s.from?' checked':'')+'> Цена «от»</label>'+
+      '<label class="check"><input type="checkbox" id="eHit"'+(s.hit?' checked':'')+'> Отметка «хит»</label>'+
+      '<div class="acts" style="margin-top:16px"><button class="btn btn-p" style="flex:1;height:48px" data-save-svc="'+esc(id||'')+'">Сохранить</button>'+(id?'<button class="btn btn-d" style="height:48px" data-del-svc="'+esc(id)+'">Удалить</button>':'')+'</div>');
+  }
+
+  function vMasters(){
+    var h = '<h2>Мастера</h2><div class="sub">Мастера показываются на сайте и в форме записи.</div>';
+    D.masters.forEach(function(m){ h += '<div class="card svc"><div class="nm" data-em="'+esc(m.id)+'" style="cursor:pointer"><b>'+esc(m.name)+'</b><small>'+esc(m.role)+'</small></div><button class="ib" data-em="'+esc(m.id)+'">✎</button></div>'; });
+    return h + '<button class="btn btn-p btn-w" data-em="new">+ Добавить мастера</button>';
+  }
+  function editMaster(id){
+    var m = id==='new' ? { id:'', name:'', role:'', note:'' } : D.masters.filter(function(x){ return x.id===id; })[0];
+    openSheet('<h3>'+(m.id?'Мастер':'Новый мастер')+'</h3><label>Имя</label><input id="mName" value="'+esc(m.name)+'"><label>Специализация</label><input id="mRole" value="'+esc(m.role)+'" placeholder="Колорист"><label>Пару слов о мастере</label><textarea id="mNote">'+esc(m.note||'')+'</textarea>'+
+      '<div class="acts" style="margin-top:16px"><button class="btn btn-p" style="flex:1;height:48px" data-save-m="'+esc(m.id)+'">Сохранить</button>'+(m.id?'<button class="btn btn-d" style="height:48px" data-del-m="'+esc(m.id)+'">Удалить</button>':'')+'</div>');
+  }
+
+  function vPhotos(){
+    var h = '<h2>Фото работ</h2><div class="sub">Загрузите фото с телефона — оно сразу появится в разделе «Наши работы». Подпись можно поменять прямо на фото.</div><div class="photos">';
+    D.works.forEach(function(w,i){ h += '<div class="ph"><img src="'+esc(w.img)+'" alt=""><button data-delw="'+i+'" aria-label="Удалить">×</button><input data-capw="'+i+'" value="'+esc(w.cap)+'"></div>'; });
+    return h + '<label class="upl" for="upl">＋<br>Загрузить фото<input type="file" id="upl" accept="image/*" hidden></label></div>';
+  }
+
+  function vPromo(){
+    var p = D.promo;
+    return '<h2>Акция</h2><div class="sub">Полоса с акцией под главным экраном сайта. Включайте и меняйте в любой момент.</div><div class="card">'+
+      '<label class="check" style="margin-top:0"><input type="checkbox" id="pOn"'+(p.on?' checked':'')+'> Показывать акцию на сайте</label>'+
+      '<label>Заголовок</label><input id="pTitle" value="'+esc(p.title)+'"><label>Текст</label><input id="pText" value="'+esc(p.text)+'">'+
+      '<button class="btn btn-p btn-w" style="margin-top:14px" data-save-p="1">Сохранить</button></div>';
+  }
+
+  function vSettings(){
+    var S = D.settings;
+    var f = function(k,l,ph){ return '<label>'+l+'</label><input data-s="'+k+'" value="'+esc(S[k]||'')+'" placeholder="'+(ph||'')+'">'; };
+    return '<h2>Контакты</h2><div class="sub">Эти данные показываются на сайте, а на WhatsApp приходят заявки.</div><div class="card">'+
+      f('slogan','Слоган на главной')+f('wa','WhatsApp для заявок','77761411171')+f('phone','Телефон на сайте')+f('address','Адрес')+f('hours','Время работы (текст)')+
+      '<div class="two"><div>'+f('open','Открытие','09:00')+'</div><div>'+f('close','Закрытие','22:00')+'</div></div>'+f('instagram','Instagram')+f('rating','Рейтинг 2ГИС')+f('reviews','Отзывов в 2ГИС')+
+      '<button class="btn btn-p btn-w" style="margin-top:14px" data-save-s="1">Сохранить</button></div>'+
+      '<button class="btn btn-d btn-w" style="margin-top:6px" data-reset="1">Сбросить демо к начальному виду</button>'+
+      '<a class="ad" href="https://wa.me/77476128411?text='+encodeURIComponent('Здравствуйте! Хочу похожий сайт для бизнеса')+'" target="_blank" rel="noopener"><div><b>Хотите похожий сайт для бизнеса?</b><span>SiteMaker · 8 747 612 84 11</span></div><i>Написать</i></a>';
+  }
+
+  function vAbout(){
+    var it = [
+      ['Цены и услуги — сами','Поменяли прайс или добавили новую услугу — на сайте сразу. Без программиста и без ожидания.'],
+      ['Все записи в одном месте','Заявки с сайта приходят в админку и в Telegram: имя, телефон, услуги, мастер, дата и время. Ничего не теряется в переписке.'],
+      ['Статусы записей','Подтвердили, клиент пришёл, отменил — видно, сколько записей и на какую сумму.'],
+      ['Ответ в один клик','Кнопка WhatsApp с готовым текстом подтверждения и кнопка «Позвонить».'],
+      ['Мастера, фото, акции','Новый мастер, свежие работы, акция на понедельник — меняете с телефона за минуту.'],
+      ['Вход по паролю','Админка закрыта паролем — зайти можете только вы и ваш администратор.']
+    ];
+    return '<h2>Что умеет админка</h2><div class="sub">Это входит в стоимость сайта.</div><div class="info">'+it.map(function(x){ return '<div class="card"><b>'+x[0]+'</b><p>'+x[1]+'</p></div>'; }).join('')+'</div>';
+  }
+
+  function render(){
+    document.querySelectorAll('.tab').forEach(function(t){ t.classList.toggle('on', t.dataset.t===tab); });
+    $('view').innerHTML = { bk:vBookings, svc:vServices, ms:vMasters, ph:vPhotos, pr:vPromo, st:vSettings, about:vAbout }[tab]();
+    newCount();
+    var up = $('upl'); if (up) up.addEventListener('change', upload);
+  }
+
+  function upload(e){
+    var f = e.target.files && e.target.files[0]; if (!f) return;
+    var r = new FileReader();
+    r.onload = function(){ var img = new Image(); img.onload = function(){
+      var W = 640, k = Math.min(1, W/img.width), c = document.createElement('canvas');
+      c.width = Math.round(img.width*k); c.height = Math.round(img.height*k);
+      c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+      D.works.unshift({ img: c.toDataURL('image/jpeg',.8), cap:'Новая работа' }); persist('Фото добавлено на сайт ✓'); render();
+    }; img.src = r.result; };
+    r.readAsDataURL(f);
+  }
+
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('button,[data-edit],[data-em]'); if (!t) return;
+    var d = t.dataset;
+    if (d.t) { tab = d.t; render(); window.scrollTo(0,0); return; }
+    if (d.bf) { bkFilter = d.bf; render(); return; }
+    if (d.st) { var l = WM.bookings(); l.forEach(function(b){ if (String(b.id)===d.id) b.status = d.st; }); WM.saveBookings(l); toast(ST[d.st][0]); render(); return; }
+    if (d.demo) { var dd = new Date(); dd.setDate(dd.getDate()+1); WM.addBooking({ id:Date.now(), at:new Date().toISOString(), name:'Айгерим', phone:'+7 777 123 45 67', master:'Мария Абраменко — Арт-директор, колорист-стилист', date:dd.toISOString().slice(0,10), time:'15:00', items:['Мелирование','Тонирование'], sum:35000, note:'Хочу тёплый блонд, волосы до лопаток', status:'new' }); render(); return; }
+    if (d.cat) { curCat = d.cat; render(); return; }
+    if (d.newcat) { var n = prompt('Название нового раздела'); if (n && n.trim()) { var id = uid('c'); D.cats.push({ id:id, name:n.trim() }); curCat = id; persist('Раздел добавлен ✓'); render(); } return; }
+    if (d.tog) { D.services.forEach(function(s){ if (s.id===d.tog) s.on = !s.on; }); persist(); render(); return; }
+    if (d.edit) { editService(d.edit); return; }
+    if (d.add) { editService(''); return; }
+    if ('saveSvc' in d) {
+      var name = $('eName').value.trim(), price = +$('ePrice').value;
+      if (!name) { $('eName').focus(); return; }
+      var obj = { name:name, price:price||0, time:$('eTime').value.trim(), cat:$('eCat').value, from:$('eFrom').checked, hit:$('eHit').checked };
+      if (d.saveSvc) D.services.forEach(function(s){ if (s.id===d.saveSvc) for (var k in obj) s[k] = obj[k]; });
+      else { obj.id = uid('s'); obj.on = true; D.services.push(obj); }
+      curCat = obj.cat; persist(); closeSheet(); render(); return;
+    }
+    if (d.delSvc) { if (confirmDel()) { D.services = D.services.filter(function(s){ return s.id!==d.delSvc; }); persist('Удалено'); closeSheet(); render(); } return; }
+    if (d.em) { editMaster(d.em); return; }
+    if ('saveM' in d) {
+      var nm = $('mName').value.trim(); if (!nm) { $('mName').focus(); return; }
+      var o = { name:nm, role:$('mRole').value.trim(), note:$('mNote').value.trim() };
+      if (d.saveM) D.masters.forEach(function(m){ if (m.id===d.saveM) for (var k in o) m[k] = o[k]; }); else { o.id = uid('m'); D.masters.push(o); }
+      persist(); closeSheet(); render(); return;
+    }
+    if (d.delM) { if (confirmDel()) { D.masters = D.masters.filter(function(m){ return m.id!==d.delM; }); persist('Удалено'); closeSheet(); render(); } return; }
+    if (d.delw) { D.works.splice(+d.delw,1); persist('Фото убрано'); render(); return; }
+    if (d.saveP) { D.promo = { on:$('pOn').checked, title:$('pTitle').value.trim(), text:$('pText').value.trim() }; persist(); return; }
+    if (d.saveS) { document.querySelectorAll('[data-s]').forEach(function(i){ D.settings[i.dataset.s] = i.value.trim(); }); persist(); return; }
+    if (d.reset) { WM.reset(); WM.saveBookings([]); D = WM.load(); toast('Демо сброшено'); render(); return; }
+  });
+  document.addEventListener('change', function(e){ var c = e.target.dataset && e.target.dataset.capw; if (c != null) { D.works[+c].cap = e.target.value; persist('Подпись сохранена ✓'); } });
+  function confirmDel(){ return window.confirm ? confirm('Удалить?') : true; }
+
+  render();
+})();
+</script>
+</body>
+</html>
