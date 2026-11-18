@@ -1,0 +1,120 @@
+/* Vertebra Medical — слой данных.
+   Цены, тексты, заявки и вход в админку хранятся на сервере sites-api (Cloudflare Worker + D1), код сайта — vertebra.
+   Если сервер недоступен, сайт берёт данные из data/site.json (или из последней сохранённой копии).
+*/
+window.Store = (function () {
+  'use strict';
+
+  var API = 'https://sites-api.tamerlankajrolla2.workers.dev', SITE = 'vertebra';
+  var LS_DATA = 'vm_data', LS_TOK = 'vm_token';
+
+  function ls(k, v) {
+    try {
+      if (v === undefined) { var r = localStorage.getItem(k); return r ? JSON.parse(r) : null; }
+      if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, JSON.stringify(v));
+      return v;
+    } catch (e) { return null; }
+  }
+  var token = ls(LS_TOK) || null;
+  function authed() { return !!(token && token.token && token.exp > Date.now()); }
+
+  function req(path, opt) {
+    opt = opt || {};
+    var h = { 'Content-Type': 'application/json' };
+    if (opt.auth && authed()) h.Authorization = 'Bearer ' + token.token;
+    var body = opt.body;
+    if (body !== undefined && typeof body !== 'string') body = JSON.stringify(body);
+    return fetch(API + path + (path.indexOf('?') < 0 ? '?' : '&') + 'site=' + SITE, {
+      method: opt.method || 'GET', headers: h, cache: 'no-store', body: body
+    }).then(function (r) {
+      return r.text().then(function (t) {
+        var d = null; try { d = t ? JSON.parse(t) : null; } catch (e) { d = t; }
+        if (!r.ok) {
+          var msg = (d && d.error) || ('HTTP ' + r.status);
+          if (r.status === 401 && opt.auth) { logout(); msg = 'вход истёк, обновите страницу и войдите снова'; }
+          if (r.status === 401 && !opt.auth) msg = 'неверный пароль';
+          if (r.status === 413) msg = 'слишком много данных';
+          var e2 = new Error(msg); e2.status = r.status; e2.code = d && d.error; throw e2;
+        }
+        return d;
+      });
+    });
+  }
+
+  function fromFile() {
+    var p = location.pathname.replace(/[^/]*$/, '');
+    return fetch(p + 'data/site.json?v=' + Date.now()).then(function (r) {
+      if (!r.ok) throw new Error('site.json не найден');
+      return r.json();
+    });
+  }
+
+  function arr(x) { return Array.isArray(x) ? x : []; }
+  function normalize(d) {
+    d = d || {};
+    var s = d.settings = d.settings || {};
+    s.credit = s.credit || {};
+    d.promo = d.promo || {}; d.promo.on = d.promo.on !== false;
+    d.consult = d.consult || {}; d.consult.price = +d.consult.price || 0;
+    d.hero = d.hero || {};
+    d.groups = arr(d.groups);
+    if (!d.groups.length) d.groups = [{ id: 'massage', name: 'Массаж и ручные методики' }, { id: 'proc', name: 'Процедуры и аппаратное лечение' }];
+    var gid = d.groups.map(function (g) { return g.id; });
+    d.services = arr(d.services).map(function (x, i) {
+      x.id = x.id || 's' + i; x.name = x.name || ''; x.dur = x.dur || ''; x.desc = x.desc || '';
+      x.price = +x.price || 0; x.on = x.on !== false;
+      if (gid.indexOf(x.grp) < 0) x.grp = gid[gid.length - 1];
+      return x;
+    });
+    d.reviews = arr(d.reviews).filter(function (r) { return r && r.text; });
+    d.faq = arr(d.faq).filter(function (f) { return f && f.q; });
+    d.rev = +d.rev || 1;
+    return d;
+  }
+
+  var cache = null;
+  function load(force) {
+    if (cache && !force) return Promise.resolve(cache);
+    return req('/menu').then(function (r) {
+      var d = r && r.data;
+      if (d && d.settings) { ls(LS_DATA, d); return normalize(d); }
+      return fromFile().then(normalize);
+    }).catch(function () {
+      var local = ls(LS_DATA);
+      return local && local.settings ? normalize(local) : fromFile().then(normalize);
+    }).then(function (d) { cache = d; return d; });
+  }
+  function save(d) {
+    cache = normalize(d);
+    return req('/menu', { method: 'PUT', auth: true, body: JSON.stringify(cache) }).then(function () { ls(LS_DATA, cache); return true; });
+  }
+  function reset() { return fromFile().then(normalize).then(function (d) { return save(d).then(function () { return cache; }); }); }
+
+  function createOrder(o) { return req('/order', { method: 'POST', body: o }).then(function (r) { return r || true; }).catch(function () { return false; }); }
+  function listOrders(limit) { return req('/orders?limit=' + (limit || 300), { auth: true }); }
+  function setStatus(id, status) { return req('/order?id=' + encodeURIComponent(id), { method: 'PATCH', auth: true, body: { status: status } }); }
+  function tgInfo() { return req('/tg', { auth: true }); }
+  function tgLink() { return req('/tg/link', { method: 'POST', auth: true, body: {} }); }
+  function tgOff() { return req('/tg', { method: 'DELETE', auth: true }); }
+
+  function login(pass) {
+    return req('/login', { method: 'POST', body: { password: pass } }).then(function (d) {
+      token = { token: d.token, exp: d.exp }; ls(LS_TOK, token); return token;
+    });
+  }
+  function logout() { token = null; ls(LS_TOK, null); }
+  function changePassword(pw) { return req('/password', { method: 'POST', auth: true, body: { password: pw } }); }
+  // первый запуск: подключить сайт к серверу (нужен ключ разработчика) и задать пароль админки
+  function register(master, pw) { return req('/register', { method: 'POST', body: { master: master, password: pw } }); }
+  // подключён ли сайт к серверу: true / false / null (нет связи)
+  function connected() {
+    return req('/menu').then(function () { return true; }).catch(function (e) { return e.status === 404 ? false : null; });
+  }
+
+  return {
+    load: load, save: save, reset: reset, fromFile: fromFile, normalize: normalize,
+    createOrder: createOrder, listOrders: listOrders, setStatus: setStatus, tgInfo: tgInfo, tgLink: tgLink, tgOff: tgOff,
+    login: login, logout: logout, authed: authed, changePassword: changePassword, register: register, connected: connected,
+    api: API, site: SITE
+  };
+})();

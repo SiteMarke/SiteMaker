@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vertebra Medical — лечение позвоночника и суставов в Петропавловске</title>
+<meta name="description" content="Vertebra Medical, Петропавловск, Жабаева 241. Лечение грыжи, протрузии, артроза, пяточной шпоры и болей в спине без операций. Консультация врача 5 000 ₸ + пробная процедура в подарок. Запись в WhatsApp.">
+<meta name="theme-color" content="#023a57">
+<meta property="og:title" content="Vertebra Medical — центр лечения позвоночника и суставов">
+<meta property="og:description" content="Петропавловск, Жабаева 241. Консультация врача 5 000 ₸ + пробная процедура в подарок.">
+<meta property="og:image" content="img/og.png">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#023a57; --navy2:#01283d; --blue:#2c7cab; --blue2:#1d6893; --sky:#e7f1f7; --bg:#f5f8fa; --gold:#f2b84b;
+  --ink:#0f2433; --muted:#5a6f7e; --line:#d8e4eb; --wa:#25d366; --card:#fff;
+  --hf:'Montserrat',system-ui,sans-serif; --bf:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif; --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--bf);background:var(--bg);color:var(--ink);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:var(--hf);font-weight:800;line-height:1.15;letter-spacing:-.01em;color:var(--navy)}
+h2{font-size:clamp(24px,5.2vw,38px)}
+h3{font-size:17.5px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue2);margin-bottom:12px}
+.eyebrow:before{content:"";width:22px;height:4px;border-radius:4px;background:var(--blue)}
+.lead{color:var(--muted);font-size:16.5px;max-width:660px;margin-top:12px}
+section{padding:64px 0}
+.sec-head{margin-bottom:30px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 24px;border-radius:14px;font-weight:800;font-size:15.5px;text-decoration:none;transition:transform .15s,box-shadow .2s,background .2s,border-color .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn svg{width:21px;height:21px;flex:none}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 12px 26px -12px rgba(37,211,102,.75)}
+.btn-navy{background:var(--navy);color:#fff;box-shadow:0 12px 26px -14px rgba(2,58,87,.8)}
+.btn-navy:hover{background:var(--navy2)}
+.btn-ghost{background:#fff;color:var(--navy);border:2px solid var(--line)}
+.btn-ghost:hover{border-color:var(--blue)}
+.btn-sm{min-height:44px;padding:0 16px;font-size:14px;border-radius:12px}
+
+/* шапка */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(245,248,250,.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+.hdr.sc{border-color:var(--line);box-shadow:0 8px 24px -20px rgba(2,58,87,.6)}
+.hdr .in{display:flex;align-items:center;gap:12px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.brand img{width:44px;height:44px;object-fit:contain}
+.brand b{display:block;font-family:'Oswald',var(--hf);font-weight:600;font-size:22px;letter-spacing:.04em;color:var(--navy);line-height:1}
+.brand small{display:block;font-family:Georgia,'Times New Roman',serif;font-size:11.5px;letter-spacing:.18em;color:var(--navy);margin-top:3px;text-align:right}
+.nav{display:none;gap:22px;font-weight:700;font-size:14px}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--blue2)}
+.hdr .btn-sm.wa{display:none}
+.icb{width:44px;height:44px;border-radius:12px;background:#fff;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--navy);flex:none}
+.icb svg{width:20px;height:20px}
+.icb:hover{border-color:var(--blue)}
+.mnav{position:fixed;inset:0;z-index:80;background:rgba(1,40,61,.5);opacity:0;pointer-events:none;transition:opacity .2s}
+.mnav.on{opacity:1;pointer-events:auto}
+.mnav .p{position:absolute;right:0;top:0;bottom:0;width:min(330px,86vw);background:#fff;padding:18px 20px calc(20px + env(safe-area-inset-bottom));display:flex;flex-direction:column;transform:translateX(30px);transition:transform .25s;overflow:auto}
+.mnav.on .p{transform:none}
+.mnav .x{align-self:flex-end;width:42px;height:42px;border-radius:12px;background:var(--sky);font-size:24px;color:var(--navy);margin-bottom:6px}
+.mnav a{padding:14px 2px;font-weight:700;text-decoration:none;border-bottom:1px solid var(--line);color:var(--navy)}
+.mnav .btn{margin-top:16px;border-bottom:0}
+
+.promo{background:linear-gradient(90deg,var(--navy),var(--blue2));color:#fff;font-weight:700;font-size:14px;text-align:center;padding:10px 16px;line-height:1.4}
+.promo b{color:var(--gold)}
+
+/* первый экран */
+.hero{padding:34px 0 26px;background:radial-gradient(100% 70% at 100% 0%,#dcebf3 0%,rgba(220,235,243,0) 62%)}
+.hero-grid{display:grid;gap:26px;align-items:center}
+.hero h1{font-size:clamp(29px,7.4vw,52px)}
+.hero h1 em{font-style:normal;color:var(--blue2);display:block}
+.hero .lead{font-size:17px}
+.gift{display:flex;gap:12px;align-items:center;background:#fff;border:2px dashed var(--blue);border-radius:16px;padding:12px 14px;margin:22px 0 4px;max-width:520px}
+.gift .ic{width:46px;height:46px;border-radius:12px;background:var(--sky);display:grid;place-items:center;flex:0 0 auto;font-size:23px}
+.gift b{display:block;color:var(--navy);font-size:15.5px;line-height:1.35}
+.gift span{font-size:13.5px;color:var(--muted)}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+@media(max-width:719px){.hero .cta-row .btn{flex:1 1 100%}.hero-art{padding:26px 20px 20px}.hero-art img{width:min(190px,52%)}}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.chip{font-size:13px;font-weight:700;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:7px 13px;color:var(--navy)}
+.hero-art{background:radial-gradient(120% 90% at 85% 10%,#0b5a82 0%,var(--navy) 45%,var(--navy2) 100%);border-radius:30px;padding:34px 26px 26px;position:relative;overflow:hidden;color:#fff;text-align:center}
+.hero-art:before,.hero-art:after{content:"";position:absolute;border-radius:50%;border:1.5px solid rgba(255,255,255,.12)}
+.hero-art:before{width:420px;height:420px;right:-170px;top:-170px}
+.hero-art:after{width:300px;height:300px;left:-150px;bottom:-150px}
+.hero-art img{position:relative;width:min(250px,62%);margin:0 auto}
+.hero-art .cap{position:relative;font-size:14px;color:#bcd6e4;margin-top:18px;font-weight:600}
+.stat3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.stat3 div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 8px;text-align:center;box-shadow:0 14px 30px -24px rgba(2,58,87,.7)}
+.stat3 b{display:block;font-family:var(--hf);font-size:clamp(17px,4.6vw,25px);color:var(--navy);line-height:1.2}
+.stat3 span{font-size:12px;color:var(--muted);line-height:1.3;display:block;margin-top:2px}
+
+/* карточки */
+.cards{display:grid;gap:12px}
+.cond{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.cond .ic{width:46px;height:46px;border-radius:14px;background:var(--sky);display:grid;place-items:center;font-size:23px;margin-bottom:12px}
+.cond p{color:var(--muted);font-size:14.5px;margin-top:6px}
+
+.visit-grid{display:grid;gap:18px}
+.steps{display:grid;gap:12px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 18px 66px;position:relative}
+.step:before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:17px;width:36px;height:36px;border-radius:12px;background:var(--navy);color:#fff;font-family:var(--hf);font-weight:800;display:grid;place-items:center}
+.step p{color:var(--muted);font-size:14.5px;margin-top:3px}
+.cons{background:var(--navy);color:#fff;border-radius:26px;padding:24px 22px;position:relative;overflow:hidden;align-self:start}
+.cons:after{content:"";position:absolute;width:220px;height:220px;right:-80px;top:-80px;border-radius:50%;background:radial-gradient(circle,rgba(44,124,171,.55),rgba(44,124,171,0) 70%)}
+.cons *{position:relative;z-index:1}
+.cons small{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#9cc8e0;font-weight:800}
+.cons .pr{font-family:var(--hf);font-weight:800;font-size:40px;line-height:1.1;margin:6px 0 2px}
+.cons .gf{display:inline-flex;gap:8px;align-items:center;background:rgba(242,184,75,.16);color:#ffd890;border:1px solid rgba(242,184,75,.45);border-radius:12px;padding:8px 12px;font-weight:800;font-size:14.5px;margin:8px 0 12px}
+.cons p{color:#c3d9e6;font-size:14.5px}
+.cons .btn{width:100%;margin-top:18px}
+.note{margin-top:16px;background:var(--sky);border-radius:18px;padding:16px 18px;font-size:14.5px;color:var(--navy)}
+
+.meth{background:var(--navy);color:#fff}
+.meth h2,.meth h3{color:#fff}
+.meth .eyebrow{color:#8fc3df}.meth .eyebrow:before{background:#8fc3df}
+.meth .lead{color:#b5cfdd}
+.mgrid{display:grid;gap:12px}
+.m{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:var(--r);padding:18px}
+.m p{color:#b5cfdd;font-size:14px;margin-top:6px}
+.m .k{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#8fc3df;margin-bottom:6px}
+
+/* цены */
+.pcons{display:flex;justify-content:space-between;align-items:center;gap:14px;background:var(--sky);border:2px solid #bcd7e7;border-radius:var(--r);padding:16px 18px;margin-bottom:16px}
+.pcons b{font-family:var(--hf);color:var(--navy);font-size:16px;display:block}
+.pcons span{font-size:13.5px;color:var(--blue2);font-weight:700}
+.pcons .p{font-family:var(--hf);font-weight:800;color:var(--navy);font-size:20px;white-space:nowrap}
+.pgrid{display:grid;gap:16px}
+.pgroup h3{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--blue2);margin:0 0 10px 4px}
+.ptable{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.row-p{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+.row-p:last-child{border-bottom:0}
+.row-p .n{font-weight:800;color:var(--navy);font-size:15px;line-height:1.35}
+.row-p .d{font-size:12.5px;color:var(--muted);margin-top:2px}
+.row-p .p{font-family:var(--hf);font-weight:800;color:var(--navy);white-space:nowrap;font-size:15.5px}
+.pnote{font-size:13px;color:var(--muted);margin-top:14px}
+
+/* запись */
+.check-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.sym{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sym button{padding:10px 14px;border-radius:12px;border:2px solid var(--line);background:#fff;font-weight:700;font-size:14px;color:var(--navy);transition:.15s}
+.sym button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.hint{margin-top:14px;background:var(--sky);border-radius:14px;padding:14px 16px;font-size:14.5px;color:var(--navy)}
+.book{display:grid;gap:22px;margin-top:22px}
+.form{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.f{margin-bottom:14px;display:block}
+.f span{display:block;font-size:12.5px;font-weight:800;color:var(--muted);margin-bottom:6px;letter-spacing:.02em}
+.f input,.f select,.f textarea{width:100%;height:52px;border:2px solid var(--line);border-radius:14px;padding:0 14px;background:#fff;outline:none;font-size:16px}
+.f textarea{height:auto;min-height:84px;padding:12px 14px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--blue)}
+.f.bad input{border-color:#e05a5a}
+.f.bad span:after{content:" — заполните";color:#d14848}
+.chk{display:flex;gap:10px;align-items:center;font-weight:700;font-size:14px;margin:2px 0 16px;cursor:pointer}
+.chk input{width:20px;height:20px;accent-color:var(--navy)}
+.form .btn{width:100%}
+.form .btn+.btn{margin-top:10px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.done{text-align:center;padding:10px 4px}
+.done .ok{width:64px;height:64px;border-radius:50%;background:var(--sky);color:var(--navy);display:grid;place-items:center;margin:0 auto 10px;font-size:30px;font-weight:800}
+.done h3{margin:4px 0 6px;font-size:21px}
+.done p{color:var(--muted);margin-bottom:16px}
+.side{display:grid;gap:12px;align-content:start}
+.tip{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+.tip b{display:block;color:var(--navy);margin-bottom:2px}
+.tip span{font-size:14px;color:var(--muted)}
+
+/* отзывы */
+.score{display:inline-flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 16px;margin-bottom:22px}
+.score b{font-family:var(--hf);font-size:30px;color:var(--navy)}
+.score span{font-size:13px;color:var(--muted);line-height:1.3}
+.stars{color:var(--gold);letter-spacing:2px;font-size:15px}
+.rv{display:grid;gap:12px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column}
+.rev p{font-size:15px;flex:1}
+.rev .who{display:flex;justify-content:space-between;gap:10px;margin-top:12px;font-size:13px;color:var(--muted)}
+.rev .who b{color:var(--navy)}
+
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:0 18px;margin-bottom:10px}
+.faq summary{list-style:none;cursor:pointer;font-weight:800;color:var(--navy);padding:16px 28px 16px 0;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:22px;color:var(--blue2);font-weight:700}
+.faq details[open] summary:after{content:"–"}
+.faq details p{color:var(--muted);padding:0 0 16px;font-size:14.5px}
+
+.contacts{background:var(--navy);color:#fff}
+.contacts h2{color:#fff}
+.contacts .eyebrow{color:#8fc3df}.contacts .eyebrow:before{background:#8fc3df}
+.cgrid{display:grid;gap:12px;margin-top:22px}
+.ci{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:18px;padding:16px 18px}
+.ci small{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#8fc3df;font-weight:800;margin-bottom:4px}
+.ci a,.ci div{font-weight:700;text-decoration:none}
+.ci em{display:block;font-style:normal;font-weight:500;font-size:13.5px;color:#b5cfdd}
+.contacts .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+
+footer{background:var(--navy2);color:#9bb8c8;padding:28px 0 96px;font-size:12.5px}
+footer .fl{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+footer .fl img{width:120px;opacity:.95}
+footer p{max-width:760px}
+footer b{color:#fff}
+footer a{color:#cfe3ee}
+
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 14px 28px -8px rgba(37,211,102,.8)}
+.fab svg{width:32px;height:32px}
+
+/* настройки */
+.sheet{position:fixed;inset:0;z-index:90;background:rgba(1,40,61,.55);display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
+.sheet.on{opacity:1;pointer-events:auto}
+.sheet .p{width:100%;max-width:460px;max-height:88vh;overflow:auto;background:#fff;border-radius:24px 24px 0 0;padding:22px 18px calc(22px + env(safe-area-inset-bottom));transform:translateY(40px);transition:transform .25s}
+.sheet.on .p{transform:none}
+.sheet .hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.sheet .hd b{font-size:20px;font-weight:800;color:var(--navy);font-family:var(--hf)}
+.sheet .x{width:40px;height:40px;border-radius:12px;background:var(--sky);font-size:22px;color:var(--navy)}
+.mi{display:flex;align-items:center;gap:14px;width:100%;padding:14px;border-radius:16px;border:1px solid var(--line);margin-bottom:8px;text-align:left;text-decoration:none;transition:border-color .2s,background .2s}
+.mi:hover{border-color:var(--blue);background:var(--sky)}
+.mi i{flex:none;width:44px;height:44px;border-radius:12px;background:var(--sky);display:grid;place-items:center;font-style:normal;font-size:20px}
+.mi b{display:block;font-size:15.5px;color:var(--navy)}
+.mi small{display:block;color:var(--muted);font-size:13px;line-height:1.35}
+.mi.buy{background:var(--navy);border-color:var(--navy)}
+.mi.buy b{color:#fff}.mi.buy small{color:#b5cfdd}.mi.buy i{background:var(--blue)}
+.mi.buy:hover{background:var(--navy2)}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media(min-width:720px){
+  .hero-grid{grid-template-columns:1.15fr .85fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .mgrid{grid-template-columns:repeat(2,1fr)}
+  .rv{grid-template-columns:repeat(2,1fr)}
+  .cgrid{grid-template-columns:repeat(2,1fr)}
+  .book{grid-template-columns:1.2fr .8fr}
+  .pgrid{grid-template-columns:repeat(2,1fr);align-items:start}
+}
+@media(min-width:960px){
+  .nav{display:flex}.burger{display:none}.hdr .btn-sm.wa{display:inline-flex}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .mgrid{grid-template-columns:repeat(4,1fr)}
+  .visit-grid{grid-template-columns:1.6fr 1fr;align-items:start}
+  .cgrid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:380px){.brand b{font-size:19px}.brand img{width:38px;height:38px}.hdr .in{gap:8px}}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr"><div class="wrap in">
+  <a class="brand" href="#top" aria-label="Vertebra Medical — на главную">
+    <img src="img/emblem.png" alt="" width="44" height="44">
+    <span><b>VERTEBRA</b><small>MEDICAL</small></span>
+  </a>
+  <nav class="nav">
+    <a href="#help">С чем помогаем</a><a href="#visit">Консультация</a><a href="#methods">Методы</a><a href="#prices">Цены</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
+  </nav>
+  <a class="btn btn-wa btn-sm wa" data-wa href="#" target="_blank" rel="noopener">Записаться</a>
+  <button class="icb" id="gearBtn" type="button" aria-label="Настройки"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+  <button class="icb burger" id="burger" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+
+<div class="mnav" id="mnav"><div class="p">
+  <button class="x" data-close aria-label="Закрыть">×</button>
+  <a href="#help" data-close>С чем помогаем</a><a href="#visit" data-close>Консультация</a><a href="#methods" data-close>Методы лечения</a><a href="#prices" data-close>Цены</a><a href="#check" data-close>Запись</a><a href="#reviews" data-close>Отзывы</a><a href="#faq" data-close>Вопросы</a><a href="#contacts" data-close>Контакты</a><a href="#" data-close id="mSet">⚙ Настройки</a>
+  <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Записаться в WhatsApp</a>
+</div></div>
+
+<div class="promo" id="promo" hidden></div>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow" id="hEyebrow">Петропавловск · Жабаева, 241</div>
+      <h1 id="hTitle">Лечим позвоночник и суставы <em>без операций</em></h1>
+      <p class="lead" id="hText"></p>
+      <div class="gift"><div class="ic">🎁</div><div><b id="hGift">Консультация врача 5 000 ₸</b><span id="hGift2">+ пробная процедура в подарок</span></div></div>
+      <div class="cta-row">
+        <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.5c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.6.9 1-3.5-.2-.4C3.1 15.6 2.5 13.8 2.5 12 2.5 6.8 6.8 2.5 12 2.5S21.5 6.8 21.5 12 17.2 21.5 12 21.5zM12 .5C5.7.5.5 5.7.5 12c0 2 .5 4 1.5 5.7L.5 23.5l6-1.6c1.7.9 3.6 1.4 5.5 1.4 6.3 0 11.5-5.2 11.5-11.5S18.3.5 12 .5z"/></svg>Записаться в WhatsApp</a>
+        <a class="btn btn-ghost" href="#check">Оставить заявку</a>
+      </div>
+      <div class="chips"><span class="chip">🩻 Приходите со снимками МРТ, КТ</span><span class="chip" id="hHours">🕘 Ежедневно 9:00–20:00</span></div>
+    </div>
+    <div class="hero-art">
+      <img src="img/logo-white.png" alt="Vertebra Medical" width="640" height="717">
+      <div class="cap" id="hTag">Центр лечения позвоночника и суставов</div>
+    </div>
+  </div>
+  <div class="stat3">
+    <div><b id="sRating">5.0</b><span>рейтинг в 2ГИС</span></div>
+    <div><b id="sRev">17</b><span>отзывов пациентов</span></div>
+    <div><b id="sHours">9–20</b><span>ежедневно, по записи</span></div>
+  </div>
+</div></section>
+
+<section id="help"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">С чем к нам приходят</div><h2>Когда стоит обратиться к врачу</h2><p class="lead">Если боль возвращается, таблетки помогают лишь на время или вам предложили операцию, начните с консультации.</p></div>
+  <div class="cards">
+    <div class="cond reveal"><div class="ic">🦴</div><h3>Грыжа и протрузия диска</h3><p>Боль в пояснице или шее отдаёт в ногу или руку, немеют пальцы. Принесите МРТ, и врач скажет, подходит ли вам лечение без операции.</p></div>
+    <div class="cond reveal"><div class="ic">🦵</div><h3>Артроз суставов</h3><p>Колени болят при ходьбе, на лестнице или по утрам. Задача лечения: уменьшить боль и вернуть подвижность.</p></div>
+    <div class="cond reveal"><div class="ic">👣</div><h3>Пяточная шпора</h3><p>Боль в пятке, особенно по утрам и после отдыха. Курс подбирает врач, часто с ударно-волновой терапией.</p></div>
+    <div class="cond reveal"><div class="ic">🧍</div><h3>Боли в спине</h3><p>Ноет поясница, тяжело долго сидеть или спать. Врач найдёт причину, а не только уберёт симптом.</p></div>
+    <div class="cond reveal"><div class="ic">💆</div><h3>Шея и плечи</h3><p>Напряжение, скованность, головные боли после работы за компьютером. Массаж и процедуры по назначению врача.</p></div>
+    <div class="cond reveal"><div class="ic">👵</div><h3>Для родителей и старшего возраста</h3><p>Если мама или папа всё реже выходят из дома из-за болей, запишите их на консультацию. Врач объяснит, чем можно помочь.</p></div>
+  </div>
+</div></section>
+
+<section id="visit" style="background:#fff"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Первый приём</div><h2>Как проходит консультация</h2><p class="lead">Многие откладывают визит, потому что не знают, что их ждёт. Всё просто и без спешки.</p></div>
+  <div class="visit-grid">
+    <div>
+      <div class="steps">
+        <div class="step reveal"><h3>Разговор с врачом</h3><p>Вы рассказываете, что беспокоит, когда началось и что уже пробовали.</p></div>
+        <div class="step reveal"><h3>Осмотр и снимки</h3><p>Врач осматривает и изучает ваши МРТ, КТ, рентген и выписки.</p></div>
+        <div class="step reveal"><h3>Диагностика при необходимости</h3><p>Если данных недостаточно, врач скажет, какое обследование пройти.</p></div>
+        <div class="step reveal"><h3>План лечения</h3><p>Индивидуальный план под вашу ситуацию и пробная процедура в подарок.</p></div>
+      </div>
+      <div class="note reveal">🩻 Возьмите с собой МРТ, КТ, рентген или выписки, если они есть. Без снимков тоже можно прийти.</div>
+    </div>
+    <div class="cons reveal">
+      <small>Консультация врача</small>
+      <div class="pr" id="cPrice">5 000 ₸</div>
+      <div class="gf" id="cGift">🎁 Пробная процедура в подарок</div>
+      <p id="cText"></p>
+      <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Записаться в WhatsApp</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="meth" id="methods"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Методы лечения</div><h2>Современное оборудование и ручная работа</h2><p class="lead">Метод подбирает врач после осмотра. Часто лечение сочетает несколько процедур.</p></div>
+  <div class="mgrid">
+    <div class="m reveal"><span class="k">Аппаратно</span><h3>Ударно-волновая терапия</h3><p>Акустические волны воздействуют на проблемную зону. Применяют при пяточной шпоре, болях в суставах и сухожилиях.</p></div>
+    <div class="m reveal"><span class="k">Аппаратно</span><h3>Магнит SIS</h3><p>Высокоинтенсивная магнитная стимуляция для спины, суставов и мышц.</p></div>
+    <div class="m reveal"><span class="k">Аппаратно</span><h3>Лазер и ультразвук</h3><p>Лазерная и ультразвуковая терапия по назначению врача.</p></div>
+    <div class="m reveal"><span class="k">Аппаратно</span><h3>Электротерапия</h3><p>ВТЭС, миостимуляция и электрофорез подбираются под вашу задачу.</p></div>
+    <div class="m reveal"><span class="k">Руки специалиста</span><h3>Мануальная терапия</h3><p>Работа руками специалиста при болях в спине и шее.</p></div>
+    <div class="m reveal"><span class="k">Руки специалиста</span><h3>ФДМ-терапия</h3><p>Ручная методика работы с фасциями, сеанс 30–60 минут.</p></div>
+    <div class="m reveal"><span class="k">Врач</span><h3>PRP-терапия и иглотерапия</h3><p>PRP: плазма из вашей собственной крови. Иглотерапия как часть комплексного курса.</p></div>
+    <div class="m reveal"><span class="k">Руки специалиста</span><h3>Лечебный массаж</h3><p>Общий массаж, массаж спины, ног и шейно-воротниковой зоны.</p></div>
+  </div>
+</div></section>
+
+<section id="prices"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Цены</div><h2>Стоимость услуг</h2><p class="lead">Точный курс лечения врач подберёт после консультации.</p></div>
+  <div class="pcons reveal"><div><b>Консультация врача</b><span id="pGift">🎁 + пробная процедура в подарок</span></div><div class="p" id="pCons">5 000 ₸</div></div>
+  <div class="pgrid" id="plist"></div>
+  <p class="pnote">Цены указаны за один сеанс. Уточнить и записаться можно у администратора в WhatsApp.</p>
+</div></section>
+
+<section id="check" style="background:#fff"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Запись</div><h2>Что вас беспокоит?</h2><p class="lead">Отметьте, что подходит, и оставьте заявку. Администратор перезвонит или напишет в WhatsApp и подберёт удобное время.</p></div>
+  <div class="check-box reveal">
+    <b style="color:var(--navy)">Отметьте, что беспокоит:</b>
+    <div class="sym" id="sym"></div>
+    <div class="hint" id="hint" hidden></div>
+  </div>
+  <div class="book">
+    <div class="form reveal" id="formBox">
+      <form id="form" autocomplete="on" novalidate>
+        <label class="f"><span>С чем обращаетесь</span><select name="problem" id="fProb"></select></label>
+        <label class="f" id="f-name"><span>Ваше имя</span><input name="name" autocomplete="name" placeholder="Например, Марат"></label>
+        <label class="f" id="f-phone"><span>Телефон</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 7__ ___ __ __"></label>
+        <label class="f"><span>Комментарий (необязательно)</span><textarea name="comment" rows="2" placeholder="Удобное время, что беспокоит"></textarea></label>
+        <label class="chk"><input type="checkbox" name="mri"> У меня есть МРТ, КТ или рентген</label>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-navy" type="submit" id="fSend">Отправить заявку</button>
+        <button class="btn btn-wa" type="button" id="fWa">Записаться через WhatsApp</button>
+      </form>
+    </div>
+    <div class="side">
+      <div class="tip reveal"><b id="tGift">🎁 Пробная процедура в подарок</b><span id="tGift2">при записи на консультацию</span></div>
+      <div class="tip reveal"><b id="tHours">🕘 Ежедневно 9:00–20:00</b><span id="tHours2">приём по предварительной записи</span></div>
+      <div class="tip reveal"><b id="tAddr">📍 Жабаева, 241</b><span id="tCity">Петропавловск</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Отзывы</div><h2>Что говорят пациенты</h2></div>
+  <div class="score reveal"><b id="rScore">5.0</b><div><div class="stars">★★★★★</div><span id="rCount">17 отзывов в 2ГИС</span></div></div>
+  <div class="rv" id="rlist"></div>
+  <p class="pnote">Отзывы пациентов с карточки Vertebra Medical в 2ГИС. Результат лечения индивидуален.</p>
+</div></section>
+
+<section id="faq" style="background:#fff"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Вопросы</div><h2>Частые вопросы</h2></div>
+  <div class="faq reveal" id="flist"></div>
+</div></section>
+
+<section class="contacts" id="contacts"><div class="wrap">
+  <div class="eyebrow">Контакты</div><h2>Как нас найти</h2>
+  <div class="cgrid">
+    <div class="ci"><small>Адрес</small><div id="cAddr"></div><em id="cAddr2"></em></div>
+    <div class="ci"><small>Время работы</small><div id="cHours"></div><em id="cHours2"></em></div>
+    <div class="ci"><small>WhatsApp и звонки</small><a id="cWa" href="#" target="_blank" rel="noopener"></a><em><a id="cTel" href="#">позвонить</a></em></div>
+    <div class="ci"><small>Instagram</small><a id="cIg" href="#" target="_blank" rel="noopener"></a></div>
+  </div>
+  <div class="cta-row" style="margin-top:22px">
+    <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">Записаться в WhatsApp</a>
+    <a class="btn btn-ghost" id="cGis" href="#" target="_blank" rel="noopener">Открыть в 2ГИС</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fl"><img src="img/logo-white.png" alt="Vertebra Medical" width="120" height="134"></div>
+  <p><b>Vertebra Medical.</b> <span id="fTag">Центр лечения позвоночника и суставов</span>, <span id="fAddr">Петропавловск</span>. Имеются противопоказания, необходима консультация специалиста. Материалы сайта не заменяют очный приём врача.</p>
+  <p style="margin-top:10px" id="fCredit"></p>
+</div></footer>
+
+<a class="fab" data-wa href="#" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.5c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.6.9 1-3.5-.2-.4C3.1 15.6 2.5 13.8 2.5 12 2.5 6.8 6.8 2.5 12 2.5S21.5 6.8 21.5 12 17.2 21.5 12 21.5zM12 .5C5.7.5.5 5.7.5 12c0 2 .5 4 1.5 5.7L.5 23.5l6-1.6c1.7.9 3.6 1.4 5.5 1.4 6.3 0 11.5-5.2 11.5-11.5S18.3.5 12 .5z"/></svg></a>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="p" id="shBody"></div></div>
+
+<script src="js/store.js?v=1"></script>
+<script>
+(function () {
+'use strict';
+var $ = function (s) { return document.querySelector(s); };
+var esc = function (t) { return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+var money = function (n) { return String(Math.round(+n || 0)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₸'; };
+var digits = function (s) { return String(s || '').replace(/\D/g, ''); };
+var D = null, S = {};
+var HELLO = 'Здравствуйте! Хочу записаться на консультацию в Vertebra Medical.';
+function wa(t) { return 'https://wa.me/' + digits(S.wa) + (t ? '?text=' + encodeURIComponent(t) : ''); }
+function txt(id, v) { var e = document.getElementById(id); if (e) e.textContent = v; }
+function hoursShort(h) { var m = String(h || '').match(/(\d{1,2}):?\d{0,2}\s*[–-]\s*(\d{1,2})/); return m ? (+m[1]) + '–' + (+m[2]) : '—'; }
+
+function render() {
+  S = D.settings;
+  var C = D.consult, giftLine = C.gift ? '+ ' + C.gift.charAt(0).toLowerCase() + C.gift.slice(1) : '';
+  /* ссылки WhatsApp */
+  document.querySelectorAll('[data-wa]').forEach(function (a) { a.href = wa(HELLO); });
+  /* акция */
+  var pr = $('#promo');
+  if (D.promo.on && D.promo.text) { pr.textContent = D.promo.text; pr.hidden = false; } else pr.hidden = true;
+  /* первый экран */
+  var t = String(D.hero.title || '').split(/\s+[—–-]\s+/);
+  $('#hTitle').innerHTML = esc(t[0]) + (t[1] ? ' <em>' + esc(t.slice(1).join(' — ')) + '</em>' : '');
+  txt('hText', D.hero.text || '');
+  txt('hEyebrow', S.city + ' · ' + String(S.address || '').replace(/^ул\.\s*/, ''));
+  txt('hGift', C.price ? 'Консультация врача ' + money(C.price) : 'Консультация врача');
+  txt('hGift2', giftLine); $('#hGift2').hidden = !giftLine;
+  txt('hHours', '🕘 ' + (S.hours || ''));
+  txt('hTag', S.tagline || '');
+  txt('sRating', S.rating || '5.0'); txt('sRev', S.reviewsCount || D.reviews.length); txt('sHours', hoursShort(S.hours));
+  /* консультация */
+  txt('cPrice', C.price ? money(C.price) : 'по записи');
+  txt('cGift', C.gift ? '🎁 ' + C.gift : ''); $('#cGift').hidden = !C.gift;
+  txt('cText', C.text || '');
+  txt('pCons', C.price ? money(C.price) : '—'); txt('pGift', C.gift ? '🎁 ' + giftLine : '');
+  txt('tGift', C.gift ? '🎁 ' + C.gift : '🩺 Консультация врача'); txt('tGift2', C.gift ? 'при записи на консультацию' : (C.price ? money(C.price) : ''));
+  /* цены */
+  $('#plist').innerHTML = D.groups.map(function (g) {
+    var list = D.services.filter(function (x) { return x.on && x.grp === g.id; });
+    if (!list.length) return '';
+    return '<div class="pgroup reveal"><h3>' + esc(g.name) + '</h3><div class="ptable">' + list.map(function (x) {
+      return '<div class="row-p"><div><div class="n">' + esc(x.name) + '</div>' + (x.dur || x.desc ? '<div class="d">' + esc([x.dur, x.desc].filter(Boolean).join(' · ')) + '</div>' : '') + '</div><div class="p">' + (x.price ? money(x.price) : 'уточняйте') + '</div></div>';
+    }).join('') + '</div></div>';
+  }).join('');
+  /* запись */
+  txt('tHours', '🕘 ' + (S.hours || '')); txt('tHours2', S.hoursNote || '');
+  txt('tAddr', '📍 ' + String(S.address || '').replace(/^ул\.\s*/, '') + (S.addressNote ? ', ' + S.addressNote : '')); txt('tCity', S.city || '');
+  /* отзывы */
+  txt('rScore', S.rating || '5.0'); txt('rCount', (S.reviewsCount || D.reviews.length) + ' отзывов в 2ГИС');
+  $('#rlist').innerHTML = D.reviews.map(function (r) { return '<div class="rev reveal"><p>«' + esc(r.text) + '»</p><div class="who"><b>' + esc(r.name || '') + '</b><span>' + esc(r.date || '') + '</span></div></div>'; }).join('');
+  $('#reviews').hidden = !D.reviews.length;
+  /* вопросы */
+  $('#flist').innerHTML = D.faq.map(function (f) { return '<details><summary>' + esc(f.q) + '</summary><p>' + esc(f.a || '') + '</p></details>'; }).join('');
+  $('#faq').hidden = !D.faq.length;
+  /* контакты */
+  txt('cAddr', S.city + ', ' + S.address); txt('cAddr2', S.addressNote || '');
+  txt('cHours', S.hours || ''); txt('cHours2', S.hoursNote || '');
+  var cw = $('#cWa'); cw.href = wa(HELLO); cw.textContent = S.phone || ('+' + digits(S.wa));
+  $('#cTel').href = 'tel:+' + digits(S.phone || S.wa);
+  var ig = $('#cIg'); ig.href = 'https://instagram.com/' + S.instagram; ig.textContent = '@' + S.instagram;
+  var gis = $('#cGis'); if (S.gis) gis.href = S.gis; else gis.hidden = true;
+  txt('fTag', S.tagline || ''); txt('fAddr', S.city + ', ' + S.address);
+  $('#fCredit').innerHTML = S.credit && S.credit.text ? 'Сайт сделан <a href="' + esc(S.credit.url || '#') + '" target="_blank" rel="noopener">' + esc(S.credit.text) + '</a>' : '';
+  reveal();
+}
+
+/* что беспокоит */
+var SYM = [
+  ['Болит поясница', 'Грыжа или протрузия', 'Боль в пояснице бывает при грыже или протрузии диска, но причины разные. Принесите МРТ, если оно есть, и врач разберётся.'],
+  ['Отдаёт в ногу или руку', 'Грыжа или протрузия', 'Боль, которая отдаёт в конечность, стоит показать врачу и не откладывать.'],
+  ['Немеют пальцы или ноги', 'Грыжа или протрузия', 'Онемение лучше не терпеть. Врач осмотрит и изучит ваши обследования.'],
+  ['Болят колени или суставы', 'Артроз суставов', 'Боль в суставах при ходьбе и на лестнице бывает при артрозе. Врач осмотрит сустав и расскажет, что можно сделать.'],
+  ['Боль в пятке по утрам', 'Пяточная шпора', 'Боль в пятке по утрам часто связана с пяточной шпорой. План лечения составит врач после осмотра.'],
+  ['Шея и плечи', 'Боль в шее и плечах', 'Скованность и боль в шее бывают после долгой работы за компьютером. Врач подберёт лечение после осмотра.']
+];
+var PROBS = ['Консультация врача', 'Грыжа или протрузия', 'Артроз суставов', 'Пяточная шпора', 'Боль в спине', 'Боль в шее и плечах', 'Массаж', 'Другое'];
+var form = $('#form'), sel = $('#fProb');
+sel.innerHTML = PROBS.map(function (p) { return '<option>' + esc(p) + '</option>'; }).join('');
+$('#sym').innerHTML = SYM.map(function (s, i) { return '<button type="button" data-i="' + i + '">' + esc(s[0]) + '</button>'; }).join('');
+$('#sym').addEventListener('click', function (e) {
+  var b = e.target.closest('button'); if (!b) return;
+  [].forEach.call(this.children, function (x) { x.classList.toggle('on', x === b); });
+  var s = SYM[+b.dataset.i]; sel.value = s[1];
+  var h = $('#hint'); h.innerHTML = '<b>' + esc(s[0]) + '.</b> ' + esc(s[2]) + ' Это не диагноз, заключение даёт врач.'; h.hidden = false;
+});
+
+/* заявка */
+form.phone.addEventListener('input', function () {
+  var d = digits(this.value); if (d[0] === '8') d = '7' + d.slice(1); if (d && d[0] !== '7') d = '7' + d; d = d.slice(0, 11);
+  var f = d ? '+7' : ''; if (d.length > 1) f += ' ' + d.slice(1, 4); if (d.length > 4) f += ' ' + d.slice(4, 7); if (d.length > 7) f += ' ' + d.slice(7, 9); if (d.length > 9) f += ' ' + d.slice(9, 11);
+  this.value = f; $('#f-phone').classList.remove('bad');
+});
+form.name.addEventListener('input', function () { $('#f-name').classList.remove('bad'); });
+function collect() {
+  var ok = true;
+  [['name', !form.name.value.trim()], ['phone', digits(form.phone.value).length !== 11]].forEach(function (x) {
+    var l = $('#f-' + x[0]); l.classList.toggle('bad', x[1]); if (x[1] && ok) { form[x[0]].focus(); ok = false; }
+  });
+  if (!ok) return null;
+  var c = form.comment.value.trim(), mri = form.mri.checked;
+  return { kind: 'request', name: form.name.value.trim(), phone: form.phone.value, service: sel.value, price: D.consult.price || 0,
+    comment: (mri ? 'Есть МРТ, КТ или рентген' : 'Снимков нет') + (c ? '. ' + c : ''), mri: mri, when: sel.value };
+}
+function waText(o) { return 'Здравствуйте! Хочу записаться на консультацию в Vertebra Medical.\nС чем обращаюсь: ' + o.service + '\nМРТ, КТ или рентген: ' + (o.mri ? 'есть' : 'нет') + '\nИмя: ' + o.name + '\nТелефон: ' + o.phone + (form.comment.value.trim() ? '\n' + form.comment.value.trim() : ''); }
+function done(o, mode, url) {
+  var h = mode === 'wa' ? 'Почти готово!' : mode === 'site' ? 'Заявка отправлена!' : 'Отправьте заявку в WhatsApp';
+  var p = mode === 'wa' ? 'Если WhatsApp не открылся сам, нажмите кнопку ниже и отправьте сообщение.' :
+    mode === 'site' ? 'Спасибо, ' + esc(o.name) + '! Администратор свяжется с вами по номеру ' + esc(o.phone) + ' и подберёт время.' :
+    'Сейчас не получилось отправить заявку с сайта. Нажмите кнопку, и сообщение с вашими данными откроется в WhatsApp.';
+  $('#formBox').innerHTML = '<div class="done"><div class="ok">✓</div><h3>' + h + '</h3><p>' + p + '</p><a class="btn btn-wa" href="' + esc(url || wa(waText(o))) + '" target="_blank" rel="noopener">' + (mode === 'site' ? 'Написать в WhatsApp' : 'Открыть WhatsApp') + '</a></div>';
+  $('#formBox').scrollIntoView({ block: 'center', behavior: 'smooth' });
+}
+form.addEventListener('submit', function (e) {
+  e.preventDefault(); var o = collect(); if (!o) return;
+  if (form.website.value) return done(o, 'site');
+  var b = $('#fSend'), url = wa(waText(o)); b.disabled = true; b.textContent = 'Отправляю…';
+  o.via = 'site';
+  Store.createOrder(o).then(function (r) { done(o, r ? 'site' : 'fail', url); });
+});
+$('#fWa').addEventListener('click', function () {
+  var o = collect(); if (!o) return; o.via = 'whatsapp';
+  var url = wa(waText(o));
+  try { navigator.sendBeacon(Store.api + '/order?site=' + Store.site, new Blob([JSON.stringify(o)], { type: 'text/plain' })); } catch (e) { Store.createOrder(o); }
+  var w = window.open(url, '_blank'); if (!w) location.href = url;
+  done(o, 'wa', url);
+});
+
+/* настройки */
+var DEV_WA = '77476128411';
+function openSheet(html) { $('#shBody').innerHTML = html; $('#sheet').classList.add('on'); document.body.style.overflow = 'hidden'; }
+function closeSheet() { $('#sheet').classList.remove('on'); document.body.style.overflow = ''; }
+function showSettings() {
+  var buy = 'https://wa.me/' + DEV_WA + '?text=' + encodeURIComponent('Здравствуйте! Видел сайт Vertebra Medical — хочу похожий сайт для своего бизнеса.');
+  openSheet('<div class="hd"><b id="shT">Настройки</b><button class="x" data-shx aria-label="Закрыть">×</button></div>' +
+    '<button class="mi" data-go="check"><i>📝</i><span><b>Записаться на консультацию</b><small>Оставьте заявку, администратор подберёт время</small></span></button>' +
+    '<button class="mi" data-go="prices"><i>💳</i><span><b>Цены</b><small>Массаж, процедуры и консультация</small></span></button>' +
+    '<a class="mi" href="' + esc(wa(HELLO)) + '" target="_blank" rel="noopener"><i>💬</i><span><b>Связаться с нами</b><small>WhatsApp ' + esc(S.phone || '') + '</small></span></a>' +
+    '<a class="mi buy" href="' + esc(buy) + '" target="_blank" rel="noopener"><i>🛒</i><span><b>Хотите похожий сайт для бизнеса?</b><small>Сделаем такой же сайт для вас. Пишите: 8 747 612 84 11</small></span></a>' +
+    '<a class="mi" href="admin.html"><i>🔐</i><span><b>Админка</b><small>Вход для администратора: заявки, цены и тексты</small></span></a>');
+}
+$('#sheet').addEventListener('click', function (e) {
+  if (e.target === this || e.target.closest('[data-shx]')) return closeSheet();
+  var g = e.target.closest('[data-go]'); if (g) { closeSheet(); var el = document.getElementById(g.dataset.go); if (el) setTimeout(function () { el.scrollIntoView({ behavior: 'smooth' }); }, 150); }
+});
+$('#gearBtn').addEventListener('click', showSettings);
+$('#mSet').addEventListener('click', function (e) { e.preventDefault(); setTimeout(showSettings, 200); });
+
+/* меню */
+var mn = $('#mnav');
+$('#burger').addEventListener('click', function () { mn.classList.add('on'); });
+mn.addEventListener('click', function (e) { if (e.target === this || e.target.closest('[data-close]')) mn.classList.remove('on'); });
+addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeSheet(); mn.classList.remove('on'); } });
+addEventListener('scroll', function () { $('#hdr').classList.toggle('sc', scrollY > 10); }, { passive: true });
+
+function reveal() {
+  var els = document.querySelectorAll('.reveal:not(.in)');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (x) { x.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }); }, { rootMargin: '0px 0px -30px 0px' });
+  els.forEach(function (x) { io.observe(x); });
+}
+
+Store.load().then(function (d) { D = d; render(); }).catch(function () { document.querySelectorAll('.reveal').forEach(function (x) { x.classList.add('in'); }); });
+})();
+</script>
+</body>
+</html>
