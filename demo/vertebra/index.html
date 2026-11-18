@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vertebra Medical — лечение позвоночника и суставов в Петропавловске: грыжа, протрузия, артроз, пяточная шпора</title>
+<meta name="description" content="Vertebra Medical в Петропавловске: консультация врача, лечение грыжи, протрузии, артроза и пяточной шпоры на современном оборудовании. При записи на консультацию пробная процедура в подарок. Жабаева, 241.">
+<meta name="theme-color" content="#0e3d5c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0e3d5c; --navy2:#0a2d44; --teal:#17a2a8; --teal2:#0f8a90; --mint:#eaf6f6; --sand:#fbf9f5; --amber:#f5b14a;
+  --ink:#12263a; --muted:#5d7083; --line:#dbe8ea; --wa:#25d366; --card:#ffffff;
+  --hf:'Montserrat',system-ui,sans-serif; --bf:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:74px}
+body{font-family:var(--bf);background:var(--sand);color:var(--ink);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:var(--hf);font-weight:800;line-height:1.14;letter-spacing:-.01em;color:var(--navy)}
+h2{font-size:clamp(24px,5.2vw,38px)}
+h3{font-size:18px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal2);margin-bottom:12px}
+.eyebrow:before{content:"";width:22px;height:4px;border-radius:4px;background:var(--teal)}
+.lead{color:var(--muted);font-size:16.5px;max-width:640px;margin-top:12px}
+section{padding:62px 0}
+.sec-head{margin-bottom:30px}
+
+.demo{background:var(--navy2);color:#cfe6ee;font-size:12.5px;text-align:center;padding:8px 12px}
+.demo b{color:var(--amber)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 26px;border-radius:14px;font-weight:800;font-size:15.5px;text-decoration:none;transition:transform .15s,box-shadow .2s,background .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--wa);color:#fff;box-shadow:0 12px 26px -10px rgba(37,211,102,.7)}
+.btn-main:hover{box-shadow:0 16px 30px -10px rgba(37,211,102,.8)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-ghost{background:#fff;color:var(--navy);border:2px solid var(--line)}
+.btn-ghost:hover{border-color:var(--teal)}
+.btn-sm{min-height:44px;padding:0 18px;font-size:14px;border-radius:12px}
+
+.hdr{position:sticky;top:0;z-index:50;background:rgba(251,249,245,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hdr .in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:38px;height:38px;flex:0 0 auto}
+.logo b{display:block;font-family:var(--hf);font-weight:800;font-size:17px;letter-spacing:.04em;color:var(--navy);line-height:1}
+.logo small{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--teal2);font-weight:800;margin-top:3px}
+.nav{display:none;gap:22px;font-weight:700;font-size:14px}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--teal2)}
+.hdr .btn-sm{display:none}
+.burger{width:44px;height:44px;border-radius:12px;background:#fff;border:2px solid var(--line);display:grid;place-items:center}
+.burger span,.burger span:before,.burger span:after{display:block;width:18px;height:2.5px;border-radius:3px;background:var(--navy);content:"";position:relative}
+.burger span:before{position:absolute;top:-6px}.burger span:after{position:absolute;top:6px}
+.mnav{display:none;background:var(--sand);border-bottom:1px solid var(--line);padding:6px 18px 16px}
+.mnav.open{display:block}
+.mnav a{display:block;padding:13px 0;font-weight:700;text-decoration:none;border-bottom:1px solid var(--line)}
+.mnav .btn{margin-top:14px;width:100%}
+
+.promo{background:linear-gradient(90deg,var(--teal2),var(--teal));color:#fff;font-weight:700;font-size:14px;text-align:center;padding:10px 16px}
+
+.hero{padding:34px 0 20px;background:radial-gradient(110% 80% at 100% 0%,#d9f0f1 0%,rgba(217,240,241,0) 60%)}
+.hero-grid{display:grid;gap:26px;align-items:center}
+.hero h1{font-size:clamp(28px,7.2vw,52px)}
+.hero h1 em{font-style:normal;color:var(--teal2)}
+.hero .lead{font-size:17px}
+.gift{display:flex;gap:12px;align-items:center;background:#fff;border:2px dashed var(--teal);border-radius:16px;padding:12px 14px;margin:20px 0 4px}
+.gift .ic{width:44px;height:44px;border-radius:12px;background:var(--mint);display:grid;place-items:center;flex:0 0 auto;font-size:22px}
+.gift b{display:block;color:var(--navy);font-size:15px}
+.gift span{font-size:13.5px;color:var(--muted)}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.chip{font-size:13px;font-weight:700;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:7px 13px;color:var(--navy)}
+.hero-art{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);border-radius:28px;padding:22px 18px 18px;position:relative;overflow:hidden;color:#fff;min-height:320px}
+.hero-art:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(23,162,168,.55),rgba(23,162,168,0) 70%);right:-60px;top:-40px}
+.hero-art svg{position:relative;margin:0 auto;height:270px;width:auto}
+.hero-art .cap{position:relative;text-align:center;font-size:13px;color:#bfe0e6;margin-top:6px}
+.stat3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:-26px;position:relative;z-index:2}
+.stat3 div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 10px;text-align:center;box-shadow:0 14px 30px -22px rgba(14,61,92,.6)}
+.stat3 b{display:block;font-family:var(--hf);font-size:clamp(18px,4.6vw,26px);color:var(--navy)}
+.stat3 span{font-size:12px;color:var(--muted)}
+
+.cards{display:grid;gap:12px}
+.cond{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.cond .ic{width:46px;height:46px;border-radius:14px;background:var(--mint);display:grid;place-items:center;font-size:23px;margin-bottom:12px}
+.cond p{color:var(--muted);font-size:14.5px;margin-top:6px}
+
+.steps{display:grid;gap:12px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 20px 20px 68px;position:relative}
+.step:before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:18px;width:36px;height:36px;border-radius:12px;background:var(--navy);color:#fff;font-family:var(--hf);font-weight:800;display:grid;place-items:center}
+.step p{color:var(--muted);font-size:14.5px;margin-top:4px}
+.note{margin-top:18px;background:var(--mint);border-radius:18px;padding:16px 18px;font-size:14.5px;color:var(--navy)}
+
+.meth{background:var(--navy);color:#fff}
+.meth h2,.meth h3{color:#fff}
+.meth .eyebrow{color:#7fd6da}
+.meth .lead{color:#b9d3df}
+.mgrid{display:grid;gap:12px}
+.m{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:18px}
+.m p{color:#b9d3df;font-size:14px;margin-top:6px}
+.m .k{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#7fd6da;margin-bottom:6px}
+
+.ptable{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.row-p{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:15px 18px;border-bottom:1px solid var(--line)}
+.row-p:last-child{border-bottom:0}
+.row-p .n{font-weight:800;color:var(--navy);font-size:15.5px}
+.row-p .d{font-size:13px;color:var(--muted);margin-top:2px;line-height:1.4}
+.row-p .p{font-family:var(--hf);font-weight:800;color:var(--navy);white-space:nowrap;font-size:15.5px}
+.row-p .p.rq{color:var(--teal2);font-size:13.5px}
+.pnote{font-size:13px;color:var(--muted);margin-top:12px}
+
+.check-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.sym{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sym button{padding:10px 14px;border-radius:12px;border:2px solid var(--line);background:#fff;font-weight:700;font-size:14px;color:var(--navy);transition:.15s}
+.sym button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.hint{margin-top:14px;background:var(--mint);border-radius:14px;padding:14px 16px;font-size:14.5px;color:var(--navy);display:none}
+.hint.show{display:block}
+.book{display:grid;gap:22px;margin-top:22px}
+.form{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.f{margin-bottom:14px}
+.f label{display:block;font-size:12.5px;font-weight:800;color:var(--muted);margin-bottom:6px;letter-spacing:.02em}
+.f input,.f select{width:100%;height:52px;border:2px solid var(--line);border-radius:14px;padding:0 14px;background:#fff;outline:none;font-size:15.5px}
+.f input:focus,.f select:focus{border-color:var(--teal)}
+.chk{display:flex;gap:10px;align-items:center;font-weight:700;font-size:14px;margin:4px 0 16px}
+.chk input{width:20px;height:20px;accent-color:var(--teal2)}
+.form .btn{width:100%}
+.ok{display:none;text-align:center;padding:8px 4px}
+.ok.show{display:block}
+.ok .big{font-size:42px}
+.ok h3{margin:6px 0}
+.ok p{color:var(--muted);margin-bottom:16px}
+.side{display:grid;gap:12px;align-content:start}
+.side .tip{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+.side .tip b{display:block;color:var(--navy);margin-bottom:2px}
+.side .tip span{font-size:14px;color:var(--muted)}
+
+.team{display:grid;gap:12px}
+.doc{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.av{width:68px;height:68px;border-radius:20px;background:linear-gradient(135deg,var(--teal),var(--navy));color:#fff;font-family:var(--hf);font-weight:800;font-size:26px;display:grid;place-items:center;flex:0 0 auto}
+.doc small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+
+.rev-top{display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.score{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 16px}
+.score b{font-family:var(--hf);font-size:30px;color:var(--navy)}
+.score span{font-size:13px;color:var(--muted);line-height:1.3}
+.stars{color:var(--amber);letter-spacing:2px;font-size:15px}
+.rv{display:grid;gap:12px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.rev p{font-size:15px;color:var(--ink)}
+.rev .who{display:flex;justify-content:space-between;gap:10px;margin-top:12px;font-size:13px;color:var(--muted)}
+.rev .who b{color:var(--navy)}
+
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:0 18px;margin-bottom:10px}
+.faq summary{list-style:none;cursor:pointer;font-weight:800;color:var(--navy);padding:16px 26px 16px 0;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:22px;color:var(--teal2);font-weight:700}
+.faq details[open] summary:after{content:"–"}
+.faq details p{color:var(--muted);padding:0 0 16px;font-size:14.5px}
+
+.contacts{background:var(--navy);color:#fff}
+.contacts h2{color:#fff}
+.contacts .eyebrow{color:#7fd6da}
+.cgrid{display:grid;gap:12px;margin-top:6px}
+.ci{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:16px 18px}
+.ci small{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#7fd6da;font-weight:800;margin-bottom:4px}
+.ci a,.ci div{font-weight:700;text-decoration:none}
+.contacts .cta-row .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+
+footer{background:var(--navy2);color:#9ebccb;padding:26px 0 90px;font-size:12.5px}
+footer p{max-width:760px}
+footer b{color:#fff}
+
+.fab{position:fixed;right:16px;bottom:16px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 14px 28px -8px rgba(37,211,102,.8)}
+.fab svg{width:32px;height:32px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
+.reveal.in{opacity:1;transform:none}
+
+@media(min-width:720px){
+  .hero-grid{grid-template-columns:1.1fr .9fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .mgrid{grid-template-columns:repeat(2,1fr)}
+  .team{grid-template-columns:repeat(2,1fr)}
+  .rv{grid-template-columns:repeat(2,1fr)}
+  .cgrid{grid-template-columns:repeat(2,1fr)}
+  .book{grid-template-columns:1.2fr .8fr}
+}
+@media(min-width:960px){
+  .nav{display:flex}.burger{display:none}.hdr .btn-sm{display:inline-flex}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .mgrid{grid-template-columns:repeat(4,1fr)}
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .step{padding:70px 18px 20px}
+  .step:before{left:18px;top:18px}
+  .cgrid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="demo"><b>Демо-сайт</b> для Vertebra Medical (Петропавловск), сделан SiteMaker. Цены и данные взяты из открытых карточек и могут отличаться от актуальных.</div>
+
+<header class="hdr"><div class="wrap in">
+  <a class="logo" href="#top" aria-label="Vertebra Medical">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#0e3d5c"/><g fill="#fff"><rect x="16" y="7" width="8" height="4.6" rx="2.2"/><rect x="15" y="13" width="10" height="4.6" rx="2.2"/><rect x="14.5" y="19" width="11" height="4.6" rx="2.2"/><rect x="15" y="25" width="10" height="4.6" rx="2.2"/><rect x="16" y="31" width="8" height="3.6" rx="1.8"/></g></svg>
+    <span><b>VERTEBRA</b><small>medical</small></span>
+  </a>
+  <nav class="nav">
+    <a href="#help">С чем помогаем</a><a href="#visit">Первый приём</a><a href="#methods">Методы</a><a href="#prices">Цены</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
+  </nav>
+  <a class="btn btn-main btn-sm" id="hWa" href="#" target="_blank" rel="noopener">Записаться в WhatsApp</a>
+  <button class="burger" id="burger" aria-label="Меню"><span></span></button>
+</div>
+<div class="mnav" id="mnav"><div class="wrap" style="padding:0">
+  <a href="#help">С чем помогаем</a><a href="#visit">Первый приём</a><a href="#methods">Методы</a><a href="#prices">Цены</a><a href="#check">Запись</a><a href="#reviews">Отзывы</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a>
+  <a class="btn btn-main" id="mWa" href="#" target="_blank" rel="noopener">Записаться в WhatsApp</a>
+</div></div></header>
+
+<div class="promo" id="promo"><span id="promoText"></span></div>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Петропавловск · Жабаева, 241</div>
+      <h1>Лечим позвоночник и суставы <em>без операции</em></h1>
+      <p class="lead">Грыжа, протрузия, артроз, пяточная шпора, боли в спине. Врач изучит ваши снимки, объяснит, что происходит, и составит план лечения на современном оборудовании.</p>
+      <div class="gift"><div class="ic">🎁</div><div><b>Пробная процедура в подарок</b><span>при записи на консультацию</span></div></div>
+      <div class="cta-row">
+        <a class="btn btn-main" id="heroWa" href="#" target="_blank" rel="noopener">Записаться в WhatsApp</a>
+        <a class="btn btn-ghost" href="#check">Оставить заявку</a>
+      </div>
+      <div class="chips"><span class="chip">🩻 Приходите со снимками МРТ, КТ</span><span class="chip">📅 Запись заранее</span></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 160 300" role="img" aria-label="Позвоночник">
+        <defs><linearGradient id="vg" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#b8e3e6"/></linearGradient></defs>
+        <g fill="url(#vg)">
+          <rect x="68" y="6" width="26" height="15" rx="7"/>
+          <rect x="64" y="26" width="32" height="16" rx="8"/>
+          <rect x="60" y="47" width="38" height="17" rx="8.5"/>
+          <rect x="58" y="69" width="42" height="18" rx="9"/>
+          <rect x="58" y="92" width="46" height="19" rx="9.5"/>
+          <rect x="60" y="116" width="50" height="20" rx="10"/>
+          <rect x="64" y="141" width="54" height="21" rx="10.5"/>
+          <rect x="68" y="167" width="56" height="22" rx="11"/>
+          <rect x="70" y="194" width="58" height="23" rx="11.5" fill="#17a2a8"/>
+          <rect x="68" y="222" width="54" height="22" rx="11"/>
+          <rect x="64" y="249" width="46" height="20" rx="10"/>
+          <rect x="62" y="274" width="34" height="18" rx="9"/>
+        </g>
+        <circle cx="99" cy="205" r="16" fill="none" stroke="#7fd6da" stroke-width="2" opacity=".7"/>
+        <circle cx="99" cy="205" r="26" fill="none" stroke="#7fd6da" stroke-width="1.5" opacity=".35"/>
+      </svg>
+      <div class="cap">Здоровая спина — это подвижность каждый день</div>
+    </div>
+  </div>
+  <div class="stat3">
+    <div><b>5.0</b><span>рейтинг в 2ГИС</span></div>
+    <div><b>17</b><span>отзывов пациентов</span></div>
+    <div><b>9–19</b><span>ежедневно, по записи</span></div>
+  </div>
+</div></section>
+
+<section id="help"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">С чем к нам приходят</div><h2>Когда стоит обратиться к врачу</h2><p class="lead">Если боль возвращается, таблетки помогают лишь на время или вам предложили операцию, начните с консультации.</p></div>
+  <div class="cards">
+    <div class="cond reveal"><div class="ic">🦴</div><h3>Грыжа и протрузия диска</h3><p>Боль в пояснице или шее, отдаёт в ногу или руку, немеют пальцы. Принесите МРТ, врач скажет, подходит ли вам лечение без операции.</p></div>
+    <div class="cond reveal"><div class="ic">🦵</div><h3>Артроз суставов</h3><p>Колени болят при ходьбе, на лестнице или по утрам. Задача лечения: уменьшить боль, вернуть подвижность и замедлить разрушение сустава.</p></div>
+    <div class="cond reveal"><div class="ic">👣</div><h3>Пяточная шпора</h3><p>Боль в пятке, особенно по утрам. Курс лечения на современном оборудовании обычно занимает от 4 до 7 сеансов.</p></div>
+    <div class="cond reveal"><div class="ic">🧍</div><h3>Боли в спине</h3><p>Ноет поясница, тяжело долго сидеть или спать. Врач найдёт причину, а не только уберёт симптом.</p></div>
+    <div class="cond reveal"><div class="ic">💆</div><h3>Шея и плечи</h3><p>Напряжение, скованность, боли после работы за компьютером. Лечебный массаж и аппаратные процедуры по назначению врача.</p></div>
+    <div class="cond reveal"><div class="ic">👵</div><h3>Для родителей и старшего возраста</h3><p>Если мама или папа всё реже выходят на прогулку из-за болей, запишите их на консультацию. Врач объяснит варианты помощи.</p></div>
+  </div>
+</div></section>
+
+<section id="visit" style="background:#fff"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Первый приём</div><h2>Как проходит консультация</h2><p class="lead">Многие откладывают визит, потому что не знают, что их ждёт. Всё просто и без спешки.</p></div>
+  <div class="steps">
+    <div class="step reveal"><h3>Разговор с врачом</h3><p>Вы рассказываете, что беспокоит, когда началось и что уже пробовали.</p></div>
+    <div class="step reveal"><h3>Осмотр и снимки</h3><p>Врач осматривает и изучает ваши МРТ, КТ, рентген и старые выписки.</p></div>
+    <div class="step reveal"><h3>Диагностика при необходимости</h3><p>Если данных недостаточно, врач назначит дополнительное обследование.</p></div>
+    <div class="step reveal"><h3>План лечения</h3><p>Индивидуальный план под вашу ситуацию, и пробная процедура в подарок.</p></div>
+  </div>
+  <div class="note reveal">🩻 Возьмите с собой МРТ, КТ, рентген или старые выписки, если они есть. Без снимков тоже можно прийти, врач подскажет, что сделать дальше.</div>
+</div></section>
+
+<section class="meth" id="methods"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Методы лечения</div><h2>Современное оборудование и ручная работа</h2><p class="lead">Метод подбирает врач после осмотра. Часто лечение сочетает несколько процедур.</p></div>
+  <div class="mgrid">
+    <div class="m reveal"><span class="k">Аппаратно</span><h3>Ударно-волновая терапия</h3><p>Акустические волны воздействуют на проблемную зону. Применяют при пяточной шпоре, болях в суставах и сухожилиях.</p></div>
+    <div class="m reveal"><span class="k">Аппаратно</span><h3>Магнитная терапия SIS</h3><p>Высокоинтенсивная и низкоинтенсивная магнитная терапия для спины и суставов.</p></div>
+    <div class="m reveal"><span class="k">Аппаратно</span><h3>Лазерная терапия</h3><p>Бережное воздействие на проблемную область по назначению врача.</p></div>
+    <div class="m reveal"><span class="k">Аппаратно</span><h3>Электростимуляция</h3><p>Подбирается под вашу задачу и состояние мышц.</p></div>
+    <div class="m reveal"><span class="k">Врач</span><h3>Мануальная терапия</h3><p>Работа руками врача при болях в спине, в том числе при грыже и протрузии.</p></div>
+    <div class="m reveal"><span class="k">Врач</span><h3>Иглотерапия</h3><p>Рефлексотерапия как часть комплексного курса.</p></div>
+    <div class="m reveal"><span class="k">Врач</span><h3>PRP-терапия</h3><p>Плазма, обогащённая тромбоцитами, из вашей собственной крови.</p></div>
+    <div class="m reveal"><span class="k">Руки мастера</span><h3>Лечебный массаж</h3><p>Массаж спины и общий массаж, снимает напряжение мышц и помогает расслабиться.</p></div>
+  </div>
+</div></section>
+
+<section id="prices"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Цены</div><h2>Стоимость услуг</h2><p class="lead">Точную стоимость курса врач назовёт после консультации.</p></div>
+  <div class="ptable reveal" id="plist"></div>
+  <p class="pnote">Цены ориентировочные, актуальные уточняйте у администратора в WhatsApp.</p>
+</div></section>
+
+<section id="check" style="background:#fff"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Запись</div><h2>Что вас беспокоит?</h2><p class="lead">Выберите, что подходит, и оставьте заявку. Администратор ответит в WhatsApp и подберёт время.</p></div>
+  <div class="check-box reveal">
+    <b style="color:var(--navy)">Отметьте, что беспокоит:</b>
+    <div class="sym" id="sym"></div>
+    <div class="hint" id="hint"></div>
+  </div>
+  <div class="book">
+    <form class="form reveal" id="bookForm" autocomplete="on">
+      <div id="formBody">
+        <div class="f"><label for="bWhat">С чем обращаетесь</label>
+          <select id="bWhat"></select></div>
+        <div class="f"><label for="bName">Ваше имя</label><input id="bName" required placeholder="Например, Марат"></div>
+        <div class="f"><label for="bPhone">Телефон</label><input id="bPhone" type="tel" inputmode="tel" required placeholder="+7 7__ ___ __ __"></div>
+        <label class="chk"><input type="checkbox" id="bMri"> У меня есть МРТ, КТ или рентген</label>
+        <button class="btn btn-main" type="submit">Записаться на консультацию</button>
+      </div>
+      <div class="ok" id="bookOk">
+        <div class="big">✅</div><h3>Заявка принята</h3>
+        <p>Осталось отправить её в WhatsApp, и администратор подберёт время.</p>
+        <a class="btn btn-main" id="bookWa" href="#" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+      </div>
+    </form>
+    <div class="side">
+      <div class="tip reveal"><b>🎁 Пробная процедура в подарок</b><span>при записи на консультацию</span></div>
+      <div class="tip reveal"><b>🕘 Ежедневно с 9:00 до 19:00</b><span>приём по предварительной записи</span></div>
+      <div class="tip reveal"><b>📍 Жабаева, 241, 1 этаж</b><span>Петропавловск</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="team"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Команда</div><h2>Кто вас примет</h2></div>
+  <div class="team">
+    <div class="doc reveal"><div class="av">А</div><div><h3>Алёна Михайловна</h3><small>Врач</small></div></div>
+    <div class="doc reveal"><div class="av">Д</div><div><h3>Даир Дулатович</h3><small>Массажист</small></div></div>
+  </div>
+  <p class="pnote">Здесь будут фото, квалификация и опыт ваших специалистов.</p>
+</div></section>
+
+<section id="reviews" style="background:#fff"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Отзывы</div><h2>Что говорят пациенты</h2></div>
+  <div class="rev-top reveal">
+    <div class="score"><b>5.0</b><div><div class="stars">★★★★★</div><span>21 оценка в 2ГИС<br>17 отзывов</span></div></div>
+  </div>
+  <div class="rv">
+    <div class="rev reveal"><p>«Врачи всё подробно объясняли, подобрали лечение, которое дало заметный результат. Персонал вежливый, доброжелательный, в клинике чисто и спокойно.»</p><div class="who"><b>Кристина Ж.</b><span>2ГИС, май 2026</span></div></div>
+    <div class="rev reveal"><p>«Прошла курс реабилитации. По завершению значительное улучшение самочувствия, ушла боль, улучшилась подвижность суставов. Прекрасные условия, заботливый персонал.»</p><div class="who"><b>Вероника Д.</b><span>2ГИС, июнь 2026</span></div></div>
+    <div class="rev reveal"><p>«Прошла 10-дневный курс лечения. Очень довольна результатом лечения. Здесь все работники с заботой и пониманием относятся к каждому больному.»</p><div class="who"><b>Надежда П.</b><span>2ГИС, август 2026</span></div></div>
+    <div class="rev reveal"><p>«Очень хорошая клиника. Болела спина, ходила 10 дней, сейчас намного лучше стало. Все врачи очень вежливые, всем советую.»</p><div class="who"><b>Айнаш А.</b><span>2ГИС, октябрь 2026</span></div></div>
+  </div>
+  <p class="pnote">Отзывы с карточки Vertebra Medical в 2ГИС. Результат лечения индивидуален.</p>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">Вопросы</div><h2>Частые вопросы</h2></div>
+  <div class="faq reveal">
+    <details><summary>Что взять с собой на консультацию?</summary><p>МРТ, КТ, рентген или старые выписки, если они у вас есть. Врач изучит их и скажет, какие варианты помощи могут вам подойти. Без снимков тоже можно прийти.</p></details>
+    <details><summary>Что будет на первом приёме?</summary><p>Врач выслушает жалобы, проведёт осмотр, изучит ваши обследования и при необходимости назначит дополнительную диагностику. После этого составляется индивидуальный план лечения.</p></details>
+    <details><summary>Правда, что пробная процедура бесплатная?</summary><p>Да, при записи на консультацию мы проводим пробную процедуру в подарок. Уточните детали у администратора в WhatsApp.</p></details>
+    <details><summary>Сколько длится курс лечения?</summary><p>Это зависит от диагноза и состояния, определяет врач. Например, при пяточной шпоре курс обычно занимает от 4 до 7 сеансов.</p></details>
+    <details><summary>Нужна ли предварительная запись?</summary><p>Да, мы принимаем по записи. Напишите в WhatsApp или оставьте заявку на сайте, и мы подберём ближайшее свободное время.</p></details>
+    <details><summary>Можно ли записать родителей?</summary><p>Конечно. Если близким тяжело ходить, спать или заниматься привычными делами, напишите нам, мы подскажем ближайшее свободное время.</p></details>
+  </div>
+</div></section>
+
+<section class="contacts" id="contacts"><div class="wrap">
+  <div class="eyebrow">Контакты</div><h2>Как нас найти</h2>
+  <div class="cgrid" style="margin-top:22px">
+    <div class="ci"><small>Адрес</small><div id="cAddr"></div></div>
+    <div class="ci"><small>Время работы</small><div id="cHours"></div></div>
+    <div class="ci"><small>WhatsApp</small><a id="cWa" href="#" target="_blank" rel="noopener"></a></div>
+    <div class="ci"><small>Instagram</small><a id="cIg" href="#" target="_blank" rel="noopener"></a></div>
+  </div>
+  <div class="cta-row" style="margin-top:22px">
+    <a class="btn btn-main" id="cWa2" href="#" target="_blank" rel="noopener">Записаться в WhatsApp</a>
+    <a class="btn btn-ghost" href="https://2gis.kz/petropavlovsk/firm/70000001109691420" target="_blank" rel="noopener">Открыть в 2ГИС</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <p><b>Vertebra Medical.</b> Центр лечения позвоночника и суставов, Петропавловск. Имеются противопоказания, необходима консультация специалиста. Материалы сайта не заменяют очный приём врача.</p>
+</div></footer>
+
+<a class="fab" id="fabWa" href="#" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><span style="font-size:30px;line-height:1">💬</span></a>
+
+<script src="js/data.js"></script>
+<script>
+(function(){
+  var D = VM.load(), S = D.settings, esc = VM.esc, money = VM.money;
+  var wa = function(t){ return 'https://wa.me/' + S.wa + (t ? '?text=' + encodeURIComponent(t) : ''); };
+  var HELLO = 'Здравствуйте! Хочу записаться на консультацию в Vertebra Medical.';
+
+  /* promo */
+  var pr = document.getElementById('promo');
+  if (D.promo && D.promo.on && D.promo.text) document.getElementById('promoText').textContent = D.promo.text; else pr.style.display = 'none';
+
+  /* whatsapp links */
+  ['hWa','mWa','heroWa','cWa2','fabWa'].forEach(function(id){ var a = document.getElementById(id); if (a) a.href = wa(HELLO); });
+
+  /* prices */
+  var list = (D.services || []).filter(function(x){ return x.on !== false; });
+  document.getElementById('plist').innerHTML = list.map(function(x){
+    var p = x.price ? (x.from ? 'от ' : '') + money(x.price) : 'по запросу';
+    return '<div class="row-p"><div><div class="n">' + esc(x.name) + '</div><div class="d">' + esc(x.desc || '') + '</div></div><div class="p' + (x.price ? '' : ' rq') + '">' + p + '</div></div>';
+  }).join('');
+
+  /* contacts */
+  document.getElementById('cAddr').textContent = S.city + ', ' + S.address;
+  document.getElementById('cHours').textContent = S.hours;
+  var cw = document.getElementById('cWa'); cw.href = wa(HELLO); cw.textContent = '+' + S.wa.replace(/^7(\d{3})(\d{3})(\d{2})(\d{2})$/, '7 $1 $2 $3 $4');
+  var ci = document.getElementById('cIg'); ci.href = 'https://instagram.com/' + S.insta; ci.textContent = '@' + S.insta;
+
+  /* symptoms */
+  var SYM = [
+    ['Болит поясница', 'Грыжа или протрузия', 'Боль в пояснице бывает при грыже или протрузии диска, но причины разные. Принесите МРТ, если оно есть, и врач разберётся.'],
+    ['Отдаёт в ногу или руку', 'Грыжа или протрузия', 'Боль, которая отдаёт в конечность, стоит показать врачу и не откладывать. Консультация поможет понять причину.'],
+    ['Немеют пальцы или ноги', 'Грыжа или протрузия', 'Онемение лучше не терпеть. Запишитесь на консультацию, врач осмотрит и изучит ваши обследования.'],
+    ['Болят колени', 'Артроз сустава', 'Боль в коленях при ходьбе и на лестнице бывает при артрозе. Врач осмотрит сустав, изучит снимки и расскажет, что можно сделать.'],
+    ['Боль в пятке по утрам', 'Пяточная шпора', 'Боль в пятке по утрам часто связана с пяточной шпорой. Курс лечения обычно занимает от 4 до 7 сеансов, точный план даёт врач.'],
+    ['Шея и плечи', 'Боль в шее и плечах', 'Скованность и боль в шее бывают после долгой работы за компьютером. Врач подберёт лечение после осмотра.']
+  ];
+  var sym = document.getElementById('sym'), hint = document.getElementById('hint'), sel = document.getElementById('bWhat');
+  var PROBS = ['Грыжа или протрузия', 'Артроз сустава', 'Пяточная шпора', 'Боль в спине', 'Боль в шее и плечах', 'Другое'];
+  sel.innerHTML = PROBS.map(function(p){ return '<option>' + esc(p) + '</option>'; }).join('');
+  sym.innerHTML = SYM.map(function(s, i){ return '<button type="button" data-i="' + i + '">' + esc(s[0]) + '</button>'; }).join('');
+  sym.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (!b) return;
+    [].forEach.call(sym.children, function(x){ x.classList.remove('on'); });
+    b.classList.add('on');
+    var s = SYM[+b.getAttribute('data-i')];
+    sel.value = s[1];
+    hint.innerHTML = '<b>' + esc(s[0]) + '.</b> ' + esc(s[2]) + ' Это не диагноз, окончательное заключение даёт врач.';
+    hint.classList.add('show');
+  });
+
+  /* booking form -> request + WhatsApp */
+  document.getElementById('bookForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var o = { name: document.getElementById('bName').value.trim(), phone: document.getElementById('bPhone').value.trim(), problem: sel.value, mri: document.getElementById('bMri').checked, note: '' };
+    try { VM.addRequest({ name: o.name, phone: o.phone, date: '', problem: o.problem, mri: o.mri, note: '' }); } catch (x) {}
+    var t = 'Здравствуйте! Хочу записаться на консультацию в Vertebra Medical.\nС чем обращаюсь: ' + o.problem + '\nМРТ, КТ или рентген: ' + (o.mri ? 'есть' : 'нет') + '\nИмя: ' + o.name + '\nТелефон: ' + o.phone;
+    document.getElementById('bookWa').href = wa(t);
+    document.getElementById('formBody').style.display = 'none';
+    document.getElementById('bookOk').classList.add('show');
+  });
+
+  /* mobile menu */
+  var mn = document.getElementById('mnav');
+  document.getElementById('burger').addEventListener('click', function(){ mn.classList.toggle('open'); });
+  mn.addEventListener('click', function(e){ if (e.target.tagName === 'A') mn.classList.remove('open'); });
+
+  /* reveal */
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }); }, { threshold: .08 });
+    els.forEach(function(el){ io.observe(el); });
+  } else els.forEach(function(el){ el.classList.add('in'); });
+})();
+</script>
+</body>
+</html>
