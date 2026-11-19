@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BJ PLAST — окна, двери и тамбуры в Астане</title>
+<meta name="description" content="BJ PLAST — изготовление и установка пластиковых и алюминиевых окон, дверей, тамбуров и перегородок в Астане и Косшы. Бесплатный замер и консультация. Рассчитать стоимость и написать в WhatsApp.">
+<meta name="theme-color" content="#091426">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230b6fcf'/%3E%3Crect x='28' y='14' width='44' height='44' fill='%23fff'/%3E%3Crect x='32' y='18' width='16' height='16' fill='%232c8cf0'/%3E%3Crect x='52' y='18' width='16' height='16' fill='%232c8cf0'/%3E%3Crect x='32' y='38' width='16' height='16' fill='%232c8cf0'/%3E%3Crect x='52' y='38' width='16' height='16' fill='%232c8cf0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"BJ PLAST","description":"Изготовление и установка пластиковых и алюминиевых окон, дверей, тамбуров и перегородок","telephone":"+77478653002","address":{"@type":"PostalAddress","streetAddress":"ул. Адольфа Янушкевича, 1","addressLocality":"Астана","addressCountry":"KZ"},"areaServed":["Астана","Косшы"],"openingHours":"Mo-Sa 09:00-18:00","sameAs":["https://www.instagram.com/bj_plast/","https://www.tiktok.com/@bj_plast","https://2gis.kz/astana/firm/70000001117091812"]}</script>
+<style>
+/* VOICE: мастер, который сам приедет, сам изготовит и сам поставит — уверенно, по-деловому, без воды
+   IDEA: окно как рамка сайта — главное фото собрано из четырёх «стёкол» реальных объектов
+   PICTURE: оконный блок с четырьмя стёклами, в каждом — настоящая работа BJ PLAST
+   COLOUR and TYPE: синий логотипа #0b6fcf, золото из постов, тёмно-синий фон; Unbounded + Manrope
+   LAYOUT: герой с оконным блоком, услуги, работы с фильтром, калькулятор с итогом, этапы, отзывы 2ГИС, вопросы, заявка */
+:root{color-scheme:light dark;--bg:light-dark(#f3f6fa,#08111f);--card:light-dark(#fff,#0f1d33);--ink:light-dark(#0b1a2e,#eaf1fb);--mute:light-dark(#4f617a,#9bb0cb);--line:light-dark(#dbe4ef,#1c2f4b);--soft:light-dark(#eaf1f9,#13253f);
+--blue:#0b6fcf;--blue2:#2c8cf0;--gold:#f2b632;--gold2:#ffd873;--navy:#091426;--navy2:#0f2342;--r:18px}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Manrope,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Unbounded,Manrope,sans-serif;line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:clamp(26px,4vw,42px);font-weight:700}h3{font-size:17px;font-weight:700}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(48px,7vw,92px) max(5vw,16px)}
+.lead{color:var(--mute);max-width:62ch;margin:14px 0 0;font-size:17px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 24px;border-radius:999px;border:0;font:800 16px Manrope,sans-serif;text-decoration:none;cursor:pointer;transition:transform .15s,background .2s,box-shadow .2s}
+.btn:active{transform:scale(.97)}
+.btn.p{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1c1400;box-shadow:0 8px 24px -10px #f2b632aa}.btn.p:hover{box-shadow:0 10px 28px -8px #f2b632dd}
+.btn.b{background:var(--blue);color:#fff}.btn.b:hover{background:#0a62b8}
+.btn.g{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+svg.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* header */
+header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--navy) 94%,transparent);backdrop-filter:blur(10px);color:#eaf1fb}
+.hd{display:flex;align-items:center;gap:10px;padding:9px max(5vw,16px);max-width:1340px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 17px Unbounded,sans-serif;letter-spacing:.02em}.logo svg{width:42px;height:42px}.logo b{color:var(--gold);font-weight:inherit}
+nav{display:flex;gap:2px;margin-left:auto}
+nav a{padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:700;color:#c3d3ea;font-size:15px}nav a:hover{color:#fff;background:#ffffff14}
+.ib{width:44px;height:44px;border-radius:12px;border:0;background:#ffffff14;color:inherit;display:grid;place-items:center;cursor:pointer;flex:none}.ib:hover{background:#ffffff24}
+.lang{display:flex;border-radius:12px;background:#ffffff14;padding:3px;margin-left:auto;flex:none}
+nav + .lang{margin-left:6px}
+.lang button{border:0;background:transparent;color:#c3d3ea;font:800 13px Manrope,sans-serif;padding:0 11px;height:38px;border-radius:9px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--gold);color:#1c1400}
+.hw{display:none}
+/* hero */
+.hero{position:relative;background:radial-gradient(90% 70% at 85% 20%,#14396a 0%,transparent 60%),linear-gradient(180deg,var(--navy2),var(--navy));color:#eaf1fb;padding:clamp(34px,6vw,76px) max(5vw,16px) clamp(40px,6vw,80px);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 119px,#ffffff08 119px 120px),repeating-linear-gradient(0deg,transparent 0 119px,#ffffff08 119px 120px);mask-image:linear-gradient(90deg,#000,transparent 70%);pointer-events:none}
+.hg{position:relative;display:grid;gap:34px;max-width:1240px;margin:0 auto;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#ffffff12;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold2)}
+.hero h1{font-size:clamp(33px,6.4vw,64px);font-weight:800;margin:18px 0 0;letter-spacing:-.01em}
+.hero h1 span{background:linear-gradient(180deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{font-size:clamp(16px,2.2vw,19px);color:#bcd0ea;max-width:52ch;margin:18px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:30px 0 0;padding:0;list-style:none;max-width:520px}
+.facts li{padding:12px 14px;border-radius:14px;background:#ffffff0d;box-shadow:inset 0 0 0 1px #ffffff14;font-size:14px;color:#bcd0ea;line-height:1.3}
+.facts b{display:block;font:800 18px Unbounded,sans-serif;color:#fff;margin-bottom:2px}
+.win{position:relative;padding:12px;border-radius:20px;background:linear-gradient(145deg,#fafcff,#b9c9de);box-shadow:0 30px 60px -20px #000c,0 0 0 1px #ffffff40 inset;max-width:540px;width:100%;justify-self:center;transform:rotate(1.2deg)}
+.panes{display:grid;grid-template-columns:1fr 1fr;gap:9px;background:#d9e3ef;border-radius:10px;padding:0}
+.panes figure{margin:0;position:relative;aspect-ratio:1;overflow:hidden;border-radius:6px;box-shadow:inset 0 0 0 2px #0003}
+.panes img{width:100%;height:100%;object-fit:cover}
+.panes figure::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,#fff5 0%,#fff0 38%,#fff0 62%,#fff2 100%);pointer-events:none}
+.badge{position:absolute;left:-10px;bottom:22px;display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:var(--navy);color:#fff;font-weight:800;box-shadow:0 12px 30px -10px #000a;border:1.5px solid var(--gold)}
+.badge svg{width:18px;height:18px;fill:var(--gold);stroke:none}
+/* services */
+.srv{display:grid;gap:14px;margin-top:34px}
+.card{background:var(--card);border-radius:var(--r);padding:22px;box-shadow:0 0 0 1px var(--line)}
+.srv .card{display:flex;flex-direction:column;gap:10px;transition:transform .2s,box-shadow .2s}
+.srv .card:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px var(--blue),0 16px 34px -18px #0b6fcf88}
+.ico{width:52px;height:52px;border-radius:14px;background:linear-gradient(145deg,var(--blue2),var(--blue));color:#fff;display:grid;place-items:center}
+.srv p{margin:0;color:var(--mute);font-size:15px}
+.srv a.more{margin-top:auto;font-weight:800;color:var(--blue);text-decoration:none;display:inline-flex;gap:6px;align-items:center;padding-top:4px}
+:root[data-theme=dark] .srv a.more{color:var(--blue2)}
+/* works */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chip{min-height:42px;padding:0 18px;border-radius:999px;border:0;background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line);font:700 14px Manrope,sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--blue);color:#fff;box-shadow:none}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
+.gal figure{margin:0;position:relative;aspect-ratio:1;border-radius:14px;overflow:hidden;cursor:zoom-in;background:var(--soft)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 12px 11px;background:linear-gradient(transparent,#050c18e6);color:#fff;font-size:13px;font-weight:700;line-height:1.3}
+.gal [hidden]{display:none}
+.more-ig{margin-top:22px;display:inline-flex}
+/* calc */
+.calc{background:linear-gradient(180deg,var(--soft),transparent)}
+.cg{display:grid;gap:18px;margin-top:30px}
+.fl{font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:0 0 10px}
+.types{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.types button{display:flex;align-items:center;gap:10px;text-align:left;min-height:56px;padding:10px 12px;border-radius:14px;border:0;background:var(--bg);color:var(--ink);box-shadow:0 0 0 1px var(--line);font:700 14px/1.2 Manrope,sans-serif;cursor:pointer}
+.types button svg{color:var(--blue)}
+.types button[aria-pressed=true]{box-shadow:0 0 0 2px var(--blue);background:color-mix(in srgb,var(--blue) 10%,var(--bg))}
+.dims{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.dims label{display:block;font-weight:700;font-size:13px;color:var(--mute)}
+.dims input{width:100%;min-height:50px;margin-top:6px;border-radius:12px;border:0;background:var(--bg);color:var(--ink);box-shadow:0 0 0 1px var(--line);padding:0 12px;font:800 18px Manrope,sans-serif}
+.dims input:focus{outline:none;box-shadow:0 0 0 2px var(--blue)}
+.opts{display:grid;gap:8px;margin-top:22px}
+.opts label{display:flex;align-items:center;gap:12px;min-height:48px;padding:0 14px;border-radius:12px;background:var(--bg);box-shadow:0 0 0 1px var(--line);font-weight:700;cursor:pointer}
+.opts input{width:20px;height:20px;accent-color:var(--blue);flex:none}
+.res{position:relative;border-radius:var(--r);padding:26px;background:linear-gradient(160deg,var(--navy2),var(--navy));color:#eaf1fb;overflow:hidden;box-shadow:0 24px 50px -24px #000a}
+.res::after{content:"";position:absolute;right:-30px;top:-30px;width:140px;height:140px;border:14px solid #ffffff0d;border-radius:30px;transform:rotate(14deg)}
+.res .k{font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold2)}
+.res .sum{font:800 clamp(28px,5vw,40px)/1.1 Unbounded,sans-serif;margin:10px 0 4px;color:#fff}
+.res .area{color:#bcd0ea;font-size:15px}
+.res .note{margin:14px 0 20px;font-size:14px;color:#9db5d6}
+.res .btn{width:100%}
+/* process */
+.steps{display:grid;gap:14px;margin:34px 0 0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:22px 22px 22px 78px}
+.steps li::before{content:counter(s);position:absolute;left:20px;top:20px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:800 18px Unbounded,sans-serif;background:var(--gold);color:#1c1400}
+.steps p{margin:6px 0 0;color:var(--mute);font-size:15px}
+/* reviews */
+.revs{display:grid;gap:14px;margin-top:32px}
+.rv{display:flex;flex-direction:column;gap:12px}
+.stars{display:flex;gap:2px;color:var(--gold)}.stars svg{width:18px;height:18px;fill:currentColor;stroke:none}
+.rv blockquote{margin:0;font-size:15.5px}
+.rv .who{margin-top:auto;font-weight:800;font-size:14px;color:var(--mute)}
+.score{display:flex;align-items:center;gap:14px;margin-top:22px;flex-wrap:wrap}
+.score b{font:800 40px Unbounded,sans-serif;color:var(--gold)}
+.score span{color:var(--mute);font-size:15px}
+/* faq */
+.faq{margin-top:28px;display:grid;gap:10px;max-width:860px}
+details{background:var(--card);border-radius:14px;box-shadow:0 0 0 1px var(--line)}
+summary{list-style:none;cursor:pointer;padding:18px 54px 18px 20px;font-weight:800;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font:700 24px Manrope;color:var(--blue)}
+details[open] summary::after{content:"–"}
+details p{margin:0;padding:0 20px 18px;color:var(--mute)}
+/* contacts */
+.contacts{background:linear-gradient(180deg,var(--navy2),var(--navy));color:#eaf1fb}
+.ctg{display:grid;gap:28px;margin-top:30px}
+.ctl{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.ctl li{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:#ffffff0d;box-shadow:inset 0 0 0 1px #ffffff14}
+.ctl svg{color:var(--gold);margin-top:2px}
+.ctl small{display:block;color:#9db5d6;font-size:13px;font-weight:600}
+.ctl a{text-decoration:none;font-weight:800}
+.soc{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.soc a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;background:#ffffff14;font-weight:800;text-decoration:none;font-size:14px}.soc a:hover{background:#ffffff24}
+.form{padding:24px;border-radius:var(--r);background:var(--card);color:var(--ink);display:grid;gap:12px}
+.form h3{font-size:20px}
+.form label{font-weight:700;font-size:13px;color:var(--mute);display:block}
+.form input{width:100%;min-height:50px;margin-top:6px;border-radius:12px;border:0;background:var(--bg);color:var(--ink);box-shadow:0 0 0 1px var(--line);padding:0 14px;font:600 16px Manrope,sans-serif}
+.form input:focus{outline:none;box-shadow:0 0 0 2px var(--blue)}
+.form .err{color:#e5484d;font-size:13px;font-weight:700;min-height:18px;margin:0}
+footer{padding:22px max(5vw,16px) 96px;background:var(--navy);color:#7f95b5;font-size:14px;text-align:center}
+/* sticky bar (mobile) */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:25;display:grid;grid-template-columns:1.25fr 1.1fr .9fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--navy) 96%,transparent);backdrop-filter:blur(10px)}
+.bar .btn{min-height:46px;padding:0 8px;font-size:13px;gap:6px}.bar .btn svg{width:18px;height:18px}
+/* dialogs */
+dialog{border:0;padding:0;background:transparent;color:var(--ink);max-width:min(560px,94vw);width:100%;max-height:92vh;overflow:visible}
+dialog::backdrop{background:#030a14b8;backdrop-filter:blur(3px)}
+.sheet{position:relative;background:var(--card);border-radius:22px;padding:26px;max-height:90vh;overflow:auto;box-shadow:0 30px 80px -20px #000}
+.sheet .ib{position:absolute;right:12px;top:12px;background:var(--soft);color:var(--ink)}
+.seg{display:flex;gap:6px;margin:8px 0 18px;background:var(--soft);padding:4px;border-radius:12px}
+.seg button{flex:1;min-height:42px;border:0;border-radius:9px;background:transparent;color:var(--ink);font:700 14px Manrope,sans-serif;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--blue);color:#fff}
+.promo{margin-top:8px;padding:22px;border-radius:20px;background:linear-gradient(160deg,var(--navy2),var(--navy));color:#eaf1fb}
+.promo p{margin:8px 0 0;color:#bcd0ea}.promo .num{font:700 22px Unbounded,sans-serif;color:var(--gold2);margin-top:12px;white-space:nowrap}
+.promo .cta{margin-top:16px}
+#lb{max-width:min(900px,96vw)}
+#lb .sheet{padding:10px;background:#000;border-radius:18px}
+#lb img{width:100%;max-height:78vh;object-fit:contain;border-radius:12px}
+#lb p{color:#eaf1fb;margin:10px 6px 4px;font-weight:700}
+#lb .nav{position:absolute;top:44%;width:46px;height:46px;border-radius:50%;border:0;background:#000a;color:#fff;font-size:22px;cursor:pointer;z-index:2}
+#lb .nav.l{left:10px}#lb .nav.r{right:10px}
+@media(min-width:640px){.srv{grid-template-columns:repeat(2,1fr)}.gal{grid-template-columns:repeat(3,1fr)}.revs{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){
+.hw{display:flex}.bar{display:none}footer{padding-bottom:26px}
+.hg{grid-template-columns:1.05fr .95fr}
+.cg{grid-template-columns:1.15fr .85fr;align-items:start}.res{position:sticky;top:92px}
+.ctg{grid-template-columns:1fr 1fr;align-items:start}
+.srv{grid-template-columns:repeat(3,1fr)}
+.revs{grid-template-columns:repeat(4,1fr)}.steps{grid-template-columns:repeat(4,1fr)}
+.steps li{padding:74px 20px 22px}.steps li::before{left:20px;top:20px}
+.types{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:899px){nav{display:none}.logo span{font-size:16px}}
+@media(max-width:380px){.logo span{display:none}.lang button{padding:0 9px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="logo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#0b6fcf"/><rect x="27" y="12" width="46" height="46" fill="#fff"/><rect x="31" y="16" width="17" height="17" fill="#2c8cf0"/><rect x="52" y="16" width="17" height="17" fill="#2c8cf0"/><rect x="31" y="37" width="17" height="17" fill="#2c8cf0"/><rect x="52" y="37" width="17" height="17" fill="#2c8cf0"/><text x="50" y="82" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-weight="800" font-size="17" fill="#fff">BJ PLAST</text></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 9c0 3 3 6 6 6l1.5-1.5-2-1-1 .7c-1-.4-2-1.4-2.4-2.4l.7-1-1-2z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-set" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7.3L12 17.8 5.7 21.5l1.6-7.3L2 9.6 9 9z"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></symbol>
+<symbol id="i-tt" viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 3 2.5 4.5 5 4.5"/></symbol>
+<symbol id="i-gis" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><path d="M9.5 10l2 2 3.5-3.5"/></symbol>
+<symbol id="i-win" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 3v18M4 12h16"/></symbol>
+<symbol id="i-alu" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M9 3v18M15 3v18M3 12h18"/></symbol>
+<symbol id="i-balc" viewBox="0 0 24 24"><path d="M4 21V8l8-5 8 5v13M4 15h16M9 21v-6M15 21v-6"/></symbol>
+<symbol id="i-door" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="1.5"/><circle cx="15" cy="12" r="1"/></symbol>
+<symbol id="i-tamb" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v11h14V10"/><rect x="10" y="14" width="4" height="7"/></symbol>
+<symbol id="i-part" viewBox="0 0 24 24"><path d="M3 4h18v16H3zM9 4v16M15 4v16M3 10h6"/></symbol>
+<symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></symbol>
+</defs>
+</svg>
+
+<header>
+<div class="hd">
+<a class="logo" href="#top" aria-label="BJ PLAST"><svg><use href="#logo"/></svg><span>BJ <b>PLAST</b></span></a>
+<nav aria-label="Меню">
+<a href="#services" data-t="nav_s">Услуги</a><a href="#works" data-t="nav_w">Работы</a><a href="#calc" data-t="nav_c">Расчёт</a><a href="#reviews" data-t="nav_r">Отзывы</a><a href="#contacts" data-t="nav_k">Контакты</a>
+</nav>
+<div class="lang" role="group" aria-label="Язык / Тіл"><button type="button" data-lang="ru" aria-pressed="true">RU</button><button type="button" data-lang="kk" aria-pressed="false">ҚАЗ</button></div>
+<button class="ib" id="gear" aria-label="Настройки" data-ta="set_h"><svg class="i"><use href="#i-set"/></svg></button>
+<a class="btn p hw" href="#" data-wa="" style="min-height:44px;padding:0 18px"><svg class="i"><use href="#i-wa"/></svg>WhatsApp</a>
+</div>
+</header>
+
+<main id="top">
+<section class="hero">
+<div class="hg">
+<div>
+<span class="eyebrow"><svg class="i" style="width:16px;height:16px"><use href="#i-pin"/></svg><span data-t="eyebrow">Астана · Косшы</span></span>
+<h1 data-t="h1">Окна, двери и тамбуры <span>под ключ</span></h1>
+<p class="sub" data-t="sub">Изготовим из ПВХ или алюминия по вашим размерам и установим сами. Замер и консультация — бесплатно.</p>
+<div class="cta">
+<a class="btn p" href="#calc"><svg class="i"><use href="#i-win"/></svg><span data-t="cta_calc">Рассчитать стоимость</span></a>
+<a class="btn g" href="#" data-wa="hello"><svg class="i"><use href="#i-wa"/></svg><span data-t="cta_wa">Написать в WhatsApp</span></a>
+</div>
+<ul class="facts">
+<li data-t="f1"><b>15+ лет</b> опыта</li>
+<li data-t="f2"><b>5,0 ★</b> в 2ГИС</li>
+<li data-t="f3"><b>Замер</b> бесплатно</li>
+<li data-t="f4"><b>Астана</b> и Косшы</li>
+</ul>
+</div>
+<div class="win">
+<div class="panes">
+<figure><img src="img/tambur-dark.jpg" alt="Остеклённый тамбур, цвет антрацит" width="621" height="621" fetchpriority="high"></figure>
+<figure><img src="img/facade.jpg" alt="Монтаж стеклопакетов на фасаде здания" width="621" height="621" fetchpriority="high"></figure>
+<figure><img src="img/window-view.jpg" alt="Окно в новостройке" width="621" height="621"></figure>
+<figure><img src="img/partition.jpg" alt="Алюминиевая перегородка с дверью" width="621" height="621"></figure>
+</div>
+<div class="badge"><svg><use href="#i-star"/></svg><span>5,0 · 2ГИС</span></div>
+</div>
+</div>
+</section>
+
+<section class="band" id="services">
+<div class="wrap">
+<h2 data-t="srv_h">Что мы делаем</h2>
+<p class="lead" data-t="srv_p">Изготовление и монтаж — у одной команды. Для квартир, домов, офисов и магазинов.</p>
+<div class="srv">
+<article class="card"><div class="ico"><svg class="i"><use href="#i-win"/></svg></div><h3 data-t="s1h">Пластиковые окна</h3><p data-t="s1p">ПВХ-профиль, любые размеры, ламинация «под дерево».</p><a class="more" href="#calc" data-pick="pvc"><span data-t="more">Рассчитать</span><svg class="i" style="width:18px;height:18px"><use href="#i-arrow"/></svg></a></article>
+<article class="card"><div class="ico"><svg class="i"><use href="#i-alu"/></svg></div><h3 data-t="s2h">Алюминиевые окна и витражи</h3><p data-t="s2p">Лёгкие и прочные конструкции для фасадов, офисов и частных домов.</p><a class="more" href="#calc" data-pick="alu"><span data-t="more">Рассчитать</span><svg class="i" style="width:18px;height:18px"><use href="#i-arrow"/></svg></a></article>
+<article class="card"><div class="ico"><svg class="i"><use href="#i-balc"/></svg></div><h3 data-t="s3h">Балконы и лоджии</h3><p data-t="s3p">Остекление и отделка балконов и лоджий.</p><a class="more" href="#calc" data-pick="balcony"><span data-t="more">Рассчитать</span><svg class="i" style="width:18px;height:18px"><use href="#i-arrow"/></svg></a></article>
+<article class="card"><div class="ico"><svg class="i"><use href="#i-tamb"/></svg></div><h3 data-t="s4h">Двери и тамбуры</h3><p data-t="s4p">Входные двери и тёплые остеклённые тамбуры для дома и входной группы.</p><a class="more" href="#calc" data-pick="tambur"><span data-t="more">Рассчитать</span><svg class="i" style="width:18px;height:18px"><use href="#i-arrow"/></svg></a></article>
+<article class="card"><div class="ico"><svg class="i"><use href="#i-part"/></svg></div><h3 data-t="s5h">Перегородки</h3><p data-t="s5p">Офисные и торговые перегородки под ваши размеры.</p><a class="more" href="#calc" data-pick="partition"><span data-t="more">Рассчитать</span><svg class="i" style="width:18px;height:18px"><use href="#i-arrow"/></svg></a></article>
+<article class="card"><div class="ico"><svg class="i"><use href="#i-tool"/></svg></div><h3 data-t="s6h">Откосы и ремонт</h3><p data-t="s6p">Откосы, подоконники, замена стеклопакетов и стекла.</p><a class="more" href="#contacts"><span data-t="more2">Заказать</span><svg class="i" style="width:18px;height:18px"><use href="#i-arrow"/></svg></a></article>
+</div>
+</div>
+</section>
+
+<section class="band" id="works" style="padding-top:0">
+<div class="wrap">
+<h2 data-t="w_h">Наши работы</h2>
+<p class="lead" data-t="w_p">Фото с реальных объектов в Астане и Косшы. Больше — в Instagram @bj_plast.</p>
+<div class="chips" id="chips" role="group" aria-label="Фильтр"></div>
+<div class="gal" id="gal"></div>
+<a class="btn b more-ig" href="https://www.instagram.com/bj_plast/" target="_blank" rel="noopener"><svg class="i"><use href="#i-ig"/></svg><span data-t="w_ig">Смотреть в Instagram</span></a>
+</div>
+</section>
+
+<section class="band calc" id="calc">
+<div class="wrap">
+<h2 data-t="c_h">Посчитайте стоимость</h2>
+<p class="lead" data-t="c_p">Ориентировочный расчёт за минуту. Точную цену назовём после бесплатного замера.</p>
+<div class="cg">
+<div class="card">
+<p class="fl" data-t="c_type">Что нужно</p>
+<div class="types" id="types"></div>
+<div class="dims">
+<label><span data-t="c_w">Ширина, м</span><input id="cw" type="text" inputmode="decimal" autocomplete="off" value="1,5"></label>
+<label><span data-t="c_h2">Высота, м</span><input id="ch" type="text" inputmode="decimal" autocomplete="off" value="1,5"></label>
+<label><span data-t="c_q">Количество</span><input id="cq" type="text" inputmode="numeric" autocomplete="off" value="1"></label>
+</div>
+<div class="opts" id="opts"></div>
+</div>
+<div class="res" aria-live="polite">
+<div class="k" data-t="r_k">Ориентировочно</div>
+<div class="sum" id="sum">—</div>
+<div class="area" id="area"></div>
+<p class="note" data-t="r_note">Это расчёт для примера. Точная цена — после бесплатного замера.</p>
+<a class="btn p" href="#" id="send"><svg class="i"><use href="#i-wa"/></svg><span data-t="r_send">Отправить расчёт в WhatsApp</span></a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="band" id="process">
+<div class="wrap">
+<h2 data-t="p_h">Как мы работаем</h2>
+<ol class="steps">
+<li class="card"><h3 data-t="p1h">Заявка</h3><p data-t="p1p">Напишите в WhatsApp или оставьте заявку. Уточним задачу и договоримся о замере.</p></li>
+<li class="card"><h3 data-t="p2h">Бесплатный замер</h3><p data-t="p2p">Приедем, замерим проём и подскажем, какая конструкция подойдёт.</p></li>
+<li class="card"><h3 data-t="p3h">Изготовление</h3><p data-t="p3p">Делаем под ваши размеры из ПВХ или алюминия.</p></li>
+<li class="card"><h3 data-t="p4h">Монтаж под ключ</h3><p data-t="p4p">Устанавливаем сами, делаем откосы и подоконники.</p></li>
+</ol>
+</div>
+</section>
+
+<section class="band" id="reviews" style="padding-top:0">
+<div class="wrap">
+<h2 data-t="v_h">Что говорят клиенты</h2>
+<div class="score"><b>5,0</b><div><div class="stars" aria-label="5 из 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><span data-t="v_src">Отзывы с карточки в 2ГИС</span></div></div>
+<div class="revs">
+<article class="card rv"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><blockquote>Оперативно и качественно заменили стеклопакет, в тот же день. Цены демократичные, вежливые специалисты.</blockquote><div class="who">Эльмира М. · 9.11.2026</div></article>
+<article class="card rv"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><blockquote>Ребята всё установили всего за 5 дней. Быстро, качественно и без лишних задержек.</blockquote><div class="who">Саида Ж. · 2.11.2026</div></article>
+<article class="card rv"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><blockquote>Заменили треснувшее стекло, откосы и подоконник за один день. Теперь в квартире тепло, не дует, а уличный шум стал заметно меньше.</blockquote><div class="who">Кульбаршин А. · 2.11.2026</div></article>
+<article class="card rv"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><blockquote>Большое спасибо за качественную работу и то, что всегда на связи!</blockquote><div class="who">Ай · 3.11.2026</div></article>
+</div>
+<a class="btn b more-ig" href="https://2gis.kz/astana/firm/70000001117091812" target="_blank" rel="noopener"><svg class="i"><use href="#i-gis"/></svg><span data-t="v_all">Все отзывы в 2ГИС</span></a>
+</div>
+</section>
+
+<section class="band" id="faq" style="padding-top:0">
+<div class="wrap">
+<h2 data-t="q_h">Частые вопросы</h2>
+<div class="faq">
+<details><summary data-t="q1">Сколько стоит окно 1,5×1,5 м?</summary><p data-t="a1">Цена зависит от профиля, стеклопакета и опций. Прикиньте в калькуляторе выше, а точную цену назовём после бесплатного замера.</p></details>
+<details><summary data-t="q2">Остекляете балконы и лоджии?</summary><p data-t="a2">Да. Остекляем и отделываем балконы и лоджии.</p></details>
+<details><summary data-t="q3">Делаете откосы?</summary><p data-t="a3">Да, откосы и подоконники делаем вместе с установкой.</p></details>
+<details><summary data-t="q4">Работаете с организациями и стройками?</summary><p data-t="a4">Да, остекляем коммерческие объекты, офисы и здания — напишите, посчитаем.</p></details>
+</div>
+</div>
+</section>
+
+<section class="band contacts" id="contacts">
+<div class="wrap">
+<h2 data-t="k_h">Контакты</h2>
+<p class="lead" style="color:#bcd0ea" data-t="k_p">Оставьте заявку на бесплатный замер — ответим в WhatsApp.</p>
+<div class="ctg">
+<div>
+<ul class="ctl">
+<li><svg class="i"><use href="#i-phone"/></svg><div><small data-t="k_ph">Телефон и WhatsApp</small><a href="tel:+77478653002">+7 747 865 30 02</a></div></li>
+<li><svg class="i"><use href="#i-pin"/></svg><div><small data-t="k_ad">Адрес</small><span data-t="k_adv">ул. Адольфа Янушкевича, 1, Астана</span></div></li>
+<li><svg class="i"><use href="#i-clock"/></svg><div><small data-t="k_hr">Часы работы</small><span data-t="k_hrv">Пн–Сб 9:00–18:00, воскресенье — выходной</span></div></li>
+</ul>
+<div class="soc">
+<a href="https://www.instagram.com/bj_plast/" target="_blank" rel="noopener"><svg class="i"><use href="#i-ig"/></svg>Instagram</a>
+<a href="https://www.tiktok.com/@bj_plast" target="_blank" rel="noopener"><svg class="i"><use href="#i-tt"/></svg>TikTok</a>
+<a href="https://2gis.kz/astana/firm/70000001117091812" target="_blank" rel="noopener"><svg class="i"><use href="#i-gis"/></svg>2ГИС</a>
+</div>
+</div>
+<form class="form" id="lead" novalidate>
+<h3 data-t="fm_h">Заявка на замер</h3>
+<label><span data-t="fm_n">Ваше имя</span><input id="fn" autocomplete="name" maxlength="60"></label>
+<label><span data-t="fm_p">Телефон</span><input id="fp" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 7" maxlength="20"></label>
+<label><span data-t="fm_a">Адрес или район</span><input id="fa" autocomplete="street-address" maxlength="100"></label>
+<p class="err" id="ferr" role="alert"></p>
+<button class="btn p" type="submit"><svg class="i"><use href="#i-wa"/></svg><span data-t="fm_s">Отправить заявку</span></button>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer data-t="foot">© BJ PLAST · Астана и Косшы</footer>
+
+<div class="bar">
+<a class="btn p" href="#" data-wa="hello"><svg class="i"><use href="#i-wa"/></svg>WhatsApp</a>
+<a class="btn g" href="tel:+77478653002" style="color:#eaf1fb"><svg class="i"><use href="#i-phone"/></svg><span data-t="bar_call">Позвонить</span></a>
+<a class="btn g" href="#calc" style="color:#eaf1fb"><svg class="i"><use href="#i-win"/></svg><span data-t="bar_calc">Расчёт</span></a>
+</div>
+
+<dialog id="set" aria-labelledby="set-t"><div class="sheet">
+<button class="ib" data-close aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button>
+<h3 id="set-t" data-t="set_h">Настройки</h3>
+<p class="fl" style="margin-top:18px" data-t="set_th">Тема оформления</p>
+<div class="seg" id="th"><button data-th="auto" data-t="th_a">Авто</button><button data-th="light" data-t="th_l">Светлая</button><button data-th="dark" data-t="th_d">Тёмная</button></div>
+<p class="fl" data-t="set_lg">Язык</p>
+<div class="seg" id="lg"><button data-lang="ru">Русский</button><button data-lang="kk">Қазақша</button></div>
+<div class="promo"><b style="font:700 18px Unbounded,sans-serif" data-t="pr_h">Хотите похожий сайт для бизнеса?</b>
+<p data-t="pr_p">Сделаю такой же сайт для вашего бизнеса — с ценами, записью и WhatsApp.</p>
+<div class="num">8 747 612 84 11</div>
+<div class="cta"><a class="btn p" href="https://wa.me/77476128411?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D1%85%D0%BE%D0%B6%D0%B8%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0" target="_blank" rel="noopener"><svg class="i"><use href="#i-wa"/></svg>WhatsApp</a><a class="btn g" href="tel:+77476128411"><svg class="i"><use href="#i-phone"/></svg><span data-t="pr_c">Позвонить</span></a></div>
+</div>
+</div></dialog>
+
+<dialog id="lb" aria-label="Фото"><div class="sheet">
+<button class="ib" data-close aria-label="Закрыть" style="z-index:3"><svg class="i"><use href="#i-x"/></svg></button>
+<button class="nav l" id="lbp" aria-label="Назад">‹</button><button class="nav r" id="lbn" aria-label="Вперёд">›</button>
+<img id="lbi" alt=""><p id="lbc"></p>
+</div></dialog>
+
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var WA='77478653002';
+/* ЦЕНЫ ДЛЯ ПРИМЕРА (₸ за м²) — заменить на реальные цены BJ PLAST */
+var TYPES=[
+{id:'pvc',icon:'i-win',rate:38000,ru:'Окно ПВХ',kk:'ПВХ терезе',w:1.5,h:1.5},
+{id:'alu',icon:'i-alu',rate:65000,ru:'Алюминиевое окно, витраж',kk:'Алюминий терезе, витраж',w:1.5,h:1.5},
+{id:'balcony',icon:'i-balc',rate:38000,ru:'Балкон, лоджия',kk:'Балкон, лоджия',w:3,h:1.4},
+{id:'tambur',icon:'i-tamb',rate:65000,ru:'Тамбур',kk:'Тамбур',w:2,h:2.4},
+{id:'partition',icon:'i-part',rate:45000,ru:'Перегородка',kk:'Перегородка',w:3,h:2.5},
+{id:'door',icon:'i-door',rate:65000,ru:'Входная дверь',kk:'Кіреберіс есік',w:1,h:2.1}];
+var OPTS=[
+{id:'install',ru:'Монтаж под ключ',kk:'Орнату (кілті дайын)',pct:.12,on:true},
+{id:'wood',ru:'Ламинация «под дерево»',kk:'«Ағаш түстес» ламинация',pct:.2},
+{id:'slopes',ru:'Откосы',kk:'Откос',flat:14000},
+{id:'sill',ru:'Подоконник',kk:'Терезе табалдырығы',flat:9000},
+{id:'net',ru:'Москитная сетка',kk:'Масалық тор',flat:7000}];
+var WORKS=[
+{img:'tambur-dark',cat:'tambur',ru:'Входной тамбур, цвет антрацит, двойной стеклопакет',kk:'Кіреберіс тамбур, антрацит түсі, қос стеклопакет'},
+{img:'tambur-wood',cat:'tambur',ru:'Тёплый тамбур для частного дома',kk:'Жеке үйге арналған жылы тамбур'},
+{img:'house',cat:'tambur',ru:'Окно, дверь и тамбур в частном доме',kk:'Жеке үйдегі терезе, есік және тамбур'},
+{img:'facade',cat:'commercial',ru:'Монтаж стеклопакетов на фасаде здания',kk:'Ғимарат қасбетіне стеклопакет орнату'},
+{img:'balcony-door',cat:'window',ru:'Балконный блок с откосами, ЖК «Гранд Виктория»',kk:'Откосы бар балкон блогы, «Гранд Виктория» ТК'},
+{img:'window-view',cat:'window',ru:'Окно в новостройке',kk:'Жаңа үйдегі терезе'},
+{img:'aluminium',cat:'window',ru:'Алюминиевые рамы в чёрном цвете',kk:'Қара түсті алюминий жақтаулар'},
+{img:'partition',cat:'partition',ru:'Офисная перегородка с дверью',kk:'Есігі бар кеңсе перегородкасы'},
+{img:'office-door',cat:'commercial',ru:'Входная группа для павильона',kk:'Павильонға арналған кіре беріс тобы'},
+{img:'shopfront',cat:'commercial',ru:'Витринный проём коммерческого помещения',kk:'Коммерциялық үй-жайдың витринасы'}];
+var CATS=['all','tambur','window','partition','commercial'];
+var T={
+ru:{nav_s:'Услуги',nav_w:'Работы',nav_c:'Расчёт',nav_r:'Отзывы',nav_k:'Контакты',eyebrow:'Астана · Косшы',h1:'Окна, двери и тамбуры <span>под ключ</span>',sub:'Изготовим из ПВХ или алюминия по вашим размерам и установим сами. Замер и консультация — бесплатно.',cta_calc:'Рассчитать стоимость',cta_wa:'Написать в WhatsApp',f1:'<b>15+ лет</b> опыта',f2:'<b>5,0 ★</b> в 2ГИС',f3:'<b>Замер</b> бесплатно',f4:'<b>Астана</b> и Косшы',
+srv_h:'Что мы делаем',srv_p:'Изготовление и монтаж — у одной команды. Для квартир, домов, офисов и магазинов.',s1h:'Пластиковые окна',s1p:'ПВХ-профиль, любые размеры, ламинация «под дерево».',s2h:'Алюминиевые окна и витражи',s2p:'Лёгкие и прочные конструкции для фасадов, офисов и частных домов.',s3h:'Балконы и лоджии',s3p:'Остекление и отделка балконов и лоджий.',s4h:'Двери и тамбуры',s4p:'Входные двери и тёплые остеклённые тамбуры для дома и входной группы.',s5h:'Перегородки',s5p:'Офисные и торговые перегородки под ваши размеры.',s6h:'Откосы и ремонт',s6p:'Откосы, подоконники, замена стеклопакетов и стекла.',more:'Рассчитать',more2:'Заказать',
+w_h:'Наши работы',w_p:'Фото с реальных объектов в Астане и Косшы. Больше — в Instagram @bj_plast.',w_ig:'Смотреть в Instagram',fl_all:'Все',fl_tambur:'Тамбуры',fl_window:'Окна',fl_partition:'Перегородки',fl_commercial:'Коммерческие',
+c_h:'Посчитайте стоимость',c_p:'Ориентировочный расчёт за минуту. Точную цену назовём после бесплатного замера.',c_type:'Что нужно',c_w:'Ширина, м',c_h2:'Высота, м',c_q:'Количество',r_k:'Ориентировочно',r_note:'Это расчёт для примера. Точная цена — после бесплатного замера.',r_send:'Отправить расчёт в WhatsApp',r_area:'Площадь',r_pcs:'шт.',r_from:'от',r_to:'до',
+p_h:'Как мы работаем',p1h:'Заявка',p1p:'Напишите в WhatsApp или оставьте заявку. Уточним задачу и договоримся о замере.',p2h:'Бесплатный замер',p2p:'Приедем, замерим проём и подскажем, какая конструкция подойдёт.',p3h:'Изготовление',p3p:'Делаем под ваши размеры из ПВХ или алюминия.',p4h:'Монтаж под ключ',p4p:'Устанавливаем сами, делаем откосы и подоконники.',
+v_h:'Что говорят клиенты',v_src:'Отзывы с карточки в 2ГИС',v_all:'Все отзывы в 2ГИС',
+q_h:'Частые вопросы',q1:'Сколько стоит окно 1,5×1,5 м?',a1:'Цена зависит от профиля, стеклопакета и опций. Прикиньте в калькуляторе выше, а точную цену назовём после бесплатного замера.',q2:'Остекляете балконы и лоджии?',a2:'Да. Остекляем и отделываем балконы и лоджии.',q3:'Делаете откосы?',a3:'Да, откосы и подоконники делаем вместе с установкой.',q4:'Работаете с организациями и стройками?',a4:'Да, остекляем коммерческие объекты, офисы и здания — напишите, посчитаем.',
+k_h:'Контакты',k_p:'Оставьте заявку на бесплатный замер — ответим в WhatsApp.',k_ph:'Телефон и WhatsApp',k_ad:'Адрес',k_adv:'ул. Адольфа Янушкевича, 1, Астана',k_hr:'Часы работы',k_hrv:'Пн–Сб 9:00–18:00, воскресенье — выходной',fm_h:'Заявка на замер',fm_n:'Ваше имя',fm_p:'Телефон',fm_a:'Адрес или район',fm_s:'Отправить заявку',fm_err:'Укажите телефон, чтобы мы могли связаться.',
+foot:'© BJ PLAST · Астана и Косшы',bar_call:'Позвонить',bar_calc:'Расчёт',set_h:'Настройки',set_th:'Тема оформления',th_a:'Авто',th_l:'Светлая',th_d:'Тёмная',set_lg:'Язык',pr_h:'Хотите похожий сайт для бизнеса?',pr_p:'Сделаю такой же сайт для вашего бизнеса — с ценами, записью и WhatsApp.',pr_c:'Позвонить',
+wa_hello:'Здравствуйте! Хочу заказать окна/двери. Подскажите, пожалуйста.',wa_calc:'Здравствуйте! Хочу рассчитать',wa_lead:'Здравствуйте! Заявка на бесплатный замер.',wa_name:'Имя',wa_phone:'Телефон',wa_addr:'Адрес/район',wa_ref:'Ориентир с сайта',close:'Закрыть'},
+kk:{nav_s:'Қызметтер',nav_w:'Жұмыстар',nav_c:'Есептеу',nav_r:'Пікірлер',nav_k:'Байланыс',eyebrow:'Астана · Қосшы',h1:'Терезе, есік және тамбур <span>кілті дайын</span>',sub:'ПВХ немесе алюминийден өлшеміңізге сай жасап, өзіміз орнатамыз. Өлшеу мен кеңес — тегін.',cta_calc:'Құнын есептеу',cta_wa:'WhatsApp-қа жазу',f1:'<b>15+ жыл</b> тәжірибе',f2:'2ГИС-те <b>5,0 ★</b>',f3:'<b>Өлшеу</b> тегін',f4:'<b>Астана</b> және Қосшы',
+srv_h:'Не істейміз',srv_p:'Жасау да, орнату да — бір команда. Пәтерге, үйге, кеңсе мен дүкенге.',s1h:'Пластик терезелер',s1p:'ПВХ профиль, кез келген өлшем, «ағаш түстес» ламинация.',s2h:'Алюминий терезелер мен витраждар',s2p:'Қасбетке, кеңсеге және жеке үйге арналған жеңіл әрі берік конструкциялар.',s3h:'Балкондар мен лоджиялар',s3p:'Балкон мен лоджияны әйнектеу және әрлеу.',s4h:'Есіктер мен тамбурлар',s4p:'Үй мен кіреберіске арналған кіре беріс есіктер және жылы әйнектелген тамбурлар.',s5h:'Перегородкалар',s5p:'Кеңсе мен сауда орындарына арналған перегородкалар, өлшемге сай.',s6h:'Откос және жөндеу',s6p:'Откос, терезе табалдырығы, стеклопакет пен әйнекті ауыстыру.',more:'Есептеу',more2:'Тапсырыс беру',
+w_h:'Біздің жұмыстар',w_p:'Астана мен Қосшыдағы нақты нысандардың суреттері. Көбірек — Instagram @bj_plast-та.',w_ig:'Instagram-да көру',fl_all:'Барлығы',fl_tambur:'Тамбурлар',fl_window:'Терезелер',fl_partition:'Перегородкалар',fl_commercial:'Коммерциялық',
+c_h:'Құнын өзіңіз есептеңіз',c_p:'Бір минутта шамамен есептеңіз. Нақты бағаны тегін өлшеуден кейін айтамыз.',c_type:'Не керек',c_w:'Ені, м',c_h2:'Биіктігі, м',c_q:'Саны',r_k:'Шамамен',r_note:'Бұл — үлгі есеп. Нақты баға — тегін өлшеуден кейін.',r_send:'Есепті WhatsApp-қа жіберу',r_area:'Ауданы',r_pcs:'дана',r_from:'бастап',r_to:'дейін',
+p_h:'Біз қалай жұмыс істейміз',p1h:'Өтінім',p1p:'WhatsApp-қа жазыңыз немесе өтінім қалдырыңыз. Тапсырманы нақтылап, өлшеуге келісеміз.',p2h:'Тегін өлшеу',p2p:'Келіп, тесікті өлшеп, қандай конструкция лайық екенін айтамыз.',p3h:'Дайындау',p3p:'ПВХ немесе алюминийден өлшеміңізге сай жасаймыз.',p4h:'Кілті дайын орнату',p4p:'Өзіміз орнатамыз, откос пен терезе табалдырығын жасаймыз.',
+v_h:'Клиенттер не дейді',v_src:'2ГИС картасындағы пікірлер',v_all:'2ГИС-тегі барлық пікір',
+q_h:'Жиі қойылатын сұрақтар',q1:'1,5×1,5 м терезе қанша тұрады?',a1:'Баға профильге, стеклопакетке және қосымшаларға байланысты. Жоғарыдағы калькуляторда шамалаңыз, нақты бағаны тегін өлшеуден кейін айтамыз.',q2:'Балкон мен лоджияны әйнектейсіздер ме?',a2:'Иә. Балкон мен лоджияны әйнектеп, әрлейміз.',q3:'Откос жасайсыздар ма?',a3:'Иә, откос пен терезе табалдырығын орнатумен бірге жасаймыз.',q4:'Ұйымдармен және құрылыспен жұмыс істейсіздер ме?',a4:'Иә, коммерциялық нысандарды, кеңселер мен ғимараттарды әйнектейміз — жазыңыз, есептеп береміз.',
+k_h:'Байланыс',k_p:'Тегін өлшеуге өтінім қалдырыңыз — WhatsApp-та жауап береміз.',k_ph:'Телефон және WhatsApp',k_ad:'Мекенжай',k_adv:'Адольф Янушкевич көшесі, 1, Астана',k_hr:'Жұмыс уақыты',k_hrv:'Дс–Сб 9:00–18:00, жексенбі — демалыс',fm_h:'Өлшеуге өтінім',fm_n:'Атыңыз',fm_p:'Телефон',fm_a:'Мекенжай немесе аудан',fm_s:'Өтінімді жіберу',fm_err:'Байланысуымыз үшін телефон нөмірін жазыңыз.',
+foot:'© BJ PLAST · Астана және Қосшы',bar_call:'Қоңырау',bar_calc:'Есептеу',set_h:'Баптаулар',set_th:'Безендіру тақырыбы',th_a:'Авто',th_l:'Жарық',th_d:'Қараңғы',set_lg:'Тіл',pr_h:'Бизнесіңізге осындай сайт керек пе?',pr_p:'Бизнесіңізге де осындай сайт жасап беремін — бағамен, жазылумен және WhatsApp-пен.',pr_c:'Қоңырау шалу',
+wa_hello:'Сәлеметсіз бе! Терезе/есік тапсырыс бергім келеді. Көмектесіңізші.',wa_calc:'Сәлеметсіз бе! Есептеп бергіңізді өтінемін',wa_lead:'Сәлеметсіз бе! Тегін өлшеуге өтінім.',wa_name:'Аты',wa_phone:'Телефон',wa_addr:'Мекенжай/аудан',wa_ref:'Сайттағы шамамен баға',close:'Жабу'}};
+var lang='ru',theme='auto',cat='all',sel='pvc',lbI=0,lbList=[];
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+function t(k){return(T[lang]&&T[lang][k])||T.ru[k]||''}
+function money(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' ₸'}
+function waUrl(text){return'https://wa.me/'+WA+'?text='+encodeURIComponent(text)}
+
+/* язык */
+function setLang(l){
+ lang=l;store('bj-lang',l);document.documentElement.lang=l==='kk'?'kk':'ru';
+ $$('[data-t]').forEach(function(e){var v=T[l][e.getAttribute('data-t')];if(v!=null)e.innerHTML=v});
+ $$('[data-ta]').forEach(function(e){e.setAttribute('aria-label',t(e.getAttribute('data-ta')))});
+ $$('[data-lang]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===l)});
+ renderChips();renderGal();renderTypes();renderOpts();calc();
+ $$('[data-wa]').forEach(function(a){a.href=waUrl(t('wa_hello'))});
+ document.title=l==='kk'?'BJ PLAST — Астанадағы терезе, есік және тамбур':'BJ PLAST — окна, двери и тамбуры в Астане';
+}
+/* тема */
+function setTheme(m){theme=m;store('bj-theme',m);if(m==='auto')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme',m);$$('#th button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-th')===m)})}
+
+/* галерея */
+function renderChips(){
+ var box=$('#chips');box.innerHTML='';
+ CATS.forEach(function(c){var b=document.createElement('button');b.className='chip';b.type='button';b.textContent=t('fl_'+c);b.setAttribute('aria-pressed',c===cat);b.onclick=function(){cat=c;renderChips();filterGal()};box.appendChild(b)});
+}
+function renderGal(){
+ var g=$('#gal');g.innerHTML='';
+ WORKS.forEach(function(w,i){
+  var f=document.createElement('figure');f.dataset.cat=w.cat;f.tabIndex=0;f.setAttribute('role','button');f.setAttribute('aria-label',w[lang]);
+  var im=document.createElement('img');im.src='img/'+w.img+'.jpg';im.alt=w[lang];im.loading='lazy';im.width=621;im.height=621;
+  var c=document.createElement('figcaption');c.textContent=w[lang];
+  f.append(im,c);f.onclick=function(){openLb(f)};f.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(f)}};g.appendChild(f)});
+ filterGal();
+}
+function filterGal(){$$('#gal figure').forEach(function(f){f.hidden=!(cat==='all'||f.dataset.cat===cat)})}
+function openLb(f){lbList=$$('#gal figure').filter(function(x){return!x.hidden});lbI=lbList.indexOf(f);showLb();$('#lb').showModal()}
+function showLb(){var f=lbList[lbI];if(!f)return;var im=$('img',f);$('#lbi').src=im.src;$('#lbi').alt=im.alt;$('#lbc').textContent=$('figcaption',f).textContent}
+$('#lbp').onclick=function(){lbI=(lbI-1+lbList.length)%lbList.length;showLb()};
+$('#lbn').onclick=function(){lbI=(lbI+1)%lbList.length;showLb()};
+$('#lb').addEventListener('keydown',function(e){if(e.key==='ArrowLeft')$('#lbp').click();if(e.key==='ArrowRight')$('#lbn').click()});
+
+/* калькулятор */
+function renderTypes(){
+ var box=$('#types');box.innerHTML='';
+ TYPES.forEach(function(x){var b=document.createElement('button');b.type='button';b.setAttribute('aria-pressed',x.id===sel);b.innerHTML='<svg class="i"><use href="#'+x.icon+'"/></svg><span>'+x[lang]+'</span>';b.onclick=function(){pick(x.id,true)};box.appendChild(b)});
+}
+function renderOpts(){
+ var box=$('#opts');var keep={};$$('input',box).forEach(function(i){keep[i.id]=i.checked});box.innerHTML='';
+ OPTS.forEach(function(o){var l=document.createElement('label');var i=document.createElement('input');i.type='checkbox';i.id='o_'+o.id;i.checked=('o_'+o.id in keep)?keep['o_'+o.id]:!!o.on;i.onchange=calc;var s=document.createElement('span');s.textContent=o[lang];l.append(i,s);box.appendChild(l)});
+}
+function pick(id,setDims){
+ sel=id;var x=TYPES.filter(function(y){return y.id===id})[0];
+ if(setDims){$('#cw').value=String(x.w).replace('.',',');$('#ch').value=String(x.h).replace('.',',');$('#cq').value='1'}
+ renderTypes();calc();
+}
+function num(el,min,max,def){var v=parseFloat(String(el.value).replace(',','.'));if(!isFinite(v))v=def;return Math.min(max,Math.max(min,v))}
+var last={text:'',sum:0};
+function calc(){
+ var x=TYPES.filter(function(y){return y.id===sel})[0];
+ var w=num($('#cw'),.3,6,1.5),h=num($('#ch'),.3,6,1.5),q=Math.round(num($('#cq'),1,50,1));
+ var area=Math.max(w*h,1);
+ var base=x.rate*area*q,mult=1,flat=0,names=[];
+ OPTS.forEach(function(o){var c=$('#o_'+o.id);if(c&&c.checked){names.push(o[lang]);if(o.pct)mult+=o.pct;if(o.flat)flat+=o.flat*q}});
+ var total=base*mult+flat;
+ var lo=Math.floor(total*.92/1000)*1000,hi=Math.ceil(total*1.08/1000)*1000;
+ $('#sum').textContent=money(lo).replace(/\u00a0₸/,'')+' – '+money(hi);
+ $('#area').textContent=t('r_area')+': '+(w*q*h).toFixed(2).replace('.',',')+' м² · '+q+' '+t('r_pcs');
+ var text=t('wa_calc')+': '+x[lang]+', '+String(w).replace('.',',')+' × '+String(h).replace('.',',')+' м, '+q+' '+t('r_pcs')+(names.length?' ('+names.join(', ')+')':'')+'. '+t('wa_ref')+': '+money(lo).replace(/\u00a0₸/,'')+' – '+money(hi)+'.';
+ last.text=text;$('#send').href=waUrl(text);
+}
+['#cw','#ch','#cq'].forEach(function(s){$(s).addEventListener('input',calc)});
+$$('[data-pick]').forEach(function(a){a.addEventListener('click',function(){pick(a.getAttribute('data-pick'),true)})});
+
+/* WhatsApp-ссылки */
+$$('[data-wa]').forEach(function(a){a.target='_blank';a.rel='noopener'});
+$('#send').target='_blank';$('#send').rel='noopener';
+
+/* заявка */
+$('#lead').addEventListener('submit',function(e){
+ e.preventDefault();var n=$('#fn').value.trim(),p=$('#fp').value.trim(),a=$('#fa').value.trim();
+ if(p.replace(/\D/g,'').length<10){$('#ferr').textContent=t('fm_err');$('#fp').focus();return}
+ $('#ferr').textContent='';
+ var text=t('wa_lead')+'\n'+(n?t('wa_name')+': '+n+'\n':'')+t('wa_phone')+': '+p+(a?'\n'+t('wa_addr')+': '+a:'');
+ window.open(waUrl(text),'_blank','noopener');
+});
+
+/* диалоги */
+$('#gear').onclick=function(){$('#set').showModal()};
+$$('dialog').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d)d.close()});$$('[data-close]',d).forEach(function(b){b.onclick=function(){d.close()}})});
+$$('#th button').forEach(function(b){b.onclick=function(){setTheme(b.getAttribute('data-th'))}});
+$$('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'))})});
+
+setTheme(store('bj-theme')||'auto');
+setLang(store('bj-lang')==='kk'?'kk':'ru');
+})();
+</script>
+</body>
+</html>
