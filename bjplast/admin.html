@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Админка — BJ PLAST</title>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+:root{--bg:#0A1A2C;--s1:#0F2238;--s2:#163053;--line:#22406A;--text:#E7EFF8;--muted:#9DB1C7;--acc:#3D93E8;--ok:#3AC77F;--red:#FF6B6B;--wa:#1FAE5B;--sun:#F2B33D}
+body{background:var(--bg);color:var(--text);font:400 15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+a{color:inherit}
+.wrap{max-width:920px;margin:0 auto;padding:0 14px 60px}
+input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;font-size:16px;padding:10px 12px;min-width:0}
+input[type=color]{padding:3px;height:42px;width:56px;flex:none}
+input[type=checkbox]{width:20px;height:20px;accent-color:var(--acc);flex:none}
+textarea{resize:vertical;line-height:1.45;font-size:14.5px}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--acc)}
+.fld{display:grid;gap:5px;font-size:13px;color:var(--muted);margin-bottom:10px}
+.muted{color:var(--muted);font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row>.fld{flex:1;min-width:120px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:42px;padding:0 15px;border-radius:11px;font-weight:600;font-size:14px;background:var(--s2);border:1px solid var(--line);text-decoration:none}
+.btn.p{background:var(--acc);color:#fff;border-color:var(--acc)}
+.btn.s{height:34px;padding:0 11px;font-size:13px;border-radius:9px}
+.btn.g{background:var(--wa);border-color:var(--wa);color:#fff}
+.btn.r{color:var(--red)}
+.btn:disabled{opacity:.5}
+.gate{max-width:380px;margin:12vh auto 0;padding:0 18px;text-align:center}
+.gate svg{width:56px;height:56px}
+.gate h1{font-size:24px;margin:14px 0 6px}
+.gate p{color:var(--muted);margin-bottom:18px}
+.gate .fld{text-align:left}.gate .btn{width:100%}
+.bar{position:sticky;top:0;z-index:10;background:rgba(10,26,44,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{display:flex;align-items:center;gap:8px;height:56px;max-width:920px;margin:0 auto;padding:0 14px}
+.bar-in b{margin-right:auto;font-size:17px;display:flex;align-items:center;gap:8px}
+.bar-in b svg{width:28px;height:28px}
+.sv{font-size:12.5px;color:var(--muted)}.sv.ok{color:var(--ok)}.sv.err{color:var(--red)}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:0 14px 10px;max-width:920px;margin:0 auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;height:36px;padding:0 13px;border-radius:99px;background:var(--s1);border:1px solid var(--line);font-size:14px;position:relative}
+.tabs button[aria-selected=true]{background:var(--text);color:#0A1A2C;font-weight:700}
+.dot{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--red);color:#fff;font-size:11px;display:grid;place-items:center}
+h2.t{font-size:21px;margin:18px 0 12px}
+.card{background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
+h3.c{font-size:16px;margin-bottom:10px}
+.note{background:rgba(61,147,232,.12);border:1px solid rgba(61,147,232,.4);color:#CFE3F8;border-radius:12px;padding:10px 12px;font-size:13.5px;margin-bottom:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.chips button{height:32px;padding:0 12px;border-radius:99px;background:var(--s1);border:1px solid var(--line);font-size:13px}
+.chips button[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:700}
+.ord{background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px}
+.ord.new{border-color:var(--sun)}
+.oh{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.oh b{font-size:16px}
+.bdg{font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:99px;background:var(--s2)}
+.bdg.calc{background:rgba(61,147,232,.18);color:#8EC2F5}.bdg.zamer{background:rgba(58,199,127,.16);color:var(--ok)}
+.oh time{margin-left:auto;color:var(--muted);font-size:12.5px}
+.ord ul{list-style:none;margin:8px 0;font-size:14px;display:grid;gap:3px}
+.ord li span{color:var(--muted)}
+.st{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.st button{height:32px;padding:0 10px;border-radius:9px;background:var(--s2);font-size:12.5px}
+.st button[aria-pressed=true]{background:var(--text);color:#0A1A2C;font-weight:700}
+.it{display:grid;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:8px}
+.it .row input,.it .row select{flex:1}
+.sw{display:flex;align-items:center;gap:10px;margin-bottom:10px;cursor:pointer;font-size:14.5px}
+.mini{display:grid;gap:3px;font-size:12px;color:var(--muted);flex:1;min-width:90px}
+.ph{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:640px){.ph{grid-template-columns:repeat(3,1fr)}}
+.phc{background:var(--bg);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.phc img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.phc .b{padding:8px;display:grid;gap:6px}
+.phc .b input,.phc .b select{font-size:13px;padding:7px 9px}
+.phc .row button{flex:1;height:30px;border-radius:8px;background:var(--s2);font-size:13px}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(120px);background:var(--text);color:#0A1A2C;font-weight:700;padding:11px 16px;border-radius:12px;transition:transform .25s;z-index:30;max-width:90vw;text-align:center}
+.toast.on{transform:translateX(-50%)}
+.empty{color:var(--muted);text-align:center;padding:24px 0}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#0B6FCF"/><rect x="13" y="10" width="22" height="24" rx="1" fill="#fff"/><rect x="15.5" y="12.5" width="7.5" height="9" fill="#5BA8F0"/><rect x="25" y="12.5" width="7.5" height="9" fill="#5BA8F0"/><rect x="15.5" y="22.8" width="7.5" height="9" fill="#5BA8F0"/><rect x="25" y="22.8" width="7.5" height="9" fill="#5BA8F0"/></symbol></svg>
+
+<div id="gate" class="gate" hidden>
+  <svg><use href="#mark"/></svg>
+  <h1>Админка BJ PLAST</h1>
+  <p>Введите пароль администратора.</p>
+  <label class="fld">Пароль <span class="muted">английскими буквами</span><input id="gPass" type="password" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false"></label>
+  <button class="btn p" id="gateBtn" type="button">Войти</button>
+  <p style="margin-top:16px"><a href="./">← вернуться на сайт</a></p>
+</div>
+
+<div id="app" hidden>
+  <header class="bar">
+    <div class="bar-in"><b><svg><use href="#mark"/></svg>Админка</b><span class="sv" id="sv"></span><a class="btn s" href="./" target="_blank" rel="noopener">Сайт ↗</a><button class="btn s" id="exit">Выйти</button></div>
+    <nav class="tabs" id="tabs">
+      <button data-tab="orders" aria-selected="true">Заявки<span class="dot" id="dot" hidden></span></button>
+      <button data-tab="calc" aria-selected="false">Цены и калькулятор</button>
+      <button data-tab="works" aria-selected="false">Работы</button>
+      <button data-tab="reviews" aria-selected="false">Отзывы</button>
+      <button data-tab="settings" aria-selected="false">Контакты</button>
+      <button data-tab="tg" aria-selected="false">Telegram</button>
+      <button data-tab="admin" aria-selected="false">Пароль</button>
+    </nav>
+  </header>
+  <main class="wrap" id="view"></main>
+</div>
+<input type="file" id="files" accept="image/*" multiple hidden>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="js/store.js?v=1"></script>
+<script>
+(function(){
+'use strict';
+var $=function(s){return document.querySelector(s);};
+var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+var fmt=function(n){return String(Math.round(n||0)).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' ₸';};
+function toast(t){var el=$('#toast');el.textContent=t;el.classList.add('on');clearTimeout(el._t);el._t=setTimeout(function(){el.classList.remove('on');},2600);}
+function getPath(o,p){return p.split('.').reduce(function(a,k){return a==null?a:a[k];},o);}
+function setPath(o,p,v){var a=p.split('.');for(var i=0;i<a.length-1;i++)o=o[a[i]];o[a[a.length-1]]=v;}
+var seenKey='bj_seen', D=null, tab='orders', orders=[], oSt='all', timer=null, seen=[];
+try{seen=JSON.parse(localStorage.getItem(seenKey)||'[]');}catch(e){}
+
+/* вход */
+function gate(){ $('#app').hidden=true; $('#gate').hidden=false; $('#gPass').focus(); }
+function login(){
+  var p=$('#gPass').value.trim(); if(!p) return toast('Введите пароль');
+  $('#gateBtn').disabled=true;
+  Store.login(p).then(boot).catch(function(e){toast(e.status===401?'Неверный пароль. Проверьте английскую раскладку':e.status===429?'Слишком много попыток, подождите 15 минут':'Нет связи: '+e.message);}).then(function(){$('#gateBtn').disabled=false;});
+}
+$('#gateBtn').onclick=login;
+$('#gPass').addEventListener('keydown',function(e){if(e.key==='Enter')login();});
+$('#exit').onclick=function(){Store.logout();location.reload();};
+function boot(){
+  $('#gate').hidden=true; $('#app').hidden=false;
+  Store.load(true).then(function(d){D=d;render();}).catch(function(e){toast('Не загрузилось: '+e.message);});
+}
+if(Store.authed()) boot(); else gate();
+
+/* сохранение */
+var saveT=null;
+function sv(s){var el=$('#sv');el.className='sv '+s;el.textContent=s==='ok'?'✓ сохранено':s==='err'?'⚠ не сохранено':'сохраняю…';}
+function touch(){ sv('busy'); clearTimeout(saveT); saveT=setTimeout(function(){ Store.save(D).then(function(){sv('ok');}).catch(function(e){sv('err');toast('Не сохранилось: '+e.message);}); },700); }
+
+/* вкладки */
+$('#tabs').addEventListener('click',function(e){var b=e.target.closest('[data-tab]');if(b)go(b.dataset.tab);});
+function go(t){tab=t;[].forEach.call($('#tabs').children,function(x){x.setAttribute('aria-selected',x.dataset.tab===t);});render();window.scrollTo(0,0);}
+function render(){ clearInterval(timer); timer=null; ({orders:vOrders,calc:vCalc,works:vWorks,reviews:vReviews,settings:vSettings,tg:vTg,admin:vAdmin})[tab](); }
+function F(label,path,o){o=o||{};var v=getPath(D,path);
+  return '<label class="fld">'+label+(o.area?'<textarea data-b="'+path+'" rows="'+(o.rows||3)+'" placeholder="'+esc(o.ph||'')+'">'+esc(v==null?'':v)+'</textarea>':'<input data-b="'+path+'"'+(o.num?' data-num="1" inputmode="decimal"':'')+' value="'+esc(v==null?'':v)+'" placeholder="'+esc(o.ph||'')+'">')+(o.hint?'<span class="muted">'+o.hint+'</span>':'')+'</label>';}
+function SW(label,path){return '<label class="sw"><input type="checkbox" data-b="'+path+'"'+(getPath(D,path)?' checked':'')+'>'+label+'</label>';}
+function MI(label,path,o){o=o||{};var v=getPath(D,path);return '<label class="mini">'+label+'<input data-b="'+path+'"'+(o.num?' data-num="1" inputmode="decimal"':'')+' value="'+esc(v==null?'':v)+'"'+(o.w?' style="max-width:'+o.w+'px"':'')+'></label>';}
+
+/* ===== ЗАЯВКИ ===== */
+var STS=[['new','Новая'],['work','В работе'],['zamer','Замер назначен'],['done','Готово'],['cancel','Отказ']];
+function vOrders(){
+  $('#view').innerHTML='<h2 class="t">Заявки</h2><div class="note">Сюда приходят заявки с калькулятора и с формы «Записаться на замер». Страница обновляется сама каждые 20 секунд.</div><div class="chips" id="oSt"></div><div id="olist" class="empty">Загружаю…</div>';
+  loadOrders(); timer=setInterval(function(){loadOrders(true);},20000);
+}
+function loadOrders(quiet){
+  Store.listOrders(300).then(function(l){
+    var fresh=l.filter(function(o){return o.status==='new'&&seen.indexOf(o.id)<0;});
+    if(quiet&&fresh.length){toast('Новая заявка!');try{var a=new (window.AudioContext||window.webkitAudioContext)(),o=a.createOscillator(),g=a.createGain();o.frequency.value=880;o.connect(g);g.connect(a.destination);g.gain.setValueAtTime(.2,a.currentTime);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+.5);o.start();o.stop(a.currentTime+.5);}catch(e){}}
+    orders=l; seen=l.map(function(o){return o.id;}); try{localStorage.setItem(seenKey,JSON.stringify(seen));}catch(e){}
+    paintOrders();
+  }).catch(function(e){var el=$('#olist'); if(el) el.textContent='Не загрузилось: '+e.message;});
+}
+function paintOrders(){
+  if(!$('#oSt')) return;
+  var n=orders.filter(function(o){return o.status==='new';}).length; $('#dot').hidden=!n; $('#dot').textContent=n;
+  $('#oSt').innerHTML=[['all','Все']].concat(STS).map(function(s){var c=s[0]==='all'?orders.length:orders.filter(function(o){return o.status===s[0];}).length;return '<button data-ost="'+s[0]+'" aria-pressed="'+(oSt===s[0])+'">'+s[1]+' '+c+'</button>';}).join('');
+  var l=orders.filter(function(o){return oSt==='all'||o.status===oSt;});
+  $('#olist').className=l.length?'':'empty';
+  $('#olist').innerHTML=l.length?l.map(orderHTML).join(''):'Заявок пока нет.';
+}
+function orderHTML(o){
+  var d=new Date(o.created_at), ph=String(o.phone||'').replace(/\D/g,''); if(ph.length===11&&ph[0]==='8') ph='7'+ph.slice(1); if(ph.length===10) ph='7'+ph;
+  var li=function(k,v){return v?'<li><span>'+k+':</span> '+esc(v)+'</li>':'';};
+  return '<div class="ord'+(o.status==='new'?' new':'')+'"><div class="oh"><span class="bdg '+(o.kind==='calc'?'calc':'zamer')+'">'+(o.kind==='calc'?'Расчёт':'Замер')+'</span><b>№'+o.id+' '+esc(o.name||'Без имени')+'</b><time>'+d.toLocaleDateString('ru-RU',{day:'numeric',month:'short'})+', '+d.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'})+'</time></div>'+
+    '<ul>'+li('Телефон',o.phone)+li('Адрес',o.address)+li('Конструкция',o.item)+li('Дополнительно',o.opts)+li('Цена с сайта',o.price)+li('Комментарий',o.comment)+(o.lang==='kk'?'<li><span>Язык:</span> қазақша</li>':'')+'</ul>'+
+    '<div class="row">'+(ph?'<a class="btn s" href="tel:+'+ph+'">📞 Позвонить</a><a class="btn s g" href="https://wa.me/'+ph+'" target="_blank" rel="noopener">WhatsApp</a>':'')+'<button class="btn s r" data-odel="'+o.id+'" style="margin-left:auto">Удалить</button></div>'+
+    '<div class="st">'+STS.map(function(s){return '<button data-ord="'+o.id+'" data-s="'+s[0]+'" aria-pressed="'+(o.status===s[0])+'">'+s[1]+'</button>';}).join('')+'</div></div>';
+}
+
+/* ===== ЦЕНЫ И КАЛЬКУЛЯТОР ===== */
+var KINDS=[['window','Окно (створки)'],['balcony','Балконный блок'],['door','Дверь'],['group','Витраж'],['groupdoor','Витраж с дверью']];
+function vCalc(){
+  var c=D.calc;
+  $('#view').innerHTML='<h2 class="t">Цены и калькулятор</h2>'+
+    '<div class="card">'+SW('Показывать клиентам примерную цену','calc.showPrice')+
+      '<p class="muted" style="margin-bottom:10px">Если выключить, клиент видит чертёж и параметры, а вместо цены — «Цену назовём после замера». Расчёт всё равно приходит в заявки.</p>'+
+      F('Подпись под ценой','calc.note')+F('Подпись под ценой — на казахском','calc.note_kk')+
+      F('Доплата за каждую открывающуюся створку, ₸','calc.openPrice',{num:1,hint:'Глухая створка дешевле. Эта сумма добавляется за каждую поворотную или поворотно-откидную створку.'})+'</div>'+
+    '<div class="card"><h3 class="c">Конструкции · цена за м²</h3><p class="muted" style="margin-bottom:10px">Цена = площадь × цена за м² (минимум 0,6 м²) + цвет + створки + допы.</p>'+c.types.map(function(t,i){
+      var p='calc.types.'+i;
+      return '<div class="it"><div class="row">'+MI('Название',p+'.name')+MI('На казахском',p+'.kk')+'</div>'+
+        '<div class="row">'+MI('₸ за м²',p+'.rate',{num:1})+MI('Ширина по умолч., мм',p+'.w',{num:1})+MI('Высота по умолч., мм',p+'.h',{num:1})+MI('Створок/секций',p+'.sashes',{num:1})+'</div>'+
+        '<div class="row"><label class="mini">Как рисовать<select data-b="'+p+'.kind">'+KINDS.map(function(k){return '<option value="'+k[0]+'"'+(t.kind===k[0]?' selected':'')+'>'+k[1]+'</option>';}).join('')+'</select></label>'+
+        '<label class="sw" style="margin:16px 0 0"><input type="checkbox" data-b="'+p+'.on"'+(t.on?' checked':'')+'>На сайте</label><button class="btn s r" data-del="calc.types.'+i+'" style="margin:16px 0 0 auto">Удалить</button></div></div>';
+    }).join('')+'<button class="btn" data-add="type">+ Конструкция</button></div>'+
+    '<div class="card"><h3 class="c">Цвета профиля</h3>'+c.colors.map(function(x,i){
+      var p='calc.colors.'+i;
+      return '<div class="it"><div class="row"><input type="color" data-b="'+p+'.hex" value="'+esc(x.hex)+'">'+MI('Название',p+'.name')+MI('На казахском',p+'.kk')+MI('Наценка, %',p+'.pct',{num:1,w:110})+'</div>'+
+        '<div class="row"><label class="sw" style="margin:0"><input type="checkbox" data-b="'+p+'.on"'+(x.on?' checked':'')+'>На сайте</label><button class="btn s r" data-del="calc.colors.'+i+'" style="margin-left:auto">Удалить</button></div></div>';
+    }).join('')+'<button class="btn" data-add="color">+ Цвет</button></div>'+
+    '<div class="card"><h3 class="c">Дополнительно</h3><p class="muted" style="margin-bottom:10px">Укажите либо процент от цены конструкции, либо сумму за штуку.</p>'+c.extras.map(function(x,i){
+      var p='calc.extras.'+i;
+      return '<div class="it"><div class="row">'+MI('Название',p+'.name')+MI('На казахском',p+'.kk')+'</div><div class="row">'+MI('%',p+'.pct',{num:1,w:90})+MI('или ₸ за шт.',p+'.price',{num:1,w:140})+'</div>'+
+        '<div class="row"><label class="sw" style="margin:0"><input type="checkbox" data-b="'+p+'.def"'+(x.def?' checked':'')+'>Отмечено сразу</label><label class="sw" style="margin:0"><input type="checkbox" data-b="'+p+'.on"'+(x.on?' checked':'')+'>На сайте</label><button class="btn s r" data-del="calc.extras.'+i+'" style="margin-left:auto">Удалить</button></div></div>';
+    }).join('')+'<button class="btn" data-add="extra">+ Позиция</button></div>';
+}
+
+/* ===== РАБОТЫ ===== */
+var CATS=[['window','Окна и балконы'],['door','Двери и тамбуры'],['commercial','Витражи и фасады'],['partition','Перегородки']];
+function vWorks(){
+  var w=D.works;
+  $('#view').innerHTML='<h2 class="t">Работы</h2>'+
+    '<div class="card"><div class="row"><button class="btn p" id="upl">📷 Добавить фото</button><span class="muted" id="uplst">Можно выбрать сразу несколько. Фото сжимаются автоматически.</span></div></div>'+
+    (w.length?'<div class="ph">'+w.map(function(x,i){
+      return '<div class="phc"><img src="'+esc(Store.img(x.img))+'" alt="" loading="lazy"><div class="b">'+
+        '<input data-b="works.'+i+'.cap" value="'+esc(x.cap||'')+'" placeholder="Подпись">'+
+        '<input data-b="works.'+i+'.cap_kk" value="'+esc(x.cap_kk||'')+'" placeholder="Подпись на казахском">'+
+        '<select data-b="works.'+i+'.cat">'+CATS.map(function(c){return '<option value="'+c[0]+'"'+(x.cat===c[0]?' selected':'')+'>'+c[1]+'</option>';}).join('')+'</select>'+
+        '<div class="row"><button data-mv="'+i+'|-1" aria-label="Раньше">←</button><button data-mv="'+i+'|1" aria-label="Позже">→</button><button data-wdel="'+i+'" aria-label="Удалить" style="color:var(--red)">🗑</button></div></div></div>';
+    }).join('')+'</div><p class="muted" style="margin-top:10px">Стрелки меняют порядок. Первое фото на сайте — крупное.</p>':'<p class="empty">Фото пока нет.</p>');
+}
+function compress(file){
+  return new Promise(function(res,rej){
+    var img=new Image(), u=URL.createObjectURL(file);
+    img.onload=function(){var s=Math.min(1,1400/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);c.getContext('2d').drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(u);c.toBlob(function(b){b?res(b):rej(new Error('не удалось сжать'));},'image/jpeg',0.82);};
+    img.onerror=function(){rej(new Error('это не картинка'));}; img.src=u;
+  });
+}
+$('#files').onchange=function(){
+  var fs=[].slice.call(this.files||[]); if(!fs.length)return; var done=0;
+  (function next(){
+    if(!fs.length){if(done){toast('Добавлено фото: '+done);touch();}return vWorks();}
+    var f=fs.shift(); var st=$('#uplst'); if(st)st.textContent='Загружаю… осталось '+(fs.length+1);
+    compress(f).then(Store.upload).then(function(id){D.works.unshift({img:id,cap:'',cap_kk:'',cat:'window'});done++;}).catch(function(e){toast('Фото не загрузилось: '+e.message);}).then(next);
+  })();
+};
+
+/* ===== ОТЗЫВЫ ===== */
+function vReviews(){
+  $('#view').innerHTML='<h2 class="t">Отзывы</h2><div class="note">Переносите сюда настоящие отзывы клиентов, например из 2ГИС.</div>'+D.reviews.map(function(r,i){
+    var p='reviews.'+i;
+    return '<div class="card"><div class="row">'+MI('Имя',p+'.name')+MI('Дата',p+'.date')+'</div><label class="fld" style="margin-top:8px">Текст<textarea data-b="'+p+'.text" rows="4">'+esc(r.text)+'</textarea></label><button class="btn s r" data-rdel="'+i+'">Удалить</button></div>';
+  }).join('')+'<button class="btn" data-add="review">+ Отзыв</button>'+
+  '<div class="card" style="margin-top:12px"><h3 class="c">Рейтинг</h3><div class="row">'+F('Оценка в 2ГИС','settings.rating')+F('Сколько оценок','settings.ratingCount')+'</div></div>';
+}
+
+/* ===== КОНТАКТЫ ===== */
+function vSettings(){
+  $('#view').innerHTML='<h2 class="t">Контакты</h2>'+
+    '<div class="card"><h3 class="c">Связь</h3>'+F('Номер WhatsApp для заявок (только цифры)','settings.wa',{ph:'77478653002'})+F('Телефон — как показывать на сайте','settings.phone')+'</div>'+
+    '<div class="card"><h3 class="c">Адрес и часы</h3>'+F('Адрес','settings.address')+F('Адрес на казахском','settings.address_kk')+F('Часы работы','settings.hours')+F('Часы работы на казахском','settings.hours_kk')+F('Лет опыта','settings.years',{ph:'15+'})+'</div>'+
+    '<div class="card"><h3 class="c">Объявление — синяя полоса наверху сайта</h3>'+F('Текст','settings.announce',{ph:'Скидка 10% на окна до конца месяца',hint:'Пустое поле — полоса не показывается.'})+F('Текст на казахском','settings.announce_kk')+'</div>'+
+    '<div class="card"><h3 class="c">Соцсети</h3>'+F('Instagram','settings.instagram')+F('TikTok','settings.tiktok')+F('2ГИС','settings.gis')+'</div>';
+}
+
+/* ===== TELEGRAM ===== */
+var tgSt=null, tgUrl='';
+function vTg(){
+  var h='<h2 class="t">Telegram</h2><div class="note">Новые заявки с сайта приходят в Telegram сразу, даже если админка закрыта. Статус заявки можно менять кнопками прямо в Telegram.</div>';
+  if(!tgSt){ $('#view').innerHTML=h+'<div class="empty">Загружаю…</div>';
+    Store.tgInfo().then(function(r){tgSt=r||{};}).catch(function(e){tgSt={err:e.message};}).then(function(){ if(tab==='tg') vTg(); }); return; }
+  if(tgSt.err){ $('#view').innerHTML=h+'<div class="card"><h3 class="c">Нет связи</h3><p class="muted">'+esc(tgSt.err)+'</p><button class="btn s" id="tgRef">Повторить</button></div>'; $('#tgRef').onclick=function(){tgSt=null;tgUrl='';vTg();}; return; }
+  if(!tgSt.bot){ $('#view').innerHTML=h+'<div class="card"><h3 class="c">Бот ещё не настроен</h3><p class="muted">Чтобы включить уведомления, разработчику сайта нужно один раз подключить Telegram-бота к серверу. После этого здесь появится кнопка «Подключить».</p></div>'; return; }
+  var n=+tgSt.chats||0;
+  $('#view').innerHTML=h+'<div class="card"><h3 class="c">Бот @'+esc(tgSt.bot)+'</h3><p class="muted" style="margin-bottom:12px">'+(n?'✅ Подключено чатов: '+n:'Пока никто не подключён')+'</p>'+
+    (tgUrl?'<a class="btn p" href="'+esc(tgUrl)+'" target="_blank" rel="noopener">Открыть Telegram</a>':'<button class="btn p" id="tgLink">'+(n?'Подключить ещё':'Подключить')+'</button>')+
+    (n?' <button class="btn r" id="tgOff">Отключить</button>':'')+'</div>'+
+    '<div class="card"><h3 class="c">Как подключить</h3><ol style="padding-left:20px;display:grid;gap:6px;color:var(--muted);font-size:14px"><li>Нажмите «Подключить» — появится кнопка «Открыть Telegram».</li><li>В Telegram нажмите «Запустить» (Start).</li><li>Готово. Так можно подключить и себя, и менеджера.</li></ol></div>';
+  if($('#tgLink')) $('#tgLink').onclick=function(){ this.disabled=true; Store.tgLink().then(function(r){ tgUrl=r.url; vTg(); window.open(r.url,'_blank'); }).catch(function(e){ toast('Не получилось: '+e.message); vTg(); }); };
+  if($('#tgOff')) $('#tgOff').onclick=function(){ if(!confirm('Отключить уведомления в Telegram?')) return; Store.tgOff().then(function(){ tgSt=null; tgUrl=''; toast('Telegram отключён'); vTg(); }).catch(function(e){ toast(e.message); }); };
+}
+
+/* ===== ПАРОЛЬ ===== */
+function vAdmin(){
+  $('#view').innerHTML='<h2 class="t">Пароль и вход</h2>'+
+    '<div class="card"><h3 class="c">🔑 Сменить пароль</h3><p class="muted" style="margin-bottom:10px">Английские буквы и цифры, минимум 6 символов. После смены войдите заново.</p>'+
+      '<label class="fld">Новый пароль<input id="p1" type="password" autocomplete="new-password" autocapitalize="off" spellcheck="false"></label>'+
+      '<label class="fld">Ещё раз<input id="p2" type="password" autocomplete="new-password" autocapitalize="off" spellcheck="false"></label><button class="btn" id="savePass">Сменить пароль</button></div>'+
+    '<div class="card"><h3 class="c">📄 Вернуть данные из файла</h3><p class="muted" style="margin-bottom:10px">Заменит цены, работы, отзывы и контакты версией из файла data/site.json. Заявки не трогает.</p><button class="btn r" id="reset">Вернуть из файла</button></div>'+
+    '<div class="card"><h3 class="c">🚪 Выход</h3><p class="muted" style="margin-bottom:10px">Вход держится 12 часов.</p><button class="btn" id="exit2">Выйти</button></div>';
+}
+
+/* ===== события ===== */
+function numVal(v){return +String(v).replace(',','.').replace(/\s/g,'')||0;}
+document.addEventListener('input',function(e){
+  var el=e.target; if(!el.dataset.b) return;
+  var v=el.type==='checkbox'?el.checked:(el.dataset.num?numVal(el.value):el.value);
+  setPath(D,el.dataset.b,v); touch();
+});
+document.addEventListener('change',function(e){var el=e.target;if((el.type==='checkbox'||el.tagName==='SELECT'||el.type==='color')&&el.dataset.b){setPath(D,el.dataset.b,el.type==='checkbox'?el.checked:el.value);touch();}});
+document.addEventListener('click',function(e){
+  var t=e.target.closest('button'); if(!t)return;
+  if(t.dataset.ost){oSt=t.dataset.ost;return paintOrders();}
+  if(t.dataset.ord){var id=t.dataset.ord,s=t.dataset.s;Store.setStatus(id,s).then(function(){orders.forEach(function(o){if(String(o.id)===id)o.status=s;});paintOrders();}).catch(function(err){toast('Не вышло: '+err.message);});return;}
+  if(t.dataset.odel){if(!confirm('Удалить заявку №'+t.dataset.odel+'?'))return;var oid=t.dataset.odel;Store.removeOrder(oid).then(function(){orders=orders.filter(function(o){return String(o.id)!==oid;});paintOrders();toast('Заявка удалена');}).catch(function(err){toast('Не вышло: '+err.message);});return;}
+  if(t.dataset.add==='type'){D.calc.types.push({id:'t'+Date.now().toString(36),name:'Новая конструкция',kk:'',kind:'window',rate:0,w:1500,h:1400,sashes:2,on:true});touch();return vCalc();}
+  if(t.dataset.add==='color'){D.calc.colors.push({id:'c'+Date.now().toString(36),name:'Новый цвет',kk:'',hex:'#cccccc',pct:0,on:true});touch();return vCalc();}
+  if(t.dataset.add==='extra'){D.calc.extras.push({id:'x'+Date.now().toString(36),name:'Новая позиция',kk:'',pct:0,price:0,on:true});touch();return vCalc();}
+  if(t.dataset.add==='review'){D.reviews.push({name:'',date:'',text:'Текст отзыва'});touch();return vReviews();}
+  if(t.dataset.rdel){if(!confirm('Удалить отзыв?'))return;D.reviews.splice(+t.dataset.rdel,1);touch();return vReviews();}
+  if(t.dataset.del){if(!confirm('Удалить?'))return;var p=t.dataset.del.split('.');getPath(D,p.slice(0,2).join('.')).splice(+p[2],1);touch();return vCalc();}
+  if(t.id==='upl'){$('#files').value='';$('#files').click();return;}
+  if(t.dataset.mv){var a=t.dataset.mv.split('|'),i=+a[0],j=i+(+a[1]);if(j<0||j>=D.works.length)return;var x=D.works[i];D.works[i]=D.works[j];D.works[j]=x;touch();return vWorks();}
+  if(t.dataset.wdel){if(!confirm('Удалить фото с сайта?'))return;var w=D.works.splice(+t.dataset.wdel,1)[0];touch();if(!/^img\//.test(String(w.img)))Store.removeImg(w.img).catch(function(){});return vWorks();}
+  if(t.id==='savePass'){var p1=$('#p1').value.trim(),p2=$('#p2').value.trim();if(p1.length<6)return toast('Минимум 6 символов');if(p1!==p2)return toast('Пароли не совпадают');if(/[а-яёәғқңөұүһі]/i.test(p1))return toast('Только английские буквы и цифры');
+    return Store.changePassword(p1).then(function(){toast('Пароль изменён, войдите заново');setTimeout(function(){Store.logout();location.reload();},1500);}).catch(function(err){toast('Не вышло: '+err.message);});}
+  if(t.id==='reset'){if(!confirm('Заменить цены, работы, отзывы и контакты версией из файла?'))return;return Store.reset().then(function(d){D=d;toast('Готово');render();}).catch(function(err){toast('Не вышло: '+err.message);});}
+  if(t.id==='exit2'){Store.logout();location.reload();}
+});
+})();
+</script>
+</body>
+</html>
