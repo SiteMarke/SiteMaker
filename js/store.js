@@ -46,8 +46,7 @@ window.Store = (function () {
   function img(id) { return id ? (/^(https?:|data:|blob:|img\/)/.test(String(id)) ? String(id) : API + '/img?site=' + SITE + '&id=' + id) : ''; }
 
   function fromFile() {
-    var p = location.pathname.replace(/[^/]*$/, '');
-    return fetch(p + 'data/site.json?v=' + Date.now()).then(function (r) {
+    return fetch('/data/site.json?v=' + Date.now()).then(function (r) { // абсолютный путь: работает и на /kz/
       if (!r.ok) throw new Error('site.json не найден');
       return r.json();
     });

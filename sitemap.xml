@@ -1,69 +1,681 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sitemakerkz.com/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/"/>
   </url>
   <url>
-    <loc>https://sitemakerkz.com/sayt-dlya-restorana/</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://sitemakerkz.com/kz/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/"/>
   </url>
   <url>
-    <loc>https://sitemakerkz.com/sayt-dlya-dostavki-edy/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <loc>https://sitemakerkz.com/sozdanie-lendinga/</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/sozdanie-lendinga/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/lending-jasau/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/sozdanie-lendinga/"/>
   </url>
   <url>
-    <loc>https://sitemakerkz.com/sayt-dlya-salona-krasoty/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <loc>https://sitemakerkz.com/razrabotka-internet-magazina/</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/razrabotka-internet-magazina/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/internet-dukenin-jasau/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/razrabotka-internet-magazina/"/>
   </url>
   <url>
-    <loc>https://sitemakerkz.com/sayt-dlya-kliniki/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <loc>https://sitemakerkz.com/sayt-dlya-biznesa/</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/sayt-dlya-biznesa/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/biznes-ushin-sait/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/sayt-dlya-biznesa/"/>
   </url>
   <url>
-    <loc>https://sitemakerkz.com/sayt-dlya-otelya/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <loc>https://sitemakerkz.com/sayt-vizitka/</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/sayt-vizitka/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/sait-vizitka/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/sayt-vizitka/"/>
   </url>
   <url>
-    <loc>https://sitemakerkz.com/sayt-dlya-uslug/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <loc>https://sitemakerkz.com/korporativnyy-sayt/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/korporativnyy-sayt/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/korporativtik-sait/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/korporativnyy-sayt/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/redizayn-sayta/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/redizayn-sayta/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/sait-redizainy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/redizayn-sayta/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/lending-jasau/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/sozdanie-lendinga/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/lending-jasau/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/sozdanie-lendinga/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/internet-dukenin-jasau/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/razrabotka-internet-magazina/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/internet-dukenin-jasau/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/razrabotka-internet-magazina/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/biznes-ushin-sait/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/sayt-dlya-biznesa/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/biznes-ushin-sait/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/sayt-dlya-biznesa/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/sait-vizitka/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/sayt-vizitka/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/sait-vizitka/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/sayt-vizitka/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/korporativtik-sait/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/korporativnyy-sayt/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/korporativtik-sait/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/korporativnyy-sayt/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/sait-redizainy/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/redizayn-sayta/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/sait-redizainy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/redizayn-sayta/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/sozdanie-saitov-almaty/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/sozdanie-saitov-shymkent/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/sozdanie-saitov-aktobe/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/uslugi/</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/uslugi/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/qyzmetter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/uslugi/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/qyzmetter/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/uslugi/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/qyzmetter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/uslugi/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/emirat/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/emirat/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/emirat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/emirat/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/sezim-family-restobar/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/sezim-family-restobar/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/sezim-family-restobar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/sezim-family-restobar/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/pinocchio/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/pinocchio/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/pinocchio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/pinocchio/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/tumar/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/tumar/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/tumar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/tumar/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/the-moon/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/the-moon/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/the-moon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/the-moon/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/jamaica-bar/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/jamaica-bar/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/jamaica-bar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/jamaica-bar/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/han-dastarhan/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/han-dastarhan/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/han-dastarhan/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/han-dastarhan/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/petro-povar/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/petro-povar/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/petro-povar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/petro-povar/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/samal-chef/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/samal-chef/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/samal-chef/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/samal-chef/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/turan-el/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/turan-el/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/turan-el/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/turan-el/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/sensei-sushi/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/sensei-sushi/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/sensei-sushi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/sensei-sushi/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/big-sushi/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/big-sushi/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/big-sushi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/big-sushi/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/chicken-hot/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/chicken-hot/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/chicken-hot/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/chicken-hot/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/pro-yxod/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/pro-yxod/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/pro-yxod/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/pro-yxod/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/fivehotel/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/fivehotel/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/fivehotel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/fivehotel/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/ag-proekt/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/ag-proekt/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/ag-proekt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/ag-proekt/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/potolkisk/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/potolkisk/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/potolkisk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/potolkisk/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/hostel-atom/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/hostel-atom/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/hostel-atom/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/hostel-atom/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/astoria-hotel/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/astoria-hotel/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/astoria-hotel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/astoria-hotel/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/avtoshkola-tulpar/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/avtoshkola-tulpar/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/avtoshkola-tulpar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/avtoshkola-tulpar/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/kinder-land/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/kinder-land/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/kinder-land/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/kinder-land/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/portfolio/woman-beauty-space/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/woman-beauty-space/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/woman-beauty-space/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/woman-beauty-space/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/emirat/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/emirat/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/emirat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/emirat/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/sezim-family-restobar/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/sezim-family-restobar/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/sezim-family-restobar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/sezim-family-restobar/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/pinocchio/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/pinocchio/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/pinocchio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/pinocchio/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/tumar/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/tumar/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/tumar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/tumar/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/the-moon/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/the-moon/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/the-moon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/the-moon/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/jamaica-bar/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/jamaica-bar/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/jamaica-bar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/jamaica-bar/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/han-dastarhan/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/han-dastarhan/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/han-dastarhan/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/han-dastarhan/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/petro-povar/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/petro-povar/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/petro-povar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/petro-povar/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/samal-chef/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/samal-chef/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/samal-chef/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/samal-chef/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/turan-el/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/turan-el/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/turan-el/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/turan-el/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/sensei-sushi/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/sensei-sushi/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/sensei-sushi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/sensei-sushi/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/big-sushi/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/big-sushi/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/big-sushi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/big-sushi/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/chicken-hot/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/chicken-hot/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/chicken-hot/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/chicken-hot/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/pro-yxod/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/pro-yxod/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/pro-yxod/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/pro-yxod/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/fivehotel/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/fivehotel/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/fivehotel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/fivehotel/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/ag-proekt/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/ag-proekt/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/ag-proekt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/ag-proekt/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/potolkisk/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/potolkisk/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/potolkisk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/potolkisk/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/hostel-atom/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/hostel-atom/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/hostel-atom/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/hostel-atom/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/astoria-hotel/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/astoria-hotel/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/astoria-hotel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/astoria-hotel/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/avtoshkola-tulpar/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/avtoshkola-tulpar/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/avtoshkola-tulpar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/avtoshkola-tulpar/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/kinder-land/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/kinder-land/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/kinder-land/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/kinder-land/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/kz/portfolio/woman-beauty-space/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sitemakerkz.com/portfolio/woman-beauty-space/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://sitemakerkz.com/kz/portfolio/woman-beauty-space/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sitemakerkz.com/portfolio/woman-beauty-space/"/>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/blog/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/blog/skolko-stoit-sozdanie-sayta-v-kazahstane/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/blog/kak-zakazat-sayt-dlya-biznesa/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/blog/lending-ili-internet-magazin/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/blog/kak-vybrat-domen-dlya-sayta/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/blog/zachem-biznesu-sobstvennyy-sayt/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/blog/kak-prinimat-zayavki-cherez-sayt/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sitemakerkz.com/sozdanie-saitov-petropavlovsk/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sitemakerkz.com/sozdanie-saitov-astana/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sitemakerkz.com/sozdanie-saitov-kostanay/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sitemakerkz.com/sozdanie-saitov-karaganda/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/sayt-dlya-restorana/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/sayt-dlya-dostavki-edy/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/sayt-dlya-salona-krasoty/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/sayt-dlya-kliniki/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/sayt-dlya-otelya/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sitemakerkz.com/sayt-dlya-uslug/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
