@@ -277,7 +277,7 @@ def patch_old():
                 ''.join('<a href="%s">%s</a>' % (h, n) for h, n in SERV_RU), ''.join('<a href="%s">%s</a>' % (h, n) for h, n in BLOG_RU[:3]), MARK), 1)
             s = s.replace('<a href="../#works">в портфолио на главной</a>', '<a href="/portfolio/">в портфолио</a>')
             s = s.replace('<meta property="og:type" content="website">', '<meta property="og:type" content="website">\n<meta property="og:site_name" content="sitemaker">', 1)
-            s = s.replace('</body>', '<script src="/js/analytics.js?v=%s" defer></script>\n<script src="/js/consult.js?v=%s" defer></script>\n</body>' % (V, V), 1)
+            s = s.replace('</body>', '<script src="/js/analytics.js?v=%s" defer></script>\n<script src="/js/consult.js?v=%s" defer></script>\n</body>' % (AV, V), 1)
         open(fp, 'w', encoding='utf-8').write(s)
         reg(path, '0.9' if 'sozdanie' in slug else '0.8')
 

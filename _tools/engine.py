@@ -12,6 +12,7 @@ PHONE = '+7 747 612 84 11'
 TEL = '+77476128411'
 TODAY = '2026-11-24'
 V = '30'
+AV = '31'  # версия js/analytics.js (поднять при смене ID)
 
 DATA = json.load(open(os.path.join(ROOT, 'data/site.json'), encoding='utf-8'))
 TYPES = {t['id']: t for t in DATA['types']}
@@ -266,12 +267,12 @@ def page(lang, path, title, desc, body, crumbs, alt=None, ld=(), og_img='/img/w/
 %(body)s
 </main>
 <footer class="ft"><div class="cols">%(foot)s</div><div class="bt"><span>%(copy)s</span><span><a href="tel:%(tel)s">%(phone)s</a> · <a href="https://t.me/%(tg)s" rel="noopener">telegram</a></span></div></footer>
-<script src="/js/analytics.js?v=%(v)s" defer></script>
+<script src="/js/analytics.js?v=%(av)s" defer></script>
 %(kkjs)s<script src="/js/consult.js?v=%(v)s" defer></script>
 </body>
 </html>
 ''' % dict(hl_lang='kk' if lang == 'kk' else 'ru', title=e(title), desc=e(desc), url=url, hreflang=hl, robots='noindex,follow' if noindex else 'index,follow,max-image-preview:large',
-           og_type=og_type, locale='kk_KZ' if lang == 'kk' else 'ru_RU', site=SITE, og=og_img, v=V, extra_head=extra_head,
+           og_type=og_type, locale='kk_KZ' if lang == 'kk' else 'ru_RU', site=SITE, og=og_img, v=V, av=AV, extra_head=extra_head,
            ld=json.dumps(lds, ensure_ascii=False), home='/kz/' if lang == 'kk' else '/', navl='Разделы' if lang == 'ru' else 'Бөлімдер', nav=nav, other=other,
            olang='ru' if lang == 'kk' else 'kk', olabel=u['other_lang_label'], otext=u['other_lang'], wa=e(wa(u['wa_hi'])), icon=ICON_WA, wabtn=u['wa_btn'],
            wide=' wide' if wide else '', crumbs=ch, body=body, foot=foot, copy=u['copy'], tel=TEL, phone=PHONE, tg=TG, kkjs=kkjs)

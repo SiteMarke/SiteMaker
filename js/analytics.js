@@ -18,8 +18,8 @@
 (function () {
   'use strict';
   var CFG = {
-    ga4: '',   // например 'G-ABC123XYZ9'
-    ym: ''     // например '98765432'
+    ga4: 'G-6SRQC40CQE',   // Google Analytics 4 (поток sitemakerkz.com)
+    ym: '114649142'     // Яндекс Метрика (счётчик SiteMaker)
   };
   if (window.SM_ANALYTICS) { CFG.ga4 = window.SM_ANALYTICS.ga4 || CFG.ga4; CFG.ym = window.SM_ANALYTICS.ym || CFG.ym; }
   var ga = /^G-[A-Z0-9]+$/.test(CFG.ga4), ym = /^\d{5,12}$/.test(String(CFG.ym));
