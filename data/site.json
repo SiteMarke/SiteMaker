@@ -638,6 +638,18 @@
     "hide": false
    },
    {
+    "id": "p-minikids",
+    "type": "img",
+    "src": "img/press/minikids.webp",
+    "poster": "",
+    "tag": "отзыв",
+    "name": "Mini Kids",
+    "who": "Детская одежда ручного пошива",
+    "text": "«Выполнили всё чётко и в срок. Понравилось, что понимают клиента: сразу поняли мой запрос и сделали так, как я хотела, даже лучше. Очень довольна результатом и рекомендую!»",
+    "url": "https://tamerlankajrolla2-a11y.github.io/Mini-Kids/",
+    "hide": false
+   },
+   {
     "id": "p-zhanara",
     "type": "img",
     "src": "img/press/zhanara.webp",
@@ -675,5 +687,5 @@
    }
   ]
  },
- "pv": 6
+ "pv": 7
 }

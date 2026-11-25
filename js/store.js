@@ -139,6 +139,11 @@ window.Store = (function () {
       }
       d.pv = 6;
     }
+    // 25.11: новый отзыв — Mini Kids (один раз для данных, уже сохранённых на сервере)
+    if ((+d.pv || 0) < 7) {
+      if (!d.press.items.some(function (x) { return x.id === 'p-minikids'; })) d.press.items.splice(Math.min(2, d.press.items.length), 0, {"id": "p-minikids", "type": "img", "src": "img/press/minikids.webp", "poster": "", "tag": "отзыв", "name": "Mini Kids", "who": "Детская одежда ручного пошива", "text": "«Выполнили всё чётко и в срок. Понравилось, что понимают клиента: сразу поняли мой запрос и сделали так, как я хотела, даже лучше. Очень довольна результатом и рекомендую!»", "url": "https://tamerlankajrolla2-a11y.github.io/Mini-Kids/", "hide": false});
+      d.pv = 7;
+    }
     d.rev = +d.rev || 1;
     return d;
   }
