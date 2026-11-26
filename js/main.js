@@ -688,3 +688,6 @@ if (fine && !reduce) {
   });
 }
 })();
+
+/* клики по демо-сайтам → аналитика */
+document.addEventListener('click', function (e) { var d = e.target.closest && e.target.closest('[data-demo]'); if (d) track('demo_open', { demo: d.dataset.demo }); });
