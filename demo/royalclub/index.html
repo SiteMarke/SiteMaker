@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Royal Club Fitness & SPA — фитнес-клубы в Алматы</title>
+<meta name="description" content="Royal Club Fitness & SPA — сеть премиальных фитнес-клубов для всей семьи в Алматы: тренажёрный зал 1200 м², бассейн 25 м, 71 групповая программа, SPA, Royal Kids.">
+<meta name="theme-color" content="#2a0712">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#6e1232;--deep:#2a0712;--deep2:#1a040b;--aqua:#2fb9c4;--aqua-d:#0f6f78;--ink:#1d1418;--mute:#6f6066;--bg:#fff;--soft:#f6f1f3;--line:#eadfe3;--r:22px;
+--hf:'Unbounded',Manrope,sans-serif;--bf:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font:16px/1.6 var(--bf);color:var(--ink);background:var(--bg);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--hf);margin:0;line-height:1.08;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,46px);font-weight:600}
+h3{font-size:19px;font-weight:600}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(56px,7vw,104px) max(5vw,16px)}
+.lead{color:var(--mute);font-size:17px;max-width:620px;margin:14px 0 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;border:0;font:700 16px var(--bf);text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-aqua{background:var(--aqua);color:#04262a;box-shadow:0 10px 30px rgba(47,185,196,.35)}
+.btn-wine{background:var(--wine);color:#fff}
+.btn-line{background:rgba(255,255,255,.08);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4);backdrop-filter:blur(6px)}
+:focus-visible{outline:3px solid var(--aqua);outline-offset:3px}
+/* header */
+.hdr{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,box-shadow .3s;color:#fff}
+.hdr.solid{background:rgba(26,4,11,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;gap:24px;max-width:1340px;margin:0 auto;padding:14px max(5vw,16px)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{color:var(--aqua);flex:none}
+.logo b{display:block;font:700 16px var(--hf);letter-spacing:.04em}
+.logo small{display:block;font-size:11px;opacity:.7;letter-spacing:.08em}
+.menu{display:flex;gap:26px;margin-left:auto;font-weight:600;font-size:15px}
+.menu a{text-decoration:none;opacity:.82}.menu a:hover{opacity:1}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+.burger{display:none;margin-left:auto;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;cursor:pointer}
+@media(max-width:980px){.menu{display:none}.nav>.btn{display:none}.burger{display:grid;place-items:center}
+ .hdr.open{background:var(--deep2)}.hdr.open .menu{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--deep2);padding:8px max(5vw,16px) 20px}
+ .hdr.open .menu a{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:18px}}
+/* hero */
+.hero{position:relative;min-height:min(100svh,900px);display:flex;flex-direction:column;justify-content:flex-end;color:#fff;background:var(--deep2);overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=2000&q=70') center/cover;transform:scale(1.06);animation:zoom 18s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(42,7,18,.94) 0%,rgba(110,18,50,.72) 45%,rgba(42,7,18,.25) 100%),linear-gradient(0deg,rgba(26,4,11,.9),transparent 45%)}
+.hero-in{position:relative;z-index:2;max-width:1240px;margin:0 auto;width:100%;padding:130px max(5vw,16px) 40px}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 10px;border-radius:999px;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);font-size:14px;font-weight:600;margin-bottom:24px}
+.badge i{font-style:normal;background:#ffb547;color:#3a2100;border-radius:999px;padding:2px 10px;font-weight:700}
+.hero h1{font-size:clamp(38px,6.6vw,84px);font-weight:700;max-width:960px;line-height:1.02}
+.hero h1 span{color:var(--aqua)}
+.hero p{font-size:clamp(17px,1.6vw,20px);opacity:.88;max-width:600px;margin:22px 0 32px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+/* quick booking */
+.quick{position:relative;z-index:2;max-width:1240px;margin:0 auto;width:calc(100% - 2*max(5vw,16px));background:#fff;color:var(--ink);border-radius:24px;padding:14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:10px;box-shadow:0 30px 80px rgba(0,0,0,.35);margin-bottom:-56px}
+.quick label{display:grid;gap:2px;padding:8px 14px;border-radius:16px;background:var(--soft);font-size:12px;font-weight:700;color:var(--mute)}
+.quick select,.quick input{border:0;background:transparent;font:600 16px var(--bf);color:var(--ink);padding:4px 0;min-height:32px;width:100%;outline:0}
+.quick .btn{min-height:auto;height:100%}
+@media(max-width:860px){.quick{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.quick .btn{grid-column:1/-1;min-height:54px}}
+@media(max-width:480px){.quick{grid-template-columns:minmax(0,1fr)}}
+/* stats */
+.stats{background:var(--deep);color:#fff;padding:110px max(5vw,16px) 56px}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.stats b{display:block;font:700 clamp(34px,4.6vw,58px) var(--hf);color:var(--aqua);line-height:1}
+.stats span{opacity:.75;font-size:15px}
+@media(max-width:700px){.stats .wrap{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:32px}}
+/* promo */
+.promo{background:linear-gradient(100deg,var(--aqua),#62d6dd);color:#04262a}
+.promo .wrap{display:flex;align-items:center;gap:20px 32px;flex-wrap:wrap;padding:26px max(5vw,16px)}
+.promo h3{font-size:clamp(18px,2vw,24px)}.promo p{margin:4px 0 0;opacity:.85}
+.promo .btn{margin-left:auto;background:var(--deep);color:#fff}
+/* zones bento */
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:260px;gap:14px}
+.z{position:relative;border-radius:var(--r);overflow:hidden;color:#fff;background:var(--deep)}
+.z img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.z:hover img{transform:scale(1.06)}
+.z::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(26,4,11,.85),transparent 60%)}
+.z div{position:absolute;left:22px;right:22px;bottom:20px;z-index:1}
+.z h3{font-size:clamp(18px,1.8vw,24px)}.z p{margin:4px 0 0;opacity:.85;font-size:15px}
+.z:nth-child(1){grid-column:span 2;grid-row:span 2}.z:nth-child(2){grid-column:span 2}
+@media(max-width:900px){.bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:220px}.z:nth-child(1){grid-row:span 1}}
+@media(max-width:520px){.bento{grid-template-columns:minmax(0,1fr)}.z:nth-child(n){grid-column:auto}}
+/* clubs */
+.clubs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media(max-width:1000px){.clubs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.clubs{grid-template-columns:minmax(0,1fr)}}
+.club{border-radius:var(--r);background:var(--soft);padding:26px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;transition:background .3s,color .3s}
+.club:hover{background:var(--deep);color:#fff}.club:hover p{color:rgba(255,255,255,.75)}
+.club .num{font:700 64px var(--hf);color:var(--wine);opacity:.14;position:absolute;right:16px;top:4px;line-height:1}
+.club:hover .num{color:var(--aqua);opacity:.35}
+.club h3{font-size:24px}.club p{margin:0;color:var(--mute);font-size:15px}
+.club .row{display:flex;gap:8px;margin-top:auto;padding-top:12px}
+.club .row a{flex:1;min-height:46px;padding:0 14px;font-size:14px}
+.pill{background:#fff;color:var(--deep);box-shadow:inset 0 0 0 1px var(--line)}
+/* picker */
+.pick{background:var(--deep);color:#fff;position:relative;overflow:hidden}
+.pick::before{content:"";position:absolute;right:-200px;top:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(47,185,196,.25),transparent 70%)}
+.pickbox{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center}
+@media(max-width:900px){.pickbox{grid-template-columns:minmax(0,1fr)}}
+.q{margin-top:26px}.q b{display:block;margin-bottom:10px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{min-height:46px;padding:0 18px;border-radius:999px;border:1.5px solid rgba(255,255,255,.25);background:transparent;color:#fff;font:600 15px var(--bf);cursor:pointer;transition:.2s}
+.opts button[aria-pressed=true]{background:var(--aqua);border-color:var(--aqua);color:#04262a}
+.res{border-radius:28px;padding:32px;min-height:380px;display:flex;flex-direction:column;color:#fff;box-shadow:0 30px 70px rgba(0,0,0,.4);transition:background .4s}
+.res small{opacity:.75;font-weight:600}
+.res h3{font-size:clamp(34px,4vw,48px);font-weight:700;margin:6px 0 4px}
+.res .price{font:600 18px var(--hf);opacity:.9}
+.res ul{list-style:none;padding:0;margin:20px 0 26px}.res li{padding:8px 0;border-top:1px solid rgba(255,255,255,.18)}
+.res .btn{margin-top:auto;background:#fff;color:var(--deep)}
+.th-platinum{background:linear-gradient(150deg,#4a4a55,#15151b)}.th-gold{background:linear-gradient(150deg,#c39433,#6b4a10)}.th-day{background:linear-gradient(150deg,#2fb9c4,#0f6f78)}.th-kids{background:linear-gradient(150deg,#ff9f5a,#cf4f2a)}.th-corp{background:linear-gradient(150deg,#8b1d44,#3a0717)}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+@media(max-width:1100px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){.cards{grid-template-columns:minmax(0,1fr)}}
+.mc{border-radius:var(--r);padding:24px;min-height:300px;display:flex;flex-direction:column;color:#fff;position:relative;overflow:hidden}
+.mc::after{content:"";position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;border:24px solid rgba(255,255,255,.08)}
+.mc small{opacity:.75;font-weight:600}.mc h3{font-size:24px;margin:4px 0}
+.mc .price{font:600 17px var(--hf)}
+.mc p{opacity:.88;font-size:15px;margin:12px 0 18px}
+.mc a{margin-top:auto;font-weight:700;text-decoration:none}
+/* schedule */
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tabs button,.sel{min-height:46px;padding:0 20px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font:600 15px var(--bf);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--wine);border-color:var(--wine);color:#fff}
+.sched{list-style:none;padding:0;margin:20px 0 0}
+.sched li{display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:20px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.sched time{font:700 28px var(--hf);color:var(--wine);white-space:nowrap}
+.sched span{color:var(--mute);font-size:14px}
+@media(max-width:600px){.sched li{grid-template-columns:78px minmax(0,1fr)}.sched time{font-size:20px}.sched .btn{grid-column:2;justify-self:start}}
+.sched .btn{min-height:44px;font-size:14px;padding:0 18px}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+/* trainers */
+.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.tr{flex:0 0 clamp(230px,24vw,280px);scroll-snap-align:start}
+.tr .ph{aspect-ratio:3/4;border-radius:var(--r);overflow:hidden;background:linear-gradient(160deg,#efe6ea,#d9c9cf)}
+.tr img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s}
+.tr:hover img{transform:scale(1.05)}
+.tr h3{margin-top:14px;font-size:17px}.tr p{margin:4px 0 0;color:var(--mute);font-size:14px}
+.arrows{display:flex;gap:8px}.arrows button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:22px;cursor:pointer;color:var(--ink)}
+.arrows button:hover{background:var(--deep);color:#fff}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:s}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.steps{grid-template-columns:minmax(0,1fr)}}
+.step{padding:26px;border-radius:var(--r);background:var(--soft)}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--wine);color:#fff;font:700 18px var(--hf);margin-bottom:18px}
+.step p{margin:8px 0 0;color:var(--mute);font-size:15px}
+/* kids + app */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+@media(max-width:900px){.split{grid-template-columns:minmax(0,1fr)}}
+.kids{border-radius:28px;background:#e6f7f8;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;overflow:hidden}
+.kids svg{width:100%;height:auto;border-radius:20px;margin-top:24px}
+.app{border-radius:28px;background:var(--wine);color:#fff;padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:24px;align-items:center;overflow:hidden}
+@media(max-width:520px){.app{grid-template-columns:minmax(0,1fr)}.phone{display:none}}
+.app p{opacity:.85}
+.phone{width:170px;height:340px;border-radius:32px;background:var(--deep2);padding:10px;box-shadow:0 20px 50px rgba(0,0,0,.4);transform:rotate(6deg)}
+.phone div{height:100%;border-radius:24px;background:linear-gradient(170deg,#7d1a3d,#2a0712);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#fff;font:700 13px var(--hf)}
+.phone i{display:block;width:110px;height:34px;border-radius:12px;background:rgba(255,255,255,.12)}
+.ticks{list-style:none;padding:0;margin:20px 0 24px}.ticks li{padding:7px 0 7px 32px;position:relative}
+.ticks li::before{content:"";position:absolute;left:2px;top:13px;width:15px;height:8px;border-left:3px solid var(--aqua);border-bottom:3px solid var(--aqua);transform:rotate(-45deg)}
+/* form */
+.contact{background:var(--soft)}
+.formbox{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+@media(max-width:900px){.formbox{grid-template-columns:minmax(0,1fr)}}
+form.f{background:#fff;border-radius:28px;padding:32px;display:grid;gap:14px;box-shadow:0 20px 60px rgba(42,7,18,.08)}
+form.f h3{font-size:24px;margin-bottom:6px}
+.f label{display:grid;gap:6px;font-weight:700;font-size:14px}
+.f input,.f select{min-height:54px;border-radius:14px;border:1px solid var(--line);background:#fff;padding:0 16px;font:16px var(--bf);color:var(--ink)}
+.f .err{color:#c0262d;font-size:14px;min-height:20px}
+.ok{display:none;text-align:center;padding:10px}
+.ok b{display:block;font:700 22px var(--hf);margin:10px 0}
+.ci{display:grid;gap:18px;margin:28px 0}
+.ci a{font:600 20px var(--hf);text-decoration:none}.ci small{display:block;color:var(--mute);font-size:13px;font-weight:600}
+details{border-top:1px solid var(--line);padding:18px 0}details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";font:400 24px var(--hf);color:var(--wine);line-height:1}details[open] summary::after{content:"−"}
+details p{color:var(--mute);margin:10px 0 0}
+footer{background:var(--deep2);color:#fff;padding:48px max(5vw,16px) 110px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px 40px;justify-content:space-between;align-items:center}
+footer .links{display:flex;gap:20px;flex-wrap:wrap;opacity:.85}
+footer small{opacity:.6;width:100%}
+footer small a{color:var(--aqua)}
+/* mobile bar */
+.mbar{display:none;position:fixed;left:10px;right:10px;bottom:10px;z-index:40;background:var(--deep2);border-radius:20px;padding:8px;gap:8px;box-shadow:0 10px 40px rgba(0,0,0,.35);padding-bottom:calc(8px + env(safe-area-inset-bottom))}
+.mbar a{flex:1;min-height:50px;border-radius:14px;display:grid;place-items:center;font-weight:700;font-size:14px;text-decoration:none;color:#fff;background:rgba(255,255,255,.08)}
+.mbar a.wa{background:#25d366;color:#05330f}.mbar a.go{background:var(--aqua);color:#04262a}
+@media(max-width:760px){.mbar{display:flex}}
+.fab{position:fixed;right:22px;bottom:22px;z-index:40;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+@media(max-width:760px){.fab{display:none}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.hero-bg{animation:none;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+ <symbol id="crown" viewBox="0 0 64 48"><path d="M6 40 2 12l16 12L32 4l14 20 16-12-4 28z" fill="currentColor"/><rect x="6" y="42" width="52" height="5" rx="2" fill="currentColor"/><circle cx="2" cy="11" r="3.5" fill="currentColor"/><circle cx="32" cy="4" r="3.5" fill="currentColor"/><circle cx="62" cy="11" r="3.5" fill="currentColor"/></symbol>
+ <symbol id="wa" viewBox="0 0 32 32"><path fill="#fff" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.9.8a3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.4z"/></symbol>
+</defs></svg>
+
+<header class="hdr" id="hdr">
+ <nav class="nav">
+  <a class="logo" href="#top"><svg width="38" height="29"><use href="#crown"/></svg><span><b>ROYAL CLUB</b><small>FITNESS &amp; SPA · ALMATY</small></span></a>
+  <div class="menu" id="menu"><a href="#zones">Клуб</a><a href="#clubs">Адреса</a><a href="#picker">Карты</a><a href="#schedule">Расписание</a><a href="#team">Тренеры</a><a href="#contact">Контакты</a></div>
+  <a class="btn btn-aqua" href="#contact">Пробная тренировка</a>
+  <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+ </nav>
+</header>
+
+<section class="hero" id="top">
+ <div class="hero-bg" role="img" aria-label="Тренажёрный зал"></div>
+ <div class="hero-in">
+  <div class="badge"><i>★ <span id="rating">4,9</span></i><span id="reviews">1158 оценок в 2ГИС</span></div>
+  <h1>Фитнес <span>королевских</span> масштабов для всей семьи</h1>
+  <p>Четыре клуба в Алматы: зал 1200 м², бассейн 25 метров, 71 вид групповых программ, SPA премиум-класса и Royal Kids для детей.</p>
+  <div class="cta"><a class="btn btn-aqua" href="#picker">Подобрать карту</a><a class="btn btn-line" id="heroWa" href="#">Написать в WhatsApp</a></div>
+ </div>
+ <form class="quick" id="quick">
+  <label>Клуб<select id="qClub"></select></label>
+  <label>Направление<select id="qDir"></select></label>
+  <label>Телефон<input id="qPhone" type="tel" inputmode="tel" placeholder="+7 7__ ___ __ __" autocomplete="tel"></label>
+  <button class="btn btn-wine" type="submit">Записаться на пробную</button>
+ </form>
+</section>
+
+<section class="stats"><div class="wrap">
+ <div><b data-n="4">4</b><span>клуба в Алматы</span></div>
+ <div><b data-n="1200">1200</b><span>м² тренажёрный зал</span></div>
+ <div><b data-n="71">71</b><span>вид групповых программ</span></div>
+ <div><b data-n="120" data-s="+">120+</b><span>инструкторов</span></div>
+</div></section>
+
+<div class="promo" id="promo" hidden><div class="wrap"><div><h3 id="pTitle"></h3><p id="pText"></p></div><a class="btn" href="#contact">Оставить заявку</a></div></div>
+
+<section class="band" id="zones"><div class="wrap">
+ <div class="head rv"><div><h2>Всё для тела и отдыха в одном клубе</h2><p class="lead">Тренируйтесь, плавайте и восстанавливайтесь без поездок по разным местам.</p></div></div>
+ <div class="bento" id="bento"></div>
+</div></section>
+
+<section class="band" id="clubs" style="padding-top:0"><div class="wrap">
+ <div class="head rv"><div><h2>Четыре клуба — выберите ближайший</h2><p class="lead">Запишитесь в нужный клуб в один клик — администратор ответит в WhatsApp.</p></div></div>
+ <div class="clubs" id="clubList"></div>
+</div></section>
+
+<section class="band pick" id="picker"><div class="wrap pickbox">
+ <div class="rv">
+  <h2>Подберём клубную карту за 3 вопроса</h2>
+  <p class="lead" style="color:rgba(255,255,255,.75)">Ответьте — карта справа обновится сразу.</p>
+  <div id="quiz"></div>
+ </div>
+ <div class="res rv" id="res" aria-live="polite"><small>Вам подойдёт</small><h3 id="rName"></h3><div class="price" id="rPrice"></div><ul id="rPerks"></ul><a class="btn" id="rBtn" href="#">Узнать условия в WhatsApp</a></div>
+</div></section>
+
+<section class="band" id="cards"><div class="wrap">
+ <div class="head rv"><div><h2>Клубные карты</h2><p class="lead">Администратор пришлёт актуальную стоимость для вашего клуба и действующие акции.</p></div></div>
+ <div class="cards" id="cardList"></div>
+</div></section>
+
+<section class="band" id="schedule" style="padding-top:0"><div class="wrap">
+ <div class="head rv"><div><h2>Расписание занятий</h2><p class="lead">Выберите направление и клуб — и запишитесь на занятие.</p></div><select class="sel" id="clubSel" aria-label="Клуб"><option value="">Все клубы</option></select></div>
+ <div class="tabs" role="tablist" id="tabs"></div>
+ <ul class="sched" id="schedList"></ul>
+ <p class="note">Демо-расписание: настоящее клуб заполняет сам в админ-панели.</p>
+</div></section>
+
+<section class="band" id="team" style="background:var(--soft)"><div class="wrap">
+ <div class="head rv"><div><h2>Тренеры Royal Club</h2><p class="lead">Элит-тренеры и супервайзеры направлений — 120+ инструкторов в сети.</p></div>
+  <div class="arrows"><button id="prev" aria-label="Назад">←</button><button id="next" aria-label="Вперёд">→</button></div></div>
+ <div class="rail" id="rail" tabindex="0" aria-label="Тренеры"></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+ <div class="head rv"><div><h2>Как стать членом клуба</h2></div></div>
+ <div class="steps rv">
+  <div class="step"><h3>Заявка</h3><p>Оставьте телефон на сайте или напишите в WhatsApp.</p></div>
+  <div class="step"><h3>Знакомство</h3><p>Администратор покажет клуб, бассейн и SPA.</p></div>
+  <div class="step"><h3>Карта</h3><p>Подберёте карту под ваш график и цели.</p></div>
+  <div class="step"><h3>Тренировка</h3><p>Первое занятие с тренером — и вы в клубе.</p></div>
+ </div>
+</div></section>
+
+<section class="band" style="padding-top:0"><div class="wrap split">
+ <div class="kids rv">
+  <h2>Royal Kids</h2>
+  <p class="lead">Пока вы тренируетесь, ребёнок занимается спортом рядом — с тренером и в своей группе.</p>
+  <ul class="ticks"><li>Более 10 программ, групповые и индивидуальные</li><li>Плавание от 0 до 14 лет, грудничковое плавание</li><li>Детская клубная карта Kids</li></ul>
+  <a class="btn btn-wine" id="kidsBtn" href="#" style="align-self:flex-start">Записать ребёнка</a>
+  <svg viewBox="0 0 520 220" aria-hidden="true"><rect width="520" height="220" fill="#2fb9c4"/><rect width="520" height="44" fill="#f3e9ec"/><rect y="44" width="520" height="6" fill="#c9b5bc"/><g fill="#fff" opacity=".45"><ellipse cx="110" cy="110" rx="50" ry="5"/><ellipse cx="400" cy="170" rx="70" ry="6"/></g><circle cx="190" cy="140" r="40" fill="none" stroke="#fff" stroke-width="20"/><circle cx="190" cy="140" r="40" fill="none" stroke="#6e1232" stroke-width="20" stroke-dasharray="31 32"/><circle cx="360" cy="105" r="28" fill="none" stroke="#fff" stroke-width="14"/><circle cx="360" cy="105" r="28" fill="none" stroke="#ffb547" stroke-width="14" stroke-dasharray="22 22"/><svg x="236" y="6" width="48" height="34" style="color:#6e1232"><use href="#crown"/></svg></svg>
+ </div>
+ <div class="app rv">
+  <div><h2>Приложение Royal Fitness</h2><p>Расписание, запись на занятия и ваша клубная карта — в телефоне.</p><a class="btn btn-aqua" id="appBtn" href="#">Скачать приложение</a></div>
+  <div class="phone" aria-hidden="true"><div><svg width="54" height="40" style="color:#2fb9c4"><use href="#crown"/></svg>ROYAL<i></i><i></i><i></i></div></div>
+ </div>
+</div></section>
+
+<section class="band contact" id="contact"><div class="wrap formbox">
+ <div class="rv">
+  <h2>Приходите на пробную тренировку</h2>
+  <p class="lead">Оставьте заявку — администратор подберёт клуб, время и тренера.</p>
+  <div class="ci">
+   <div><small>Телефон всех клубов</small><a id="cPhone" href="#"></a></div>
+   <div><small>WhatsApp</small><a id="cWa" href="#">Написать в WhatsApp</a></div>
+   <div><small>Instagram</small><a id="cIg" href="#"></a></div>
+  </div>
+  <div id="faq"></div>
+ </div>
+ <form class="f rv" id="form" novalidate>
+  <div id="fBody" style="display:grid;gap:14px">
+   <h3>Заявка на пробную тренировку</h3>
+   <label>Имя<input id="fName" autocomplete="name" placeholder="Как к вам обращаться"></label>
+   <label>Телефон<input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 7__ ___ __ __"></label>
+   <label>Клуб<select id="fClub"></select></label>
+   <label>Направление<select id="fDir"></select></label>
+   <div class="err" id="fErr"></div>
+   <button class="btn btn-wine" type="submit">Отправить заявку</button>
+  </div>
+  <div class="ok" id="ok"><svg width="64" height="48" style="color:var(--aqua)"><use href="#crown"/></svg><b>Заявка принята!</b><p style="color:var(--mute)">Чтобы ответили быстрее, отправьте её администратору в WhatsApp.</p><a class="btn btn-aqua" id="okWa" href="#">Отправить в WhatsApp</a></div>
+ </form>
+</div></section>
+
+<footer><div class="wrap">
+ <a class="logo" href="#top"><svg width="38" height="29"><use href="#crown"/></svg><span><b>ROYAL CLUB</b><small>СЕТЬ ПРЕМИАЛЬНЫХ ФИТНЕС-КЛУБОВ</small></span></a>
+ <div class="links"><a href="#clubs">Адреса</a><a href="#cards">Клубные карты</a><a href="#schedule">Расписание</a><a id="fIg" href="#">Instagram</a></div>
+ <small>© Royal Club Fitness &amp; SPA, Алматы. Хотите похожий сайт для бизнеса? <a href="https://wa.me/77476128411">+7 747 612 84 11</a> · <a href="https://sitemakerkz.com">sitemakerkz.com</a></small>
+</div></footer>
+
+<div class="mbar"><a id="mCall" href="#">Позвонить</a><a class="wa" id="mWa" href="#">WhatsApp</a><a class="go" href="#contact">Записаться</a></div>
+<a class="fab" id="fab" href="#" aria-label="WhatsApp"><svg width="32" height="32"><use href="#wa"/></svg></a>
+
+<script src="js/data.js"></script>
+<script>
+{
+const D=RC.load(),S=D.settings,e=RC.esc,$=id=>document.getElementById(id);
+const wa=t=>RC.wa(S.wa,t);
+const dirs=['Тренажёрный зал','Бассейн','Групповые программы','Персональный тренинг','SPA','Royal Kids','Фитнес-медицина'];
+
+$('rating').textContent=S.rating;$('reviews').textContent=S.reviews+' оценок в 2ГИС';
+const ig='https://instagram.com/'+S.instagram;
+$('cPhone').textContent=S.phone;$('cPhone').href='tel:'+S.phone.replace(/[^\d+]/g,'');$('mCall').href=$('cPhone').href;
+$('cIg').textContent='@'+S.instagram;$('cIg').href=ig;$('fIg').href=ig;
+for(const id of ['heroWa','cWa','fab','mWa'])$(id).href=wa('Здравствуйте! Хочу узнать про Royal Club');
+$('kidsBtn').href=wa('Здравствуйте! Хочу записать ребёнка в Royal Kids');$('appBtn').href=S.app;
+if(D.promo&&D.promo.on){$('promo').hidden=false;$('pTitle').textContent=D.promo.title;$('pText').textContent=D.promo.text;}
+
+$('bento').innerHTML=D.zones.map(z=>`<div class="z rv"><img src="${e(z.img)}" alt="${e(z.title)}" loading="lazy"><div><h3>${e(z.title)}</h3><p>${e(z.text)}</p></div></div>`).join('');
+$('clubList').innerHTML=D.clubs.map((c,i)=>`<div class="club rv"><span class="num">0${i+1}</span><h3>${e(c.name)}</h3><p>${e(c.address)}</p>${c.hours?`<p>${e(c.hours)}</p>`:''}<p>${e(c.note||'')}</p><div class="row"><a class="btn pill" href="https://2gis.kz/almaty/search/${encodeURIComponent('Royal Club '+c.address)}">Маршрут</a><a class="btn btn-wine" href="${e(wa('Здравствуйте! Хочу записаться в клуб '+c.name))}">Записаться</a></div></div>`).join('');
+
+const opt=a=>a.map(x=>`<option>${e(x)}</option>`).join('');
+const names=D.clubs.map(c=>c.name);
+$('qClub').innerHTML=opt(names);$('fClub').innerHTML=opt(names);$('qDir').innerHTML=opt(dirs);$('fDir').innerHTML=opt(dirs);
+$('clubSel').innerHTML+=opt(names);
+
+const price=c=>c.price?`${c.price} ₸ · ${c.period}`:c.period;
+const th={platinum:'th-platinum',gold:'th-gold',day:'th-day',kids:'th-kids',corp:'th-corp'};
+$('cardList').innerHTML=D.cards.map(c=>`<div class="mc rv ${th[c.theme]||'th-corp'}"><small>${e(c.period)}</small><h3>${e(c.name)}</h3><div class="price">${c.price?e(c.price)+' ₸':'Цена по запросу'}</div><p>${e(c.text)}</p><a href="${e(wa('Здравствуйте! Подскажите стоимость карты '+c.name))}">Узнать стоимость →</a></div>`).join('');
+
+const Q=[{k:'who',q:'Кто будет ходить в клуб?',o:[['me','Я'],['kid','Ребёнок'],['team','Сотрудники компании']]},
+ {k:'time',q:'Когда удобно тренироваться?',o:[['day','Утром и днём'],['eve','Вечером'],['any','Когда захочу']]},
+ {k:'lvl',q:'Что важнее?',o:[['base','Выгодная цена'],['all','Все зоны и гости'],['vip','Максимум привилегий']]}];
+const ans={who:'me',time:'any',lvl:'all'};
+const pick=()=>{
+ $('quiz').innerHTML=Q.map(q=>`<div class="q"><b>${q.q}</b><div class="opts">${q.o.map(o=>`<button type="button" data-k="${q.k}" data-v="${o[0]}" aria-pressed="${ans[q.k]===o[0]}">${o[1]}</button>`).join('')}</div></div>`).join('');
+ let t='gold';if(ans.who==='kid')t='kids';else if(ans.who==='team')t='corp';else if(ans.lvl==='vip')t='platinum';else if(ans.time==='day'&&ans.lvl==='base')t='day';
+ const c=D.cards.find(x=>x.theme===t)||D.cards[0];
+ $('res').className='res in '+(th[c.theme]||'th-corp');$('rName').textContent=c.name;$('rPrice').textContent=c.price?c.price+' ₸ · '+c.period:c.period;
+ $('rPerks').innerHTML=String(c.perks||'').split(';').filter(Boolean).map(p=>`<li>${e(p.trim())}</li>`).join('');
+ $('rBtn').href=wa(`Здравствуйте! Мне подходит карта ${c.name}. Подскажите стоимость и условия.`);
+};
+$('quiz').addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;ans[b.dataset.k]=b.dataset.v;pick();});pick();
+
+const cats=[...new Set(D.schedule.map(s=>s.cat))];let tab=cats[0];
+const sched=()=>{
+ $('tabs').innerHTML=cats.map(k=>`<button role="tab" aria-selected="${k===tab}" data-t="${e(k)}">${e(k)}</button>`).join('');
+ const cl=$('clubSel').value,rows=D.schedule.filter(s=>s.cat===tab&&(!cl||s.club===cl)).sort((a,b)=>a.time.localeCompare(b.time));
+ $('schedList').innerHTML=rows.length?rows.map(r=>`<li><time>${e(r.time)}</time><div><h3>${e(r.name)}</h3><span>${e(r.club)} · ${e(r.dur)}</span></div><a class="btn pill" href="${e(wa(`Здравствуйте! Хочу записаться: ${r.name}, ${r.time}, клуб ${r.club}`))}">Записаться</a></li>`).join(''):'<li><span style="grid-column:1/-1">В этом клубе по направлению пока нет занятий — выберите другой клуб.</span></li>';
+};
+$('tabs').addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;tab=b.dataset.t;sched();});$('clubSel').addEventListener('change',sched);sched();
+
+const ini=n=>n.split(' ').map(w=>w[0]).join('');
+$('rail').innerHTML=D.trainers.map(t=>`<div class="tr"><div class="ph"><img src="${e(t.img)}" alt="${e(t.name)}" loading="lazy" onerror="this.remove()"></div><h3>${e(t.name)}</h3><p>${e(t.role)}</p></div>`).join('');
+const step=d=>$('rail').scrollBy({left:d*300,behavior:'smooth'});
+$('prev').onclick=()=>step(-1);$('next').onclick=()=>step(1);
+$('rail').addEventListener('keydown',ev=>{if(ev.key==='ArrowRight')step(1);if(ev.key==='ArrowLeft')step(-1);});
+
+$('faq').innerHTML=D.faq.map(f=>`<details><summary>${e(f.q)}</summary><p>${e(f.a)}</p></details>`).join('');
+
+const okPhone=p=>p.replace(/\D/g,'').length>=10;
+const book=(b)=>{b.date=new Date().toISOString();b.status='new';RC.addBooking(b);return wa(`Заявка на пробную тренировку\nИмя: ${b.name||'—'}\nТелефон: ${b.phone}\nКлуб: ${b.club}\nНаправление: ${b.dir}`);};
+$('quick').addEventListener('submit',ev=>{ev.preventDefault();const p=$('qPhone').value.trim();if(!okPhone(p)){$('qPhone').focus();$('qPhone').placeholder='Введите номер телефона';return}
+ const link=book({name:'',phone:p,club:$('qClub').value,dir:$('qDir').value});
+ $('fPhone').value=p;$('fClub').value=$('qClub').value;$('fDir').value=$('qDir').value;
+ $('fBody').style.display='none';$('ok').style.display='block';$('okWa').href=link;$('contact').scrollIntoView({behavior:'smooth'});});
+$('form').addEventListener('submit',ev=>{ev.preventDefault();const n=$('fName').value.trim(),p=$('fPhone').value.trim();
+ if(!n){$('fErr').textContent='Введите имя';$('fName').focus();return}if(!okPhone(p)){$('fErr').textContent='Введите номер телефона';$('fPhone').focus();return}
+ $('okWa').href=book({name:n,phone:p,club:$('fClub').value,dir:$('fDir').value});$('fBody').style.display='none';$('ok').style.display='block';});
+
+const hdr=$('hdr');const onS=()=>hdr.classList.toggle('solid',scrollY>40);addEventListener('scroll',onS,{passive:true});onS();
+$('burger').onclick=()=>{const o=hdr.classList.toggle('open');$('burger').setAttribute('aria-expanded',o)};
+$('menu').addEventListener('click',ev=>{if(ev.target.closest('a'))hdr.classList.remove('open')});
+
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const so=new IntersectionObserver(es=>es.forEach(x=>{if(!x.isIntersecting)return;so.unobserve(x.target);const b=x.target,n=+b.dataset.n,s=b.dataset.s||'',t0=performance.now();
+ const f=t=>{const k=Math.min(1,(t-t0)/1200);b.textContent=Math.round(n*(1-Math.pow(1-k,3)))+(k===1?s:'');if(k<1)requestAnimationFrame(f)};if(!matchMedia('(prefers-reduced-motion:reduce)').matches)requestAnimationFrame(f)}),{threshold:.5});
+document.querySelectorAll('[data-n]').forEach(b=>so.observe(b));
+}
+</script>
+</body>
+</html>
