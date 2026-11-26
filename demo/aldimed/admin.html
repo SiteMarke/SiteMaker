@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Админ-панель · ALDIMED</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#08193a">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0b56c9;--blue2:#2a7ef0;--navy:#08193a;--ink:#0d1c33;--mute:#5a6a82;--sky:#f1f6ff;--sky2:#e3eeff;--line:#dce6f4;--ok:#11a683;--warn:#e9962b;--bad:#d23c3c;--f:'Onest',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 var(--f);color:var(--ink);background:#f4f7fc;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}a{color:inherit}
+h1,h2,h3{margin:0;letter-spacing:-.01em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:42px;padding:0 16px;border-radius:12px;border:1px solid transparent;cursor:pointer;font-weight:700;font-size:14px;white-space:nowrap;text-decoration:none;background:var(--sky);color:var(--blue)}
+.btn:hover{background:var(--sky2)}
+.btn.main{background:var(--blue);color:#fff}.btn.main:hover{background:#0a4bb0}
+.btn.ok{background:#e6f8f1;color:#0a7d62}.btn.bad{background:#fdecec;color:var(--bad)}.btn.wa{background:#1fb85a;color:#fff}
+.btn.sm{height:34px;padding:0 11px;border-radius:10px;font-size:13px}
+.btn.line{background:#fff;border-color:var(--line);color:var(--ink)}
+input,select,textarea{width:100%;height:42px;border:1px solid var(--line);border-radius:11px;padding:0 12px;background:#fff;outline:0}
+textarea{height:auto;min-height:80px;padding:10px 12px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:#5aa2ff;box-shadow:0 0 0 3px rgba(42,126,240,.14)}
+label.f{display:block;font-weight:600;font-size:13px;color:#2b3a52;margin:12px 0 6px}
+input[type=checkbox]{width:18px;height:18px;accent-color:var(--blue);vertical-align:middle}
+.login{min-height:100dvh;display:grid;place-items:center;padding:20px;background:radial-gradient(800px 500px at 80% 0,#dbe9ff,transparent 60%),#f4f7fc}
+.login form{background:#fff;border-radius:24px;padding:34px;width:min(400px,100%);box-shadow:0 30px 80px -40px rgba(11,40,96,.5);border:1px solid var(--line)}
+.login .lg{display:flex;gap:12px;align-items:center;margin-bottom:22px}
+.login .hint{font-size:13px;color:var(--mute);margin-top:14px;background:var(--sky);padding:10px 12px;border-radius:10px}
+.app{display:grid;grid-template-columns:250px 1fr;min-height:100dvh}
+.side{background:var(--navy);color:#c6d4ee;padding:22px 14px;position:sticky;top:0;height:100dvh;display:flex;flex-direction:column;gap:4px}
+.side .lg{display:flex;gap:10px;align-items:center;padding:4px 10px 22px;color:#fff}
+.side .lg b{font-size:18px;letter-spacing:.02em}.side .lg small{display:block;font-size:11.5px;color:#9fb1d1}
+.side button{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;color:inherit;padding:11px 12px;border-radius:12px;cursor:pointer;font-weight:600}
+.side button:hover{background:rgba(255,255,255,.06)}.side button.on{background:rgba(90,162,255,.18);color:#fff}
+.side button em{margin-left:auto;font-style:normal;background:#ff7a45;color:#fff;font-size:12px;border-radius:99px;padding:1px 8px}
+.side .sp{flex:1}.side a{color:#c6d4ee;text-decoration:none;padding:10px 12px;border-radius:12px;font-weight:600;font-size:14px}.side a:hover{background:rgba(255,255,255,.06)}
+.content{padding:28px 32px 80px;min-width:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.top h1{font-size:28px;font-weight:800}
+.demo{background:#fff8ec;border:1px solid #f6e2bd;color:#6d4b10;border-radius:14px;padding:12px 16px;font-size:14px;margin-bottom:20px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}
+.kpi b{display:block;font-size:30px;font-weight:800;color:var(--blue);line-height:1.1}.kpi span{color:var(--mute);font-size:13.5px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;margin-bottom:18px}
+.panel h2{font-size:18px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.chips button{height:34px;padding:0 13px;border-radius:99px;border:1px solid var(--line);background:#fff;cursor:pointer;font-weight:600;font-size:13px}
+.chips button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.bk{display:grid;grid-template-columns:120px 1fr auto;gap:14px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
+.bk:first-child{border-top:0}
+.bk .dt b{display:block;font-size:16px}.bk .dt small{color:var(--mute)}
+.bk .who b{font-weight:700}.bk .who small{display:block;color:var(--mute)}
+.bk .acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.st{display:inline-block;font-size:12px;font-weight:700;border-radius:99px;padding:2px 9px;margin-left:6px;vertical-align:1px}
+.st.new{background:#fff1ea;color:#d4581f}.st.confirmed{background:#e6f8f1;color:#0a7d62}.st.moved{background:#eef3ff;color:#2a5bc4}.st.came{background:#e9f6ff;color:#0c6aa8}.st.cancel{background:#f1f2f4;color:#6b7280}
+.resched{display:none;gap:8px;margin-top:10px;flex-wrap:wrap}.resched.on{display:flex}.resched input{width:auto}
+.tbl{width:100%;border-collapse:collapse}
+.tbl th{text-align:left;font-size:12.5px;color:var(--mute);font-weight:600;padding:8px 8px;border-bottom:1px solid var(--line)}
+.tbl td{padding:8px;border-bottom:1px solid var(--line);vertical-align:middle}
+.tbl input{height:38px}
+.tbl .num{width:130px}
+.tbl .c{width:56px;text-align:center}
+.dl{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.dc{border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;gap:12px;align-items:flex-start;background:#fff}
+.dc .av{width:54px;height:54px;border-radius:16px;background:linear-gradient(140deg,#5aa2ff,var(--blue));color:#fff;font-weight:800;display:grid;place-items:center;overflow:hidden;flex:none}
+.dc .av img{width:100%;height:100%;object-fit:cover}
+.dc b{display:block}.dc small{color:var(--mute)}.dc .off{opacity:.45}
+.dc .a{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.hrow{display:grid;grid-template-columns:60px 1fr 1fr 110px;gap:10px;align-items:center;margin-top:8px}
+.modal{position:fixed;inset:0;background:rgba(8,25,58,.5);display:none;align-items:center;justify-content:center;padding:18px;z-index:50}
+.modal.on{display:flex}
+.modal .box{background:#fff;border-radius:22px;width:min(560px,100%);max-height:calc(100dvh - 36px);overflow:auto;padding:24px}
+.modal .box h3{font-size:20px;margin-bottom:6px}
+.foot{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--navy);color:#fff;padding:11px 16px;border-radius:12px;opacity:0;transition:.25s;z-index:60;font-weight:600;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%)}
+.empty{color:var(--mute);padding:18px 0;text-align:center}
+.mtabs{display:none}
+@media(max-width:900px){
+ .app{grid-template-columns:1fr}.side{display:none}.content{padding:16px 14px 90px}
+ .mtabs{display:flex;gap:6px;overflow-x:auto;position:sticky;top:0;z-index:20;background:#f4f7fc;padding:10px 14px;margin:0 -14px 14px;border-bottom:1px solid var(--line)}
+ .mtabs button{flex:none;height:38px;padding:0 14px;border-radius:99px;border:1px solid var(--line);background:#fff;font-weight:600;font-size:13.5px}
+ .mtabs button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+ .cards{grid-template-columns:1fr 1fr}.bk{grid-template-columns:1fr}.bk .acts{justify-content:flex-start}.grid2{grid-template-columns:1fr}
+ .tbl thead{display:none}.tbl tr{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 0;border-bottom:1px solid var(--line)}.tbl td{border:0;padding:0}.tbl td.nm{grid-column:1/-1}.tbl .num{width:100%}.tbl td.c{display:flex;align-items:center;gap:8px;width:auto;text-align:left}.tbl td[data-l]::after{content:attr(data-l);font-size:13px;color:var(--mute)}
+ .hrow{grid-template-columns:44px 1fr 1fr 90px}
+}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="login" id="login">
+ <form id="lf" autocomplete="off">
+  <div class="lg"><svg width="44" height="44" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#0b56c9"/><path d="M12 24.5 24 13l12 11.5" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.5 22v12.5h17V22" fill="none" stroke="#fff" stroke-width="2.8" stroke-linejoin="round"/><path d="M24 23.5v8M20 27.5h8" stroke="#fff" stroke-width="2.8" stroke-linecap="round"/></svg><div><h1 style="font-size:22px">ALDIMED</h1><small style="color:var(--mute)">Панель управления сайтом</small></div></div>
+  <label class="f" for="pwd">Пароль</label>
+  <input id="pwd" type="password" autocomplete="current-password" placeholder="••••••••">
+  <div id="lerr" style="color:var(--bad);font-size:13px;min-height:20px;margin-top:6px"></div>
+  <button class="btn main" style="width:100%;height:48px;margin-top:6px">Войти</button>
+  <div class="hint">Демо-доступ: пароль <b>aldimed2026</b></div>
+ </form>
+</div>
+
+<div class="app" id="app" hidden>
+ <aside class="side" id="side"></aside>
+ <main class="content">
+  <div class="mtabs" id="mtabs"></div>
+  <div id="view"></div>
+ </main>
+</div>
+<div class="modal" id="modal"><div class="box" id="mbox"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script>
+(function(){
+var S=window.AStore,$=function(id){return document.getElementById(id)},esc=S.esc,D=S.load();
+var HASH='93a003832b906d253042645bf6f55b88ba51bdd88f2632f859747096bac248c6',AK='aldimed_admin_auth';
+var STATUS={new:'Новая',confirmed:'Подтверждена',moved:'Перенесена',came:'Пришёл',cancel:'Отменена'};
+var DAYN=['Вс','Пн','Вт','Ср','Чт','Пт','Сб'];
+function toast(t){var e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(function(){e.classList.remove('on')},1800)}
+function save(msg){S.save(D);toast(msg||'Сохранено — изменения уже на сайте')}
+async function sha(t){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')}
+function authed(){try{return localStorage.getItem(AK)===HASH}catch(e){return false}}
+$('lf').onsubmit=async function(e){e.preventDefault();var h=await sha($('pwd').value.trim());if(h===HASH){try{localStorage.setItem(AK,HASH)}catch(x){}start()}else{$('lerr').textContent='Неверный пароль'}};
+
+/* демо-заявки, чтобы панель не была пустой */
+function seed(){
+ try{if(localStorage.getItem('aldimed_seeded'))return;localStorage.setItem('aldimed_seeded','1')}catch(e){return}
+ if(S.bookings().length)return;
+ var n=S.now(),d=function(k){var x=new Date(n.getFullYear(),n.getMonth(),n.getDate()+k);while(!D.settings.hours[x.getDay()])x.setDate(x.getDate()+1);return S.ymd(x)};
+ var mk=function(o){o.id=S.uid();o.created=new Date(Date.now()-Math.random()*864e5).toISOString();o.source=o.source||'сайт';o.demo=true;return o};
+ S.saveBookings([
+  mk({status:'new',cat:'uzi',item:'u9',label:'УЗИ органов малого таза',date:d(1),time:'10:30',name:'Айгерим (пример)',phone:'77010000001',note:'Акция «Женское здоровье»',promo:'Женское здоровье — неделя заботы о себе'}),
+  mk({status:'new',cat:'doc',item:'d4',label:'Приём: Кабилдин Куан Советович (уролог, уролог-андролог)',date:d(1),time:'15:00',name:'Ерлан (пример)',phone:'77020000002',note:''}),
+  mk({status:'confirmed',cat:'uzi',item:'u18',label:'УЗИ 3D / 4D — Увидеть малыша в объёме и в движении',date:d(2),time:'11:00',name:'Мадина (пример)',phone:'77050000003',note:'24 недели'}),
+  mk({status:'came',cat:'doc',item:'d8',label:'Приём: Ященко Наталья Юрьевна (дерматолог, трихолог, косметолог)',date:d(0),time:'09:30',name:'Ольга (пример)',phone:'77770000004',note:'Выпадение волос',source:'телефон'})
+ ]);
+}
+
+var TABS=[['dash','Обзор'],['book','Заявки'],['pat','Пациенты'],['docs','Врачи'],['price','Услуги и цены'],['promo','Акции'],['set','Настройки'],['data','Данные']];
+var cur='dash';
+function nav(){
+ var nNew=S.bookings().filter(function(b){return b.status==='new'}).length;
+ $('side').innerHTML='<div class="lg"><svg width="38" height="38" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#2a7ef0"/><path d="M12 24.5 24 13l12 11.5" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.5 22v12.5h17V22" fill="none" stroke="#fff" stroke-width="2.8" stroke-linejoin="round"/><path d="M24 23.5v8M20 27.5h8" stroke="#fff" stroke-width="2.8" stroke-linecap="round"/></svg><span><b>ALDIMED</b><small>панель управления</small></span></div>'+
+  TABS.map(function(t){return '<button data-t="'+t[0]+'" class="'+(cur===t[0]?'on':'')+'">'+t[1]+(t[0]==='book'&&nNew?'<em>'+nNew+'</em>':'')+'</button>'}).join('')+
+  '<span class="sp"></span><a href="./" target="_blank" rel="noopener">↗ Открыть сайт</a><a href="#" id="logout">Выйти</a>';
+ $('mtabs').innerHTML=TABS.map(function(t){return '<button data-t="'+t[0]+'" class="'+(cur===t[0]?'on':'')+'">'+t[1]+(t[0]==='book'&&nNew?' ('+nNew+')':'')+'</button>'}).join('')+'<button onclick="window.open(\'./\')">Сайт ↗</button>';
+}
+document.addEventListener('click',function(e){var b=e.target.closest('[data-t]');if(b&&(b.closest('#side')||b.closest('#mtabs'))){cur=b.dataset.t;render();scrollTo(0,0)}if(e.target.id==='logout'){e.preventDefault();try{localStorage.removeItem(AK)}catch(x){}location.reload()}});
+function render(){nav();({dash:vDash,book:vBook,pat:vPat,docs:vDocs,price:vPrice,promo:vPromo,set:vSet,data:vData})[cur]()}
+function top(t,extra){return '<div class="top"><h1>'+t+'</h1><div style="display:flex;gap:8px;flex-wrap:wrap">'+(extra||'')+'</div></div>'}
+var demoNote='<div class="demo"><b>Демо-режим.</b> Всё, что вы меняете, сохраняется в этом браузере и сразу видно на <a href="./" target="_blank" style="font-weight:700">сайте</a> (откройте в этом же браузере). В рабочей версии данные хранятся в облаке, а новые заявки приходят регистратору в WhatsApp и Telegram.</div>';
+
+/* ---------- Обзор ---------- */
+function vDash(){
+ var bs=S.bookings(),today=S.ymd(S.now());
+ var pats={};bs.forEach(function(b){pats[b.phone]=1});
+ var up=bs.filter(function(b){return b.date>=today&&b.status!=='cancel'}).sort(function(a,b){return (a.date+a.time).localeCompare(b.date+b.time)}).slice(0,6);
+ $('view').innerHTML=top('Обзор','<button class="btn main" id="addB">+ Записать пациента</button>')+demoNote+
+ '<div class="cards"><div class="kpi"><b>'+bs.filter(function(b){return b.status==='new'}).length+'</b><span>новых заявок</span></div><div class="kpi"><b>'+bs.filter(function(b){return b.date===today&&b.status!=='cancel'}).length+'</b><span>записей на сегодня</span></div><div class="kpi"><b>'+bs.length+'</b><span>заявок всего</span></div><div class="kpi"><b>'+Object.keys(pats).length+'</b><span>пациентов в базе</span></div></div>'+
+ '<div class="panel"><h2>Ближайшие записи<button class="btn sm" data-t2="book">Все заявки →</button></h2>'+(up.length?up.map(bkRow).join(''):'<div class="empty">Пока нет записей</div>')+'</div>'+
+ '<div class="panel"><h2>Быстрые действия</h2><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-t2="price">Изменить цены</button><button class="btn" data-t2="docs">Добавить врача</button><button class="btn" data-t2="promo">Запустить акцию</button><button class="btn" data-t2="set">График и объявление</button></div></div>';
+ wireBk();$('addB').onclick=function(){bookForm()};
+}
+document.addEventListener('click',function(e){var b=e.target.closest('[data-t2]');if(b){cur=b.dataset.t2;render();scrollTo(0,0)}});
+
+/* ---------- Заявки ---------- */
+var bf='all',bq='';
+function waPatient(b,kind){
+ var dt=b.date?S.fmtDate(b.date)+' ('+DAYN[new Date(b.date+'T00:00:00').getDay()].toLowerCase()+')'+(b.time?' в '+b.time:''):'';
+ var t=kind==='confirm'?'Здравствуйте, '+b.name.replace(/ \(пример\)/,'')+'! Это медицинский центр ALDIMED. Подтверждаем вашу запись: '+b.label+', '+dt+'. Адрес: Караганда, Гоголя, 57. Ждём вас!'
+  :kind==='move'?'Здравствуйте, '+b.name.replace(/ \(пример\)/,'')+'! Это медицинский центр ALDIMED. Ваша запись перенесена: '+b.label+' — новое время: '+dt+'. Если не подходит — ответьте на это сообщение, подберём другое.'
+  :kind==='cancel'?'Здравствуйте, '+b.name.replace(/ \(пример\)/,'')+'! Это медицинский центр ALDIMED. К сожалению, запись на '+dt+' отменена. Напишите, и мы подберём удобное время.'
+  :'Здравствуйте, '+b.name.replace(/ \(пример\)/,'')+'! Это медицинский центр ALDIMED.';
+ return S.wa(b.phone,t);
+}
+function bkRow(b){
+ var dd=b.date?new Date(b.date+'T00:00:00'):null;
+ return '<div class="bk" data-id="'+b.id+'"><div class="dt"><b>'+(b.date?S.fmtDate(b.date):'Без даты')+'</b><small>'+(dd?DAYN[dd.getDay()]+' · ':'')+(b.time||'время не выбрано')+'</small></div>'+
+ '<div class="who"><b>'+esc(b.name)+'</b><span class="st '+b.status+'">'+STATUS[b.status]+'</span><small>'+esc(b.label)+'</small><small>+'+esc(b.phone)+(b.note?' · «'+esc(b.note)+'»':'')+(b.source&&b.source!=='сайт'?' · '+esc(b.source):'')+'</small>'+
+ '<div class="resched"><input type="date" class="rd" value="'+(b.date||'')+'"><input type="time" class="rt" value="'+(b.time||'')+'" step="1800"><button class="btn sm main" data-a="movego">Перенести и написать</button></div></div>'+
+ '<div class="acts">'+(b.status==='new'||b.status==='moved'?'<button class="btn sm ok" data-a="confirm">✓ Подтвердить</button>':'')+
+ '<button class="btn sm line" data-a="move">Перенести</button>'+(b.status!=='came'?'<button class="btn sm line" data-a="came">Пришёл</button>':'')+
+ '<a class="btn sm wa" href="'+waPatient(b,'')+'" target="_blank" rel="noopener">WhatsApp</a>'+(b.status!=='cancel'?'<button class="btn sm bad" data-a="cancel">Отменить</button>':'<button class="btn sm bad" data-a="del">Удалить</button>')+'</div></div>';
+}
+function wireBk(){
+ document.querySelectorAll('.bk [data-a]').forEach(function(btn){btn.onclick=function(){
+  var row=btn.closest('.bk'),id=row.dataset.id,bs=S.bookings(),b=bs.filter(function(x){return x.id===id})[0];if(!b)return;var a=btn.dataset.a;
+  if(a==='move'){row.querySelector('.resched').classList.toggle('on');return}
+  if(a==='movego'){var nd=row.querySelector('.rd').value,nt=row.querySelector('.rt').value;if(!nd)return toast('Выберите дату');b.date=nd;b.time=nt;b.status='moved';S.saveBookings(bs);window.open(waPatient(b,'move'),'_blank');toast('Перенесено — сообщение пациенту открыто');return render()}
+  if(a==='confirm'){b.status='confirmed';S.saveBookings(bs);window.open(waPatient(b,'confirm'),'_blank');toast('Подтверждено — сообщение пациенту открыто');return render()}
+  if(a==='cancel'){if(!confirm('Отменить запись '+b.name+'?'))return;b.status='cancel';S.saveBookings(bs);window.open(waPatient(b,'cancel'),'_blank');return render()}
+  if(a==='came'){b.status='came';S.saveBookings(bs);toast('Отмечено: пациент пришёл');return render()}
+  if(a==='del'){if(!confirm('Удалить заявку?'))return;S.saveBookings(bs.filter(function(x){return x.id!==id}));return render()}
+ }});
+}
+function vBook(){
+ var bs=S.bookings(),q=bq.toLowerCase();
+ var list=bs.filter(function(b){return (bf==='all'||b.status===bf)&&(!q||(b.name+' '+b.phone+' '+b.label).toLowerCase().indexOf(q)>=0)}).sort(function(a,b){return ((b.status==='new')-(a.status==='new'))||((a.date||'9')+(a.time||'')).localeCompare((b.date||'9')+(b.time||''))});
+ $('view').innerHTML=top('Заявки и записи','<button class="btn main" id="addB">+ Записать пациента</button>')+
+ '<div class="panel"><div class="chips">'+[['all','Все']].concat(Object.keys(STATUS).map(function(k){return [k,STATUS[k]]})).map(function(s){var n=s[0]==='all'?bs.length:bs.filter(function(b){return b.status===s[0]}).length;return '<button data-bf="'+s[0]+'" class="'+(bf===s[0]?'on':'')+'">'+s[1]+' · '+n+'</button>'}).join('')+'</div>'+
+ '<input id="bq" placeholder="Поиск: имя, телефон, услуга" value="'+esc(bq)+'" style="margin-bottom:6px">'+
+ '<div id="blist">'+(list.length?list.map(bkRow).join(''):'<div class="empty">Нет заявок</div>')+'</div></div>'+
+ '<p style="color:var(--mute);font-size:13.5px">Подтверждение, перенос и отмена сразу открывают сообщение пациенту в WhatsApp — пациент всегда знает об изменениях.</p>';
+ document.querySelectorAll('[data-bf]').forEach(function(b){b.onclick=function(){bf=b.dataset.bf;vBook()}});
+ $('bq').oninput=function(){bq=this.value;var p=this.selectionStart;vBook();$('bq').focus();$('bq').setSelectionRange(p,p)};
+ $('addB').onclick=function(){bookForm()};wireBk();
+}
+function bookForm(pre){
+ pre=pre||{};
+ var opts='<optgroup label="Врачи">'+D.doctors.map(function(d){return '<option value="doc:'+d.id+'">'+esc(d.role+' — '+d.name)+'</option>'}).join('')+'</optgroup>'+D.groups.map(function(g){return '<optgroup label="'+esc(g.name)+'">'+D.services.filter(function(s){return s.g===g.id}).map(function(s){return '<option value="svc:'+s.id+'">'+esc(s.name)+'</option>'}).join('')+'</optgroup>'}).join('');
+ modal('<h3>Записать пациента</h3><p style="color:var(--mute);margin:0 0 6px">Для звонков и визитов — запись попадёт в общий список и базу пациентов.</p>'+
+ '<div class="grid2"><div><label class="f">Имя</label><input id="fN" value="'+esc(pre.name||'')+'"></div><div><label class="f">Телефон</label><input id="fP" type="tel" placeholder="+7 7__ ___ __ __" value="'+esc(pre.phone?'+'+pre.phone:'')+'"></div></div>'+
+ '<label class="f">Врач или услуга</label><select id="fI">'+opts+'</select>'+
+ '<div class="grid2"><div><label class="f">Дата</label><input id="fD" type="date" value="'+S.ymd(S.now())+'"></div><div><label class="f">Время</label><input id="fT" type="time" step="1800" value="10:00"></div></div>'+
+ '<label class="f">Комментарий</label><textarea id="fC"></textarea>'+
+ '<label class="f"><input type="checkbox" id="fW" checked> Отправить пациенту подтверждение в WhatsApp</label>'+
+ '<div class="foot"><button class="btn line" data-close>Отмена</button><button class="btn main" id="fSave">Записать</button></div>');
+ $('fSave').onclick=function(){
+  var ph=S.normPhone($('fP').value),name=$('fN').value.trim();if(name.length<2||ph.length!==11)return toast('Укажите имя и телефон');
+  var v=$('fI').value,lab;if(v.indexOf('doc:')===0){var d=D.doctors.filter(function(x){return x.id===v.slice(4)})[0];lab='Приём: '+d.name+' ('+d.role.toLowerCase()+')'}else{var s=D.services.filter(function(x){return x.id===v.slice(4)})[0];lab=s.name}
+  var b={id:S.uid(),created:new Date().toISOString(),status:'confirmed',cat:v.slice(0,3),item:v.slice(4),label:lab,date:$('fD').value,time:$('fT').value,name:name,phone:ph,note:$('fC').value.trim(),source:'регистратура'};
+  S.addBooking(b);if($('fW').checked)window.open(waPatient(b,'confirm'),'_blank');closeM();toast('Пациент записан');render();
+ };
+}
+function modal(h){$('mbox').innerHTML=h;$('modal').classList.add('on')}
+function closeM(){$('modal').classList.remove('on')}
+$('modal').addEventListener('click',function(e){if(e.target===this||e.target.closest('[data-close]'))closeM()});
+
+/* ---------- Пациенты ---------- */
+var pq='';
+function vPat(){
+ var bs=S.bookings(),notes=S.notes(),m={};
+ bs.forEach(function(b){var p=m[b.phone]=m[b.phone]||{phone:b.phone,name:b.name,list:[],last:''};p.list.push(b);if((b.date||'')>p.last){p.last=b.date||'';p.name=b.name}});
+ var arr=Object.keys(m).map(function(k){return m[k]}).filter(function(p){return !pq||(p.name+' '+p.phone).toLowerCase().indexOf(pq.toLowerCase())>=0}).sort(function(a,b){return b.last.localeCompare(a.last)});
+ $('view').innerHTML=top('База пациентов')+
+ '<div class="panel"><input id="pq" placeholder="Поиск по имени или телефону" value="'+esc(pq)+'"><p style="color:var(--mute);font-size:13.5px;margin:10px 0 0">Карточка пациента собирается автоматически из всех его записей — больше не нужно каждый раз заново спрашивать данные.</p></div>'+
+ (arr.length?arr.map(function(p){
+  var came=p.list.filter(function(b){return b.status==='came'}).length;
+  return '<div class="panel"><h2><span>'+esc(p.name)+' <small style="color:var(--mute);font-weight:500;font-size:14px">+'+esc(p.phone)+'</small></span><span style="display:flex;gap:6px"><button class="btn sm" data-newfor="'+p.phone+'">+ Записать снова</button><a class="btn sm wa" href="'+S.wa(p.phone,'Здравствуйте! Это медицинский центр ALDIMED.')+'" target="_blank" rel="noopener">WhatsApp</a></span></h2>'+
+  '<div style="color:var(--mute);font-size:13.5px;margin-bottom:10px">Записей: '+p.list.length+' · визитов: '+came+(p.last?' · последняя: '+S.fmtDate(p.last):'')+'</div>'+
+  p.list.slice(0,5).map(function(b){return '<div style="font-size:14px;padding:4px 0">'+(b.date?S.fmtDate(b.date)+' '+(b.time||''):'—')+' · '+esc(b.label)+' <span class="st '+b.status+'">'+STATUS[b.status]+'</span></div>'}).join('')+
+  '<label class="f">Заметка о пациенте</label><textarea data-note="'+p.phone+'" placeholder="Аллергии, предпочтения, напоминания…">'+esc(notes[p.phone]||'')+'</textarea></div>'}).join(''):'<div class="panel empty">Пациентов пока нет — они появятся с первой заявкой</div>');
+ $('pq').oninput=function(){pq=this.value;var p=this.selectionStart;vPat();$('pq').focus();$('pq').setSelectionRange(p,p)};
+ document.querySelectorAll('[data-note]').forEach(function(t){t.onchange=function(){var n=S.notes();n[t.dataset.note]=t.value;S.saveNotes(n);toast('Заметка сохранена')}});
+ document.querySelectorAll('[data-newfor]').forEach(function(b){b.onclick=function(){bookForm(m[b.dataset.newfor])}});
+}
+
+/* ---------- Врачи ---------- */
+function ini(n){var p=n.replace(/\./g,' ').split(/\s+/).filter(Boolean);return (p[0]||'')[0]+((p[1]||'')[0]||'')}
+function vDocs(){
+ $('view').innerHTML=top('Врачи','<button class="btn main" id="addD">+ Добавить врача</button>')+
+ '<div class="panel"><div class="dl">'+D.doctors.map(function(d,i){return '<div class="dc"><div class="av'+(d.on===false?' off':'')+'">'+(d.photo?'<img src="'+esc(d.photo)+'" alt="">':esc(ini(d.name)))+'</div><div style="min-width:0;flex:1"><b class="'+(d.on===false?'off':'')+'">'+esc(d.name)+'</b><small>'+esc(d.role)+(d.price?' · '+S.money(d.price):'')+(d.on===false?' · скрыт':'')+'</small><div class="a"><button class="btn sm" data-ed="'+i+'">Изменить</button><button class="btn sm line" data-up="'+i+'"'+(i?'':' disabled')+'>↑</button><button class="btn sm line" data-tg="'+i+'">'+(d.on===false?'Показать':'Скрыть')+'</button></div></div></div>'}).join('')+'</div></div>';
+ $('addD').onclick=function(){docForm(-1)};
+ document.querySelectorAll('[data-ed]').forEach(function(b){b.onclick=function(){docForm(+b.dataset.ed)}});
+ document.querySelectorAll('[data-up]').forEach(function(b){b.onclick=function(){var i=+b.dataset.up;if(!i)return;var x=D.doctors[i];D.doctors[i]=D.doctors[i-1];D.doctors[i-1]=x;save('Порядок изменён');vDocs()}});
+ document.querySelectorAll('[data-tg]').forEach(function(b){b.onclick=function(){var d=D.doctors[+b.dataset.tg];d.on=d.on===false;save(d.on?'Врач показан на сайте':'Врач скрыт с сайта');vDocs()}});
+}
+function docForm(i){
+ var d=i>=0?D.doctors[i]:{id:'d'+S.uid(),on:true,name:'',role:'',dir:'gyn',photo:'',price:0,days:'',about:''};
+ modal('<h3>'+(i>=0?'Изменить врача':'Новый врач')+'</h3>'+
+ '<label class="f">ФИО</label><input id="dN" value="'+esc(d.name)+'">'+
+ '<div class="grid2"><div><label class="f">Специальность</label><input id="dR" value="'+esc(d.role)+'"></div><div><label class="f">Направление</label><select id="dDir">'+D.directions.map(function(x){return '<option value="'+x.id+'"'+(x.id===d.dir?' selected':'')+'>'+esc(x.name)+'</option>'}).join('')+'</select></div></div>'+
+ '<label class="f">О враче</label><textarea id="dA">'+esc(d.about)+'</textarea>'+
+ '<div class="grid2"><div><label class="f">Стоимость приёма, ₸</label><input id="dP" type="number" min="0" step="500" value="'+(d.price||'')+'" placeholder="не показывать"></div><div><label class="f">Дни и часы приёма</label><input id="dDays" value="'+esc(d.days)+'" placeholder="Пн, Ср, Пт 09:00–14:00"></div></div>'+
+ '<label class="f">Фото</label><div style="display:flex;gap:8px;align-items:center"><input id="dF" type="file" accept="image/*" style="padding:8px"><button class="btn sm line" id="dFx" type="button">Убрать</button></div><input type="hidden" id="dPh" value="'+esc(d.photo)+'">'+
+ '<label class="f"><input type="checkbox" id="dOn"'+(d.on!==false?' checked':'')+'> Показывать на сайте</label>'+
+ '<div class="foot">'+(i>=0?'<button class="btn bad" id="dDel" style="margin-right:auto">Удалить</button>':'')+'<button class="btn line" data-close>Отмена</button><button class="btn main" id="dSave">Сохранить</button></div>');
+ $('dF').onchange=function(){var f=this.files[0];if(!f)return;var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var s=360,c=document.createElement('canvas'),k=Math.max(s/im.width,s/im.height);c.width=c.height=s;c.getContext('2d').drawImage(im,(s-im.width*k)/2,(s-im.height*k)/2,im.width*k,im.height*k);$('dPh').value=c.toDataURL('image/jpeg',.82);toast('Фото загружено')};im.src=r.result};r.readAsDataURL(f)};
+ $('dFx').onclick=function(){$('dPh').value='';toast('Фото убрано')};
+ if($('dDel'))$('dDel').onclick=function(){if(!confirm('Удалить врача '+d.name+'?'))return;D.doctors.splice(i,1);save('Врач удалён');closeM();vDocs()};
+ $('dSave').onclick=function(){
+  d.name=$('dN').value.trim();d.role=$('dR').value.trim();d.dir=$('dDir').value;d.about=$('dA').value.trim();d.price=+$('dP').value||0;d.days=$('dDays').value.trim();d.photo=$('dPh').value;d.on=$('dOn').checked;
+  if(!d.name||!d.role)return toast('Заполните ФИО и специальность');
+  if(i<0)D.doctors.push(d);save();closeM();vDocs();
+ };
+}
+
+/* ---------- Цены ---------- */
+var pc='uzi';
+function vPrice(){
+ var cats=[['uzi','УЗИ'],['lab','Анализы'],['cosmo','Косметология']];
+ $('view').innerHTML=top('Услуги и цены','<button class="btn main" id="addG">+ Новая группа</button>')+
+ '<div class="chips">'+cats.map(function(c){return '<button data-pc="'+c[0]+'" class="'+(pc===c[0]?'on':'')+'">'+c[1]+'</button>'}).join('')+'</div>'+
+ '<p style="color:var(--mute);font-size:13.5px;margin:-4px 0 14px">Меняйте цену прямо в таблице — она сохраняется автоматически и сразу появляется на сайте. Пустая цена = «Узнать цену» на сайте.</p>'+
+ D.groups.filter(function(g){return g.cat===pc}).map(function(g){
+  var items=D.services.filter(function(s){return s.g===g.id});
+  return '<div class="panel"><h2><input value="'+esc(g.name)+'" data-gname="'+g.id+'" style="font-weight:700;font-size:16px;max-width:420px;border-color:transparent;padding-left:0"><span style="display:flex;gap:6px"><button class="btn sm" data-addsvc="'+g.id+'">+ Услуга</button>'+(items.length?'':'<button class="btn sm bad" data-delg="'+g.id+'">Удалить группу</button>')+'</span></h2>'+
+  '<table class="tbl"><thead><tr><th>Название</th><th>Пояснение</th><th>Цена, ₸</th><th class="c">Хит</th><th class="c">На сайте</th><th></th></tr></thead><tbody>'+
+  items.map(function(s){return '<tr data-s="'+s.id+'"><td class="nm"><input data-k="name" value="'+esc(s.name)+'"></td><td><input data-k="note" value="'+esc(s.note)+'" placeholder="—"></td><td><input class="num" data-k="price" type="number" min="0" step="100" value="'+(s.price||'')+'" placeholder="по запросу"></td><td class="c" data-l="Хит"><input type="checkbox" data-k="hit"'+(s.hit?' checked':'')+'></td><td class="c" data-l="На сайте"><input type="checkbox" data-k="on"'+(s.on!==false?' checked':'')+'></td><td class="c"><button class="btn sm bad" data-dels="'+s.id+'" aria-label="Удалить">✕</button></td></tr>'}).join('')+'</tbody></table></div>'}).join('');
+ document.querySelectorAll('[data-pc]').forEach(function(b){b.onclick=function(){pc=b.dataset.pc;vPrice()}});
+ document.querySelectorAll('tr[data-s] input').forEach(function(inp){inp.onchange=function(){var s=D.services.filter(function(x){return x.id===inp.closest('tr').dataset.s})[0],k=inp.dataset.k;s[k]=k==='price'?(+inp.value||0):(k==='hit'||k==='on')?inp.checked:inp.value.trim();save()}});
+ document.querySelectorAll('[data-gname]').forEach(function(inp){inp.onchange=function(){D.groups.filter(function(g){return g.id===inp.dataset.gname})[0].name=inp.value.trim();save()}});
+ document.querySelectorAll('[data-addsvc]').forEach(function(b){b.onclick=function(){D.services.push({id:'s'+S.uid(),g:b.dataset.addsvc,name:'Новая услуга',note:'',price:0,prep:'none'});save('Услуга добавлена — впишите название и цену');vPrice()}});
+ document.querySelectorAll('[data-dels]').forEach(function(b){b.onclick=function(){if(!confirm('Удалить услугу?'))return;D.services=D.services.filter(function(s){return s.id!==b.dataset.dels});save('Удалено');vPrice()}});
+ document.querySelectorAll('[data-delg]').forEach(function(b){b.onclick=function(){D.groups=D.groups.filter(function(g){return g.id!==b.dataset.delg});save('Группа удалена');vPrice()}});
+ $('addG').onclick=function(){var n=prompt('Название группы');if(!n)return;D.groups.push({id:'g'+S.uid(),cat:pc,name:n});save('Группа добавлена');vPrice()};
+}
+
+/* ---------- Акции ---------- */
+function vPromo(){
+ var today=S.ymd(S.now());
+ $('view').innerHTML=top('Акции','<button class="btn main" id="addP">+ Новая акция</button>')+
+ '<p style="color:var(--mute);font-size:13.5px;margin:-6px 0 14px">Акция показывается на главной с таймером и сама исчезает после даты окончания. Цена в прайсе тоже меняется на акционную.</p>'+
+ (D.promos.length?D.promos.map(function(p,i){var live=p.on&&(!p.until||p.until>=today);return '<div class="panel"><h2><span>'+esc(p.title||'Без названия')+' <span class="st '+(live?'confirmed':'cancel')+'">'+(live?'идёт':p.on?'завершена':'выключена')+'</span></span><button class="btn sm bad" data-delp="'+i+'">Удалить</button></h2>'+
+  '<label class="f">Заголовок</label><input data-p="'+i+'" data-k="title" value="'+esc(p.title)+'"><label class="f">Текст</label><textarea data-p="'+i+'" data-k="text">'+esc(p.text)+'</textarea>'+
+  '<div class="grid2"><div><label class="f">Старая цена, ₸</label><input data-p="'+i+'" data-k="oldPrice" type="number" value="'+(p.oldPrice||'')+'"></div><div><label class="f">Цена по акции, ₸</label><input data-p="'+i+'" data-k="price" type="number" value="'+(p.price||'')+'"></div>'+
+  '<div><label class="f">Действует до</label><input data-p="'+i+'" data-k="until" type="date" value="'+(p.until||'')+'"></div><div><label class="f">Услуга из прайса</label><select data-p="'+i+'" data-k="service"><option value="">— не привязана —</option>'+D.services.map(function(s){return '<option value="'+s.id+'"'+(s.id===p.service?' selected':'')+'>'+esc(s.name)+'</option>'}).join('')+'</select></div></div>'+
+  '<label class="f"><input type="checkbox" data-p="'+i+'" data-k="on"'+(p.on?' checked':'')+'> Акция включена</label></div>'}).join(''):'<div class="panel empty">Акций нет</div>');
+ document.querySelectorAll('[data-p]').forEach(function(el){el.onchange=function(){var p=D.promos[+el.dataset.p],k=el.dataset.k;p[k]=el.type==='checkbox'?el.checked:el.type==='number'?(+el.value||0):el.value.trim();save();vPromo()}});
+ document.querySelectorAll('[data-delp]').forEach(function(b){b.onclick=function(){if(!confirm('Удалить акцию?'))return;D.promos.splice(+b.dataset.delp,1);save('Акция удалена');vPromo()}});
+ $('addP').onclick=function(){var d=S.now();d.setDate(d.getDate()+7);D.promos.unshift({id:'p'+S.uid(),on:true,title:'Новая акция',text:'',oldPrice:0,price:0,until:S.ymd(d),service:''});save('Акция добавлена');vPromo()};
+}
+
+/* ---------- Настройки ---------- */
+function vSet(){
+ var s=D.settings;
+ $('view').innerHTML=top('Настройки сайта')+
+ '<div class="panel"><h2>Объявление на сайте</h2><label class="f"><input type="checkbox" id="nOn"'+(s.notice.on?' checked':'')+'> Показывать полосу-объявление вверху сайта</label><input id="nT" value="'+esc(s.notice.text)+'" placeholder="Например: праздничный график работы"></div>'+
+ '<div class="panel"><h2>График работы</h2>'+[1,2,3,4,5,6,0].map(function(d){var h=s.hours[d];return '<div class="hrow"><b>'+DAYN[d]+'</b><input type="time" data-h="'+d+'" data-i="0" value="'+(h?h[0]:'')+'"'+(h?'':' disabled')+'><input type="time" data-h="'+d+'" data-i="1" value="'+(h?h[1]:'')+'"'+(h?'':' disabled')+'><label><input type="checkbox" data-off="'+d+'"'+(h?'':' checked')+'> выходной</label></div>'}).join('')+'<p style="color:var(--mute);font-size:13px;margin:10px 0 0">По графику сайт показывает «Открыто / Закрыто» и предлагает пациентам только рабочие часы для записи.</p></div>'+
+ '<div class="panel"><h2>Контакты</h2><div class="grid2"><div><label class="f">WhatsApp для заявок с сайта</label><input id="sWa" value="+'+esc(s.wa)+'"></div><div><label class="f">Instagram</label><input id="sIg" value="'+esc(s.instagram)+'"></div></div>'+
+ s.phones.map(function(p,i){return '<div class="grid2"><div><label class="f">Подпись телефона '+(i+1)+'</label><input data-ph="'+i+'" data-k="label" value="'+esc(p.label)+'"></div><div><label class="f">Номер</label><input data-ph="'+i+'" data-k="value" value="'+esc(p.value)+'"></div></div>'}).join('')+
+ '<label class="f">Адрес</label><input id="sAd" value="'+esc(s.address)+'"><label class="f">Как добраться</label><input id="sAn" value="'+esc(s.addressNote)+'"></div>'+
+ '<div class="panel"><h2>Главный экран</h2><label class="f">Заголовок (можно &lt;em&gt;выделение&lt;/em&gt;)</label><input id="hT" value="'+esc(D.hero.title)+'"><label class="f">Подзаголовок</label><textarea id="hX">'+esc(D.hero.text)+'</textarea>'+
+ '<div class="grid2"><div><label class="f">Рейтинг 2ГИС</label><input id="sR" value="'+esc(s.rating)+'"></div><div><label class="f">Количество оценок</label><input id="sRc" value="'+esc(s.ratingCount)+'"></div></div></div>'+
+ '<div style="display:flex;gap:10px"><button class="btn main" id="sSave" style="height:48px;padding:0 26px">Сохранить настройки</button><a class="btn line" href="./" target="_blank" style="height:48px">Посмотреть на сайте ↗</a></div>';
+ document.querySelectorAll('[data-off]').forEach(function(c){c.onchange=function(){var d=c.dataset.off;document.querySelectorAll('[data-h="'+d+'"]').forEach(function(i){i.disabled=c.checked;if(!c.checked&&!i.value)i.value=i.dataset.i==='0'?'08:00':'18:00'})}});
+ $('sSave').onclick=function(){
+  s.notice.on=$('nOn').checked;s.notice.text=$('nT').value.trim();
+  [0,1,2,3,4,5,6].forEach(function(d){var off=document.querySelector('[data-off="'+d+'"]').checked,a=document.querySelector('[data-h="'+d+'"][data-i="0"]').value,b=document.querySelector('[data-h="'+d+'"][data-i="1"]').value;s.hours[d]=off||!a||!b?null:[a,b]});
+  s.wa=S.normPhone($('sWa').value)||s.wa;s.instagram=$('sIg').value.replace(/^@/,'').trim();
+  document.querySelectorAll('[data-ph]').forEach(function(i){s.phones[+i.dataset.ph][i.dataset.k]=i.value.trim()});
+  s.address=$('sAd').value.trim();s.addressNote=$('sAn').value.trim();D.hero.title=$('hT').value.trim();D.hero.text=$('hX').value.trim();s.rating=$('sR').value.trim();s.ratingCount=$('sRc').value.trim();
+  save();
+ };
+}
+
+/* ---------- Данные ---------- */
+function vData(){
+ $('view').innerHTML=top('Данные')+
+ '<div class="panel"><h2>Резервная копия</h2><p style="color:var(--mute);margin:0 0 12px">Скачайте все данные сайта (врачи, цены, акции, настройки, заявки) одним файлом или загрузите копию обратно.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn main" id="exp">Скачать копию</button><label class="btn line" style="cursor:pointer">Загрузить копию<input type="file" id="imp" accept="application/json" hidden></label></div></div>'+
+ '<div class="panel"><h2>Сброс демо</h2><p style="color:var(--mute);margin:0 0 12px">Вернуть сайт к исходным данным и очистить заявки.</p><button class="btn bad" id="rst">Сбросить всё</button></div>';
+ $('exp').onclick=function(){var blob=new Blob([JSON.stringify({site:D,bookings:S.bookings(),notes:S.notes()},null,1)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='aldimed-backup-'+S.ymd(S.now())+'.json';a.click()};
+ $('imp').onchange=function(){var f=this.files[0];if(!f)return;f.text().then(function(t){try{var j=JSON.parse(t);if(!j.site||!j.site.settings)throw 0;D=j.site;S.save(D);S.saveBookings(j.bookings||[]);S.saveNotes(j.notes||{});toast('Копия загружена');render()}catch(e){toast('Файл не подходит')}})};
+ $('rst').onclick=function(){if(!confirm('Сбросить все изменения и заявки?'))return;S.reset();S.saveBookings([]);S.saveNotes({});try{localStorage.removeItem('aldimed_seeded')}catch(e){}D=S.load();toast('Демо сброшено');seed();render()};
+}
+
+function start(){$('login').hidden=true;$('app').hidden=false;seed();render()}
+if(authed())start();
+})();
+</script>
+</body>
+</html>
