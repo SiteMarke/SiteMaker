@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Стом Империя — стоматология</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: calm, clinical, reassuring
+   IDEA: a clean appointment card
+   PICTURE: glowing white tooth with sparkle
+   COLOUR and TYPE: deep sea teal hero, white, mint; Manrope only
+   LAYOUT: sticky nav, full-bleed hero band with scene, feature strip, tabbed main list, booking form to WhatsApp, contacts, footer */
+:root{color-scheme:light;--bg:#ffffff;--ink:#0b2a2e;--muted:#4d6669;--hero:#0b5d66;--hero-ink:#f2fbfb;--acc:#5ce1d6;--soft:#eaf6f7;--line:#d4eaec;--card:#fff}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 'Manrope',system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:'Manrope',system-ui,sans-serif;line-height:1.05;text-wrap:balance;margin:0}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}
+nav{position:sticky;top:0;z-index:5;background:var(--hero);color:var(--hero-ink);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;align-items:center;gap:16px;padding:12px max(5vw,16px);flex-wrap:wrap}
+.logo{font-family:'Manrope',system-ui,sans-serif;font-size:22px;letter-spacing:.01em;margin-right:auto;text-decoration:none}
+nav .links{display:flex;gap:18px;flex-wrap:wrap}
+nav .links a{text-decoration:none;opacity:.85;font-size:15px}
+nav .links a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:18px;background:var(--acc);color:#063b40;font-weight:700;text-decoration:none;border:0;font-size:16px;cursor:pointer;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--hero-ink);box-shadow:inset 0 0 0 2px currentColor}
+.btn:focus-visible,input:focus-visible,select:focus-visible,.tab:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.hero{background:var(--hero);color:var(--hero-ink)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(36px,5.4vw,60px)}
+.hero p.lead{font-size:18px;opacity:.88;max-width:34em;margin:16px 0 24px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.rating{display:inline-flex;gap:8px;align-items:center;margin-bottom:18px;font-size:15px;padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.1)}
+.rating b{color:var(--acc)}
+.scene{position:relative;aspect-ratio:1.15/1;width:100%}
+.scene svg{position:absolute;inset:0;width:100%;height:100%}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.chip{padding:8px 14px;border-radius:99px;background:var(--soft);font-size:15px}
+.strip{background:var(--soft)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.stat b{display:block;font-family:'Manrope',system-ui,sans-serif;font-size:clamp(24px,3vw,34px);color:var(--acc2)}
+.stat span{color:var(--muted);font-size:15px}
+h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:10px}
+.sub{color:var(--muted);margin:0 0 24px;max-width:40em}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:20px}
+.tab{flex:none;min-height:44px;padding:0 18px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 15px/1 inherit;font-family:inherit;cursor:pointer}
+.tab[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:6px}
+.item h3{font-size:20px;font-family:'Manrope',system-ui,sans-serif;font-weight:700}
+.item p{margin:0;color:var(--muted);font-size:15px}
+.item .price{margin-top:auto;padding-top:8px;font-weight:700;white-space:nowrap;color:var(--acc2)}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+.book .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:start}
+form{display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,select{font:16px/1.3 inherit;font-family:inherit;min-height:46px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+#out{display:none;padding:14px;border-radius:10px;background:var(--soft);font-size:15px}
+#out.on{display:block}
+.why{display:grid;gap:14px;margin-top:8px;padding:0;list-style:none}
+.why li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start}
+.why i{width:36px;height:36px;border-radius:10px;background:var(--soft);display:grid;place-items:center;font-style:normal;font-weight:700;color:var(--acc2)}
+.info .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.info h3{font-size:20px;margin-bottom:10px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:15px}
+.hours span:nth-child(odd){color:var(--muted)}
+footer{background:var(--hero);color:var(--hero-ink);font-size:14px}
+footer .wrap{display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-between;opacity:.85}
+@media(max-width:860px){.hero .wrap,.book .wrap{grid-template-columns:1fr}.strip .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.info .wrap{grid-template-columns:1fr}.scene{max-width:520px}}
+@media(max-width:600px){nav .links{display:none}.row2{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:no-preference){.float{animation:fl 6s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-8px)}}}
+</style></head><body>
+<div style="background:#fffbe6;color:#3a2f00;font-size:14px;text-align:center;padding:8px 16px">Это прототип сайта для «Стом Империя» от SiteMaker, не официальный сайт. Заказ и бронь здесь пока не работают по-настоящему.</div>
+<nav><div class="wrap"><a class="logo" href="#top">Стом Империя</a><div class="links"><a href="#main">Услуги</a><a href="#book">Запись</a><a href="#contacts">Контакты</a></div><a class="btn" href="#book">Записаться</a></div></nav>
+<header class="hero band" id="top"><div class="wrap">
+<div><div class="rating"><b>★ 5.0</b> 298 оценок в 2ГИС</div>
+<h1>Стоматология для всей семьи — без боли и очередей</h1><p class="lead">Лечение, имплантация, ортодонтия и детская стоматология. Первая консультация — бесплатно. Запишитесь онлайн, мы перезвоним и подтвердим время.</p>
+<div class="cta"><a class="btn" href="#book">Записаться</a><a class="btn ghost" href="#main">Услуги</a></div></div>
+<div class="scene"><svg viewBox="0 0 460 400" aria-hidden="true">
+<defs><linearGradient id="th" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9eef0"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".45" r=".55"><stop offset="0" stop-color="#7fd6dc" stop-opacity=".6"/><stop offset="1" stop-color="#7fd6dc" stop-opacity="0"/></radialGradient></defs>
+<circle cx="230" cy="190" r="190" fill="url(#glow)"/>
+<circle cx="230" cy="190" r="140" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
+<ellipse cx="230" cy="352" rx="120" ry="16" fill="#043a40" opacity=".35"/>
+<g class="float"><path d="M230 92c-34-24-112-26-112 54 0 50 18 70 26 120 6 40 14 66 32 66 22 0 20-60 54-60s32 60 54 60c18 0 26-26 32-66 8-50 26-70 26-120 0-80-78-78-112-54z" fill="url(#th)"/>
+<path d="M150 120c10-22 40-28 62-14" stroke="#fff" stroke-width="10" stroke-linecap="round" fill="none"/>
+<path d="M300 300c6-30 12-46 20-78" stroke="#bfe3e6" stroke-width="6" stroke-linecap="round" fill="none"/></g>
+<g fill="#fff"><path d="M372 92l6 16 16 6-16 6-6 16-6-16-16-6 16-6z"/><path d="M92 250l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/><path d="M380 230l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/></g>
+</svg></div>
+</div></header>
+<section class="strip band"><div class="wrap"><div class="stat"><b>Бесплатно</b><span>первая консультация</span></div><div class="stat"><b>Взрослые и дети</b><span>все направления</span></div><div class="stat"><b>5.0 ★</b><span>298 оценок в 2ГИС</span></div><div class="stat"><b>Вт–Сб</b><span>10:00–18:00</span></div></div></section>
+<section class="band" id="main"><div class="wrap">
+<h2>Услуги</h2><p class="sub">Взрослые и детские врачи в одной клинике.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="grid" id="items"></div>
+<p class="note">Услуги — по данным 2ГИС. Цены и врачей вы добавите сами через админ-панель.</p>
+<div class="chips" style="margin-top:22px"><span class="chip">Бесплатная консультация</span><span class="chip">Неотложка для взрослых</span><span class="chip">Детский приём</span><span class="chip">Оплата картой и QR</span><span class="chip">Пандус</span></div>
+</div></section>
+<section class="band book" id="book" style="background:var(--soft)"><div class="wrap">
+<div><h2>Запись к врачу онлайн</h2><p class="sub">Пациент выбирает направление и удобный день — администратор просто подтверждает.</p>
+<ul class="why"><li><i>1</i><div><b>Экономит время</b><br><span style="color:var(--muted)">Меньше звонков, администратор не уточняет одно и то же</span></div></li><li><i>2</i><div><b>Меньше страха</b><br><span style="color:var(--muted)">Пациент заранее видит врачей, услуги и бесплатную консультацию</span></div></li><li><i>3</i><div><b>Заявки 24/7</b><br><span style="color:var(--muted)">Записываются вечером, когда клиника уже закрыта</span></div></li></ul></div>
+<form id="f" novalidate><label>Имя<input name="Имя" type="text" placeholder="Как к вам обращаться"></label><label>Телефон<input name="Телефон" type="tel" placeholder="+7 7__ ___ __ __"></label><div class="row2"><label>Направление<select name="Направление"><option>Консультация</option><option>Терапия</option><option>Имплантация</option><option>Ортодонтия</option><option>Детский приём</option><option>Хирургия</option></select></label><label>Желаемая дата<input name="Дата" type="date" placeholder=""></label></div>
+<button class="btn" type="submit">Записаться</button>
+<div id="out" role="status"></div></form>
+</div></section>
+<section class="band info" id="contacts"><div class="wrap">
+<div><h3>Адрес</h3><p style="margin:0">ул. Лермонтова, 46, 1 этаж<br><span style="color:var(--muted)">Павлодар</span></p></div>
+<div><h3>Время работы</h3><div class="hours"><span>Вт–Сб</span><span>10:00–18:00</span><span>Вс, Пн</span><span>выходной</span></div></div>
+<div><h3>Связь</h3><p style="margin:0">+7 776 820 02 01<br><a href="https://wa.me/77768200201">Написать в WhatsApp</a><br><a href="https://instagram.com/stom__imperiya">Instagram @stom__imperiya</a></p></div>
+</div></section>
+<footer class="band"><div class="wrap"><span>© 2026 Стом Империя</span><span>Прототип сайта · SiteMaker · sitemakerkz.com</span></div></footer>
+<script>{
+const T=[{"tab": "Взрослым", "items": [["Терапия", "Лечение кариеса и каналов", ""], ["Хирургия", "Удаление зубов", ""], ["Имплантация", "Восстановление утраченных зубов", ""], ["Ортопедия", "Коронки и протезы", ""], ["Пародонтология", "Лечение дёсен", ""]]}, {"tab": "Детям", "items": [["Детский терапевт", "Лечение молочных и постоянных зубов", ""], ["Детский ортодонт", "Исправление прикуса", ""], ["Детский хирург", "Бережное удаление", ""]]}, {"tab": "Ортодонтия", "items": [["Взрослый ортодонт", "Брекеты и элайнеры", ""], ["Диагностика", "Прицельный снимок зуба", ""]]}, {"tab": "Срочно", "items": [["Неотложная помощь", "Для взрослых при острой боли", ""], ["Бесплатная консультация", "Осмотр и план лечения", ""]]}];
+const tabs=document.getElementById('tabs'),items=document.getElementById('items');
+const e=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+function show(i){tabs.querySelectorAll('.tab').forEach((b,j)=>b.setAttribute('aria-selected',j===i));
+items.innerHTML=T[i].items.map(x=>'<div class="item"><h3>'+e(x[0])+'</h3><p>'+e(x[1])+'</p>'+(x[2]?'<div class="price">'+e(x[2])+'</div>':'')+'</div>').join('');}
+tabs.innerHTML=T.map((t,i)=>'<button class="tab" role="tab" type="button">'+e(t.tab)+'</button>').join('');
+tabs.querySelectorAll('.tab').forEach((b,i)=>b.addEventListener('click',()=>show(i)));show(0);
+const f=document.getElementById('f'),out=document.getElementById('out');
+f.addEventListener('submit',ev=>{ev.preventDefault();const d=new FormData(f);const lines=[];
+for(const [k,v] of d.entries()){if(String(v).trim())lines.push(k+': '+v)}
+if(!d.get('Имя')||!d.get('Телефон')){out.textContent='Укажите имя и телефон.';out.className='on';return}
+const msg='Здравствуйте! Запись с сайта:\n'+lines.join('\n');
+out.textContent='Так заявка придёт вам в WhatsApp:\n\n'+msg;out.style.whiteSpace='pre-line';out.className='on';});
+const dt=f.querySelector('input[type=date]');if(dt){dt.min=new Date().toISOString().slice(0,10)}
+}</script>
+</body></html>
