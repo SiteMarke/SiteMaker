@@ -221,18 +221,28 @@ def build_blog():
         words = len(re.sub(r'<[^>]+>', ' ', p['body']).split())
         mob = p.get('img_mobile')
         fig = '<figure><img src="/%s" alt="%s" width="%d" height="%d" fetchpriority="high"%s><figcaption>%s</figcaption></figure>' % (p['img'], e(p['img_alt']), 390 if mob else 960, 844 if mob else 600, ' style="max-width:320px"' if mob else '', e(p['img_alt']))
-        body = '<article class="post"><h1>%s</h1><p class="meta"><time datetime="%s">%s</time> · %d мин чтения · sitemaker</p>%s' % (e(p['title']), p['date'], ru_date(p['date']), max(3, round(words / 180)), fig)
+        upd = p.get('updated')
+        faq_h, faq_ld = faq('ru', p['faq']) if p.get('faq') else ('', None)
+        if faq_h:
+            toc.append(('faq', 'Частые вопросы'))
+            words += len(re.sub(r'<[^>]+>', ' ', faq_h).split())
+        meta_upd = ' · обновлено <time datetime="%s">%s</time>' % (upd, ru_date(upd)) if upd else ''
+        body = '<article class="post"><h1>%s</h1><p class="meta"><time datetime="%s">%s</time>%s · %d мин чтения · sitemaker</p>%s' % (e(p['title']), p['date'], ru_date(p['date']), meta_upd, max(3, round(words / 180)), fig)
         body += '<nav class="toc" aria-label="Содержание"><b>Содержание</b><ol>%s</ol></nav>' % ''.join('<li><a href="#%s">%s</a></li>' % (a, re.sub(r'^\d+\.\s*', '', t)) for a, t in toc)
-        body += p['body'] + '</article>'
+        if p.get('tldr'):
+            body += '<div class="box" style="margin:18px 0 22px"><b>Коротко.</b> %s</div>' % p['tldr']
+        body += p['body'] + ('<h2 id="faq">Частые вопросы</h2>\n' + faq_h if faq_h else '') + '</article>'
         body += box('ru', 'Здравствуйте! Прочитал статью «%s» — хочу обсудить сайт.' % p['title'])
         rel_posts = [q for q in POSTS if q is not p][:3]
         body += '<h2 style="font-size:18px">Услуги по теме</h2><div class="rel">%s</div>' % ''.join('<a href="%s">%s</a>' % (h, dict(SERV_RU + [('/portfolio/', 'Портфолио'), ('/sayt-dlya-uslug/', 'Сайт для компании услуг')]).get(h, h)) for h in p['related'])
         body += '<h2 style="font-size:18px">Читайте также</h2><div class="rel">%s</div>' % ''.join('<a href="/blog/%s/">%s</a>' % (q['slug'], e(q['title'])) for q in rel_posts)
-        ld = [{"@context": "https://schema.org", "@type": "BlogPosting", "headline": p['title'], "description": p['desc'], "image": SITE + '/' + p['img'], "datePublished": p['date'], "dateModified": p['date'],
+        ld = [{"@context": "https://schema.org", "@type": "BlogPosting", "headline": p['title'], "description": p['desc'], "image": SITE + '/' + p['img'], "datePublished": p['date'], "dateModified": upd or p['date'],
                "inLanguage": "ru", "mainEntityOfPage": SITE + path, "author": {"@type": "Organization", "name": "sitemaker", "url": SITE + "/"}, "publisher": {"@id": SITE + "/#business", "@type": "Organization", "name": "sitemaker", "logo": {"@type": "ImageObject", "url": SITE + "/icon-512.png"}}}]
+        if faq_ld:
+            ld.append(faq_ld)
         write(path, page('ru', path, p['seo_title'], p['desc'], body, [('/blog/', 'Блог'), (path, p['title'])], ld=ld, og_img='/' + p['img'], og_type='article',
-                         extra_head='<meta property="article:published_time" content="%s">\n' % p['date']))
-        reg(path, '0.6', lastmod=p['date'])
+                         extra_head='<meta property="article:published_time" content="%s">\n' % p['date'] + ('<meta property="article:modified_time" content="%s">\n' % upd if upd else '')))
+        reg(path, '0.6', lastmod=upd or p['date'])
 
 
 MONTHS = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
@@ -265,6 +275,10 @@ def patch_old():
         s = s.replace('От 10 000 ₸', 'От 7 000 ₸').replace('от 10 000 ₸', 'от 7 000 ₸').replace('от 10&nbsp;000&nbsp;₸', 'от 7&nbsp;000&nbsp;₸').replace('— от 10&nbsp;000&nbsp;₸', '— от 7&nbsp;000&nbsp;₸')
         s = s.replace('бизнес-сайт с админкой и калькулятором — от 17 500 ₸', 'бизнес-сайт — от 17 500 ₸, админ-панель — плюс 5 000 ₸')
         s = s.replace('Бизнес-сайт с админкой и калькулятором — от 17&nbsp;500&nbsp;₸', 'Бизнес-сайт на несколько страниц — от 17&nbsp;500&nbsp;₸, админ-панель — плюс 5&nbsp;000&nbsp;₸')
+        # ноябрь 2026: бизнес-сайт — 25 000 ₸, админ-панель входит
+        s = s.replace('бизнес-сайт — от 17 500 ₸, админ-панель — плюс 5 000 ₸', 'бизнес-сайт с админ-панелью — от 25 000 ₸')
+        s = s.replace('Бизнес-сайт на несколько страниц — от 17&nbsp;500&nbsp;₸, админ-панель — плюс 5&nbsp;000&nbsp;₸', 'Бизнес-сайт на несколько страниц с админ-панелью — от 25&nbsp;000&nbsp;₸')
+        s = s.replace('17 500 ₸', '25 000 ₸').replace('17&nbsp;500&nbsp;₸', '25&nbsp;000&nbsp;₸').replace('"price": 17500', '"price": 25000').replace('"minPrice": 17500', '"minPrice": 25000')
         if MARK not in s:
             # шапка: разделы сайта
             s = s.replace('</style>', '.tn{display:flex;gap:18px;margin-left:auto;margin-right:14px;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bdb8b0}.tn a{text-decoration:none}.tn a:hover{color:#fff}@media(max-width:760px){.tn{display:none}}\n</style>', 1)
