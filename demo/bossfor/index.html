@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bossfor — рестобар</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: night out, music, celebration
+   IDEA: a club flyer under a spotlight
+   PICTURE: spotlight on cocktail and beer glass over a bar counter
+   COLOUR and TYPE: deep plum night, magenta spotlight, warm white; Oswald + Inter
+   LAYOUT: sticky nav, full-bleed hero band with scene, feature strip, tabbed main list, booking form to WhatsApp, contacts, footer */
+:root{color-scheme:dark;--bg:#1a0b20;--ink:#f7eef8;--muted:#c9b6cd;--hero:#12061a;--hero-ink:#f7eef8;--acc:#ff3d7f;--soft:#2a1233;--line:#3d1f48;--card:#22102a}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 'Inter',system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:'Oswald',system-ui,sans-serif;line-height:1.05;text-wrap:balance;margin:0}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}
+nav{position:sticky;top:0;z-index:5;background:var(--hero);color:var(--hero-ink);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;align-items:center;gap:16px;padding:12px max(5vw,16px);flex-wrap:wrap}
+.logo{font-family:'Oswald',system-ui,sans-serif;font-size:22px;letter-spacing:.01em;margin-right:auto;text-decoration:none}
+nav .links{display:flex;gap:18px;flex-wrap:wrap}
+nav .links a{text-decoration:none;opacity:.85;font-size:15px}
+nav .links a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:10px;background:var(--acc);color:#fff;font-weight:700;text-decoration:none;border:0;font-size:16px;cursor:pointer;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--hero-ink);box-shadow:inset 0 0 0 2px currentColor}
+.btn:focus-visible,input:focus-visible,select:focus-visible,.tab:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.hero{background:var(--hero);color:var(--hero-ink)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(36px,5.4vw,60px)}
+.hero p.lead{font-size:18px;opacity:.88;max-width:34em;margin:16px 0 24px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.rating{display:inline-flex;gap:8px;align-items:center;margin-bottom:18px;font-size:15px;padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.1)}
+.rating b{color:var(--acc)}
+.scene{position:relative;aspect-ratio:1.15/1;width:100%}
+.scene svg{position:absolute;inset:0;width:100%;height:100%}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.chip{padding:8px 14px;border-radius:99px;background:var(--soft);font-size:15px}
+.strip{background:var(--soft)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.stat b{display:block;font-family:'Oswald',system-ui,sans-serif;font-size:clamp(24px,3vw,34px);color:var(--acc2)}
+.stat span{color:var(--muted);font-size:15px}
+h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:10px}
+.sub{color:var(--muted);margin:0 0 24px;max-width:40em}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:20px}
+.tab{flex:none;min-height:44px;padding:0 18px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 15px/1 inherit;font-family:inherit;cursor:pointer}
+.tab[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:6px}
+.item h3{font-size:20px;font-family:'Inter',system-ui,sans-serif;font-weight:700}
+.item p{margin:0;color:var(--muted);font-size:15px}
+.item .price{margin-top:auto;padding-top:8px;font-weight:700;white-space:nowrap;color:var(--acc2)}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+.book .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:start}
+form{display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,select{font:16px/1.3 inherit;font-family:inherit;min-height:46px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+#out{display:none;padding:14px;border-radius:10px;background:var(--soft);font-size:15px}
+#out.on{display:block}
+.why{display:grid;gap:14px;margin-top:8px;padding:0;list-style:none}
+.why li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start}
+.why i{width:36px;height:36px;border-radius:10px;background:var(--soft);display:grid;place-items:center;font-style:normal;font-weight:700;color:var(--acc2)}
+.info .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.info h3{font-size:20px;margin-bottom:10px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:15px}
+.hours span:nth-child(odd){color:var(--muted)}
+footer{background:var(--hero);color:var(--hero-ink);font-size:14px}
+footer .wrap{display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-between;opacity:.85}
+@media(max-width:860px){.hero .wrap,.book .wrap{grid-template-columns:1fr}.strip .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.info .wrap{grid-template-columns:1fr}.scene{max-width:520px}}
+@media(max-width:600px){nav .links{display:none}.row2{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:no-preference){.float{animation:fl 6s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-8px)}}}
+</style></head><body>
+<div style="background:#fffbe6;color:#3a2f00;font-size:14px;text-align:center;padding:8px 16px">Это прототип сайта для «BOSSFOR» от SiteMaker, не официальный сайт. Заказ и бронь здесь пока не работают по-настоящему.</div>
+<nav><div class="wrap"><a class="logo" href="#top">BOSSFOR</a><div class="links"><a href="#main">Кухня</a><a href="#book">Бронь</a><a href="#contacts">Контакты</a></div><a class="btn" href="#book">Забронировать стол</a></div></nav>
+<header class="hero band" id="top"><div class="wrap">
+<div><div class="rating"><b>★ 4.7</b> 913 оценок в 2ГИС</div>
+<h1>Рестобар, где вечер заканчивается в 2 ночи</h1><p class="lead">Живая музыка, караоке, танцпол, VIP-зал и кабинки. Лучший ресторан 2026 по версии 2ГИС. Бронируйте стол онлайн — без звонков и переписок.</p>
+<div class="cta"><a class="btn" href="#book">Забронировать стол</a><a class="btn ghost" href="#main">Кухня и зоны</a></div></div>
+<div class="scene"><svg viewBox="0 0 460 400" aria-hidden="true">
+<defs><radialGradient id="sp" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#ff3d7f" stop-opacity=".7"/><stop offset=".6" stop-color="#ff3d7f" stop-opacity="0"/></radialGradient>
+<linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity=".25"/></linearGradient></defs>
+<path d="M150 0L40 380h380L310 0z" fill="url(#sp)" opacity=".7"/>
+<circle cx="230" cy="70" r="16" fill="#ffd1e0"/>
+<ellipse cx="230" cy="350" rx="200" ry="24" fill="#000" opacity=".4"/>
+<rect x="40" y="300" width="380" height="40" rx="8" fill="#4a1d57"/><rect x="40" y="300" width="380" height="6" rx="3" fill="#ff3d7f"/>
+<g class="float"><path d="M120 150h70l-12 70c-2 12-10 18-23 18s-21-6-23-18z" fill="url(#gl)"/><path d="M127 180h56l-6 36c-2 9-8 14-22 14s-20-5-22-14z" fill="#ff3d7f"/>
+<rect x="150" y="236" width="10" height="50" fill="#fff" opacity=".8"/><rect x="128" y="284" width="54" height="10" rx="5" fill="#fff" opacity=".8"/>
+<path d="M270 130h60v150c0 10-8 16-30 16s-30-6-30-16z" fill="url(#gl)"/><path d="M274 190h52v86c0 8-6 12-26 12s-26-4-26-12z" fill="#ffb347"/>
+<circle cx="290" cy="215" r="5" fill="#fff" opacity=".7"/><circle cx="305" cy="245" r="4" fill="#fff" opacity=".7"/><circle cx="295" cy="265" r="3" fill="#fff" opacity=".7"/></g>
+<g fill="#ffd1e0"><circle cx="370" cy="120" r="3"/><circle cx="90" cy="100" r="2.5"/><circle cx="400" cy="200" r="2"/><circle cx="70" cy="230" r="2"/></g>
+<path d="M360 160c20-30 50-20 50 0s-30 30-50 60" stroke="#ff3d7f" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="356" cy="224" r="12" fill="#ff3d7f"/>
+</svg></div>
+</div></header>
+<section class="strip band"><div class="wrap"><div class="stat"><b>12:00–02:00</b><span>каждый день</span></div><div class="stat"><b>до 70 гостей</b><span>зал, VIP, кабинки, веранда</span></div><div class="stat"><b>Лучший ресторан 2026</b><span>награда 2ГИС</span></div><div class="stat"><b>≈ 9 000 ₸</b><span>средний чек</span></div></div></section>
+<section class="band" id="main"><div class="wrap">
+<h2>Кухня и зоны</h2><p class="sub">Восточная и европейская кухня, шашлык и гриль. Выберите, где будете отдыхать.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="grid" id="items"></div>
+<p class="note">Позиции показаны для примера. Точное меню, фото и цены вы добавите сами через админ-панель.</p>
+<div class="chips" style="margin-top:22px"><span class="chip">Живая музыка</span><span class="chip">Караоке</span><span class="chip">Танцпол</span><span class="chip">VIP-зал</span><span class="chip">Кабинки</span><span class="chip">Винная карта</span><span class="chip">Ифтар-меню</span><span class="chip">Доставка и навынос</span></div>
+</div></section>
+<section class="band book" id="book" style="background:var(--soft)"><div class="wrap">
+<div><h2>Бронь стола за 30 секунд</h2><p class="sub">Гость выбирает дату, время и зону — вы получаете готовую заявку в WhatsApp.</p>
+<ul class="why"><li><i>1</i><div><b>Экономит время администратора</b><br><span style="color:var(--muted)">Не нужно по десять раз уточнять дату, время и количество гостей</span></div></li><li><i>2</i><div><b>Заполненные выходные</b><br><span style="color:var(--muted)">Бронируют заранее, даже ночью, когда никто не отвечает</span></div></li><li><i>3</i><div><b>Сразу видно атмосферу</b><br><span style="color:var(--muted)">Зоны, музыка и кухня на одной странице — гостю проще решиться</span></div></li></ul></div>
+<form id="f" novalidate><label>Имя<input name="Имя" type="text" placeholder="Как к вам обращаться"></label><label>Телефон<input name="Телефон" type="tel" placeholder="+7 7__ ___ __ __"></label><div class="row2"><label>Дата<input name="Дата" type="date" placeholder=""></label><label>Время<input name="Время" type="time" placeholder=""></label></div><div class="row2"><label>Гостей<select name="Гостей"><option>2</option><option>3–4</option><option>5–8</option><option>9–15</option><option>Больше 15</option></select></label><label>Зона<select name="Зона"><option>Основной зал</option><option>VIP-зал</option><option>Кабинка</option><option>Веранда</option></select></label></div>
+<button class="btn" type="submit">Забронировать</button>
+<div id="out" role="status"></div></form>
+</div></section>
+<section class="band info" id="contacts"><div class="wrap">
+<div><h3>Адрес</h3><p style="margin:0">ул. Камзина, 146/1, 1 этаж<br><span style="color:var(--muted)">Павлодар</span></p></div>
+<div><h3>Время работы</h3><div class="hours"><span>Пн–Вс</span><span>12:00–02:00</span></div></div>
+<div><h3>Связь</h3><p style="margin:0">+7 707 557 10 77<br><a href="https://wa.me/77075571077">Написать в WhatsApp</a><br><a href="https://instagram.com/bossfor_pavlodar">Instagram @bossfor_pavlodar</a></p></div>
+</div></section>
+<footer class="band"><div class="wrap"><span>© 2026 BOSSFOR</span><span>Прототип сайта · SiteMaker · sitemakerkz.com</span></div></footer>
+<script>{
+const T=[{"tab": "Гриль и шашлык", "items": [["Шашлык", "Классика на углях", ""], ["Люля-кебаб", "Сочный, с лепёшкой и луком", ""], ["Стейки", "Прожарка на ваш вкус", ""]]}, {"tab": "Восточная кухня", "items": [["Манты", "Ручная лепка", ""], ["Чебуреки", "Хрустящие, горячие", ""], ["Хачапури", "С сыром и яйцом", ""], ["Пельмени", "Домашние", ""]]}, {"tab": "Европейская", "items": [["Паста", "Сливочная или томатная", ""], ["Пицца", "Из печи", ""], ["Салаты", "Свежие и тёплые", ""], ["Супы", "Каждый день", ""]]}, {"tab": "Зоны", "items": [["Основной зал", "Живая музыка и танцпол", ""], ["VIP-зал", "Для закрытых встреч", ""], ["Кабинки", "Уединённо для компании", ""], ["Летняя веранда", "В тёплый сезон", ""]]}];
+const tabs=document.getElementById('tabs'),items=document.getElementById('items');
+const e=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+function show(i){tabs.querySelectorAll('.tab').forEach((b,j)=>b.setAttribute('aria-selected',j===i));
+items.innerHTML=T[i].items.map(x=>'<div class="item"><h3>'+e(x[0])+'</h3><p>'+e(x[1])+'</p>'+(x[2]?'<div class="price">'+e(x[2])+'</div>':'')+'</div>').join('');}
+tabs.innerHTML=T.map((t,i)=>'<button class="tab" role="tab" type="button">'+e(t.tab)+'</button>').join('');
+tabs.querySelectorAll('.tab').forEach((b,i)=>b.addEventListener('click',()=>show(i)));show(0);
+const f=document.getElementById('f'),out=document.getElementById('out');
+f.addEventListener('submit',ev=>{ev.preventDefault();const d=new FormData(f);const lines=[];
+for(const [k,v] of d.entries()){if(String(v).trim())lines.push(k+': '+v)}
+if(!d.get('Имя')||!d.get('Телефон')){out.textContent='Укажите имя и телефон.';out.className='on';return}
+const msg='Здравствуйте! Бронь стола с сайта:\n'+lines.join('\n');
+out.textContent='Так заявка придёт вам в WhatsApp:\n\n'+msg;out.style.whiteSpace='pre-line';out.className='on';});
+const dt=f.querySelector('input[type=date]');if(dt){dt.min=new Date().toISOString().slice(0,10)}
+}</script>
+</body></html>
