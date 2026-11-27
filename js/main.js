@@ -55,7 +55,7 @@ function fanOf(c) {
 var CASES = window.SM_CASES || {};
 function caseUrl(w) { var k = CASES[w.id] || CASES[w.name]; return k ? (LANG === 'kk' ? '/kz' : '') + '/portfolio/' + k + '/' : ''; }
 function renderWorks() {
-  var C = cats(), n = C.reduce(function (a, c) { return a + vis(c).length; }, 0);
+  var C = cats(), n = C.reduce(function (a, c) { return a + (c.id === 'demo' ? 0 : vis(c).length); }, 0); // примеры для бизнесов не считаем живыми сайтами
   $('#wCount').textContent = n + ' ' + pl(n, ['живой сайт', 'живых сайта', 'живых сайтов'], 'жұмыс істеп тұрған сайт');
   var stw = $('#stWorks'); if (stw) { stw.dataset.count = n; if (stw.dataset.done) stw.textContent = n + '+'; }
   $('#cats').innerHTML = C.map(function (c, i) {
@@ -68,6 +68,7 @@ var dlg = $('#dlg');
 function openCat(i) {
   var c = cats()[i]; if (!c) return;
   $('#dlgP').innerHTML = '<div class="top"><h3 id="dlgT">' + esc(tr(c.title)) + '</h3><button class="x" type="button" data-close aria-label="' + L('Закрыть', 'Жабу') + '">×</button></div>' +
+    (c.id === 'demo' ? '<p class="c" style="margin:-4px 0 18px">' + L('Это примеры: я сделал их бесплатно, чтобы показать бизнесу его будущий сайт. Сами бизнесы эти сайты у меня не заказывали.', 'Бұл үлгілер: бизнеске болашақ сайтын көрсету үшін тегін жасадым. Бизнестердің өздері бұл сайттарға тапсырыс берген жоқ.') + '</p>' : '') +
     vis(c).map(function (w) {
       var mob = !w.d;
       var cs = caseUrl(w);

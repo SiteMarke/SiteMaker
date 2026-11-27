@@ -61,6 +61,7 @@ section{position:relative;padding:110px 0}
 /* работы */
 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 @media(max-width:960px){.cats{grid-template-columns:1fr 1fr}}
+@media(min-width:961px){.cats:has(>.cat:nth-child(4):last-child){grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.cats{grid-template-columns:1fr}}
 .cat{position:relative;text-align:left;background:linear-gradient(180deg,#121218,#0c0c10);border:1px solid var(--line);border-radius:26px;padding:18px 18px 20px;overflow:hidden;transition:border-color .3s,transform .3s}
 .cat:hover{border-color:var(--line2);transform:translateY(-4px)}

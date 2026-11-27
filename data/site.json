@@ -329,12 +329,13 @@
      "id": "petro",
      "name": "PETRO.POVAR",
      "city": "Петропавловск · выездной шеф-повар",
-     "desc": "Банкеты под ключ: меню, калькулятор банкета на гостя, RU/KZ.",
+     "desc": "Выездной шеф: банкеты, фуршеты и сеты, каталог с корзиной, доставка и админ-панель.",
      "tags": [
-      "Калькулятор",
-      "2 языка"
+      "Корзина",
+      "Доставка",
+      "Админка"
      ],
-     "url": "https://tamerlankajrolla2-a11y.github.io/RETRO-POVAR/",
+     "url": "https://petro-povar.github.io/",
      "m": "img/w/petro-m.webp",
      "d": "img/w/petro-d.webp",
      "fan": false
@@ -433,6 +434,65 @@
      "m": "img/w/proyxod-m.webp",
      "d": "img/w/proyxod-d.webp",
      "fan": true
+    },
+    {
+     "id": "nazdar",
+     "name": "Nazdar Flowers",
+     "city": "Астана · цветы и подарки",
+     "desc": "Каталог букетов, растений и подарков с ценами, корзина, акции и заказ с доставкой в WhatsApp.",
+     "tags": [
+      "Каталог",
+      "Корзина",
+      "Доставка"
+     ],
+     "url": "https://tamerlankajrolla2-a11y.github.io/Nazdar-Flowers/",
+     "m": "img/w/nazdar-m.webp",
+     "d": "img/w/nazdar-d.webp",
+     "fan": true
+    },
+    {
+     "id": "alisa",
+     "name": "ALISA KIDS",
+     "city": "Казахстан · детская одежда",
+     "desc": "Каталог одежды для детей 2–12 лет с фильтром по размеру, корзина, доставка по Казахстану и админ-панель. Свой домен.",
+     "tags": [
+      "Каталог",
+      "Фильтры",
+      "Админка"
+     ],
+     "url": "https://alisa-kids.com/",
+     "m": "img/w/alisa-m.webp",
+     "d": "img/w/alisa-d.webp",
+     "fan": false
+    },
+    {
+     "id": "minikids",
+     "name": "Mini Kids",
+     "city": "Казахстан · детская одежда ручного пошива",
+     "desc": "Каталог хлопковой одежды с размерами 92–110 и заказ в WhatsApp. Есть отзыв владелицы.",
+     "tags": [
+      "Каталог",
+      "WhatsApp"
+     ],
+     "url": "https://tamerlankajrolla2-a11y.github.io/Mini-Kids/",
+     "m": "img/w/minikids-m.webp",
+     "d": "img/w/minikids-d.webp",
+     "fan": false
+    },
+    {
+     "id": "zerosushi",
+     "name": "Zero Sushi",
+     "city": "Петропавловск · доставка суши, пиццы и чикена",
+     "desc": "Сеты до 100 роллов, роллы, пицца и чикен; корзина, промокоды и админ-панель.",
+     "tags": [
+      "Корзина",
+      "Промокоды",
+      "Админка"
+     ],
+     "url": "https://tamerlankajrolla2-a11y.github.io/ZeroSushi/",
+     "m": "img/w/zerosushi-m.webp",
+     "d": "img/w/zerosushi-d.webp",
+     "fan": false
     }
    ]
   },
@@ -512,6 +572,133 @@
      "fan": false
     },
     {
+     "id": "aldimed",
+     "name": "ALDIMED",
+     "city": "Караганда · медицинский центр",
+     "desc": "Врачи и направления, УЗИ 4D, анализы лаборатории INVIVO с ценами, запись на приём и админ-панель для клиники.",
+     "tags": [
+      "Запись",
+      "Цены",
+      "Админка"
+     ],
+     "url": "https://aldimed.github.io/",
+     "m": "img/w/aldimed-m.webp",
+     "d": "img/w/aldimed-d.webp",
+     "fan": true
+    },
+    {
+     "id": "vertebra",
+     "name": "Vertebra Medical",
+     "city": "Петропавловск · лечение позвоночника и суставов",
+     "desc": "Врачи, методы лечения грыжи и артроза, цены, отзывы пациентов, запись на приём и админ-панель. Свой домен.",
+     "tags": [
+      "Запись",
+      "Отзывы",
+      "Админка"
+     ],
+     "url": "https://vertebramedical.com/",
+     "m": "img/w/vertebra-m.webp",
+     "d": "img/w/vertebra-d.webp",
+     "fan": false
+    },
+    {
+     "id": "bjplast",
+     "name": "BJ PLAST",
+     "city": "Астана · окна, двери и витражи",
+     "desc": "Пластиковые и алюминиевые окна, двери и тамбуры, калькулятор стоимости, заявка на бесплатный замер и админ-панель. Свой домен.",
+     "tags": [
+      "Калькулятор",
+      "Заявка",
+      "Админка"
+     ],
+     "url": "https://bjplast.com/",
+     "m": "img/w/bjplast-m.webp",
+     "d": "img/w/bjplast-d.webp",
+     "fan": false
+    },
+    {
+     "id": "petrodom",
+     "name": "PetroDom",
+     "city": "Петропавловск · продажа квартир",
+     "desc": "Квартиры с фото и ценами, фильтры по комнатам и цене, подбор вариантов и заявка в WhatsApp.",
+     "tags": [
+      "Каталог",
+      "Фильтры",
+      "WhatsApp"
+     ],
+     "url": "https://tamerlankajrolla2-a11y.github.io/PetroDom/",
+     "m": "img/w/petrodom-m.webp",
+     "d": "img/w/petrodom-d.webp",
+     "fan": false
+    }
+   ]
+  },
+  {
+   "id": "demo",
+   "title": "примеры для бизнесов",
+   "desc": "Бесплатные примеры, которые я сделал салонам, клиникам, кафе и магазинам, чтобы показать их будущий сайт.",
+   "works": [
+    {
+     "id": "masstape",
+     "name": "Mass Tape",
+     "city": "Павлодар · массаж и тейпирование",
+     "desc": "Карта тела с ценами по зонам, 6 мастеров, полный прайс, курсы, отзывы из 2ГИС и запись в WhatsApp.",
+     "tags": [
+      "Запись",
+      "Цены",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/masstape/",
+     "m": "img/w/masstape-m.webp",
+     "d": "img/w/masstape-d.webp",
+     "fan": true
+    },
+    {
+     "id": "royalclub",
+     "name": "Royal Club",
+     "city": "Алматы · фитнес-клубы и SPA",
+     "desc": "4 клуба, подбор клубной карты за 3 вопроса, расписание занятий, тренеры и Royal Kids.",
+     "tags": [
+      "Запись",
+      "Филиалы",
+      "Расписание"
+     ],
+     "url": "https://sitemakerkz.com/demo/royalclub/",
+     "m": "img/w/royalclub-m.webp",
+     "d": "img/w/royalclub-d.webp",
+     "fan": true
+    },
+    {
+     "id": "labella",
+     "name": "La Bella Sweets",
+     "city": "Астана · торты и десерты",
+     "desc": "60+ позиций с ценами: торты, бенто, комбо-наборы и клубника в шоколаде, корзина и заказ в WhatsApp.",
+     "tags": [
+      "Каталог",
+      "Корзина",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/la-bella-sweets/",
+     "m": "img/w/la-bella-sweets-m.webp",
+     "d": "img/w/la-bella-sweets-d.webp",
+     "fan": true
+    },
+    {
+     "id": "abramenko",
+     "name": "ABRAMENKO studio",
+     "city": "Петропавловск · студия красоты",
+     "desc": "Окрашивание, стрижки и эпиляция: мастера, работы, курс колористики, отзывы и запись за минуту.",
+     "tags": [
+      "Запись",
+      "Мастера",
+      "Отзывы"
+     ],
+     "url": "https://sitemakerkz.com/demo/abramenko/",
+     "m": "img/w/abramenko-m.webp",
+     "d": "img/w/abramenko-d.webp",
+     "fan": false
+    },
+    {
      "id": "tulpar",
      "name": "Тұлпар",
      "city": "Петропавловск · автошкола",
@@ -554,6 +741,616 @@
      "url": "https://sitemakerkz.com/demo/woman/",
      "m": "img/w/woman-m.webp",
      "d": "img/w/woman-d.webp",
+     "fan": false
+    },
+    {
+     "id": "zhb",
+     "name": "Zhb.gym",
+     "city": "Астана · тренажёрный зал",
+     "desc": "Зал, абонементы, отзывы и запись на тренировку в WhatsApp.",
+     "tags": [
+      "Запись",
+      "Отзывы",
+      "WhatsApp"
+     ],
+     "url": "https://tamerlankajrolla2-a11y.github.io/ZNB/",
+     "m": "img/w/zhb-m.webp",
+     "d": "img/w/zhb-d.webp",
+     "fan": false
+    },
+    {
+     "id": "stomimp",
+     "name": "Стом Империя",
+     "city": "Павлодар · стоматология",
+     "desc": "Лечение, имплантация, ортодонтия и детская стоматология, онлайн-запись к врачу.",
+     "tags": [
+      "Запись",
+      "Услуги"
+     ],
+     "url": "https://sitemakerkz.com/demo/stom-imperiya/",
+     "m": "img/w/stom-imperiya-m.webp",
+     "d": "img/w/stom-imperiya-d.webp",
+     "fan": false
+    },
+    {
+     "id": "alazani",
+     "name": "Алазани",
+     "city": "Павлодар · грузинский ресторан",
+     "desc": "Меню грузинской кухни, бронь стола и заявка на банкет онлайн.",
+     "tags": [
+      "Меню",
+      "Бронь",
+      "Банкеты"
+     ],
+     "url": "https://sitemakerkz.com/demo/alazani/",
+     "m": "img/w/alazani-m.webp",
+     "d": "img/w/alazani-d.webp",
+     "fan": false
+    },
+    {
+     "id": "bossfor",
+     "name": "Bossfor",
+     "city": "Павлодар · рестобар",
+     "desc": "Кухня и зоны заведения, бронь стола за 30 секунд.",
+     "tags": [
+      "Меню",
+      "Бронь"
+     ],
+     "url": "https://sitemakerkz.com/demo/bossfor/",
+     "m": "img/w/bossfor-m.webp",
+     "d": "img/w/bossfor-d.webp",
+     "fan": false
+    },
+    {
+     "id": "akbars",
+     "name": "Ак Барс",
+     "city": "Павлодар · автоцентр",
+     "desc": "Ремонт, шиномонтаж и запчасти, онлайн-запись на ремонт с выбором услуги.",
+     "tags": [
+      "Запись",
+      "Услуги"
+     ],
+     "url": "https://sitemakerkz.com/demo/akbars/",
+     "m": "img/w/akbars-m.webp",
+     "d": "img/w/akbars-d.webp",
+     "fan": false
+    },
+    {
+     "id": "crm",
+     "name": "CRM для бизнеса",
+     "city": "Казахстан · пример CRM",
+     "desc": "Записи, клиенты, заявки, склад и финансы в одной программе. Можно нажимать и менять.",
+     "tags": [
+      "CRM",
+      "Админка"
+     ],
+     "url": "https://sitemakerkz.com/demo/crm/",
+     "m": "img/w/crm-m.webp",
+     "d": "img/w/crm-d.webp",
+     "fan": false
+    },
+    {
+     "id": "banoffee",
+     "name": "Banoffee",
+     "city": "Астана · кондитерская",
+     "desc": "Торты, бенто, эклеры, макарон и синнабоны с ценами, корзина и заказ в WhatsApp.",
+     "tags": [
+      "Каталог",
+      "Корзина",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/banoffee/",
+     "m": "img/w/banoffee-m.webp",
+     "d": "img/w/banoffee-d.webp",
+     "fan": false
+    },
+    {
+     "id": "chocostr",
+     "name": "Chocostrawberry",
+     "city": "Астана · клубника в шоколаде",
+     "desc": "Наборы клубники в шоколаде по размеру и цене, корзина, доставка или самовывоз.",
+     "tags": [
+      "Каталог",
+      "Корзина",
+      "Доставка"
+     ],
+     "url": "https://sitemakerkz.com/demo/chocostrawberry/",
+     "m": "img/w/chocostrawberry-m.webp",
+     "d": "img/w/chocostrawberry-d.webp",
+     "fan": false
+    },
+    {
+     "id": "sandi",
+     "name": "Sandi Chocoflowers",
+     "city": "Астана · клубника в шоколаде",
+     "desc": "Боксы клубники и клубничные букеты XS–L, выбор шоколада, корзина и заказ в WhatsApp.",
+     "tags": [
+      "Каталог",
+      "Корзина",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/sandi-chocoflowers/",
+     "m": "img/w/sandi-chocoflowers-m.webp",
+     "d": "img/w/sandi-chocoflowers-d.webp",
+     "fan": false
+    },
+    {
+     "id": "sladkaya",
+     "name": "Сладкая жизнь",
+     "city": "Астана · кондитерская",
+     "desc": "30 десертов с ценами: торты, пирожные, трайфлы и боксы, корзина и заказ в WhatsApp.",
+     "tags": [
+      "Каталог",
+      "Корзина",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/sladkaya-zhizn/",
+     "m": "img/w/sladkaya-zhizn-m.webp",
+     "d": "img/w/sladkaya-zhizn-d.webp",
+     "fan": false
+    },
+    {
+     "id": "shafran",
+     "name": "Shafran",
+     "city": "Алматы · сеть кафе",
+     "desc": "17 филиалов, восточная и европейская кухня, заказ и бронь стола напрямую без агрегаторов.",
+     "tags": [
+      "Меню",
+      "Заказ",
+      "Бронь"
+     ],
+     "url": "https://sitemakerkz.com/demo/shafran/",
+     "m": "img/w/shafran-m.webp",
+     "d": "img/w/shafran-d.webp",
+     "fan": false
+    },
+    {
+     "id": "burger",
+     "name": "Burger na Satpayeva",
+     "city": "Алматы · сеть бургерных",
+     "desc": "9 филиалов, меню бургеров и донеров и заказ напрямую в WhatsApp.",
+     "tags": [
+      "Меню",
+      "Заказ",
+      "Филиалы"
+     ],
+     "url": "https://sitemakerkz.com/demo/burger-na-satpayeva/",
+     "m": "img/w/burger-na-satpayeva-m.webp",
+     "d": "img/w/burger-na-satpayeva-d.webp",
+     "fan": false
+    },
+    {
+     "id": "coffee",
+     "name": "Coffee Original",
+     "city": "Алматы · сеть кофеен",
+     "desc": "22 филиала, меню кофе, завтраков и десертов и поиск ближайшей кофейни.",
+     "tags": [
+      "Меню",
+      "Филиалы"
+     ],
+     "url": "https://sitemakerkz.com/demo/coffee-original/",
+     "m": "img/w/coffee-original-m.webp",
+     "d": "img/w/coffee-original-d.webp",
+     "fan": false
+    },
+    {
+     "id": "termanova",
+     "name": "Terma Nova",
+     "city": "Караганда · банный комплекс",
+     "desc": "Бани, сауны, бассейн и зоны отдыха, рейтинг из 2ГИС и бронь в WhatsApp.",
+     "tags": [
+      "Бронь",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/terma-nova/",
+     "m": "img/w/terma-nova-m.webp",
+     "d": "img/w/terma-nova-d.webp",
+     "fan": false
+    },
+    {
+     "id": "lifespa",
+     "name": "Life SPA",
+     "city": "Астана · SPA и салон красоты",
+     "desc": "Бани, сауны и массаж, рейтинг из 2ГИС и бронь отдыха в WhatsApp.",
+     "tags": [
+      "Бронь",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/life-spa/",
+     "m": "img/w/life-spa-m.webp",
+     "d": "img/w/life-spa-d.webp",
+     "fan": false
+    },
+    {
+     "id": "adam",
+     "name": "ADAM CLINIC",
+     "city": "Астана · многопрофильная клиника",
+     "desc": "9 филиалов, направления врачей, анализы и диагностика, запись на приём в WhatsApp.",
+     "tags": [
+      "Запись",
+      "Врачи",
+      "Филиалы"
+     ],
+     "url": "https://sitemakerkz.com/demo/adam-clinic/",
+     "m": "img/w/adam-clinic-m.webp",
+     "d": "img/w/adam-clinic-d.webp",
+     "fan": false
+    },
+    {
+     "id": "kristina",
+     "name": "Кристина",
+     "city": "Караганда · клиника",
+     "desc": "Направления врачей, анализы и диагностика, рейтинг из 2ГИС и запись на приём в WhatsApp.",
+     "tags": [
+      "Запись",
+      "Врачи",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/kristina-clinic/",
+     "m": "img/w/kristina-clinic-m.webp",
+     "d": "img/w/kristina-clinic-d.webp",
+     "fan": false
+    },
+    {
+     "id": "kovaleva",
+     "name": "Dr. Kovaleva",
+     "city": "Караганда · косметология",
+     "desc": "Врач-косметолог: процедуры, опыт, рейтинг из 2ГИС и запись на консультацию в WhatsApp.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/dr-kovaleva/",
+     "m": "img/w/dr-kovaleva-m.webp",
+     "d": "img/w/dr-kovaleva-d.webp",
+     "fan": false
+    },
+    {
+     "id": "laboptic",
+     "name": "LAB optic",
+     "city": "Астана · сеть салонов оптики",
+     "desc": "6 филиалов, оправы, солнцезащитные очки, линзы и ремонт, запись на подбор очков.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "Филиалы"
+     ],
+     "url": "https://sitemakerkz.com/demo/lab-optic/",
+     "m": "img/w/lab-optic-m.webp",
+     "d": "img/w/lab-optic-d.webp",
+     "fan": false
+    },
+    {
+     "id": "s1gma",
+     "name": "S1gma",
+     "city": "Астана · автошкола и мотошкола",
+     "desc": "6 филиалов, права категории B и мотошкола, заявка с подбором группы и филиала.",
+     "tags": [
+      "Заявка",
+      "Филиалы",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/s1gma/",
+     "m": "img/w/s1gma-m.webp",
+     "d": "img/w/s1gma-d.webp",
+     "fan": false
+    },
+    {
+     "id": "este",
+     "name": "ESTE",
+     "city": "Астана · сеть барбершопов",
+     "desc": "13 филиалов, мужские стрижки и борода, рейтинг из 2ГИС и запись к барберу в WhatsApp.",
+     "tags": [
+      "Запись",
+      "Филиалы",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/este/",
+     "m": "img/w/este-m.webp",
+     "d": "img/w/este-d.webp",
+     "fan": false
+    },
+    {
+     "id": "alphatrim",
+     "name": "Alpha Trim",
+     "city": "Караганда · барбершоп",
+     "desc": "Мужские стрижки и борода, рейтинг из 2ГИС, карта и запись к барберу в WhatsApp.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/alpha-trim/",
+     "m": "img/w/alpha-trim-m.webp",
+     "d": "img/w/alpha-trim-d.webp",
+     "fan": false
+    },
+    {
+     "id": "adal",
+     "name": "Adal",
+     "city": "Караганда · парикмахерская",
+     "desc": "3 филиала, стрижки и уход для всей семьи, рейтинг из 2ГИС и запись в WhatsApp.",
+     "tags": [
+      "Запись",
+      "Филиалы",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/adal/",
+     "m": "img/w/adal-m.webp",
+     "d": "img/w/adal-d.webp",
+     "fan": false
+    },
+    {
+     "id": "imanova",
+     "name": "Imanova beauty",
+     "city": "Караганда · салон красоты",
+     "desc": "3 филиала, услуги салона, рейтинг из 2ГИС и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Филиалы",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/imanova/",
+     "m": "img/w/imanova-m.webp",
+     "d": "img/w/imanova-d.webp",
+     "fan": false
+    },
+    {
+     "id": "madam",
+     "name": "Madam",
+     "city": "Караганда · студия красоты",
+     "desc": "Маникюр, педикюр, брови и ресницы: услуги, рейтинг из 2ГИС и запись в WhatsApp.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/madam/",
+     "m": "img/w/madam-m.webp",
+     "d": "img/w/madam-d.webp",
+     "fan": false
+    },
+    {
+     "id": "shuaq",
+     "name": "Shuaq",
+     "city": "Астана · маникюр и брови",
+     "desc": "Маникюр, педикюр, брови и ресницы: услуги, рейтинг из 2ГИС и запись в WhatsApp.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/shuaq/",
+     "m": "img/w/shuaq-m.webp",
+     "d": "img/w/shuaq-d.webp",
+     "fan": false
+    },
+    {
+     "id": "ayalashes",
+     "name": "Ayalashes",
+     "city": "Астана · брови и ресницы",
+     "desc": "Брови и ресницы: услуги, рейтинг из 2ГИС, карта и запись за минуту в WhatsApp.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/ayalashes/",
+     "m": "img/w/ayalashes-m.webp",
+     "d": "img/w/ayalashes-d.webp",
+     "fan": false
+    },
+    {
+     "id": "beautybooster",
+     "name": "Beautybooster",
+     "city": "Астана · брови и ресницы",
+     "desc": "Брови и ресницы: услуги, рейтинг из 2ГИС, карта и запись за минуту в WhatsApp.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/beautybooster/",
+     "m": "img/w/beautybooster-m.webp",
+     "d": "img/w/beautybooster-d.webp",
+     "fan": false
+    },
+    {
+     "id": "elizabeth",
+     "name": "Elizabeth",
+     "city": "Караганда · имидж-клуб",
+     "desc": "Услуги салона, рейтинг из 2ГИС, адрес на карте и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/elizabeth/",
+     "m": "img/w/elizabeth-m.webp",
+     "d": "img/w/elizabeth-d.webp",
+     "fan": false
+    },
+    {
+     "id": "freshstyle",
+     "name": "Fresh Style",
+     "city": "Караганда · салон красоты",
+     "desc": "Услуги салона, рейтинг из 2ГИС, адрес на карте и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/fresh-style/",
+     "m": "img/w/fresh-style-m.webp",
+     "d": "img/w/fresh-style-d.webp",
+     "fan": false
+    },
+    {
+     "id": "ahh",
+     "name": "Ahh beauty",
+     "city": "Астана · салон красоты",
+     "desc": "Услуги салона, рейтинг из 2ГИС, адрес на карте и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/ahh-beauty/",
+     "m": "img/w/ahh-beauty-m.webp",
+     "d": "img/w/ahh-beauty-d.webp",
+     "fan": false
+    },
+    {
+     "id": "aigul",
+     "name": "Айгүл",
+     "city": "Астана · салон красоты",
+     "desc": "Услуги салона, рейтинг из 2ГИС, адрес на карте и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/aigul/",
+     "m": "img/w/aigul-m.webp",
+     "d": "img/w/aigul-d.webp",
+     "fan": false
+    },
+    {
+     "id": "aura",
+     "name": "Aura",
+     "city": "Астана · салон красоты",
+     "desc": "Услуги салона, рейтинг из 2ГИС, адрес на карте и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/aura-beauty/",
+     "m": "img/w/aura-beauty-m.webp",
+     "d": "img/w/aura-beauty-d.webp",
+     "fan": false
+    },
+    {
+     "id": "beles",
+     "name": "Beles.beauty",
+     "city": "Астана · студия красоты",
+     "desc": "Услуги салона, рейтинг из 2ГИС, адрес на карте и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/beles-beauty/",
+     "m": "img/w/beles-beauty-m.webp",
+     "d": "img/w/beles-beauty-d.webp",
+     "fan": false
+    },
+    {
+     "id": "bounty",
+     "name": "Bounty",
+     "city": "Астана · студия красоты",
+     "desc": "Услуги салона, рейтинг из 2ГИС, адрес на карте и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/bounty/",
+     "m": "img/w/bounty-m.webp",
+     "d": "img/w/bounty-d.webp",
+     "fan": false
+    },
+    {
+     "id": "inkar",
+     "name": "Іңкәр",
+     "city": "Астана · салон красоты",
+     "desc": "Услуги салона, рейтинг из 2ГИС, адрес на карте и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/inkar-beauty/",
+     "m": "img/w/inkar-beauty-m.webp",
+     "d": "img/w/inkar-beauty-d.webp",
+     "fan": false
+    },
+    {
+     "id": "meduza",
+     "name": "Meduza",
+     "city": "Астана · салон красоты",
+     "desc": "Услуги салона, рейтинг из 2ГИС, адрес на карте и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/meduza/",
+     "m": "img/w/meduza-m.webp",
+     "d": "img/w/meduza-d.webp",
+     "fan": false
+    },
+    {
+     "id": "merci",
+     "name": "Merci",
+     "city": "Астана · салон красоты",
+     "desc": "Услуги салона, рейтинг из 2ГИС, адрес на карте и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/merci/",
+     "m": "img/w/merci-m.webp",
+     "d": "img/w/merci-d.webp",
+     "fan": false
+    },
+    {
+     "id": "minard",
+     "name": "Minard",
+     "city": "Астана · салон красоты",
+     "desc": "Услуги салона, рейтинг из 2ГИС, адрес на карте и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/minard/",
+     "m": "img/w/minard-m.webp",
+     "d": "img/w/minard-d.webp",
+     "fan": false
+    },
+    {
+     "id": "mizu",
+     "name": "MIZU",
+     "city": "Астана · салон красоты",
+     "desc": "Услуги салона, рейтинг из 2ГИС, адрес на карте и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/mizu/",
+     "m": "img/w/mizu-m.webp",
+     "d": "img/w/mizu-d.webp",
+     "fan": false
+    },
+    {
+     "id": "rayana",
+     "name": "Rayana Deluxe",
+     "city": "Астана · салон красоты",
+     "desc": "Услуги салона, рейтинг из 2ГИС, адрес на карте и запись в WhatsApp с выбранной услугой.",
+     "tags": [
+      "Запись",
+      "Услуги",
+      "WhatsApp"
+     ],
+     "url": "https://sitemakerkz.com/demo/rayana-deluxe/",
+     "m": "img/w/rayana-deluxe-m.webp",
+     "d": "img/w/rayana-deluxe-d.webp",
      "fan": false
     }
    ]
@@ -688,5 +1485,5 @@
    }
   ]
  },
- "pv": 8
+ "pv": 9
 }

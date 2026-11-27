@@ -79,13 +79,13 @@ def build_hubs():
 
 # ---------------- портфолио ----------------
 CATS = {c['id']: c['title'] for c in DATA['cats']}
-CATS_KK = {'food': 'мейрамханалар мен банкеттер', 'shop': 'жеткізу және дүкендер', 'serv': 'қызметтер мен қонақүйлер'}
+CATS_KK = {'food': 'мейрамханалар мен банкеттер', 'shop': 'жеткізу және дүкендер', 'serv': 'қызметтер мен қонақүйлер', 'demo': 'бизнестерге арналған үлгілер'}
 GLOSS = {'ru': {'Бронь дат': 'Календарь свободных дат и заявка на бронь', 'Админка': 'Админ-панель для владельца: цены, меню и заявки', 'Telegram': 'Уведомления о заявках в Telegram',
                 'Меню': 'Меню с фото и ценами', 'Заказ': 'Заказ прямо с сайта', 'Бронь': 'Бронь стола', 'Бизнес-ланч': 'Бизнес-ланч и сеты', 'Банкеты': 'Тои и банкеты', 'Караоке': 'Караоке',
                 'VIP': 'VIP-комнаты', 'Подбор стола': 'Подбор стола под количество гостей', 'Калькулятор': 'Калькулятор стоимости', '2 языка': 'Две языковые версии', '3 языка': 'Три языковые версии',
                 'Заявка': 'Заявка на мероприятие', 'Услуги': 'Услуги с ценами', 'WhatsApp': 'Заявки и заказы в WhatsApp', 'Галерея': 'Галерея', 'Корзина': 'Корзина', 'Промокоды': 'Промокоды',
                 'Доставка': 'Доставка и акции', 'Каталог': 'Каталог товаров', 'Фильтры': 'Фильтры', 'Бронирование': 'Онлайн-бронирование', 'Номера': 'Номера и цены', 'Расчёт': 'Расчёт стоимости брони',
-                'Запись': 'Онлайн-запись', 'Отзывы': 'Отзывы', 'Цены': 'Цены', 'Праздники': 'Праздничные программы'}}
+                'Запись': 'Онлайн-запись', 'Отзывы': 'Отзывы', 'Цены': 'Цены', 'Праздники': 'Праздничные программы', 'Мастера': 'Мастера и их работы', 'Врачи': 'Врачи и направления', 'Филиалы': 'Все филиалы на одной странице', 'Расписание': 'Расписание занятий', 'CRM': 'CRM-система'}}
 GLOSS['kk'] = {k: TAGS_KK.get(k, k) for k in GLOSS['ru']}
 
 
@@ -102,7 +102,7 @@ def feats(w):
 
 FEAT = {'ru': [('admin', 'Админ-панель'), ('book', 'Бронь'), ('cart', 'Корзина'), ('calc', 'Калькулятор'), ('tg', 'Telegram'), ('lang', 'Несколько языков')],
         'kk': [('admin', 'Әкімшілік панель'), ('book', 'Брондау'), ('cart', 'Себет'), ('calc', 'Калькулятор'), ('tg', 'Telegram'), ('lang', 'Бірнеше тіл')]}
-CALC_T = {'food': 'cafe', 'shop': 'shop', 'serv': 'biz'}
+CALC_T = {'food': 'cafe', 'shop': 'shop', 'serv': 'biz', 'demo': 'land'}
 
 
 def city_of(lang, w):
@@ -121,9 +121,9 @@ def build_portfolio(lang):
     for w in WORKS:
         cs, kind = city_of(lang, w)[0], ' · '.join(city_of(lang, w)[1:])
         img = w.get('d') or w['m']; mob = not w.get('d')
-        demo = '/demo/' in w['url']
+        demo = w['cat'] == 'demo' or '/demo/' in w['url']
         cards += '<article data-cat="%s" data-f="%s" data-city="%s"><a class="im%s" href="%s%s/">%s<img src="/%s" alt="%s" width="%d" height="%d" loading="lazy" decoding="async"></a><div class="bd"><h2><a href="%s%s/">%s</a></h2><div class="c">%s</div><p>%s</p><div class="tags">%s</div><div class="ac"><a class="btn g" href="%s" target="_blank" rel="noopener" data-portfolio="%s">%s</a><a class="btn" href="%s%s/">%s</a></div></div></article>' % (
-            w['cat'], ' '.join(feats(w)), e(cs), ' m' if mob else '', base, CASE_SLUG[w['id']], '<span class="badge">%s</span>' % ('демо' if lang == 'ru' else 'демо') if demo else '',
+            w['cat'], ' '.join(feats(w)), e(cs), ' m' if mob else '', base, CASE_SLUG[w['id']], '<span class="badge">%s</span>' % ('пример' if lang == 'ru' else 'үлгі') if demo else '',
             img, e(('Сайт ' if lang == 'ru' else 'Сайт: ') + w['name']), 390 if mob else 960, 844 if mob else 600, base, CASE_SLUG[w['id']], e(w['name']), e(cs + (' · ' + kind if kind else '')),
             e(work_desc(lang, w)), ''.join('<span>%s</span>' % e(t if lang == 'ru' else TAGS_KK.get(t, t)) for t in w['tags']), e(w['url']), w['id'],
             'Открыть сайт ↗' if lang == 'ru' else 'Сайтты ашу ↗', base, CASE_SLUG[w['id']], 'Подробнее' if lang == 'ru' else 'Толығырақ')
@@ -136,10 +136,10 @@ function run(){var k=0;A.forEach(function(a){var ok=(!S.cat||a.dataset.cat===S.c
 document.querySelectorAll('.flt').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});S[g.dataset.g]=b.dataset.v;run();try{window.smTrack&&smTrack('portfolio_filter',{group:g.dataset.g,value:b.dataset.v})}catch(_){}})});
 var q=new URLSearchParams(location.search);['cat','f','city'].forEach(function(g){var v=q.get(g);if(v){var b=document.querySelector('.flt[data-g="'+g+'"] button[data-v="'+v+'"]');if(b)b.click()}})})();</script>'''
     if lang == 'ru':
-        h1, lead = 'Портфолио: сайты для бизнеса', 'Все сайты ниже — живые: откройте любой и посмотрите, как он работает на телефоне. Рестораны и банкетные залы, доставка, магазины, отели и компании услуг из разных городов Казахстана. Отметка «демо» — пример сайта, подготовленный для бизнеса.'
+        h1, lead = 'Портфолио: сайты для бизнеса', 'Все сайты ниже — живые: откройте любой и посмотрите, как он работает на телефоне. Рестораны и банкетные залы, доставка, магазины, отели и компании услуг из разных городов Казахстана. Отдельный раздел «примеры для бизнесов» — бесплатные примеры, которые я сделал, чтобы показать бизнесу его будущий сайт; они отмечены словом «пример».'
         title, desc = 'Портфолио sitemaker — %d %s для бизнеса в Казахстане' % (len(WORKS), 'сайт' if len(WORKS) % 10 == 1 and len(WORKS) % 100 != 11 else 'сайта' if 2 <= len(WORKS) % 10 <= 4 and not 12 <= len(WORKS) % 100 <= 14 else 'сайтов'), 'Портфолио веб-студии sitemaker: сайты ресторанов, доставки, магазинов, отелей и услуг. Фильтры по сфере, городу и возможностям, подробные кейсы и ссылки на живые сайты.'
     else:
-        h1, lead = 'Портфолио: бизнеске арналған сайттар', 'Төмендегі сайттардың бәрі жұмыс істеп тұр: кез келгенін ашып, телефонда қалай жұмыс істейтінін қараңыз. Мейрамханалар мен банкет залдары, жеткізу, дүкендер, қонақүйлер және Қазақстанның түрлі қалаларындағы қызмет компаниялары. «Демо» белгісі — бизнеске дайындалған сайт үлгісі.'
+        h1, lead = 'Портфолио: бизнеске арналған сайттар', 'Төмендегі сайттардың бәрі жұмыс істеп тұр: кез келгенін ашып, телефонда қалай жұмыс істейтінін қараңыз. Мейрамханалар мен банкет залдары, жеткізу, дүкендер, қонақүйлер және Қазақстанның түрлі қалаларындағы қызмет компаниялары. «Бизнестерге арналған үлгілер» бөлімі — бизнеске болашақ сайтын көрсету үшін жасаған тегін үлгілерім; олар «үлгі» деп белгіленген.'
         title, desc = 'sitemaker портфолиосы — Қазақстандағы бизнеске %d сайт' % len(WORKS), 'sitemaker портфолиосы: мейрамханалар, жеткізу, дүкендер, қонақүйлер мен қызметтер сайттары. Сала, қала және мүмкіндік бойынша сүзгілер, толық кейстер және сайт сілтемелері.'
     body = '<h1>%s</h1><p class="lead">%s</p>%s<p class="meta" style="margin-top:14px">%s <b id="pfN">%d</b></p><div class="pf">%s</div><p class="empty" id="pfE" hidden>%s</p>' % (
         h1, lead, flt, L('Показано:', 'Көрсетілді:'), len(WORKS), cards, L('Под эти фильтры работ пока нет — сбросьте один из них или напишите, какой сайт нужен.', 'Бұл сүзгілерге жұмыс әзірге жоқ — біреуін алып тастаңыз немесе қандай сайт керек екенін жазыңыз.'))
@@ -157,7 +157,7 @@ def build_case(lang, w):
     L = (lambda r, k: r) if lang == 'ru' else (lambda r, k: k)
     slug = CASE_SLUG[w['id']]; path = pre + '/portfolio/' + slug + '/'
     parts = city_of(lang, w); city = parts[0]; kind = ' · '.join(parts[1:])
-    demo = '/demo/' in w['url']; gh = 'github.io' in w['url']
+    demo = w['cat'] == 'demo' or '/demo/' in w['url']; gh = 'github.io' in w['url']
     f = feats(w)
     tech = ['HTML5, CSS3 и JavaScript — без конструкторов' if lang == 'ru' else 'HTML5, CSS3 және JavaScript — конструкторсыз',
             L('Адаптивная вёрстка под телефоны и планшеты', 'Телефон мен планшетке бейімделген беттеу')]
@@ -179,19 +179,19 @@ def build_case(lang, w):
     want = L('Здравствуйте! Хочу похожий сайт, как %s.' % name, 'Сәлеметсіз бе! %s сияқты сайт қалаймын.' % name)
     body = '<h1>%s</h1><p class="lead">%s</p>' % (e(name) + L(' — сайт: ', ' — сайт: ') + e(kind), e(work_desc(lang, w)))
     if demo:
-        body += '<div class="note">%s</div>' % L('Это демо-версия: пример сайта, который я подготовил для бизнеса, чтобы показать, как может выглядеть его сайт.', 'Бұл демо-нұсқа: бизнеске оның сайты қалай көрінуі мүмкін екенін көрсету үшін дайындаған сайт үлгісі.')
+        body += '<div class="note">%s</div>' % L('Это пример сайта: я сделал его бесплатно, чтобы показать бизнесу, как может выглядеть его сайт. Сам бизнес этот сайт у меня не заказывал.', 'Бұл сайт үлгісі: бизнеске оның сайты қалай көрінуі мүмкін екенін көрсету үшін тегін жасадым. Бизнестің өзі бұл сайтқа тапсырыс берген жоқ.')
     body += '<div class="cta"><a class="btn" href="%s" target="_blank" rel="noopener" data-portfolio="%s">%s</a><a class="btn g" href="%s" rel="noopener">%s%s</a><a class="btn g" href="%s">%s</a></div>' % (
         e(w['url']), w['id'], L('Открыть сайт ↗', 'Сайтты ашу ↗'), e(wa(want)), ICON_WA, L('Заказать похожий сайт', 'Осындай сайтқа тапсырыс'), calc_url(lang, calc_t), L('Рассчитать похожий', 'Ұқсасын есептеу'))
     body += shots
     body += '<div class="facts"><div><small>%s</small><b>%s</b></div><div><small>%s</small><b>%s</b></div><div><small>%s</small><b>%s</b></div><div><small>%s</small><b>%s</b></div></div>' % (
-        L('Город', 'Қала'), e(city), L('Сфера', 'Сала'), e(kind), L('Категория', 'Санат'), e((CATS if lang == 'ru' else CATS_KK)[w['cat']]), L('Формат', 'Формат'), L('демо-версия', 'демо-нұсқа') if demo else L('живой сайт', 'жұмыс істеп тұрған сайт'))
+        L('Город', 'Қала'), e(city), L('Сфера', 'Сала'), e(kind), L('Категория', 'Санат'), e((CATS if lang == 'ru' else CATS_KK)[w['cat']]), L('Формат', 'Формат'), L('пример сайта', 'сайт үлгісі') if demo else L('живой сайт', 'жұмыс істеп тұрған сайт'))
     body += '<h2>%s</h2><ul class="f">%s</ul>' % (L('Что сделано на сайте', 'Сайтта не жасалды'), ''.join('<li><b>%s</b></li>' % e(GLOSS[lang].get(t, t)) for t in w['tags']))
     body += '<h2>%s</h2><ul>%s</ul>' % (L('Технологии', 'Технологиялар'), ''.join('<li>%s</li>' % e(x) for x in tech))
     same = [x for x in WORKS if x['cat'] == w['cat'] and x['id'] != w['id']][:4]
     body += '<h2>%s</h2>' % L('Похожие работы', 'Ұқсас жұмыстар') + examples(lang, [x['id'] for x in same])
     body += box(lang, want)
     if lang == 'ru':
-        svc = {'food': ('/sayt-dlya-restorana/', 'Сайт для ресторана и кафе'), 'shop': ('/razrabotka-internet-magazina/', 'Разработка интернет-магазина'), 'serv': ('/sayt-dlya-biznesa/', 'Сайт для бизнеса')}[w['cat']]
+        svc = {'food': ('/sayt-dlya-restorana/', 'Сайт для ресторана и кафе'), 'shop': ('/razrabotka-internet-magazina/', 'Разработка интернет-магазина'), 'serv': ('/sayt-dlya-biznesa/', 'Сайт для бизнеса'), 'demo': ('/sayt-dlya-biznesa/', 'Сайт для бизнеса')}[w['cat']]
         body += '<h2 style="font-size:18px">Услуги</h2><div class="rel"><a href="%s">%s</a><a href="/portfolio/">Всё портфолио</a><a href="/#calc">Калькулятор</a></div>' % svc
     else:
         body += '<h2 style="font-size:18px">Қызметтер</h2><div class="rel"><a href="/kz/qyzmetter/">Барлық қызметтер</a><a href="/kz/portfolio/">Барлық портфолио</a><a href="/kz/#calc">Калькулятор</a></div>'
