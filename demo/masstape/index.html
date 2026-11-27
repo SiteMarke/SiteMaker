@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Mass|Tape — студия массажа и тейпирования в Павлодаре</title>
+<meta name="description" content="Общий и висцеральный массаж, лифтинг-массаж лица и тейпирование в Павлодаре. Чокина 87/2, каждый день 08:00–21:00.">
+<meta name="theme-color" content="#F4EEF6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23F7B08A'/%3E%3Cpath d='M16 16m-2 0a2 2 0 1 1 4 0a5 5 0 1 1-10 0a8 8 0 1 1 16 0' fill='none' stroke='%237A3E8E' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HealthAndBeautyBusiness","name":"Mass Tape","description":"Студия массажа и тейпирования в Павлодаре","address":{"@type":"PostalAddress","streetAddress":"ул. Академика Чокина, 87/2","addressLocality":"Павлодар","addressCountry":"KZ"},"telephone":"+77057958015","openingHours":"Mo-Su 08:00-21:00","priceRange":"5500–20000 ₸","sameAs":["https://www.instagram.com/masstape_pvl/"]}
+</script>
+<style>
+:root{
+  --ink:#3A1D3F; --ink2:#6E5873; --violet:#7A3E8E; --violet2:#6A3280;
+  --peach:#F7B08A; --peach2:#F39B6E; --apricot:#FDE7DA; --mist:#F4EEF6;
+  --night:#2C1530; --lilac:#CFA8E0;
+  --disp:'Unbounded',system-ui,sans-serif; --body:'Golos Text',system-ui,-apple-system,sans-serif;
+  --weave:repeating-linear-gradient(115deg,rgba(255,255,255,.22) 0 2px,transparent 2px 7px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:76px}
+body{font:400 17px/1.6 var(--body);color:var(--ink);background:var(--mist);overflow-x:hidden}
+svg{display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+h2{font:400 clamp(30px,4.6vw,52px)/1.08 var(--disp);letter-spacing:-.03em;margin-bottom:16px}
+.sub{color:var(--ink2);max-width:52ch;font-size:18px}
+
+/* прототип */
+.proto{background:var(--ink);color:var(--mist);font-size:14px;line-height:1.45;text-align:center;padding:9px 16px}
+.proto a{color:var(--peach)}
+
+/* шапка */
+.nav{position:sticky;top:0;z-index:20;background:rgba(244,238,246,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(58,29,63,.08)}
+.nav .wrap{display:flex;align-items:center;gap:24px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:500 18px/1 var(--disp);letter-spacing:-.02em}
+.logo .disc{width:36px;height:36px;border-radius:50%;background:var(--peach);display:grid;place-items:center;flex:none}
+.logo .disc svg{width:26px;height:26px}
+.logo .pipe{color:var(--violet);margin:0 2px}
+.links{display:flex;gap:24px;margin-left:auto;font-size:15px}
+.links a{text-decoration:none;color:var(--ink2)}
+.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 26px;border-radius:999px;font:600 16px/1 var(--body);text-decoration:none;border:0;cursor:pointer;transition:background .15s,box-shadow .15s,transform .12s}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--violet);color:#fff}
+.btn-main:hover{background:var(--violet2)}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(58,29,63,.3)}
+.btn-line:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.nav .btn{min-height:42px;padding:0 20px;font-size:15px}
+
+/* первый экран */
+.hero{padding:52px 0 84px;overflow:hidden;position:relative}
+.word{font:300 clamp(46px,14.2vw,170px)/.9 var(--disp);letter-spacing:-.05em;display:flex;align-items:flex-end;white-space:nowrap}
+.word .bar{display:inline-block;width:.17em;height:.86em;margin:0 .1em .02em;border-radius:.09em;background:var(--peach);background-image:var(--weave);box-shadow:0 .04em .12em rgba(58,29,63,.12);transform-origin:50% 0;animation:stretchY .9s cubic-bezier(.2,.9,.25,1) .15s both}
+@keyframes stretchY{from{scale:1 0}to{scale:1 1}}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;margin-top:36px}
+.lead{font-size:20px;line-height:1.55;max-width:38ch}
+.motto{font:300 clamp(22px,2.6vw,30px)/1.3 var(--disp);letter-spacing:-.02em;margin:22px 0 30px;color:var(--violet)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.proof{display:flex;flex-wrap:wrap;gap:14px 12px;margin-top:38px}
+.label{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:5px;font-weight:600;font-size:15px;line-height:1.3;background-image:var(--weave);box-shadow:0 3px 10px rgba(58,29,63,.1);text-decoration:none}
+.label.a{background-color:var(--peach);rotate:-2deg}
+.label.b{background-color:var(--lilac);rotate:1.5deg}
+.label svg{width:16px;height:16px;flex:none}
+.now{display:flex;align-items:center;gap:10px;margin-top:22px;color:var(--ink2);font-size:15px}
+.now i{width:9px;height:9px;border-radius:50%;background:#9AA0A6;flex:none}
+.now.open i{background:#3FA66B;box-shadow:0 0 0 4px rgba(63,166,107,.18)}
+
+.stage{position:relative;width:100%;max-width:470px;aspect-ratio:1;justify-self:end}
+.sun{position:absolute;inset:7%;border-radius:50%;background:radial-gradient(circle at 34% 30%,#FCD3B8,var(--peach) 58%,var(--peach2))}
+.stage .sp{position:absolute;inset:17%}
+.sp path{fill:none;stroke:var(--violet);stroke-width:7;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0;animation:draw 2.2s cubic-bezier(.45,.1,.2,1) .3s both}
+@keyframes draw{from{stroke-dashoffset:1}}
+.tape{position:absolute;height:38px;border-radius:19px;background-image:var(--weave);box-shadow:0 8px 18px rgba(58,29,63,.16);animation:apply .75s cubic-bezier(.2,.85,.25,1) both}
+.tape.t1{width:66%;left:-6%;top:62%;rotate:-17deg;background-color:var(--lilac);transform-origin:left center;animation-delay:1.3s}
+.tape.t2{width:50%;right:-8%;top:20%;rotate:24deg;background-color:#fff;transform-origin:right center;animation-delay:1.55s}
+.tape.t3{width:30%;right:4%;top:72%;rotate:-62deg;background-color:var(--violet);opacity:.9;transform-origin:right center;animation-delay:1.8s}
+@keyframes apply{from{scale:0 1}to{scale:1 1}}
+
+/* зоны */
+.zones{background:var(--night);color:var(--mist);padding:92px 0;position:relative}
+.zones .sub{color:#CDBBD2}
+.zgrid{display:grid;grid-template-columns:minmax(240px,360px) 1fr;gap:64px;align-items:center;margin-top:44px}
+.map{width:100%;max-width:340px;margin-inline:auto;touch-action:manipulation}
+.fig{fill:#43234A;stroke:rgba(247,176,138,.45);stroke-width:1.5}
+.hit{fill:transparent;cursor:pointer;transition:fill .2s}
+.hit:hover{fill:rgba(247,176,138,.1)}
+.map[data-zone="face"] .hit.face,.map[data-zone="neck"] .hit.neck,.map[data-zone="belly"] .hit.belly,.map[data-zone="legs"] .hit.legs{fill:rgba(247,176,138,.16)}
+.t{fill:none;stroke:var(--peach);stroke-width:9;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;pointer-events:none;transition:stroke-dashoffset .55s cubic-bezier(.3,.7,.2,1);transition-delay:calc(var(--i,0) * 80ms)}
+.t.l{stroke:var(--lilac)}
+.map[data-zone="face"] .z-face,.map[data-zone="neck"] .z-neck,.map[data-zone="belly"] .z-belly,.map[data-zone="legs"] .z-legs,.map[data-zone="all"] .t{stroke-dashoffset:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.chip{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid rgba(247,176,138,.45);background:transparent;color:var(--mist);font-weight:500;font-size:15px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.chip:hover{border-color:var(--peach)}
+.chip[aria-pressed="true"]{background:var(--peach);border-color:var(--peach);color:var(--ink)}
+.zinfo{min-height:330px}
+.zinfo h3{font:400 clamp(26px,3vw,34px)/1.15 var(--disp);letter-spacing:-.02em;margin-bottom:12px}
+.zinfo p{color:#E2D5E5;max-width:56ch}
+.zinfo ul{list-style:none;margin:24px 0 28px;border-top:1px solid rgba(244,238,246,.14)}
+.zinfo li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid rgba(244,238,246,.14)}
+.zinfo li b{color:var(--peach);font-weight:600;white-space:nowrap}
+.zinfo li b.ask{color:#CDBBD2;font-weight:400}
+.zinfo .btn-main{background:var(--peach);color:var(--ink)}
+.zinfo .btn-main:hover{background:#F9C09F}
+.swap{animation:swap .35s ease both}
+@keyframes swap{from{opacity:0;translate:0 8px}}
+
+/* прайс */
+.price{padding:100px 0}
+.pgrid{display:grid;grid-template-columns:1fr 1.55fr;gap:64px}
+.pside{position:sticky;top:96px;align-self:start}
+.crew{list-style:none;margin:28px 0;display:grid;gap:10px}
+.crew li{display:flex;align-items:center;gap:14px}
+.mono{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font:500 17px/1 var(--disp);flex:none}
+.crew li:nth-child(1) .mono{background:var(--violet);color:#fff}
+.crew li:nth-child(2) .mono{background:var(--peach)}
+.crew li:nth-child(n+3) .mono{background:#fff;box-shadow:inset 0 0 0 1.5px rgba(58,29,63,.18)}
+.crew small{display:block;color:var(--ink2);font-size:14px;line-height:1.3}
+.pay{color:var(--ink2);font-size:15px}
+.svc{padding:30px 0;border-top:1px solid rgba(58,29,63,.14)}
+.svc:last-child{border-bottom:1px solid rgba(58,29,63,.14)}
+.svc h3{font:400 23px/1.25 var(--disp);letter-spacing:-.02em}
+.svc>p{color:var(--ink2);margin-top:8px;max-width:60ch}
+.rows{list-style:none;margin-top:16px;display:grid;gap:6px}
+.row{width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 16px;text-align:left;background:#fff;border:0;border-radius:14px;padding:14px 18px;cursor:pointer;transition:background .15s,box-shadow .15s}
+.row:hover{background:var(--apricot)}
+.row .who{font-weight:500;line-height:1.35}
+.row .who small{display:block;font-weight:400;color:var(--ink2);font-size:14px}
+.row .cost{font:500 19px/1 var(--disp);letter-spacing:-.02em;white-space:nowrap;text-align:right}
+.row .go{grid-column:2;font-size:13px;color:var(--violet);font-weight:600;text-align:right}
+.note{color:var(--ink2);margin-top:14px;font-size:15px}
+
+/* тейпы */
+.teip{background:var(--apricot);padding:100px 0}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.teip p{max-width:56ch}
+.teip p+p{margin-top:14px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:8px 0 14px}
+.day{height:132px;border-radius:14px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:10px;font:500 15px/1 var(--disp)}
+.day.on{background:var(--peach);background-image:var(--weave);box-shadow:0 6px 14px rgba(58,29,63,.1)}
+.day.off{border:2px dashed rgba(58,29,63,.25);color:var(--ink2)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--ink2);font-size:15px}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:14px;height:14px;border-radius:4px;background:var(--peach)}
+.legend i.x{background:transparent;border:2px dashed rgba(58,29,63,.3)}
+.uses{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.uses span{background:#fff;border-radius:999px;padding:8px 16px;font-size:15px}
+.tcard h3{font:400 20px/1.3 var(--disp);margin:0 0 14px;letter-spacing:-.01em}
+
+/* вопросы */
+.faq{padding:100px 0}
+.fgrid{display:grid;grid-template-columns:1fr 1.55fr;gap:64px}
+details{border-top:1px solid rgba(58,29,63,.14)}
+details:last-child{border-bottom:1px solid rgba(58,29,63,.14)}
+summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;font-weight:600;font-size:18px;line-height:1.4}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:14px;height:14px;margin-top:-9px;border-right:2px solid var(--violet);border-bottom:2px solid var(--violet);rotate:45deg;transition:rotate .2s,margin .2s}
+details[open] summary::after{rotate:225deg;margin-top:-2px}
+details p{padding:0 0 22px;color:var(--ink2);max-width:62ch}
+details p+p{margin-top:-10px}
+
+/* запись */
+.book{background:#fff;padding:100px 0}
+.bgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:start}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.f{display:grid;gap:7px;font-size:15px;font-weight:500}
+.f.full{grid-column:1/-1}
+input,select{width:100%;height:54px;border-radius:14px;border:1.5px solid rgba(58,29,63,.18);background:var(--mist);padding:0 16px;font:400 17px var(--body);color:var(--ink);appearance:none;-webkit-appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%237A3E8E' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+input:focus,select:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 3px rgba(122,62,142,.18)}
+.err{grid-column:1/-1;color:#B3261E;font-size:15px;min-height:1px}
+form .btn{grid-column:1/-1;min-height:56px;font-size:17px}
+.alt{grid-column:1/-1;color:var(--ink2);font-size:15px;text-align:center}
+.preview{display:none;margin-top:22px;background:var(--apricot);border-radius:18px;padding:22px}
+.preview.show{display:block;animation:swap .35s ease both}
+.preview h3{font:400 18px/1.3 var(--disp);margin-bottom:10px}
+.preview pre{white-space:pre-wrap;font:400 16px/1.55 var(--body);background:#fff;border-radius:12px;padding:14px 16px}
+.preview p{font-size:14px;color:var(--ink2);margin-top:10px}
+.contacts{background:var(--mist);border-radius:28px;padding:34px}
+.contacts h3{font:400 24px/1.2 var(--disp);letter-spacing:-.02em;margin-bottom:20px}
+.contacts dl{display:grid;gap:18px}
+.contacts dt{font-size:14px;color:var(--ink2)}
+.contacts dd{font-weight:500;line-height:1.45}
+.contacts dd a{text-decoration-color:rgba(122,62,142,.4);text-underline-offset:3px}
+.social{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.social .btn{min-height:46px;padding:0 20px;font-size:15px}
+
+/* подвал */
+footer{background:var(--night);color:#CDBBD2;padding:44px 0 48px;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px}
+footer .logo{color:var(--mist)}
+footer a{color:var(--peach);white-space:nowrap}
+.maker{color:var(--mist)}
+
+/* мобильная панель */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(244,238,246,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid rgba(58,29,63,.1)}
+.mbar .btn{flex:1;min-height:50px}
+.mbar .wa{flex:0 0 auto;width:50px;padding:0;background:#25D366;color:#fff}
+.mbar .wa svg{width:24px;height:24px}
+
+@media (max-width:900px){
+  .links{display:none}
+  .nav .btn{margin-left:auto}
+  .hero{padding:34px 0 64px}
+  .hero-grid,.zgrid,.pgrid,.tgrid,.fgrid,.bgrid{grid-template-columns:1fr;gap:40px}
+  .stage{justify-self:center;max-width:320px}
+  .pside{position:static}
+  .zones,.price,.teip,.faq,.book{padding:72px 0}
+  .zinfo{min-height:0}
+  .map{max-width:250px}
+  .mbar{display:flex}
+  body{padding-bottom:72px}
+}
+@media (max-width:560px){
+  .wrap{width:min(1160px,100% - 32px)}
+  .lead{font-size:18px}
+  form{grid-template-columns:1fr}
+  .day{height:96px;font-size:13px}
+  .week{gap:5px}
+  .contacts{padding:26px 22px}
+  .row{padding:13px 15px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="proto">Это прототип сайта для «Mass Tape» от SiteMaker, не официальный сайт. Заявки здесь пока не отправляются. Записаться по-настоящему: <a href="https://zapis.kz/masstape">zapis.kz/masstape</a></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Mass Tape, наверх">
+      <span class="disc"><svg viewBox="0 0 200 200" aria-hidden="true"><path class="spiral" d="" fill="none" stroke="#7A3E8E" stroke-width="16" stroke-linecap="round"/></svg></span>
+      <span>Mass<span class="pipe">|</span>Tape</span>
+    </a>
+    <nav class="links" aria-label="Разделы">
+      <a href="#zony">Зоны</a><a href="#price">Прайс</a><a href="#teip">Тейпы</a><a href="#faq">Вопросы</a><a href="#kontakty">Контакты</a>
+    </nav>
+    <a class="btn btn-main" href="#zapis">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <h1><span class="word" aria-hidden="true">Mass<span class="bar"></span>Tape</span><span class="sr">Mass Tape — студия массажа и тейпирования в Павлодаре</span></h1>
+    <div class="hero-grid">
+      <div>
+        <p class="lead">Студия массажа и тейпирования в Павлодаре. Общий и висцеральный массаж, лифтинг-массаж лица, тейпы для лица и тела.</p>
+        <p class="motto">Сначала здоровье, потом красота.</p>
+        <div class="cta">
+          <a class="btn btn-main" href="#zapis">Записаться</a>
+          <a class="btn btn-line" href="#price">Смотреть прайс</a>
+        </div>
+        <div class="proof">
+          <a class="label a" href="https://2gis.kz/pavlodar/firm/70000001069613603" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8l-5.2 2.7 1-5.8L1.6 7.6l5.8-.8z" fill="#3A1D3F"/></svg>5,0 в 2ГИС по 256 отзывам</a>
+          <span class="label b">Лучший массажный салон 2026 в 2ГИС</span>
+        </div>
+        <p class="now" id="now"><i></i><span>Каждый день с 08:00 до 21:00, Чокина 87/2</span></p>
+      </div>
+      <div class="stage" aria-hidden="true">
+        <div class="sun"></div>
+        <svg class="sp" viewBox="0 0 200 200"><path class="spiral" pathLength="1" d=""/></svg>
+        <div class="tape t1"></div>
+        <div class="tape t2"></div>
+        <div class="tape t3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="zones" id="zony">
+  <div class="wrap">
+    <h2>С чем вы хотите прийти?</h2>
+    <p class="sub">Выберите зону. Покажем, что с ней делают мастера и сколько это стоит.</p>
+    <div class="zgrid">
+      <svg class="map" id="map" data-zone="all" viewBox="0 0 300 520" role="img" aria-label="Силуэт тела, на выбранную зону накладываются тейпы">
+        <path class="fig" data-z="all" d="M138 94C138 112 124 121 104 128C88 133 82 146 84 162C86 190 98 214 104 236C108 252 110 262 106 280C100 300 90 318 92 344C94 380 102 430 110 500L146 500C147 450 148 400 150 378C152 400 153 450 154 500L190 500C198 430 206 380 208 344C210 318 200 300 194 280C190 262 192 252 196 236C202 214 214 190 216 162C218 146 212 133 196 128C176 121 162 112 162 94Z"/>
+        <ellipse class="fig" data-z="face" cx="150" cy="58" rx="32" ry="41"/>
+        <clipPath id="body"><path d="M138 94C138 112 124 121 104 128C88 133 82 146 84 162C86 190 98 214 104 236C108 252 110 262 106 280C100 300 90 318 92 344C94 380 102 430 110 500L146 500C147 450 148 400 150 378C152 400 153 450 154 500L190 500C198 430 206 380 208 344C210 318 200 300 194 280C190 262 192 252 196 236C202 214 214 190 216 162C218 146 212 133 196 128C176 121 162 112 162 94Z"/><ellipse cx="150" cy="58" rx="32" ry="41"/></clipPath>
+        <g clip-path="url(#body)">
+          <rect class="hit face" data-z="face" x="100" y="10" width="100" height="92"/>
+          <rect class="hit neck" data-z="neck" x="70" y="102" width="160" height="72"/>
+          <rect class="hit belly" data-z="belly" x="70" y="206" width="160" height="104"/>
+          <rect class="hit legs" data-z="legs" x="70" y="316" width="160" height="190"/>
+        </g>
+        <g>
+          <path class="t z-face" style="--i:0" pathLength="1" d="M134 38L166 38"/>
+          <path class="t z-face l" style="--i:1" pathLength="1" d="M126 74L142 64"/>
+          <path class="t z-face l" style="--i:2" pathLength="1" d="M174 74L158 64"/>
+          <path class="t z-face" style="--i:3" pathLength="1" d="M138 90Q150 97 162 90"/>
+          <path class="t z-neck" style="--i:0" pathLength="1" d="M150 112L116 138"/>
+          <path class="t z-neck" style="--i:1" pathLength="1" d="M150 112L184 138"/>
+          <path class="t z-neck l" style="--i:2" pathLength="1" d="M150 120L150 160"/>
+          <path class="t z-belly" style="--i:0" pathLength="1" d="M150 298L122 238"/>
+          <path class="t z-belly l" style="--i:1" pathLength="1" d="M150 298L140 230"/>
+          <path class="t z-belly" style="--i:2" pathLength="1" d="M150 298L160 230"/>
+          <path class="t z-belly l" style="--i:3" pathLength="1" d="M150 298L178 238"/>
+          <path class="t z-legs" style="--i:0" pathLength="1" d="M102 336L112 452"/>
+          <path class="t z-legs l" style="--i:1" pathLength="1" d="M102 336L132 440"/>
+          <path class="t z-legs" style="--i:2" pathLength="1" d="M198 336L188 452"/>
+          <path class="t z-legs l" style="--i:3" pathLength="1" d="M198 336L168 440"/>
+        </g>
+      </svg>
+      <div>
+        <div class="chips" role="group" aria-label="Зона">
+          <button class="chip" type="button" data-z="all" aria-pressed="true">Всё тело</button>
+          <button class="chip" type="button" data-z="face" aria-pressed="false">Лицо</button>
+          <button class="chip" type="button" data-z="neck" aria-pressed="false">Шея и декольте</button>
+          <button class="chip" type="button" data-z="belly" aria-pressed="false">Живот</button>
+          <button class="chip" type="button" data-z="legs" aria-pressed="false">Бёдра и ягодицы</button>
+        </div>
+        <div class="zinfo" id="zinfo" aria-live="polite">
+          <h3>Всё тело</h3>
+          <p>Мы советуем начинать с общего массажа. Когда проработано всё тело, запускаются лимфатическая система и обмен веществ, и результат на лице и фигуре заметнее. Лимфодренаж входит в любой вид массажа студии.</p>
+          <ul><li><span>Общий массаж, 60 минут</span><b>от 12 000 ₸</b></li><li><span>Комбо: общий массаж и лифтинг лица</span><b>16 500 ₸</b></li></ul>
+          <a class="btn btn-main" href="#zapis" data-book="Общий массаж">Записаться на общий массаж</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="price" id="price">
+  <div class="wrap pgrid">
+    <div class="pside">
+      <h2>Прайс</h2>
+      <p class="sub">Цена общего и висцерального массажа зависит от мастера. Сеанс длится 60 минут. Нажмите на строку, чтобы записаться.</p>
+      <ul class="crew">
+        <li><span class="mono">Л</span><span>Ляззат<small>главный мастер</small></span></li>
+        <li><span class="mono">Л</span><span>Лаура<small>топ-мастер</small></span></li>
+        <li><span class="mono">М</span><span>Марина<small>мастер</small></span></li>
+        <li><span class="mono">А</span><span>Анастасия<small>мастер</small></span></li>
+        <li><span class="mono">С</span><span>Сауле<small>мастер</small></span></li>
+      </ul>
+      <p class="pay">Оплата картой, наличными, по QR или переводом.</p>
+    </div>
+    <div>
+      <div class="svc">
+        <h3>Общий массаж</h3>
+        <p>Всё тело, кроме лица, груди и зоны промежности. Вакуумные банки и скребок гуаша по желанию.</p>
+        <ul class="rows">
+          <li><button class="row" type="button" data-proc="Общий массаж" data-master="Ляззат"><span class="who">Ляззат<small>главный мастер</small></span><span class="cost">20 000 ₸</span><span class="go">Записаться</span></button></li>
+          <li><button class="row" type="button" data-proc="Общий массаж" data-master="Лаура"><span class="who">Лаура<small>топ-мастер</small></span><span class="cost">14 000 ₸</span><span class="go">Записаться</span></button></li>
+          <li><button class="row" type="button" data-proc="Общий массаж" data-master="Любой свободный мастер"><span class="who">Марина, Анастасия, Сауле<small>мастера</small></span><span class="cost">12 000 ₸</span><span class="go">Записаться</span></button></li>
+        </ul>
+      </div>
+      <div class="svc">
+        <h3>Висцеральный массаж с проработкой тазового дна</h3>
+        <p>Массаж внутренних органов. 60 минут.</p>
+        <ul class="rows">
+          <li><button class="row" type="button" data-proc="Висцеральный массаж" data-master="Лаура"><span class="who">Лаура, Сауле<small>топ-мастер и мастер</small></span><span class="cost">12 000 ₸</span><span class="go">Записаться</span></button></li>
+          <li><button class="row" type="button" data-proc="Висцеральный массаж" data-master="Любой свободный мастер"><span class="who">Марина, Анастасия<small>мастера</small></span><span class="cost">10 000 ₸</span><span class="go">Записаться</span></button></li>
+        </ul>
+      </div>
+      <div class="svc">
+        <h3>Лицо</h3>
+        <p>Лифтинг-массаж: лицо, шейно-воротниковая зона, грудной отдел и голова. Комбо добавляет к нему общий массаж всего тела с двух сторон.</p>
+        <ul class="rows">
+          <li><button class="row" type="button" data-proc="Лифтинг-массаж лица"><span class="who">Лифтинг-массаж лица</span><span class="cost">5 500 ₸</span><span class="go">Записаться</span></button></li>
+          <li><button class="row" type="button" data-proc="Комбо: общий массаж и лифтинг лица"><span class="who">Комбо: общий массаж и лифтинг лица</span><span class="cost">16 500 ₸</span><span class="go">Записаться</span></button></li>
+        </ul>
+      </div>
+      <div class="svc">
+        <h3>Тейпирование и массаж для двоих</h3>
+        <p>Тейпирование лица и тела, парный массаж и парный комбо. Стоимость зависит от зоны и программы, её подскажет администратор.</p>
+        <ul class="rows">
+          <li><button class="row" type="button" data-proc="Тейпирование"><span class="who">Тейпирование лица или тела</span><span class="cost">по запросу</span><span class="go">Узнать цену</span></button></li>
+          <li><button class="row" type="button" data-proc="Парный массаж"><span class="who">Парный массаж или парный комбо</span><span class="cost">по запросу</span><span class="go">Узнать цену</span></button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="teip" id="teip">
+  <div class="wrap tgrid">
+    <div>
+      <h2>Тейпы: как это работает</h2>
+      <p>Тейп — хлопковая лента с гипоаллергенным клеевым слоем. Она тянется так же, как кожа, поэтому на теле её почти не чувствуешь.</p>
+      <p>Там, где наклеен тейп, уходит застойная жидкость и активнее работает лимфатическая система. Спадают отёки, уменьшаются объёмы, кожа становится упругее.</p>
+      <div class="uses" aria-label="С чем работаем тейпами">
+        <span>мимические морщины</span><span>объёмы живота</span><span>«фартук»</span><span>диастаз</span><span>осанка</span><span>подтяжка ягодиц</span><span>целлюлит</span><span>«ушки» на ногах</span>
+      </div>
+    </div>
+    <div class="tcard">
+      <h3>Ритм тейпирования: 5 дней в тейпах, потом 2 дня кожа отдыхает</h3>
+      <div class="week" aria-hidden="true">
+        <div class="day on">1</div><div class="day on">2</div><div class="day on">3</div><div class="day on">4</div><div class="day on">5</div><div class="day off">6</div><div class="day off">7</div>
+      </div>
+      <div class="legend"><span><i></i>в тейпах</span><span><i class="x"></i>отдых</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap fgrid">
+    <div>
+      <h2>Частые вопросы</h2>
+      <p class="sub">Не нашли ответ? Напишите администратору в WhatsApp.</p>
+    </div>
+    <div>
+      <details open>
+        <summary>С чего начать: с массажа лица или тела?</summary>
+        <p>С тела. Когда проработано всё тело, запускаются лимфатическая система и обмен веществ, и бонусом приходит стройность. Отёк уходит со всего тела, в том числе с лица. Начните с общего массажа, а потом подключайте лицо, и результат будет комплексным.</p>
+      </details>
+      <details>
+        <summary>Есть ли лимфодренажный массаж?</summary>
+        <p>Да, лимфодренаж входит в любой вид массажа нашей студии.</p>
+      </details>
+      <details>
+        <summary>Как часто нужно ходить на массаж?</summary>
+        <p>Обычно это курс до 5 сеансов, потом перерывы увеличиваются. К главному мастеру Ляззат советуем приходить раз в неделю. Точный ритм мастер подберёт по состоянию тела.</p>
+      </details>
+      <details>
+        <summary>Как часто переклеивают тейпы?</summary>
+        <p>Тейпы клеят на 5 дней, потом 2 дня кожа отдыхает.</p>
+      </details>
+      <details>
+        <summary>Как оплатить?</summary>
+        <p>Картой, наличными, по QR-коду или банковским переводом.</p>
+      </details>
+      <details>
+        <summary>Где вы находитесь и можно ли с коляской?</summary>
+        <p>Павлодар, улица Академика Чокина, 87/2, напротив 9 школы. У входа есть пандус.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="zapis">
+  <div class="wrap bgrid">
+    <div>
+      <h2>Записаться</h2>
+      <p class="sub">Оставьте телефон, и администратор подберёт время и подтвердит запись.</p>
+      <form id="form" novalidate>
+        <label class="f">Имя<input id="fname" name="name" autocomplete="name" placeholder="Как к вам обращаться"></label>
+        <label class="f">Телефон<input id="fphone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 7__ ___ __ __"></label>
+        <label class="f full">Процедура
+          <select id="fproc" name="proc">
+            <option>Общий массаж</option>
+            <option>Лифтинг-массаж лица</option>
+            <option>Комбо: общий массаж и лифтинг лица</option>
+            <option>Висцеральный массаж</option>
+            <option>Тейпирование</option>
+            <option>Парный массаж</option>
+            <option>Пока не знаю, нужна консультация</option>
+          </select>
+        </label>
+        <label class="f">Мастер
+          <select id="fmaster" name="master">
+            <option>Любой свободный мастер</option>
+            <option>Ляззат</option>
+            <option>Лаура</option>
+            <option>Марина</option>
+            <option>Анастасия</option>
+            <option>Сауле</option>
+          </select>
+        </label>
+        <label class="f">Когда удобно
+          <select id="fwhen" name="when">
+            <option>Сегодня</option>
+            <option>Завтра</option>
+            <option>На этой неделе</option>
+            <option>На выходных</option>
+          </select>
+        </label>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn btn-main" type="submit">Записаться</button>
+        <p class="alt">Удобнее выбрать время самой? <a href="https://zapis.kz/masstape" target="_blank" rel="noopener">Онлайн-запись на zapis.kz</a></p>
+      </form>
+      <div class="preview" id="preview" aria-live="polite">
+        <h3>Заявка готова</h3>
+        <pre id="msg"></pre>
+        <p>Это прототип: здесь заявка только показывается. В рабочей версии сайта она сразу придёт в WhatsApp студии.</p>
+      </div>
+    </div>
+    <aside class="contacts" id="kontakty">
+      <h3>Как нас найти</h3>
+      <dl>
+        <div><dt>Адрес</dt><dd>Павлодар, ул. Академика Чокина, 87/2, напротив 9 школы. <a href="https://2gis.kz/pavlodar/firm/70000001069613603" target="_blank" rel="noopener">Открыть в 2ГИС</a></dd></div>
+        <div><dt>Часы работы</dt><dd>Каждый день с 08:00 до 21:00, по предварительной записи</dd></div>
+        <div><dt>Телефон и WhatsApp</dt><dd><a href="tel:+77057958015">+7 705 795 80 15</a></dd></div>
+        <div><dt>Удобства</dt><dd>Пандус у входа, оплата картой и по QR</dd></div>
+      </dl>
+      <div class="social">
+        <a class="btn btn-main" href="https://wa.me/77057958015" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-line" href="https://www.instagram.com/masstape_pvl/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </aside>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#top"><span class="disc"><svg viewBox="0 0 200 200" aria-hidden="true"><path class="spiral" d="" fill="none" stroke="#7A3E8E" stroke-width="16" stroke-linecap="round"/></svg></span><span>Mass<span class="pipe">|</span>Tape</span></a>
+      <p style="margin-top:14px">© 2026 Mass Tape, Павлодар</p>
+    </div>
+    <div>
+      <p class="maker">Прототип сайта от SiteMaker, <a href="https://sitemakerkz.com" target="_blank" rel="noopener">sitemakerkz.com</a></p>
+      <p>Хотите похожий сайт для бизнеса? <a href="https://wa.me/77476128411" target="_blank" rel="noopener">8 747 612 84 11</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-main" href="#zapis">Записаться</a>
+  <a class="btn wa" href="https://wa.me/77057958015" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3z"/></svg></a>
+</div>
+
+<script>
+(function(){
+  // спираль из логотипа
+  function spiral(cx,cy,r0,r1,turns,n){
+    var d='';
+    for(var i=0;i<=n;i++){
+      var t=i/n, a=t*turns*2*Math.PI-Math.PI/2, r=r0+(r1-r0)*t;
+      d+=(i?'L':'M')+(cx+r*Math.cos(a)).toFixed(1)+' '+(cy+r*Math.sin(a)).toFixed(1);
+    }
+    return d;
+  }
+  var d=spiral(100,100,5,90,3.1,240);
+  document.querySelectorAll('.spiral').forEach(function(p){p.setAttribute('d',d)});
+
+  // открыто сейчас (Павлодар, UTC+5)
+  var now=new Date(Date.now()+5*3600e3), m=now.getUTCHours()*60+now.getUTCMinutes();
+  var el=document.getElementById('now');
+  if(m>=480&&m<1260){el.classList.add('open');el.querySelector('span').textContent='Сейчас открыто до 21:00, Чокина 87/2';}
+  else{el.querySelector('span').textContent='Сейчас закрыто, откроемся в 08:00. Записаться можно уже сейчас';}
+
+  // карта зон
+  var Z={
+    all:{h:'Всё тело',p:'Мы советуем начинать с общего массажа. Когда проработано всё тело, запускаются лимфатическая система и обмен веществ, и результат на лице и фигуре заметнее. Лимфодренаж входит в любой вид массажа студии.',
+      l:[['Общий массаж, 60 минут','от 12 000 ₸'],['Комбо: общий массаж и лифтинг лица','16 500 ₸']],b:'Общий массаж',bt:'Записаться на общий массаж'},
+    face:{h:'Лицо',p:'Лифтинг-массаж глубоко прорабатывает мышцы лица. Работаем с мимическими морщинами, вторым подбородком, асимметрией, перекосом челюсти и овалом лица. Тейпы на лице делают морщины менее заметными.',
+      l:[['Лифтинг-массаж лица','5 500 ₸'],['Комбо: общий массаж и лифтинг лица','16 500 ₸'],['Тейпирование лица','по запросу']],b:'Лифтинг-массаж лица',bt:'Записаться на лифтинг лица'},
+    neck:{h:'Шея и декольте',p:'В лифтинг-массаж входят шейно-воротниковая зона, грудной отдел и голова, мастер вытягивает шею. Тейпы помогают в работе с осанкой.',
+      l:[['Лифтинг-массаж лица и шеи','5 500 ₸'],['Тейпирование для осанки','по запросу'],['Общий массаж, 60 минут','от 12 000 ₸']],b:'Лифтинг-массаж лица',bt:'Записаться на лифтинг'},
+    belly:{h:'Живот',p:'Висцеральный массаж — это массаж внутренних органов с проработкой тазового дна. Тейпы используют, чтобы уменьшить объёмы живота, убрать «фартук» и при работе с диастазом.',
+      l:[['Висцеральный массаж, 60 минут','от 10 000 ₸'],['Тейпирование живота','по запросу']],b:'Висцеральный массаж',bt:'Записаться на висцеральный массаж'},
+    legs:{h:'Бёдра и ягодицы',p:'Общий массаж с вакуумными банками и скребком гуаша по желанию. Тейпы применяют для подтяжки ягодиц, против целлюлита и «ушек» на ногах.',
+      l:[['Общий массаж, 60 минут','от 12 000 ₸'],['Тейпирование тела','по запросу']],b:'Тейпирование',bt:'Записаться на тейпирование'}
+  };
+  var map=document.getElementById('map'), info=document.getElementById('zinfo'), chips=document.querySelectorAll('.chip');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function pick(z){
+    if(!Z[z]||map.getAttribute('data-zone')===z)return;
+    map.setAttribute('data-zone',z);
+    chips.forEach(function(c){c.setAttribute('aria-pressed',c.dataset.z===z?'true':'false')});
+    var o=Z[z];
+    info.innerHTML='<div class="swap"><h3>'+esc(o.h)+'</h3><p>'+esc(o.p)+'</p><ul>'+o.l.map(function(r){return '<li><span>'+esc(r[0])+'</span><b'+(r[1]==='по запросу'?' class="ask"':'')+'>'+esc(r[1])+'</b></li>'}).join('')+'</ul><a class="btn btn-main" href="#zapis" data-book="'+esc(o.b)+'">'+esc(o.bt)+'</a></div>';
+  }
+  chips.forEach(function(c){c.addEventListener('click',function(){pick(c.dataset.z)})});
+  map.addEventListener('click',function(e){var t=e.target.closest('[data-z]');if(t)pick(t.getAttribute('data-z'))});
+
+  // запись
+  var fproc=document.getElementById('fproc'), fmaster=document.getElementById('fmaster');
+  function setSel(sel,val){for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===val){sel.selectedIndex=i;return}}}
+  function prefill(proc,master){
+    if(proc)setSel(fproc,proc);
+    setSel(fmaster,master||'Любой свободный мастер');
+    document.getElementById('zapis').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+    setTimeout(function(){document.getElementById('fname').focus({preventScroll:true})},450);
+  }
+  document.querySelectorAll('.row').forEach(function(r){r.addEventListener('click',function(){prefill(r.dataset.proc,r.dataset.master)})});
+  info.addEventListener('click',function(e){var a=e.target.closest('[data-book]');if(a){e.preventDefault();prefill(a.dataset.book)}});
+
+  var form=document.getElementById('form'), err=document.getElementById('err');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var fname=document.getElementById('fname'), fphone=document.getElementById('fphone');
+    var name=fname.value.trim(), phone=fphone.value.trim();
+    var digits=phone.replace(/\D/g,'');
+    if(!name){err.textContent='Укажите имя, чтобы администратор знал, как к вам обращаться.';fname.focus();return}
+    if(digits.length<10){err.textContent='Укажите телефон полностью, чтобы администратор мог подтвердить запись.';fphone.focus();return}
+    err.textContent='';
+    var msg='Здравствуйте! Хочу записаться в Mass Tape.\nПроцедура: '+fproc.value+'\nМастер: '+fmaster.value+'\nКогда удобно: '+document.getElementById('fwhen').value+'\nИмя: '+name+'\nТелефон: '+phone;
+    document.getElementById('msg').textContent=msg;
+    var pv=document.getElementById('preview');pv.classList.remove('show');void pv.offsetWidth;pv.classList.add('show');
+    pv.scrollIntoView({block:'nearest'});
+  });
+})();
+</script>
+</body>
+</html>
