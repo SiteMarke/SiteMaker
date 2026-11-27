@@ -146,8 +146,8 @@ R('<a href="#" data-terms>соглашение</a>', '<a href="#" data-terms>к�
 R('rel="nofollow">админка</a>', 'rel="nofollow">әкімшілік</a>')
 
 # ---------- скрипты: казахский словарь до main.js ----------
-R('<script src="/js/main.js?v=31"></script>', '<script src="/js/i18n-kk.js?v=31"></script>\n<script src="/js/main.js?v=31"></script>')
-R('<link rel="preload" href="/js/main.js?v=31" as="script">', '<link rel="preload" href="/js/main.js?v=31" as="script">\n<link rel="preload" href="/js/i18n-kk.js?v=31" as="script">')
+R('<script src="/js/main.js?v=32"></script>', '<script src="/js/i18n-kk.js?v=32"></script>\n<script src="/js/main.js?v=32"></script>')
+R('<link rel="preload" href="/js/main.js?v=32" as="script">', '<link rel="preload" href="/js/main.js?v=32" as="script">\n<link rel="preload" href="/js/i18n-kk.js?v=32" as="script">')
 
 left = [t for t in re.findall(r'>([^<>]*[А-Яа-яЁё][^<>]*)<', s[s.find('<body'):]) if not re.search(r'[әіңғүұқөһӘІҢҒҮҰҚӨҺ]', t) and t.strip()]
 os.makedirs(os.path.join(ROOT, 'kz'), exist_ok=True)

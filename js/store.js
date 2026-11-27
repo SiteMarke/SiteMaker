@@ -144,6 +144,17 @@ window.Store = (function () {
       if (!d.press.items.some(function (x) { return x.id === 'p-minikids'; })) d.press.items.splice(Math.min(2, d.press.items.length), 0, {"id": "p-minikids", "type": "img", "src": "img/press/minikids.webp", "poster": "", "tag": "отзыв", "name": "Mini Kids", "who": "Детская одежда ручного пошива", "text": "«Выполнили всё чётко и в срок. Понравилось, что понимают клиента: сразу поняли мой запрос и сделали так, как я хотела, даже лучше. Очень довольна результатом и рекомендую!»", "url": "https://tamerlankajrolla2-a11y.github.io/Mini-Kids/", "hide": false});
       d.pv = 7;
     }
+    // 27.11: бизнес-сайт — 25 000 ₸, админ-панель входит в цену
+    if ((+d.pv || 0) < 8) {
+      d.types.forEach(function (x) {
+        if (x.id !== 'biz') return;
+        if (x.price === 17500) x.price = 25000;
+        if (x.desc === 'Попроще: до 10 страниц, продающие тексты, форма заявки, галерея, базовое SEO. Без админ-панели — правки вношу я.') x.desc = 'До 10 страниц, продающие тексты, форма заявки, галерея, базовое SEO, админ-панель.';
+        x.adminIn = true;
+      });
+      d.faq.forEach(function (f) { if (f && typeof f.a === 'string') f.a = f.a.replace('В интернет-магазине и премиуме админка уже входит.', 'В бизнес-сайте, интернет-магазине и премиуме админка уже входит.'); });
+      d.pv = 8;
+    }
     d.rev = +d.rev || 1;
     return d;
   }
