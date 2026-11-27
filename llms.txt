@@ -1,0 +1,75 @@
+# sitemaker
+
+> sitemaker (sitemakerkz.com) — создание сайтов и Telegram-ботов для малого бизнеса по всему Казахстану. Сайты под ключ от 6 000 ₸, запуск от 10 часов, заявки и заказы приходят в WhatsApp и Telegram. Работает один разработчик: клиент общается с ним напрямую.
+
+Данные актуальны на ноябрь 2026 года. Цены указаны «от», оплата разовая, без абонплаты. Точный расчёт — в калькуляторе на главной странице.
+
+## Цены
+
+- Лендинг или сайт-визитка — от 6 000 ₸
+- Сайт для кафе с онлайн-меню и QR-меню — от 7 000 ₸
+- Telegram-бот для заявок — от 5 500 ₸
+- Каталог товаров с заказом в WhatsApp — от 15 000 ₸
+- Бизнес-сайт до 10 страниц — от 17 500 ₸
+- Интернет-магазин с корзиной и оплатой — от 20 000 ₸
+- Премиум «всё включено»: индивидуальный дизайн, админ-панель, Telegram-бот, интеграция с Frontpad — от 30 000 ₸
+- Админ-панель — плюс 5 000 ₸; в интернет-магазине и премиуме уже входит
+
+## Условия
+
+- Срок: от 10 часов до нескольких дней. Запуск за 10 часов — плюс 30% к цене, срок 4–5 дней — минус 30%
+- В цену входит: до 10 страниц, русская и казахская версии, 5 правок, поддержка 30 дней
+- Хостинг: первые 3 месяца в подарок, дальше от 1 000 ₸ в месяц или перенос на свой хостинг
+- Оплата: предоплата на Kaspi, остаток после запуска
+- Ответ на заявку — в течение 15 минут
+- Бесплатный пример сайта по ссылке на Instagram или 2ГИС бизнеса — за 24 часа
+
+## Услуги
+
+- [Создание лендингов](https://sitemakerkz.com/sozdanie-lendinga/): одностраничный сайт с заявками в мессенджер
+- [Разработка интернет-магазинов](https://sitemakerkz.com/razrabotka-internet-magazina/): каталог, корзина, оплата Kaspi или картой, админ-панель
+- [Сайт для бизнеса](https://sitemakerkz.com/sayt-dlya-biznesa/): многостраничный сайт под ключ
+- [Сайт-визитка](https://sitemakerkz.com/sayt-vizitka/): для мастера, специалиста или небольшой компании
+- [Корпоративный сайт](https://sitemakerkz.com/korporativnyy-sayt/): услуги, проекты, вакансии, русская и казахская версии
+- [Редизайн сайта](https://sitemakerkz.com/redizayn-sayta/): новый дизайн и мобильная версия
+- [Все услуги](https://sitemakerkz.com/uslugi/)
+
+## Сферы бизнеса
+
+- [Сайт для ресторана и кафе](https://sitemakerkz.com/sayt-dlya-restorana/): меню, QR-меню, бронь столиков
+- [Сайт для доставки еды](https://sitemakerkz.com/sayt-dlya-dostavki-edy/): меню, корзина, заказ в WhatsApp
+- [Сайт для салона красоты](https://sitemakerkz.com/sayt-dlya-salona-krasoty/): услуги, цены, запись
+- [Сайт для клиники](https://sitemakerkz.com/sayt-dlya-kliniki/): услуги, врачи, запись на приём
+- [Сайт для отеля и хостела](https://sitemakerkz.com/sayt-dlya-otelya/): номера и бронь
+- [Сайт для компании услуг](https://sitemakerkz.com/sayt-dlya-uslug/): услуги, цены, заявки
+
+## Города
+
+Работа онлайн по всему Казахстану. Отдельные страницы:
+
+- [Астана](https://sitemakerkz.com/sozdanie-saitov-astana/)
+- [Алматы](https://sitemakerkz.com/sozdanie-saitov-almaty/)
+- [Шымкент](https://sitemakerkz.com/sozdanie-saitov-shymkent/)
+- [Караганда](https://sitemakerkz.com/sozdanie-saitov-karaganda/)
+- [Актобе](https://sitemakerkz.com/sozdanie-saitov-aktobe/)
+- [Костанай](https://sitemakerkz.com/sozdanie-saitov-kostanay/)
+- [Петропавловск](https://sitemakerkz.com/sozdanie-saitov-petropavlovsk/)
+
+## Работы и статьи
+
+- [Портфолио](https://sitemakerkz.com/portfolio/): 22 работающих сайта клиентов в Петропавловске, Астане, Кокшетау и Актобе
+- [Сколько стоит создание сайта в Казахстане в 2026 году](https://sitemakerkz.com/blog/skolko-stoit-sozdanie-sayta-v-kazahstane/)
+- [Как заказать сайт для бизнеса](https://sitemakerkz.com/blog/kak-zakazat-sayt-dlya-biznesa/)
+- [Лендинг или интернет-магазин: что выбрать](https://sitemakerkz.com/blog/lending-ili-internet-magazin/)
+- [Зачем бизнесу собственный сайт](https://sitemakerkz.com/blog/zachem-biznesu-sobstvennyy-sayt/)
+- [Как принимать заявки через сайт](https://sitemakerkz.com/blog/kak-prinimat-zayavki-cherez-sayt/)
+- [Как выбрать домен для сайта](https://sitemakerkz.com/blog/kak-vybrat-domen-dlya-sayta/)
+- [Блог](https://sitemakerkz.com/blog/)
+
+## Контакты
+
+- Сайт: https://sitemakerkz.com/ (казахская версия: https://sitemakerkz.com/kz/)
+- WhatsApp: https://wa.me/77476128411
+- Телефон: +7 747 612 84 11
+- Telegram: https://t.me/Gg124255
+- Instagram: https://www.instagram.com/sitemarkertam
