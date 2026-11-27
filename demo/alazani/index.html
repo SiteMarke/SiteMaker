@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Алазани — грузинский ресторан</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm Georgian hospitality, feast
+   IDEA: a supra table cloth with vine border
+   PICTURE: plate of khinkali, wine glass, grape vine
+   COLOUR and TYPE: white table, saperavi wine red, vine olive; Prata + Rubik
+   LAYOUT: sticky nav, full-bleed hero band with scene, feature strip, tabbed main list, booking form to WhatsApp, contacts, footer */
+:root{color-scheme:light;--bg:#ffffff;--ink:#2a1316;--muted:#6f5a5c;--hero:#7a1f2b;--hero-ink:#fff6f3;--acc:#f2c14e;--soft:#f7eeee;--line:#ecdcdc;--card:#fff}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 'Rubik',system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:'Prata',Georgia,serif;line-height:1.05;text-wrap:balance;margin:0}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}
+nav{position:sticky;top:0;z-index:5;background:var(--hero);color:var(--hero-ink);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;align-items:center;gap:16px;padding:12px max(5vw,16px);flex-wrap:wrap}
+.logo{font-family:'Prata',Georgia,serif;font-size:22px;letter-spacing:.01em;margin-right:auto;text-decoration:none}
+nav .links{display:flex;gap:18px;flex-wrap:wrap}
+nav .links a{text-decoration:none;opacity:.85;font-size:15px}
+nav .links a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:16px;background:var(--acc);color:#2a1316;font-weight:700;text-decoration:none;border:0;font-size:16px;cursor:pointer;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--hero-ink);box-shadow:inset 0 0 0 2px currentColor}
+.btn:focus-visible,input:focus-visible,select:focus-visible,.tab:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.hero{background:var(--hero);color:var(--hero-ink)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(36px,5.4vw,60px)}
+.hero p.lead{font-size:18px;opacity:.88;max-width:34em;margin:16px 0 24px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.rating{display:inline-flex;gap:8px;align-items:center;margin-bottom:18px;font-size:15px;padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.1)}
+.rating b{color:var(--acc)}
+.scene{position:relative;aspect-ratio:1.15/1;width:100%}
+.scene svg{position:absolute;inset:0;width:100%;height:100%}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.chip{padding:8px 14px;border-radius:99px;background:var(--soft);font-size:15px}
+.strip{background:var(--soft)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.stat b{display:block;font-family:'Prata',Georgia,serif;font-size:clamp(24px,3vw,34px);color:var(--acc2)}
+.stat span{color:var(--muted);font-size:15px}
+h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:10px}
+.sub{color:var(--muted);margin:0 0 24px;max-width:40em}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:20px}
+.tab{flex:none;min-height:44px;padding:0 18px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 15px/1 inherit;font-family:inherit;cursor:pointer}
+.tab[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:6px}
+.item h3{font-size:20px;font-family:'Rubik',system-ui,sans-serif;font-weight:700}
+.item p{margin:0;color:var(--muted);font-size:15px}
+.item .price{margin-top:auto;padding-top:8px;font-weight:700;white-space:nowrap;color:var(--acc2)}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+.book .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:start}
+form{display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,select{font:16px/1.3 inherit;font-family:inherit;min-height:46px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+#out{display:none;padding:14px;border-radius:10px;background:var(--soft);font-size:15px}
+#out.on{display:block}
+.why{display:grid;gap:14px;margin-top:8px;padding:0;list-style:none}
+.why li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start}
+.why i{width:36px;height:36px;border-radius:10px;background:var(--soft);display:grid;place-items:center;font-style:normal;font-weight:700;color:var(--acc2)}
+.info .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.info h3{font-size:20px;margin-bottom:10px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:15px}
+.hours span:nth-child(odd){color:var(--muted)}
+footer{background:var(--hero);color:var(--hero-ink);font-size:14px}
+footer .wrap{display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-between;opacity:.85}
+@media(max-width:860px){.hero .wrap,.book .wrap{grid-template-columns:1fr}.strip .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.info .wrap{grid-template-columns:1fr}.scene{max-width:520px}}
+@media(max-width:600px){nav .links{display:none}.row2{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:no-preference){.float{animation:fl 6s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-8px)}}}
+</style></head><body>
+<div style="background:#fffbe6;color:#3a2f00;font-size:14px;text-align:center;padding:8px 16px">Это прототип сайта для «Алазани» от SiteMaker, не официальный сайт. Заказ и бронь здесь пока не работают по-настоящему.</div>
+<nav><div class="wrap"><a class="logo" href="#top">Алазани</a><div class="links"><a href="#main">Меню</a><a href="#book">Бронь</a><a href="#contacts">Контакты</a></div><a class="btn" href="#book">Забронировать</a></div></nav>
+<header class="hero band" id="top"><div class="wrap">
+<div><div class="rating"><b>★ 4.8</b> 826 оценок в 2ГИС</div>
+<h1>Грузинское застолье в центре Павлодара</h1><p class="lead">Хинкали ручной лепки, хачапури, шашлык на углях и винная карта. Банкеты, VIP-зал и летняя веранда. Забронировать стол или банкет — в пару кликов.</p>
+<div class="cta"><a class="btn" href="#book">Забронировать</a><a class="btn ghost" href="#main">Меню</a></div></div>
+<div class="scene"><svg viewBox="0 0 460 400" aria-hidden="true">
+<defs><radialGradient id="kh" cx=".4" cy=".3" r=".8"><stop offset="0" stop-color="#fff8ee"/><stop offset="1" stop-color="#e9d5b5"/></radialGradient></defs>
+<circle cx="250" cy="190" r="165" fill="#f3e3e5"/>
+<path d="M60 80c60-40 120 10 180-20s110-10 160 30" stroke="#5f7a3a" stroke-width="6" fill="none" stroke-linecap="round"/>
+<g fill="#7a1f2b"><circle cx="110" cy="105" r="11"/><circle cx="124" cy="120" r="11"/><circle cx="100" cy="124" r="11"/><circle cx="114" cy="140" r="11"/></g>
+<path d="M80 70c10 10 20 12 34 6-6 14-20 20-34-6z" fill="#7c9a4c"/><path d="M330 60c14 4 24 14 26 30-16-4-24-14-26-30z" fill="#7c9a4c"/>
+<ellipse cx="230" cy="340" rx="190" ry="22" fill="#7a1f2b" opacity=".18"/>
+<ellipse cx="230" cy="310" rx="175" ry="34" fill="#fff"/><ellipse cx="230" cy="306" rx="150" ry="24" fill="#f4ede4"/>
+<g class="float">
+<g transform="translate(170 250)"><path d="M-48 40c0-40 20-66 48-74 28 8 48 34 48 74z" fill="url(#kh)"/><path d="M0-34c-6-10-4-20 0-26 4 6 6 16 0 26z" fill="#e9d5b5"/><path d="M-30 30c6-24 14-40 30-60M30 30c-6-24-14-40-30-60M0 36V-30" stroke="#d6bd93" stroke-width="3" fill="none"/></g>
+<g transform="translate(270 262)"><path d="M-42 34c0-34 18-56 42-64 24 8 42 30 42 64z" fill="url(#kh)"/><path d="M0-30c-5-9-4-17 0-22 4 5 5 13 0 22z" fill="#e9d5b5"/><path d="M-26 26c6-20 12-34 26-52M26 26c-6-20-12-34-26-52" stroke="#d6bd93" stroke-width="3" fill="none"/></g>
+<path d="M330 150h40l-6 90c-1 8-6 12-14 12s-13-4-14-12z" fill="#fff" stroke="#e4d2d4" stroke-width="2"/><path d="M334 190h32l-3 48c-1 6-5 9-13 9s-12-3-13-9z" fill="#7a1f2b"/><rect x="346" y="252" width="8" height="40" fill="#e4d2d4"/><rect x="330" y="290" width="40" height="8" rx="4" fill="#e4d2d4"/></g>
+</svg></div>
+</div></header>
+<section class="strip band"><div class="wrap"><div class="stat"><b>12:00–01:00</b><span>каждый день</span></div><div class="stat"><b>до 50 гостей</b><span>зал, VIP, веранда</span></div><div class="stat"><b>4.8 ★</b><span>826 оценок в 2ГИС</span></div><div class="stat"><b>≈ 6 000 ₸</b><span>средний чек</span></div></div></section>
+<section class="band" id="main"><div class="wrap">
+<h2>Меню</h2><p class="sub">Главное грузинской кухни — и то, за чем к вам возвращаются.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="grid" id="items"></div>
+<p class="note">Позиции показаны для примера. Точное меню, фото и цены вы добавите сами через админ-панель.</p>
+<div class="chips" style="margin-top:22px"><span class="chip">Проведение банкетов</span><span class="chip">VIP-зал</span><span class="chip">Летняя веранда</span><span class="chip">Винная карта</span><span class="chip">Доставка</span><span class="chip">Навынос</span><span class="chip">Wi-Fi</span></div>
+</div></section>
+<section class="band book" id="book" style="background:var(--soft)"><div class="wrap">
+<div><h2>Стол или банкет — онлайн</h2><p class="sub">Гость сам указывает дату, время и повод. Вам остаётся только подтвердить.</p>
+<ul class="why"><li><i>1</i><div><b>Экономит время</b><br><span style="color:var(--muted)">Меньше звонков с одними и теми же вопросами</span></div></li><li><i>2</i><div><b>Больше банкетов</b><br><span style="color:var(--muted)">Человек видит зал и меню — и сразу оставляет заявку</span></div></li><li><i>3</i><div><b>Заявки даже ночью</b><br><span style="color:var(--muted)">Сайт работает 24/7, вы отвечаете утром</span></div></li></ul></div>
+<form id="f" novalidate><label>Имя<input name="Имя" type="text" placeholder="Как к вам обращаться"></label><label>Телефон<input name="Телефон" type="tel" placeholder="+7 7__ ___ __ __"></label><div class="row2"><label>Дата<input name="Дата" type="date" placeholder=""></label><label>Время<input name="Время" type="time" placeholder=""></label></div><div class="row2"><label>Гостей<select name="Гостей"><option>2</option><option>3–4</option><option>5–10</option><option>11–20</option><option>21–50</option></select></label><label>Повод<select name="Повод"><option>Ужин</option><option>День рождения</option><option>Банкет</option><option>Деловая встреча</option></select></label></div>
+<button class="btn" type="submit">Отправить заявку</button>
+<div id="out" role="status"></div></form>
+</div></section>
+<section class="band info" id="contacts"><div class="wrap">
+<div><h3>Адрес</h3><p style="margin:0">ул. Сураганова, 17/1<br><span style="color:var(--muted)">Павлодар</span></p></div>
+<div><h3>Время работы</h3><div class="hours"><span>Пн–Вс</span><span>12:00–01:00</span></div></div>
+<div><h3>Связь</h3><p style="margin:0">+7 705 533 70 50<br><a href="https://wa.me/77055337050">Написать в WhatsApp</a><br><a href="https://instagram.com/alazany_pvl">Instagram @alazany_pvl</a></p></div>
+</div></section>
+<footer class="band"><div class="wrap"><span>© 2026 Алазани</span><span>Прототип сайта · SiteMaker · sitemakerkz.com</span></div></footer>
+<script>{
+const T=[{"tab": "Хинкали", "items": [["Хинкали с говядиной", "Сочные, ручной лепки", ""], ["Хинкали с бараниной", "С зеленью и специями", ""], ["Хинкали с сыром", "Для тех, кто не ест мясо", ""]]}, {"tab": "Хачапури", "items": [["Аджарский", "Лодочка с сыром, яйцом и маслом", ""], ["Имеретинский", "Круглый, с сулугуни", ""], ["Мегрельский", "С сыром сверху и внутри", ""]]}, {"tab": "Гриль", "items": [["Шашлык из баранины", "На углях", ""], ["Шашлык из курицы", "Маринад с травами", ""], ["Стейки", "Прожарка на выбор", ""]]}, {"tab": "Банкеты", "items": [["Банкет в зале", "Дни рождения, юбилеи, свадьбы", ""], ["VIP-зал", "Для своих", ""], ["Летняя веранда", "В тёплый сезон", ""]]}];
+const tabs=document.getElementById('tabs'),items=document.getElementById('items');
+const e=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+function show(i){tabs.querySelectorAll('.tab').forEach((b,j)=>b.setAttribute('aria-selected',j===i));
+items.innerHTML=T[i].items.map(x=>'<div class="item"><h3>'+e(x[0])+'</h3><p>'+e(x[1])+'</p>'+(x[2]?'<div class="price">'+e(x[2])+'</div>':'')+'</div>').join('');}
+tabs.innerHTML=T.map((t,i)=>'<button class="tab" role="tab" type="button">'+e(t.tab)+'</button>').join('');
+tabs.querySelectorAll('.tab').forEach((b,i)=>b.addEventListener('click',()=>show(i)));show(0);
+const f=document.getElementById('f'),out=document.getElementById('out');
+f.addEventListener('submit',ev=>{ev.preventDefault();const d=new FormData(f);const lines=[];
+for(const [k,v] of d.entries()){if(String(v).trim())lines.push(k+': '+v)}
+if(!d.get('Имя')||!d.get('Телефон')){out.textContent='Укажите имя и телефон.';out.className='on';return}
+const msg='Здравствуйте! Бронь с сайта:\n'+lines.join('\n');
+out.textContent='Так заявка придёт вам в WhatsApp:\n\n'+msg;out.style.whiteSpace='pre-line';out.className='on';});
+const dt=f.querySelector('input[type=date]');if(dt){dt.min=new Date().toISOString().slice(0,10)}
+}</script>
+</body></html>
