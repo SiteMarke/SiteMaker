@@ -173,10 +173,12 @@ def box(lang, watext):
 SERV_RU = [('/sozdanie-lendinga/', 'Создание лендингов'), ('/razrabotka-internet-magazina/', 'Разработка интернет-магазинов'), ('/sayt-dlya-biznesa/', 'Сайт для бизнеса под ключ'),
            ('/sayt-vizitka/', 'Сайт-визитка'), ('/korporativnyy-sayt/', 'Корпоративный сайт'), ('/redizayn-sayta/', 'Редизайн сайта')]
 CITY_RU = [('/sozdanie-saitov-astana/', 'Астана'), ('/sozdanie-saitov-almaty/', 'Алматы'), ('/sozdanie-saitov-shymkent/', 'Шымкент'), ('/sozdanie-saitov-karaganda/', 'Караганда'),
-           ('/sozdanie-saitov-aktobe/', 'Актобе'), ('/sozdanie-saitov-kostanay/', 'Костанай'), ('/sozdanie-saitov-petropavlovsk/', 'Петропавловск')]
+           ('/sozdanie-saitov-aktobe/', 'Актобе'), ('/sozdanie-saitov-kostanay/', 'Костанай'), ('/sozdanie-saitov-petropavlovsk/', 'Петропавловск'),
+           ('/sozdanie-saitov-pavlodar/', 'Павлодар'), ('/sozdanie-saitov-kokshetau/', 'Кокшетау'), ('/sozdanie-saitov-semey/', 'Семей'), ('/sozdanie-saitov-ust-kamenogorsk/', 'Усть-Каменогорск')]
 IND_RU = [('/sayt-dlya-restorana/', 'Рестораны и кафе'), ('/sayt-dlya-dostavki-edy/', 'Доставка еды'), ('/sayt-dlya-salona-krasoty/', 'Салоны красоты'), ('/sayt-dlya-kliniki/', 'Клиники и медцентры'),
           ('/sayt-dlya-otelya/', 'Отели и хостелы'), ('/sayt-dlya-uslug/', 'Компании услуг')]
-BLOG_RU = [('/blog/skolko-stoit-sozdanie-sayta-v-kazahstane/', 'Сколько стоит сайт в Казахстане'), ('/blog/kak-zakazat-sayt-dlya-biznesa/', 'Как заказать сайт для бизнеса'),
+BLOG_RU = [('/blog/skolko-stoit-sozdanie-sayta-v-kazahstane/', 'Сколько стоит сайт в Казахстане'), ('/blog/skolko-stoit-sayt-dlya-salona-krasoty/', 'Сколько стоит сайт для салона красоты'),
+           ('/blog/sayt-dlya-restorana-ili-kafe/', 'Сайт для ресторана или кафе'), ('/blog/kak-zakazat-sayt-dlya-biznesa/', 'Как заказать сайт для бизнеса'),
            ('/blog/lending-ili-internet-magazin/', 'Лендинг или интернет-магазин'), ('/blog/kak-vybrat-domen-dlya-sayta/', 'Как выбрать домен'),
            ('/blog/zachem-biznesu-sobstvennyy-sayt/', 'Зачем бизнесу свой сайт'), ('/blog/kak-prinimat-zayavki-cherez-sayt/', 'Как принимать заявки через сайт')]
 SERV_KK = [('/kz/lending-jasau/', 'Лендинг жасау'), ('/kz/internet-dukenin-jasau/', 'Интернет-дүкен жасау'), ('/kz/biznes-ushin-sait/', 'Бизнеске арналған сайт'),
