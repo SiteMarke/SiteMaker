@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ак Барс — автоцентр</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: exact, reliable, fast
+   IDEA: an engineering service card with a lift diagram
+   PICTURE: car on a lift over a blueprint grid
+   COLOUR and TYPE: cobalt title band, white, black, signal orange; Space Grotesk + Inter
+   LAYOUT: sticky nav, full-bleed hero band with scene, feature strip, tabbed main list, booking form to WhatsApp, contacts, footer */
+:root{color-scheme:light;--bg:#ffffff;--ink:#0d1020;--muted:#545a70;--hero:#1240e0;--hero-ink:#ffffff;--acc:#ff5a36;--soft:#eef2ff;--line:#dde3f7;--card:#fff}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 'Inter',system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.05;text-wrap:balance;margin:0}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}
+nav{position:sticky;top:0;z-index:5;background:var(--hero);color:var(--hero-ink);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;align-items:center;gap:16px;padding:12px max(5vw,16px);flex-wrap:wrap}
+.logo{font-family:'Space Grotesk',system-ui,sans-serif;font-size:22px;letter-spacing:.01em;margin-right:auto;text-decoration:none}
+nav .links{display:flex;gap:18px;flex-wrap:wrap}
+nav .links a{text-decoration:none;opacity:.85;font-size:15px}
+nav .links a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:8px;background:var(--acc);color:#fff;font-weight:700;text-decoration:none;border:0;font-size:16px;cursor:pointer;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--hero-ink);box-shadow:inset 0 0 0 2px currentColor}
+.btn:focus-visible,input:focus-visible,select:focus-visible,.tab:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.hero{background:var(--hero);color:var(--hero-ink)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(36px,5.4vw,60px)}
+.hero p.lead{font-size:18px;opacity:.88;max-width:34em;margin:16px 0 24px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.rating{display:inline-flex;gap:8px;align-items:center;margin-bottom:18px;font-size:15px;padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.1)}
+.rating b{color:var(--acc)}
+.scene{position:relative;aspect-ratio:1.15/1;width:100%}
+.scene svg{position:absolute;inset:0;width:100%;height:100%}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.chip{padding:8px 14px;border-radius:99px;background:var(--soft);font-size:15px}
+.strip{background:var(--soft)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.stat b{display:block;font-family:'Space Grotesk',system-ui,sans-serif;font-size:clamp(24px,3vw,34px);color:var(--acc2)}
+.stat span{color:var(--muted);font-size:15px}
+h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:10px}
+.sub{color:var(--muted);margin:0 0 24px;max-width:40em}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:20px}
+.tab{flex:none;min-height:44px;padding:0 18px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 15px/1 inherit;font-family:inherit;cursor:pointer}
+.tab[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:6px}
+.item h3{font-size:20px;font-family:'Inter',system-ui,sans-serif;font-weight:700}
+.item p{margin:0;color:var(--muted);font-size:15px}
+.item .price{margin-top:auto;padding-top:8px;font-weight:700;white-space:nowrap;color:var(--acc2)}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+.book .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:start}
+form{display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:22px}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,select{font:16px/1.3 inherit;font-family:inherit;min-height:46px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+#out{display:none;padding:14px;border-radius:10px;background:var(--soft);font-size:15px}
+#out.on{display:block}
+.why{display:grid;gap:14px;margin-top:8px;padding:0;list-style:none}
+.why li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start}
+.why i{width:36px;height:36px;border-radius:10px;background:var(--soft);display:grid;place-items:center;font-style:normal;font-weight:700;color:var(--acc2)}
+.info .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.info h3{font-size:20px;margin-bottom:10px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:15px}
+.hours span:nth-child(odd){color:var(--muted)}
+footer{background:var(--hero);color:var(--hero-ink);font-size:14px}
+footer .wrap{display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-between;opacity:.85}
+@media(max-width:860px){.hero .wrap,.book .wrap{grid-template-columns:1fr}.strip .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.info .wrap{grid-template-columns:1fr}.scene{max-width:520px}}
+@media(max-width:600px){nav .links{display:none}.row2{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:no-preference){.float{animation:fl 6s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-8px)}}}
+</style></head><body>
+<div style="background:#fffbe6;color:#3a2f00;font-size:14px;text-align:center;padding:8px 16px">Это прототип сайта для «AQ BARS» от SiteMaker, не официальный сайт. Заказ и бронь здесь пока не работают по-настоящему.</div>
+<nav><div class="wrap"><a class="logo" href="#top">AQ BARS</a><div class="links"><a href="#main">Услуги</a><a href="#book">Запись</a><a href="#contacts">Контакты</a></div><a class="btn" href="#book">Записаться</a></div></nav>
+<header class="hero band" id="top"><div class="wrap">
+<div><div class="rating"><b>★ 4.8</b> 358 оценок в 2ГИС</div>
+<h1>Автоцентр: ремонт, шиномонтаж и запчасти в одном месте</h1><p class="lead">Ходовая, развал-схождение, стартеры и генераторы, шиномонтаж, автохимия и запчасти для иномарок. Запишитесь онлайн на удобное время — без очереди и звонков.</p>
+<div class="cta"><a class="btn" href="#book">Записаться</a><a class="btn ghost" href="#main">Услуги</a></div></div>
+<div class="scene"><svg viewBox="0 0 460 400" aria-hidden="true">
+<defs><linearGradient id="car" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cfd8ff"/></linearGradient></defs>
+<rect x="0" y="0" width="460" height="400" fill="#0f2fb8" opacity=".35"/>
+<g stroke="#fff" stroke-opacity=".12">
+<path d="M0 80h460M0 160h460M0 240h460M80 0v400M160 0v400M240 0v400M320 0v400M400 0v400"/></g>
+<rect x="60" y="300" width="340" height="16" fill="#e6ebff"/><rect x="100" y="316" width="16" height="70" fill="#e6ebff"/><rect x="344" y="316" width="16" height="70" fill="#e6ebff"/>
+<rect x="90" y="292" width="280" height="10" fill="#ff5a36"/>
+<g class="float"><path d="M70 250c0-24 20-36 50-40l50-40c14-11 30-16 50-16h70c22 0 38 8 52 24l34 34c30 4 44 16 44 38v20H70z" fill="url(#car)"/>
+<path d="M180 176c10-8 22-12 38-12h60c16 0 28 6 38 16l24 26H150z" fill="#0f2fb8" opacity=".85"/><path d="M248 164v42" stroke="#fff" stroke-width="5"/>
+<path d="M70 262h320" stroke="#ff5a36" stroke-width="5"/>
+<g transform="translate(140 270)"><circle r="30" fill="#14161c"/><circle r="15" fill="#9aa4bf"/><circle r="5" fill="#14161c"/></g>
+<g transform="translate(330 270)"><circle r="30" fill="#14161c"/><circle r="15" fill="#9aa4bf"/><circle r="5" fill="#14161c"/></g></g>
+<path d="M392 90l20-20m-8 34l28-8M380 70l4-26" stroke="#ff5a36" stroke-width="5" stroke-linecap="round"/>
+<g transform="translate(70 110) rotate(-30)"><rect x="-6" y="-46" width="12" height="70" rx="6" fill="#fff"/><path d="M-18-50a18 18 0 1 0 36 0l-8 8h-20z" fill="#fff"/></g>
+</svg></div>
+</div></header>
+<section class="strip band"><div class="wrap"><div class="stat"><b>09:00–20:00</b><span>без выходных</span></div><div class="stat"><b>50+ марок</b><span>от Audi до Haval</span></div><div class="stat"><b>4.8 ★</b><span>358 оценок в 2ГИС</span></div><div class="stat"><b>1 адрес</b><span>СТО + магазин</span></div></div></section>
+<section class="band" id="main"><div class="wrap">
+<h2>Услуги</h2><p class="sub">Всё для легкового авто: от сезонной смены шин до ремонта ходовой.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="grid" id="items"></div>
+<p class="note">Услуги — по данным 2ГИС. Цены и акции вы добавите сами через админ-панель.</p>
+<div class="chips" style="margin-top:22px"><span class="chip">Acura</span><span class="chip">Audi</span><span class="chip">BMW</span><span class="chip">BYD</span><span class="chip">Chery</span><span class="chip">Chevrolet</span><span class="chip">Changan</span><span class="chip">Geely</span><span class="chip">Haval</span><span class="chip">и ещё 40+ марок</span></div>
+</div></section>
+<section class="band book" id="book" style="background:var(--soft)"><div class="wrap">
+<div><h2>Онлайн-запись на ремонт</h2><p class="sub">Клиент сам выбирает услугу и время. Мастера не отвлекаются на звонки.</p>
+<ul class="why"><li><i>1</i><div><b>Экономит время</b><br><span style="color:var(--muted)">Не нужно по телефону выяснять марку, услугу и свободное время</span></div></li><li><i>2</i><div><b>Меньше простоев</b><br><span style="color:var(--muted)">Запись равномерно заполняет день</span></div></li><li><i>3</i><div><b>Доверие</b><br><span style="color:var(--muted)">Услуги, марки и отзывы видны сразу — клиент приезжает уже готовым</span></div></li></ul></div>
+<form id="f" novalidate><label>Имя<input name="Имя" type="text" placeholder="Как к вам обращаться"></label><label>Телефон<input name="Телефон" type="tel" placeholder="+7 7__ ___ __ __"></label><div class="row2"><label>Марка авто<input name="Марка" type="text" placeholder="Например: Toyota Camry"></label><label>Услуга<select name="Услуга"><option>Шиномонтаж</option><option>Развал-схождение</option><option>Ходовая</option><option>Стартер / генератор</option><option>ТО</option><option>Подбор запчастей</option></select></label></div><div class="row2"><label>Дата<input name="Дата" type="date" placeholder=""></label><label>Время<input name="Время" type="time" placeholder=""></label></div>
+<button class="btn" type="submit">Записаться</button>
+<div id="out" role="status"></div></form>
+</div></section>
+<section class="band info" id="contacts"><div class="wrap">
+<div><h3>Адрес</h3><p style="margin:0">ул. Академика Сатпаева, 200, 1 этаж<br><span style="color:var(--muted)">Павлодар</span></p></div>
+<div><h3>Время работы</h3><div class="hours"><span>Пн–Вс</span><span>09:00–20:00</span><span>Перерыв</span><span>13:00–13:30</span></div></div>
+<div><h3>Связь</h3><p style="margin:0">+7 701 525 87 70<br>+7 705 707 85 80<br>+7 771 043 91 02<br><a href="https://wa.me/77015258770">Написать в WhatsApp</a><br><a href="https://instagram.com/akbars.pvl">Instagram @akbars.pvl</a></p></div>
+</div></section>
+<footer class="band"><div class="wrap"><span>© 2026 AQ BARS</span><span>Прототип сайта · SiteMaker · sitemakerkz.com</span></div></footer>
+<script>{
+const T=[{"tab": "Ремонт", "items": [["Ремонт ходовой части", "Диагностика и замена деталей", ""], ["Стартеры и генераторы", "Ремонт и замена", ""], ["Легковой автосервис", "ТО и текущий ремонт", ""]]}, {"tab": "Шины и колёса", "items": [["Шиномонтаж", "Сезонная смена и ремонт", ""], ["Развал-схождение", "Точная настройка углов", ""]]}, {"tab": "Магазин", "items": [["Запчасти для иномарок", "Подбор по VIN", ""], ["Автохимия", "Масла, жидкости, уход", ""], ["Автоаксессуары", "Всё для салона и багажника", ""]]}];
+const tabs=document.getElementById('tabs'),items=document.getElementById('items');
+const e=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+function show(i){tabs.querySelectorAll('.tab').forEach((b,j)=>b.setAttribute('aria-selected',j===i));
+items.innerHTML=T[i].items.map(x=>'<div class="item"><h3>'+e(x[0])+'</h3><p>'+e(x[1])+'</p>'+(x[2]?'<div class="price">'+e(x[2])+'</div>':'')+'</div>').join('');}
+tabs.innerHTML=T.map((t,i)=>'<button class="tab" role="tab" type="button">'+e(t.tab)+'</button>').join('');
+tabs.querySelectorAll('.tab').forEach((b,i)=>b.addEventListener('click',()=>show(i)));show(0);
+const f=document.getElementById('f'),out=document.getElementById('out');
+f.addEventListener('submit',ev=>{ev.preventDefault();const d=new FormData(f);const lines=[];
+for(const [k,v] of d.entries()){if(String(v).trim())lines.push(k+': '+v)}
+if(!d.get('Имя')||!d.get('Телефон')){out.textContent='Укажите имя и телефон.';out.className='on';return}
+const msg='Здравствуйте! Запись в автоцентр с сайта:\n'+lines.join('\n');
+out.textContent='Так заявка придёт вам в WhatsApp:\n\n'+msg;out.style.whiteSpace='pre-line';out.className='on';});
+const dt=f.querySelector('input[type=date]');if(dt){dt.min=new Date().toISOString().slice(0,10)}
+}</script>
+</body></html>
