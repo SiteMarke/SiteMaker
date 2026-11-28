@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Patron сервис — автосервис и запчасти для иномарок в Петропавловске</title>
+<meta name="description" content="Диагностика, ходовая, двигатель, автоэлектрика, кондиционеры, замена масла. Запчасти для иномарок. Ул. Жамбыла, 304.">
+<meta name="theme-color" content="#0f1b2d">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font:16px/1.6 var(--bf);color:var(--ink);background:var(--bg);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--hf);margin:0;line-height:1.1;text-wrap:balance;font-weight:var(--hw,700)}
+h2{font-size:clamp(28px,4.4vw,46px)}
+h3{font-size:19px}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto}
+.band{padding:clamp(56px,8vw,104px) max(5vw,18px)}
+.kick{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--acc);margin:0 0 12px}
+.lead{color:var(--mute);font-size:17px;max-width:620px;margin-top:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 26px;border-radius:var(--br,999px);font:700 15px/1 var(--bf);text-decoration:none;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn svg{width:19px;height:19px;flex:none}
+.b-acc{background:var(--acc);color:var(--on-acc,#fff);box-shadow:0 10px 26px -10px var(--acc)}
+.b-line{border:1.5px solid currentColor;background:transparent}
+.hdr{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px max(5vw,18px);background:var(--hdr-bg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--hf);font-weight:700;font-size:19px;text-decoration:none;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+.logo i{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--acc);color:var(--on-acc,#fff);font-style:normal;font-size:15px}
+.nav{display:none;gap:26px;font-size:14.5px;font-weight:600}
+.nav a{text-decoration:none;opacity:.8}.nav a:hover{opacity:1}
+.hdr .btn{min-height:42px;padding:0 18px;font-size:14px}
+@media(min-width:900px){.nav{display:flex}}
+.grid{display:grid;gap:16px}
+@media(min-width:720px){.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rc,20px);padding:24px}
+.ph{position:relative;overflow:hidden;background:var(--ph,#ddd)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.noimg img{display:none}
+.stars{color:#f5b301;letter-spacing:2px}
+.rv blockquote{margin:12px 0 0;font-size:16.5px;line-height:1.6}
+.rv .who{margin-top:14px;font-size:14px;color:var(--mute)}
+.rv .who b{color:var(--ink)}
+.form{display:grid;gap:12px}
+.form label{display:grid;gap:6px;font-size:13.5px;font-weight:700}
+.form input,.form select,.form textarea{width:100%;min-height:50px;border-radius:14px;border:1px solid var(--line);background:var(--field,#fff);color:var(--ink);padding:12px 14px;font:16px var(--bf)}
+.form textarea{min-height:90px;resize:vertical}
+.two{display:grid;gap:12px}@media(min-width:560px){.two{grid-template-columns:1fr 1fr}}
+.contact{display:grid;gap:14px;margin-top:8px}
+.contact a,.contact div{display:flex;gap:12px;align-items:flex-start;text-decoration:none;font-size:16px}
+.contact svg{width:22px;height:22px;flex:none;color:var(--acc);margin-top:2px}
+.fab{position:fixed;right:16px;bottom:16px;z-index:40;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;box-shadow:0 12px 28px -8px rgba(0,0,0,.45)}
+.fab svg{width:30px;height:30px}
+.foot{padding:34px max(5vw,18px) 90px;font-size:13.5px;color:var(--mute);border-top:1px solid var(--line);text-align:center}
+.foot small{display:block;margin-top:8px}
+.foot a{text-underline-offset:3px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+:root{--bg:#f2f4f7;--card:#fff;--ink:#0f1b2d;--mute:#5a6577;--acc:#f5b400;--on-acc:#0f1b2d;--line:rgba(15,27,45,.12);--hdr-bg:rgba(15,27,45,.94);--hf:'Barlow Condensed',sans-serif;--hw:800;--bf:'Barlow',system-ui,sans-serif;--br:6px;--rc:10px;--ph:#1c2a40}
+.hdr{color:#fff}
+h1,h2{text-transform:uppercase}
+h2{font-size:clamp(34px,5vw,56px);letter-spacing:.01em}
+.hero{background:#0f1b2d;color:#fff;display:grid;gap:30px;padding:clamp(34px,5vw,70px) max(5vw,18px);align-items:center}
+@media(min-width:900px){.hero{grid-template-columns:1.1fr .9fr}}
+.hero h1{font-size:clamp(52px,9vw,118px);line-height:.88}
+.hero h1 span{color:var(--acc)}
+.hero .lead{color:#b9c3d3}
+.hero .ph{aspect-ratio:4/3;border-radius:10px;border:4px solid var(--acc)}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero .b-line{color:#fff}
+.kpis{display:flex;flex-wrap:wrap;gap:24px;margin-top:30px}
+.kpis b{font-family:var(--hf);font-size:44px;color:var(--acc);display:block;line-height:1}
+.kpis span{font-size:14px;color:#b9c3d3}
+.svc{display:grid;gap:12px;margin-top:30px}@media(min-width:640px){.svc{grid-template-columns:repeat(2,1fr)}}@media(min-width:1000px){.svc{grid-template-columns:repeat(4,1fr)}}
+.svc .card{border-left:5px solid var(--acc)}
+.svc h3{font-family:var(--hf);font-size:23px;text-transform:uppercase;margin:6px 0 6px}
+.svc p{color:var(--mute);font-size:14.5px}
+.svc .ic{font-size:28px}
+.brands{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.brands span{background:#fff;border:1px solid var(--line);border-radius:6px;padding:8px 14px;font-weight:700;font-size:14.5px}
+.parts{background:#0f1b2d;color:#fff}
+.parts .lead{color:#b9c3d3}
+.parts ul{display:grid;gap:10px;padding:0;margin:26px 0 0;list-style:none}@media(min-width:720px){.parts ul{grid-template-columns:repeat(3,1fr)}}
+.parts li{background:#17263d;border-radius:8px;padding:14px 16px;font-weight:600}
+.parts li::before{content:"✓ ";color:var(--acc)}
+.rv blockquote{font-size:17px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.98L2 22l5.16-1.5A9.93 9.93 0 1 0 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.06.89.9-2.98-.2-.31a8.22 8.22 0 1 1 6.86 3.73Zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.17.25-.64.8-.78.96-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22a7.4 7.4 0 0 1-1.37-1.7c-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.66.31 2.76 2.76 0 0 0-.86 2.05 4.8 4.8 0 0 0 1 2.55c.13.17 1.73 2.64 4.2 3.7.58.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.15-1.17-.06-.1-.22-.17-.47-.29Z"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+<symbol id="phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z"/></symbol>
+<symbol id="ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></g></symbol>
+<symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></symbol>
+</svg>
+<header class="hdr"><a class="logo" href="#top">Patron сервис</a><nav class="nav"><a href="#services">Услуги</a><a href="#parts">Запчасти</a><a href="#book">Запись</a></nav><a class="btn b-acc" href="#book">Записаться</a></header>
+<main id="top">
+<section class="hero"><div>
+  <p class="kick">Автоцентр · Петропавловск</p>
+  <h1>Patron<br><span>сервис</span></h1>
+  <p class="lead">Все виды ремонта вашего автомобиля и запчасти для иномарок в одном месте. Диагностируем, чиним и подбираем детали без лишних поездок.</p>
+  <div class="acts"><a class="btn b-acc" href="#book"><svg><use href="#wa"/></svg>Записаться на ремонт</a><a class="btn b-line" href="tel:+77767504848">Позвонить</a></div>
+  <div class="kpis"><div><b>4.8</b><span>рейтинг в 2ГИС</span></div><div><b>148</b><span>оценок клиентов</span></div><div><b>20+</b><span>марок авто</span></div></div>
+ </div>
+ <div class="ph reveal"><img src="https://ams2-cdn.2gis.com/previews/1250130109738778624/01f0f3ca-7e53-4764-b7aa-786a11207e82/3/ru/656x340?api-version=2.0" alt="Автосервис Patron" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div>
+</section>
+
+<section class="band" id="services"><div class="wrap">
+ <p class="kick">Услуги</p><h2>Что ремонтируем</h2>
+ <p class="lead">Стоимость зависит от авто и объёма работ. Опишите проблему, и мастер сориентирует по цене.</p>
+ <div class="svc"><div class="card reveal"><div class="ic">🔍</div><h3>Компьютерная диагностика</h3><p>Находим причину ошибки и неисправности</p></div><div class="card reveal"><div class="ic">🛞</div><h3>Ремонт ходовой</h3><p>Подвеска, рулевое, шумы и стуки</p></div><div class="card reveal"><div class="ic">⚙️</div><h3>Ремонт двигателя</h3><p>Бензиновые двигатели, выхлопная система</p></div><div class="card reveal"><div class="ic">⚡</div><h3>Автоэлектрика</h3><p>Стартеры, генераторы, электронные системы</p></div><div class="card reveal"><div class="ic">❄️</div><h3>Кондиционеры</h3><p>Обслуживание и заправка климатических систем</p></div><div class="card reveal"><div class="ic">🛢️</div><h3>Замена масла</h3><p>Масла и расходники в наличии</p></div><div class="card reveal"><div class="ic">💡</div><h3>Автооптика</h3><p>Установка и ремонт фар</p></div><div class="card reveal"><div class="ic">🔧</div><h3>Слесарный ремонт</h3><p>Любые виды ремонта легковых авто</p></div></div>
+ <p style="margin-top:34px;font-weight:700">Работаем с марками:</p><div class="brands"><span>Toyota</span><span>Lexus</span><span>Hyundai</span><span>Kia</span><span>Nissan</span><span>Mitsubishi</span><span>Mazda</span><span>Honda</span><span>Subaru</span><span>Volkswagen</span><span>Skoda</span><span>Audi</span><span>BMW</span><span>Mercedes-Benz</span><span>Chevrolet</span><span>Lada</span></div>
+</div></section>
+
+<section class="band parts" id="parts"><div class="wrap">
+ <p class="kick">Запчасти</p><h2>Детали в наличии и под заказ</h2>
+ <p class="lead">Не нужно ездить по магазинам: подберём запчасть по VIN и сразу установим.</p>
+ <ul><li>Запчасти для иномарок</li><li>Контрактные запчасти</li><li>Подвеска и ходовая</li><li>Двигатель и трансмиссия</li><li>Электрика и оптика</li><li>Масла и автохимия</li></ul>
+</div></section>
+
+<section class="band"><div class="wrap">
+ <p class="kick">Отзывы из 2ГИС</p><h2>Нам доверяют машины</h2>
+ <div class="grid g2 rv" style="margin-top:30px">
+  <div class="card reveal"><span class="stars">★★★★★</span><blockquote>«Отдельное спасибо мастеру Ивану за профессионализм и ответственный подход. Всё сделано качественно, оперативно и без лишних вопросов»</blockquote><p class="who"><b>Вячеслав Г.</b> · ноябрь 2026</p></div>
+  <div class="card reveal"><span class="stars">★★★★★</span><blockquote>Клиенты чаще всего отмечают: <b>быстро и качественно</b>, <b>вежливый персонал</b>, <b>адекватные цены</b>.</blockquote><p class="who"><b>По отзывам в 2ГИС</b></p></div>
+ </div></div></section>
+
+<section class="band" id="book" style="background:#fff"><div class="wrap grid g2" style="gap:34px;align-items:start">
+ <div><p class="kick">Запись</p><h2>Опишите проблему</h2><p class="lead">Заявка уйдёт мастеру в WhatsApp. Можно сразу приложить фото или VIN.</p>
+  <div id="contacts" style="margin-top:30px"><div class="contact"><a href="https://2gis.kz/petropavlovsk/firm/70000001038485021" target="_blank" rel="noopener"><svg><use href="#pin"/></svg><span>Петропавловск, ул. Жамбыла, 304</span></a><div><svg><use href="#clock"/></svg><span>Время работы уточняйте по телефону или в WhatsApp</span></div><a href="tel:+77767504848"><svg><use href="#phone"/></svg><span>+7 776 750 48 48 · +7 707 750 48 48</span></a><a href="https://instagram.com/avtoservice_patron_petro" target="_blank" rel="noopener"><svg><use href="#ig"/></svg><span>@avtoservice_patron_petro</span></a></div></div></div>
+ <form class="form card" id="f" style="background:var(--bg)">
+  <div class="two"><label>Марка и модель<input id="car" placeholder="Toyota Camry"></label><label>Год<input id="y" inputmode="numeric" placeholder="2015"></label></div>
+  <label>Что нужно<select id="s"><option>Компьютерная диагностика</option><option>Ремонт ходовой</option><option>Ремонт двигателя</option><option>Автоэлектрика</option><option>Кондиционеры</option><option>Замена масла</option><option>Автооптика</option><option>Слесарный ремонт</option><option>Подобрать запчасть</option></select></label>
+  <label>Что беспокоит<textarea id="c" placeholder="Стук спереди справа, горит Check…"></textarea></label>
+  <button class="btn b-acc" type="submit"><svg><use href="#wa"/></svg>Отправить мастеру</button>
+ </form></div></section>
+</main>
+<a class="fab" href="https://wa.me/77767504848?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Patron%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81." target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#wa"/></svg></a>
+<footer class="foot">
+  <div>© 2026 Patron сервис · Петропавловск</div>
+  <small>Демо-версия сайта. Хотите такой сайт для своего бизнеса? <a href="https://wa.me/77476128411">+7 747 612 84 11</a> · <a href="https://sitemakerkz.com" target="_blank" rel="noopener">sitemakerkz.com</a></small>
+</footer>
+<script>var WA="77767504848";
+(function(){
+var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12}):null;
+document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('on')});
+window.wa=function(text){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(text),'_blank','noopener')};
+})();
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var v=function(i){return document.getElementById(i).value};wa('Здравствуйте! Пишу с сайта Patron сервис.'+(v('car')?'\nАвто: '+v('car')+(v('y')?', '+v('y'):''):'')+'\nНужно: '+v('s')+(v('c')?'\nПроблема: '+v('c'):''))};</script>
+</body>
+</html>
