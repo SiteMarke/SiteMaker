@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Viva beauty — салон красоты и маникюр в Петропавловске</title>
-<meta name="description" content="Аппаратный маникюр, гель-лак и уход от А до Я. Ул. Юрия Медведева, 4. Онлайн-запись и WhatsApp.">
-<meta name="theme-color" content="#eef4f1">
+<title>Viva beauty — салон красоты в Петропавловске: стрижки, окрашивание, кератин, маникюр</title>
+<meta name="description" content="Стрижки, окрашивание, кератин и ботокс для волос, маникюр и педикюр. Ул. Юрия Медведева, 4. Ежедневно 9:00–20:00. Онлайн-запись.">
+<meta name="theme-color" content="#141012">
 <meta name="referrer" content="no-referrer">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;min-width:0}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
@@ -63,29 +63,86 @@ p{margin:0}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
 .reveal.on{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-:root{--bg:#f3f7f5;--bg2:#e7f0eb;--card:#fff;--ink:#1f2d27;--mute:#64756d;--acc:#2f7a5b;--line:rgba(31,45,39,.11);--hdr-bg:rgba(243,247,245,.88);--hf:'Marcellus',serif;--hw:400;--bf:'Manrope',system-ui,sans-serif;--rc:22px;--ph:#d8e6de}
-h2{font-size:clamp(32px,4.6vw,52px)}
-.hero{display:grid;gap:28px;align-items:center;padding:clamp(24px,4vw,56px) max(5vw,18px) clamp(50px,7vw,90px)}@media(min-width:880px){.hero{grid-template-columns:1fr 1fr}}
-.hero h1{font-size:clamp(54px,9vw,112px);line-height:.95}
-.hero h1 em{font-style:normal;color:var(--acc)}
-.hero .ph{aspect-ratio:5/4}
-.chip{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;margin-bottom:20px}
-
-.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.svgrid{display:grid;gap:16px;margin-top:32px}@media(min-width:720px){.svgrid{grid-template-columns:repeat(2,1fr)}}@media(min-width:1060px){.svgrid{grid-template-columns:repeat(3,1fr)}}
-.sv{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:24px;display:flex;flex-direction:column}
-.sv h3{font-family:var(--hf);font-size:24px;margin-bottom:12px}
-.sv ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:15px}
-.sv li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:7px}
-.sv li b{white-space:nowrap;color:var(--acc)}
-.sv .go{margin-top:auto;padding-top:16px;background:none;border:0;font:700 15px var(--bf);color:var(--acc);text-align:left;cursor:pointer;padding-left:0}
+:root{--bg:#141012;--bg2:#1b1518;--card:#201a1d;--ink:#f6ece9;--mute:#b8a7a6;--acc:#e7b8b0;--gold:#c9a46a;--on-acc:#1a1214;--line:rgba(246,236,233,.1);--hdr-bg:rgba(20,16,18,.82);--hf:'Cormorant Garamond',serif;--hw:600;--bf:'Manrope',system-ui,sans-serif;--rc:22px;--field:#251e21;--ph:#2a2225}
+.script{font-family:'Great Vibes',cursive;font-weight:400}
+h2{font-size:clamp(36px,5.2vw,62px)}
+.kick{color:var(--gold)}
+.logo{font-family:'Great Vibes',cursive;font-size:38px;font-weight:400;line-height:1;gap:6px;align-items:baseline}
+.logo small{font-family:var(--bf);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.b-acc{background:linear-gradient(135deg,#f0c6be,#d79a91)}
+/* hero */
+.hero{position:relative;display:grid;gap:34px;align-items:center;padding:clamp(30px,5vw,70px) max(5vw,18px) clamp(60px,8vw,110px);overflow:hidden}
+@media(min-width:900px){.hero{grid-template-columns:1.05fr .95fr}}
+.hero::before{content:"";position:absolute;width:640px;height:640px;right:-200px;top:-220px;border-radius:50%;background:radial-gradient(circle,rgba(231,184,176,.18),transparent 65%);pointer-events:none}
+.hero h1{font-family:var(--hf);font-size:clamp(46px,7vw,92px);line-height:.98;font-weight:500}
+.hero h1 .script{display:block;font-size:1.35em;color:var(--acc);line-height:.8;margin-bottom:6px}
+.hero .lead{color:var(--mute)}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.facts span{border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13.5px;color:var(--mute)}
+.facts b{color:var(--ink)}
+.hframe{position:relative}
+.hframe .ph{aspect-ratio:4/5;border-radius:220px 220px 26px 26px;border:1px solid rgba(201,164,106,.45)}
+.hframe .mini{position:absolute;left:-18px;bottom:28px;width:42%;aspect-ratio:1;border-radius:50%;border:4px solid var(--bg);box-shadow:0 20px 40px -20px #000}
+.hframe .tag{position:absolute;right:-8px;top:34px;background:var(--bg);border:1px solid rgba(201,164,106,.5);border-radius:16px;padding:12px 16px;text-align:center}
+.hframe .tag b{display:block;font-family:var(--hf);font-size:30px;color:var(--gold);line-height:1}
+.hframe .tag span{font-size:12px;color:var(--mute)}
+/* directions */
+.dirs{display:grid;gap:14px;margin-top:34px}@media(min-width:700px){.dirs{grid-template-columns:repeat(2,1fr)}}@media(min-width:1060px){.dirs{grid-template-columns:repeat(4,1fr)}}
+.dir{position:relative;border-radius:var(--rc);overflow:hidden;min-height:320px;display:flex;align-items:flex-end;isolation:isolate;text-decoration:none}
+.dir .ph{position:absolute;inset:0;z-index:-2}
+.dir::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 35%,rgba(20,16,18,.92))}
+.dir div{padding:22px}
+.dir h3{font-family:var(--hf);font-size:28px;font-weight:600}
+.dir p{color:var(--mute);font-size:14.5px;margin-top:4px}
+.dir .ph img{transition:transform .6s}
+.dir:hover .ph img{transform:scale(1.05)}
+/* masters */
+.masters{display:grid;gap:14px;margin-top:34px}@media(min-width:760px){.masters{grid-template-columns:repeat(4,1fr)}}
+.m{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:26px 22px;text-align:center}
+.m .av{width:84px;height:84px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 30%,#3a2c30,#1d1619);border:1px solid rgba(201,164,106,.5);font-family:'Great Vibes',cursive;font-size:44px;color:var(--acc)}
+.m h3{font-family:var(--hf);font-size:26px}
+.m p{color:var(--mute);font-size:14px;margin-top:6px}
+.m .top{display:inline-block;margin-top:10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,164,106,.4);border-radius:999px;padding:4px 10px}
+/* prices */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.tabs button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);font:600 14.5px var(--bf);cursor:pointer}
+.tabs button.on{background:var(--acc);color:var(--on-acc);border-color:var(--acc)}
+.pane{display:none;margin-top:22px}.pane.on{display:block}
+.sub{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.sub button{min-height:38px;padding:0 14px;border-radius:999px;border:1px dashed rgba(201,164,106,.5);background:transparent;color:var(--mute);font:600 13.5px var(--bf);cursor:pointer}
+.sub button.on{color:var(--gold);border-style:solid}
+.plist[hidden]{display:none}
+.plist{display:grid;gap:18px}@media(min-width:820px){.plist{grid-template-columns:1fr 1fr}}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:24px}
+.pc h3{font-family:var(--hf);font-size:26px;margin-bottom:12px}
+.pc ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.pc li{display:flex;align-items:baseline;gap:8px;font-size:15px}
+.pc li i{flex:1;border-bottom:1px dotted rgba(246,236,233,.2);transform:translateY(-4px)}
+.pc li b{color:var(--acc);white-space:nowrap;font-weight:600}
+.note{font-size:13.5px;color:var(--mute);margin-top:14px}
+/* color consult */
+.consult{display:grid;gap:26px;align-items:center;background:linear-gradient(135deg,#2a1d21,#1b1518);border:1px solid rgba(201,164,106,.35);border-radius:28px;padding:clamp(24px,4vw,44px)}
+@media(min-width:880px){.consult{grid-template-columns:1fr 1fr}}
+.steps{counter-reset:s;display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.steps li{position:relative;padding-left:46px;color:var(--mute)}
+.steps li b{color:var(--ink)}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:var(--on-acc);font-weight:700}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:30px}
+@media(min-width:860px){.gal{grid-template-columns:repeat(4,1fr);grid-auto-rows:220px}.gal .ph:nth-child(1){grid-row:span 2;grid-column:span 2}}
+.gal .ph{border-radius:18px;min-height:180px}
+.rv blockquote{font-family:var(--hf);font-size:23px;line-height:1.35}
+.rv .card{background:var(--card)}
 .alt{background:var(--bg2)}
 .days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
-.days button{aspect-ratio:1;border:1px solid var(--line);background:var(--field,#fff);color:var(--ink);border-radius:12px;font:700 14px var(--bf);cursor:pointer;line-height:1.1;padding:0}
+.days button{aspect-ratio:1;border:1px solid var(--line);background:var(--field);color:var(--ink);border-radius:12px;font:700 14px var(--bf);cursor:pointer;line-height:1.1;padding:0}
 .days button small{display:block;font-size:10px;font-weight:500;color:var(--mute)}
-.days button.on{background:var(--acc);border-color:var(--acc);color:var(--on-acc,#fff)}
+.days button.on{background:var(--acc);border-color:var(--acc);color:var(--on-acc)}
 .days button.on small{color:inherit}
-.hero .ph{border-radius:var(--rph,28px)}
+.map{border-radius:22px;overflow:hidden;position:relative;min-height:260px}
+.map .ph{position:absolute;inset:0}
+.map a{position:absolute;left:16px;bottom:16px}
 </style>
 </head>
 <body>
@@ -97,28 +154,88 @@ h2{font-size:clamp(32px,4.6vw,52px)}
 <symbol id="ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></g></symbol>
 <symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></symbol>
 </svg>
-<header class="hdr"><a class="logo" href="#top">Viva beauty</a><nav class="nav"><a href="#services">Услуги</a><a href="#reviews">Отзывы</a><a href="#book">Запись</a></nav><a class="btn b-acc" href="#book">Записаться</a></header>
+<header class="hdr"><a class="logo" href="#top">Viva <small>beauty</small></a>
+<nav class="nav"><a href="#dirs">Услуги</a><a href="#masters">Мастера</a><a href="#price">Прайс</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+<a class="btn b-acc" href="#book">Записаться</a></header>
 <main id="top">
-<section class="hero"><div><div class="chip">💅 Ногтевой сервис · ★ 4.6 · 2GIS Awards</div><h1>Viva<br><em>beauty</em></h1>
- <p class="lead">Вдохновляем на красоту: профессиональный уход от А до Я. Аппаратный маникюр, стойкий гель-лак и педикюр в уютном салоне на Медведева.</p>
- <div class="acts"><a class="btn b-acc" href="#book"><svg><use href="#wa"/></svg>Записаться</a><a class="btn b-line" href="https://dikidi.net/1500220" target="_blank" rel="noopener">Онлайн-запись</a></div></div>
- <div class="ph reveal"><img src="https://ams2-cdn.2gis.com/previews/1223457344948535299/3bf30631-5909-4c87-83e2-8e984ee999bc/3/ru/656x340?api-version=2.0" alt="Салон Viva beauty" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div></section>
-<section class="band" id="services"><div class="wrap">
- <p class="kick">Услуги</p><h2>Что мы делаем</h2>
- <p class="lead">Точную стоимость подскажем в WhatsApp: она зависит от мастера и сложности.</p>
- <div class="svgrid"><div class="sv reveal"><h3>Маникюр</h3><ul><li><span>Аппаратный маникюр</span></li><li><span>Маникюр с покрытием гель-лак</span></li><li><span>Дизайн ногтей</span></li></ul><button class="go" type="button" data-s="Маникюр">Записаться →</button></div><div class="sv reveal"><h3>Педикюр</h3><ul><li><span>Педикюр с покрытием</span></li><li><span>Экспресс-педикюр</span></li><li><span>Уход за стопами</span></li></ul><button class="go" type="button" data-s="Педикюр">Записаться →</button></div><div class="sv reveal"><h3>Уход от А до Я</h3><ul><li><span>Комплекс маникюр + педикюр</span></li><li><span>Снятие и коррекция</span></li><li><span>Уход и укрепление ногтей</span></li></ul><button class="go" type="button" data-s="Уход от А до Я">Записаться →</button></div></div>
+<section class="hero"><div>
+ <p class="kick">Салон красоты · Петропавловск</p>
+ <h1><span class="script">Viva beauty</span>Красота от&nbsp;А&nbsp;до&nbsp;Я</h1>
+ <p class="lead">Все виды парикмахерских услуг, реконструкция волос (кератин и ботокс), маникюр и педикюр. Профессиональный уход в уютном салоне на Медведева.</p>
+ <div class="acts"><a class="btn b-acc" href="https://dikidi.net/1500220" target="_blank" rel="noopener">Записаться онлайн</a><a class="btn b-line" href="#book"><svg><use href="#wa"/></svg>Написать в WhatsApp</a></div>
+ <div class="facts"><span><b>★ 4.6</b> · 2GIS Awards</span><span><b>9:00–20:00</b> каждый день</span><span><b>Медведева, 4</b></span></div>
+</div>
+<div class="hframe reveal"><div class="ph"><img src="https://ams2-cdn.2gis.com/previews/1223457344948535299/3bf30631-5909-4c87-83e2-8e984ee999bc/3/ru/656x340?api-version=2.0" alt="Мастер Viva beauty за работой" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div>
+ <div class="ph mini"><img src="https://i1.photo.2gis.com/photo-gallery/9c69ca6d-d7ab-4846-a386-61004b45293f_1280x.jpg" alt="Маникюр в Viva beauty" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div>
+ <div class="tag"><b>3</b><span>мастера по<br>стрижкам</span></div></div>
+</section>
+
+<section class="band alt" id="dirs"><div class="wrap">
+ <p class="kick">Услуги</p><h2>Чем мы занимаемся</h2>
+ <div class="dirs">
+  <a class="dir reveal" href="#price" data-tab="cut"><div class="ph"><img src="https://i1.photo.2gis.com/photo-gallery/a35ee306-9e50-45de-8c30-72a2cfcd360a_1280x.jpg" alt="Зал для стрижек" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div><div><h3>Стрижки</h3><p>Женские, мужские, детские. От 1 500 ₸</p></div></a>
+  <a class="dir reveal" href="#price" data-tab="color"><div class="ph"><img src="https://i1.photo.2gis.com/photo-gallery/fabe2c58-3a84-4821-895f-02446be7c826_1280x.jpg" alt="Окрашивание волос" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div><div><h3>Окрашивание</h3><p>В один тон, мелирование, сложные техники</p></div></a>
+  <a class="dir reveal" href="#price" data-tab="keratin"><div class="ph"><img src="https://i1.photo.2gis.com/photo-gallery/65b7582e-257b-4ce9-bf2a-b8f22773069f_1280x.jpg" alt="Кератин и ботокс" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div><div><h3>Кератин и ботокс</h3><p>Реконструкция: гладкие и блестящие волосы</p></div></a>
+  <a class="dir reveal" href="#price" data-tab="nails"><div class="ph"><img src="https://i1.photo.2gis.com/photo-gallery/9c69ca6d-d7ab-4846-a386-61004b45293f_1280x.jpg" alt="Маникюр" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div><div><h3>Маникюр и педикюр</h3><p>Аппаратный маникюр, гель-лак, педикюр</p></div></a>
+ </div></div></section>
+
+<section class="band" id="masters"><div class="wrap">
+ <p class="kick">Команда</p><h2>Наши мастера</h2>
+ <div class="masters">
+  <div class="m reveal"><div class="av">Е</div><h3>Елена</h3><p>Женские и мужские стрижки</p><span class="top">Топ-мастер</span></div>
+  <div class="m reveal"><div class="av">И</div><h3>Ирина</h3><p>Женские и мужские стрижки</p></div>
+  <div class="m reveal"><div class="av">Л</div><h3>Лилия</h3><p>Женские и мужские стрижки</p></div>
+  <div class="m reveal"><div class="av">N</div><h3>Nail-мастер</h3><p>Маникюр, педикюр, дизайн</p></div>
+ </div></div></section>
+
+<section class="band alt" id="price"><div class="wrap">
+ <p class="kick">Прайс</p><h2>Цены без сюрпризов</h2>
+ <div class="tabs" id="tabs"><button class="on" data-p="cut">Стрижки</button><button data-p="color">Окрашивание</button><button data-p="keratin">Кератин и ботокс</button><button data-p="nails">Ногти</button></div>
+ <div class="pane on" id="p-cut">
+  <div class="sub" id="sub"><button class="on" data-m="elena">Топ-мастер Елена</button><button data-m="il">Мастера Ирина и Лилия</button></div>
+  <div class="plist" id="m-elena"><div class="pc"><h3>Мужские</h3><ul><li><span>Мужская</span><i></i><b>4 000 ₸</b></li><li><span>Студенческая</span><i></i><b>3 500 ₸</b></li><li><span>Удлинённая (ножницами)</span><i></i><b>4 500 ₸</b></li><li><span>Школьная</span><i></i><b>3 000 ₸</b></li><li><span>Пенсионная</span><i></i><b>3 000 ₸</b></li><li><span>Детская (от 5 лет)</span><i></i><b>3 000 ₸</b></li><li><span>Под одну насадку</span><i></i><b>2 000 ₸</b></li><li><span>Под 0</span><i></i><b>1 500 ₸</b></li><li><span>Под 0 с шейвером</span><i></i><b>3 000 ₸</b></li></ul></div><div class="pc"><h3>Женские</h3><ul><li><span>Чёлка</span><i></i><b>2 000 ₸</b></li><li><span>Короткая классическая</span><i></i><b>4 500 ₸</b></li><li><span>Короткая пенсионная</span><i></i><b>4 000 ₸</b></li><li><span>Удлинённая (каре и др.)</span><i></i><b>5 000–6 000 ₸</b></li><li><span>Удлинённая школьная</span><i></i><b>4 500–5 500 ₸</b></li><li><span>Удлинённая пенсионная</span><i></i><b>4 500–5 500 ₸</b></li></ul></div></div>
+  <div class="plist" id="m-il" hidden><div class="pc"><h3>Мужские</h3><ul><li><span>Мужская</span><i></i><b>3 500 ₸</b></li><li><span>Студенческая</span><i></i><b>3 000 ₸</b></li><li><span>Школьная (от 6 лет)</span><i></i><b>3 000 ₸</b></li><li><span>Пенсионная</span><i></i><b>3 000 ₸</b></li><li><span>Детская (до 6 лет)</span><i></i><b>2 500 ₸</b></li><li><span>Под одну насадку</span><i></i><b>2 000 ₸</b></li><li><span>Под 0</span><i></i><b>1 500 ₸</b></li></ul></div><div class="pc"><h3>Женские</h3><ul><li><span>Чёлка</span><i></i><b>1 500 ₸</b></li><li><span>Короткая классическая</span><i></i><b>4 000 ₸</b></li><li><span>Короткая пенсионная</span><i></i><b>3 500 ₸</b></li><li><span>Удлинённая (каре и др.)</span><i></i><b>4 500–5 000 ₸</b></li><li><span>Удлинённая пенсионная</span><i></i><b>4 000–5 000 ₸</b></li></ul></div></div>
+  <p class="note">Детей младше 5 лет топ-мастер не принимает.</p>
+ </div>
+ <div class="pane" id="p-color"><div class="plist"><div class="pc"><h3>Окрашивание волос</h3><ul><li><span>В один тон (краситель клиента)</span><i></i><b>от 5 000 до 15 000 ₸</b></li><li><span>Окрашивание корней</span><i></i><b>от 7 500 ₸</b></li><li><span>Средняя длина (до плеч)</span><i></i><b>от 9 000 до 15 000 ₸</b></li><li><span>Длинные волосы (от лопаток)</span><i></i><b>от 20 000 до 35 000 ₸</b></li><li><span>Мелирование</span><i></i><b>от 20 000 ₸</b></li><li><span>Сложные техники</span><i></i><b>от 35 000 ₸</b></li></ul></div>
+  <div class="pc"><h3>Как узнать точную цену</h3><p style="color:var(--mute)">Стоимость зависит от густоты, длины волос и сложности окрашивания. Пришлите фото волос со спины и расскажите их историю: что было раньше, окрашивания, осветления, завивка. Мастер назовёт точную цену до записи.</p><div class="acts"><a class="btn b-acc" href="#consult">Узнать цену по фото</a></div></div></div></div>
+ <div class="pane" id="p-keratin"><div class="plist"><div class="pc"><h3>Реконструкция волос</h3><ul><li><span>Кератиновое выпрямление</span><i></i><b>по длине</b></li><li><span>Ботокс для волос</span><i></i><b>по длине</b></li><li><span>Полировка волос</span><i></i><b>по длине</b></li><li><span>Домашний уход после процедуры</span><i></i><b>подберём</b></li></ul></div>
+  <div class="pc"><h3>Цена зависит от длины</h3><p style="color:var(--mute)">Пришлите фото волос, и мастер рассчитает стоимость. Подскажем, что подойдёт вам больше, кератин или ботокс, и как сохранить результат дольше.</p><div class="acts"><a class="btn b-acc" href="#consult">Рассчитать по фото</a></div></div></div></div>
+ <div class="pane" id="p-nails"><div class="plist"><div class="pc"><h3>Маникюр</h3><ul><li><span>Аппаратный маникюр</span><i></i><b>уточняйте</b></li><li><span>Маникюр + гель-лак</span><i></i><b>уточняйте</b></li><li><span>Дизайн</span><i></i><b>уточняйте</b></li></ul></div>
+  <div class="pc"><h3>Педикюр</h3><ul><li><span>Педикюр с покрытием</span><i></i><b>уточняйте</b></li><li><span>Экспресс-педикюр</span><i></i><b>уточняйте</b></li><li><span>Уход за стопами</span><i></i><b>уточняйте</b></li></ul></div></div></div>
 </div></section>
 
-<section class="band" id="reviews"><div class="wrap">
- <p class="kick">Отзывы из 2ГИС</p><h2>Гости о нас</h2>
- <div class="grid g2 rv" style="margin-top:30px"><div class="card reveal"><span class="stars">★★★★★</span><blockquote style="font-size:44px;font-family:var(--hf)">4.6</blockquote><p class="who"><b>38 отзывов</b> в 2ГИС</p></div><div class="card reveal"><blockquote>Здесь будут лучшие отзывы ваших гостей из 2ГИС и Instagram с фото работ.</blockquote><p class="who">Блок заполним при запуске сайта</p></div></div>
+<section class="band" id="consult"><div class="wrap consult">
+ <div><p class="kick">Окрашивание без сюрпризов</p><h2>Результат, который вы хотели</h2>
+  <p class="lead">Чтобы цвет получился таким, как на вашем фото-примере, мы обсуждаем всё заранее, ещё до визита.</p></div>
+ <div><ol class="steps"><li><b>Отправьте заявку</b> с желаемой услугой</li><li><b>Пришлите в чат 2 фото:</b> ваши волосы со спины и пример желаемого цвета</li><li><b>Мастер ответит</b>, реально ли это за один визит, и назовёт цену</li></ol>
+  <div class="acts"><button class="btn b-acc" type="button" id="cgo"><svg><use href="#wa"/></svg>Начать консультацию</button></div></div>
 </div></section>
+
+<section class="band alt"><div class="wrap">
+ <p class="kick">Салон</p><h2>Уютно, светло, по-домашнему</h2>
+ <div class="gal">
+  <div class="ph reveal"><img src="https://i1.photo.2gis.com/photo-gallery/a35ee306-9e50-45de-8c30-72a2cfcd360a_1280x.jpg" alt="Зал Viva beauty" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div><div class="ph reveal"><img src="https://i1.photo.2gis.com/photo-gallery/f8aa75ac-7d9a-4c58-87c7-eee97b73fa75_1280x.jpg" alt="Зона ожидания" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div>
+  <div class="ph reveal"><img src="https://i1.photo.2gis.com/photo-gallery/74fa5ccc-2994-4883-b0d7-e4e483fe02d0_1280x.jpg" alt="Рабочее место мастера" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div><div class="ph reveal"><img src="https://i1.photo.2gis.com/photo-gallery/65b7582e-257b-4ce9-bf2a-b8f22773069f_1280x.jpg" alt="Результат: гладкие волосы" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div>
+  <div class="ph reveal"><img src="https://i1.photo.2gis.com/photo-gallery/9c69ca6d-d7ab-4846-a386-61004b45293f_1280x.jpg" alt="Маникюр" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div><div class="ph reveal"><img src="https://i1.photo.2gis.com/photo-gallery/fabe2c58-3a84-4821-895f-02446be7c826_1280x.jpg" alt="Окрашивание" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div>
+ </div></div></section>
+
+<section class="band" id="reviews"><div class="wrap">
+ <p class="kick">Отзывы</p><h2>Что говорят гости</h2>
+ <div class="grid g3 rv" style="margin-top:30px">
+  <div class="card reveal"><span class="stars">★★★★★</span><blockquote>«Салон Viva лучшие в Петропавловске. Большое спасибо за уютную атмосферу»</blockquote><p class="who"><b>Юлия Л.</b> · 2ГИС</p></div>
+  <div class="card reveal"><span class="stars">★★★★★</span><blockquote>«Лена, большое спасибо Вам за такую красоту. Я очень довольна»</blockquote><p class="who"><b>Наталья Т.</b> · Instagram</p></div>
+  <div class="card reveal"><span class="stars">★★★★★</span><blockquote>«Отличный салон, рекомендую»</blockquote><p class="who"><b>Кристина Ш.</b> · 2ГИС</p></div>
+ </div></div></section>
+
 <section class="band alt" id="book"><div class="wrap grid g2" style="gap:34px;align-items:start">
- <div><p class="kick">Запись</p><h2>Запишитесь за минуту</h2><p class="lead">Выберите услугу и день, и администратор подтвердит время в WhatsApp.</p>
+ <div id="contacts"><p class="kick">Запись и контакты</p><h2>Ждём вас в Viva</h2><p class="lead">Запишитесь онлайн или оставьте заявку, и администратор подтвердит время в WhatsApp.</p>
   <div class="acts"><a class="btn b-line" href="https://dikidi.net/1500220" target="_blank" rel="noopener">Онлайн-запись</a></div>
-  <div id="contacts" style="margin-top:26px"><div class="contact"><a href="https://2gis.kz/petropavlovsk/firm/70000001038630214" target="_blank" rel="noopener"><svg><use href="#pin"/></svg><span>Петропавловск, ул. Юрия Медведева, 4</span></a><div><svg><use href="#clock"/></svg><span>Ежедневно с 09:00 до 20:00, по записи</span></div><a href="tel:+77059871677"><svg><use href="#phone"/></svg><span>+7 705 987 16 77</span></a><a href="https://instagram.com/viva_beauty_petro" target="_blank" rel="noopener"><svg><use href="#ig"/></svg><span>@viva_beauty_petro</span></a></div></div></div>
+  <div style="margin-top:26px"><div class="contact"><a href="https://2gis.kz/petropavlovsk/firm/70000001038630214" target="_blank" rel="noopener"><svg><use href="#pin"/></svg><span>Петропавловск, ул. Юрия Медведева, 4</span></a><div><svg><use href="#clock"/></svg><span>Ежедневно с 09:00 до 20:00, по записи</span></div><a href="tel:+77059871677"><svg><use href="#phone"/></svg><span>+7 705 987 16 77</span></a><a href="https://instagram.com/viva_beauty_petro" target="_blank" rel="noopener"><svg><use href="#ig"/></svg><span>@viva_beauty_petro</span></a></div></div>
+  <div class="map" style="margin-top:22px"><div class="ph"><img src="https://i1.photo.2gis.com/photo-gallery/2db3d164-d159-4044-b184-e76de9c3dd14_1280x.jpg" alt="Вход в салон Viva beauty" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div><a class="btn b-acc" href="https://2gis.kz/petropavlovsk/firm/70000001038630214" target="_blank" rel="noopener">Маршрут в 2ГИС</a></div></div>
  <form class="form card" id="f">
-  <label>Услуга<select id="s"><option>Маникюр</option><option>Педикюр</option><option>Уход от А до Я</option></select></label>
+  <label>Услуга<select id="s"><option>Стрижка</option><option>Окрашивание</option><option>Кератин / ботокс</option><option>Маникюр</option><option>Педикюр</option></select></label>
+  <label>Мастер<select id="mm"><option>Любой свободный</option><option>Топ-мастер Елена</option><option>Ирина</option><option>Лилия</option></select></label>
   <div><p style="font-size:13.5px;font-weight:700;margin:0 0 8px">День</p><div class="days" id="days"></div></div>
   <div class="two"><label>Время<select id="t"><option>Утро</option><option>День</option><option>Вечер</option><option>Любое</option></select></label><label>Имя<input id="n" placeholder="Ваше имя"></label></div>
   <button class="btn b-acc" type="submit"><svg><use href="#wa"/></svg>Записаться в WhatsApp</button>
@@ -126,7 +243,7 @@ h2{font-size:clamp(32px,4.6vw,52px)}
 </main>
 <a class="fab" href="https://wa.me/77059871677?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Viva%20beauty." target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#wa"/></svg></a>
 <footer class="foot">
-  <div>© 2026 Viva beauty · Петропавловск</div>
+  <div>© 2026 Viva beauty · Петропавловск, ул. Юрия Медведева, 4</div>
   <small>Демо-версия сайта. Хотите такой сайт для своего бизнеса? <a href="https://wa.me/77476128411">+7 747 612 84 11</a> · <a href="https://sitemakerkz.com" target="_blank" rel="noopener">sitemakerkz.com</a></small>
 </footer>
 <script>var WA="77059871677";
@@ -135,8 +252,12 @@ var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es
 document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('on')});
 window.wa=function(text){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(text),'_blank','noopener')};
 })();
+function tab(p){document.querySelectorAll('#tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.p===p)});document.querySelectorAll('.pane').forEach(function(x){x.classList.toggle('on',x.id==='p-'+p)})}
+document.querySelectorAll('#tabs button').forEach(function(b){b.onclick=function(){tab(b.dataset.p)}});
+document.querySelectorAll('.dir').forEach(function(a){a.addEventListener('click',function(){tab(a.dataset.tab)})});
+document.querySelectorAll('#sub button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#sub button').forEach(function(x){x.classList.toggle('on',x===b)});document.getElementById('m-elena').hidden=b.dataset.m!=='elena';document.getElementById('m-il').hidden=b.dataset.m!=='il'}});
 var D='',days=document.getElementById('days'),W=['вс','пн','вт','ср','чт','пт','сб'];for(var i=0;i<14;i++){(function(i){var dt=new Date();dt.setDate(dt.getDate()+i);var b=document.createElement('button');b.type='button';b.innerHTML=dt.getDate()+'<small>'+W[dt.getDay()]+'</small>';b.onclick=function(){[].forEach.call(days.children,function(x){x.classList.remove('on')});b.classList.add('on');D=('0'+dt.getDate()).slice(-2)+'.'+('0'+(dt.getMonth()+1)).slice(-2)};days.appendChild(b)})(i)}
-document.querySelectorAll('.go').forEach(function(b){b.onclick=function(){document.getElementById('s').value=b.dataset.s;document.getElementById('book').scrollIntoView()}});
-document.getElementById('f').onsubmit=function(e){e.preventDefault();var v=function(i){return document.getElementById(i).value};wa('Здравствуйте! Хочу записаться в Viva beauty.\nУслуга: '+v('s')+(D?'\nДень: '+D:'')+'\nВремя: '+v('t')+(v('n')?'\nИмя: '+v('n'):''))};</script>
+document.getElementById('cgo').onclick=function(){wa('Здравствуйте! Хочу консультацию по окрашиванию в Viva beauty. Сейчас пришлю фото волос со спины и пример желаемого цвета.')};
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var v=function(i){return document.getElementById(i).value};wa('Здравствуйте! Хочу записаться в Viva beauty.\nУслуга: '+v('s')+'\nМастер: '+v('mm')+(D?'\nДень: '+D:'')+'\nВремя: '+v('t')+(v('n')?'\nИмя: '+v('n'):''))};</script>
 </body>
 </html>
