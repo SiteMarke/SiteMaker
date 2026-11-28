@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>La Manicur — маникюр, педикюр и подология в Алматы (Таугуль)</title>
+<meta name="description" content="Маникюр от 6 000 ₸, педикюр, подология, мужской маникюр. ЖК Берекет, ул. Мустай Карим, 13а. Ежедневно 9:00–20:00.">
+<meta name="theme-color" content="#f7f2fb">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font:16px/1.6 var(--bf);color:var(--ink);background:var(--bg);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--hf);margin:0;line-height:1.1;text-wrap:balance;font-weight:var(--hw,700)}
+h2{font-size:clamp(28px,4.4vw,46px)}
+h3{font-size:19px}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto}
+.band{padding:clamp(56px,8vw,104px) max(5vw,18px)}
+.kick{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--acc);margin:0 0 12px}
+.lead{color:var(--mute);font-size:17px;max-width:620px;margin-top:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 26px;border-radius:var(--br,999px);font:700 15px/1 var(--bf);text-decoration:none;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn svg{width:19px;height:19px;flex:none}
+.b-acc{background:var(--acc);color:var(--on-acc,#fff);box-shadow:0 10px 26px -10px var(--acc)}
+.b-line{border:1.5px solid currentColor;background:transparent}
+.hdr{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px max(5vw,18px);background:var(--hdr-bg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--hf);font-weight:700;font-size:19px;text-decoration:none;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+.logo i{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--acc);color:var(--on-acc,#fff);font-style:normal;font-size:15px}
+.nav{display:none;gap:26px;font-size:14.5px;font-weight:600}
+.nav a{text-decoration:none;opacity:.8}.nav a:hover{opacity:1}
+.hdr .btn{min-height:42px;padding:0 18px;font-size:14px}
+@media(min-width:900px){.nav{display:flex}}
+.grid{display:grid;gap:16px}
+@media(min-width:720px){.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rc,20px);padding:24px}
+.ph{position:relative;overflow:hidden;background:var(--ph,#ddd)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.noimg img{display:none}
+.stars{color:#f5b301;letter-spacing:2px}
+.rv blockquote{margin:12px 0 0;font-size:16.5px;line-height:1.6}
+.rv .who{margin-top:14px;font-size:14px;color:var(--mute)}
+.rv .who b{color:var(--ink)}
+.form{display:grid;gap:12px}
+.form label{display:grid;gap:6px;font-size:13.5px;font-weight:700}
+.form input,.form select,.form textarea{width:100%;min-height:50px;border-radius:14px;border:1px solid var(--line);background:var(--field,#fff);color:var(--ink);padding:12px 14px;font:16px var(--bf)}
+.form textarea{min-height:90px;resize:vertical}
+.two{display:grid;gap:12px}@media(min-width:560px){.two{grid-template-columns:1fr 1fr}}
+.contact{display:grid;gap:14px;margin-top:8px}
+.contact a,.contact div{display:flex;gap:12px;align-items:flex-start;text-decoration:none;font-size:16px}
+.contact svg{width:22px;height:22px;flex:none;color:var(--acc);margin-top:2px}
+.fab{position:fixed;right:16px;bottom:16px;z-index:40;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;box-shadow:0 12px 28px -8px rgba(0,0,0,.45)}
+.fab svg{width:30px;height:30px}
+.foot{padding:34px max(5vw,18px) 90px;font-size:13.5px;color:var(--mute);border-top:1px solid var(--line);text-align:center}
+.foot small{display:block;margin-top:8px}
+.foot a{text-underline-offset:3px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+:root{--bg:#f8f4fb;--bg2:#efe7f6;--card:#fff;--ink:#2b2236;--mute:#7b6f88;--acc:#8a5bb8;--line:rgba(43,34,54,.1);--hdr-bg:rgba(248,244,251,.9);--hf:'Bodoni Moda',serif;--hw:500;--bf:'DM Sans',system-ui,sans-serif;--rc:18px;--ph:#e3d6ef}
+h2{font-size:clamp(30px,4.4vw,50px)}.hero h1{font-size:clamp(48px,8vw,100px);line-height:.95;font-style:italic}.hero h1 span{font-style:normal;color:var(--acc)}
+.hero .ph{border-radius:28px}
+.hero{display:grid;gap:30px;align-items:center;padding:clamp(24px,4vw,60px) max(5vw,18px) clamp(56px,7vw,96px)}@media(min-width:900px){.hero{grid-template-columns:1.05fr .95fr}}
+.hero .ph{aspect-ratio:4/5}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.badges span{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:600;background:var(--card)}
+
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.svgrid{display:grid;gap:16px;margin-top:32px}@media(min-width:720px){.svgrid{grid-template-columns:repeat(2,1fr)}}@media(min-width:1060px){.svgrid{grid-template-columns:repeat(3,1fr)}}
+.sv{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:24px;display:flex;flex-direction:column}
+.sv h3{font-family:var(--hf);font-size:24px;margin-bottom:12px}
+.sv ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:15px}
+.sv li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:7px}
+.sv li b{white-space:nowrap;color:var(--acc)}
+.sv .go{margin-top:auto;padding-top:16px;background:none;border:0;font:700 15px var(--bf);color:var(--acc);text-align:left;cursor:pointer;padding-left:0}
+.alt{background:var(--bg2)}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.days button{aspect-ratio:1;border:1px solid var(--line);background:var(--field,#fff);color:var(--ink);border-radius:12px;font:700 14px var(--bf);cursor:pointer;line-height:1.1;padding:0}
+.days button small{display:block;font-size:10px;font-weight:500;color:var(--mute)}
+.days button.on{background:var(--acc);border-color:var(--acc);color:var(--on-acc,#fff)}
+.days button.on small{color:inherit}
+.hero .ph{border-radius:var(--rph,28px)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.98L2 22l5.16-1.5A9.93 9.93 0 1 0 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.06.89.9-2.98-.2-.31a8.22 8.22 0 1 1 6.86 3.73Zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.17.25-.64.8-.78.96-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22a7.4 7.4 0 0 1-1.37-1.7c-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.66.31 2.76 2.76 0 0 0-.86 2.05 4.8 4.8 0 0 0 1 2.55c.13.17 1.73 2.64 4.2 3.7.58.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.15-1.17-.06-.1-.22-.17-.47-.29Z"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+<symbol id="phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z"/></symbol>
+<symbol id="ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></g></symbol>
+<symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></symbol>
+</svg>
+<header class="hdr"><a class="logo" href="#top">La Manicur</a><nav class="nav"><a href="#services">Услуги</a><a href="#reviews">Отзывы</a><a href="#book">Запись</a></nav><a class="btn b-acc" href="#book">Записаться</a></header>
+<main id="top">
+<section class="hero"><div><p class="kick">Студия красоты · Таугуль</p><h1>La <span>Manicur</span></h1>
+ <p class="lead">Ухоженные руки говорят больше, чем слова. Маникюр, педикюр и подология для женщин и мужчин. Первое посещение со скидкой 10%.</p>
+ <div class="acts"><a class="btn b-acc" href="#book"><svg><use href="#wa"/></svg>Записаться</a><a class="btn b-line" href="#services">Услуги и цены</a></div>
+ <div class="badges"><span>★ 4.8 · Номинант 2ГИС 2026</span><span>−10% на первый визит</span><span>9:00–20:00</span></div></div>
+ <div class="ph reveal"><img src="https://ams2-cdn.2gis.com/previews/1217147132289482752/d7935c12-bd11-4d56-8e9b-fb00acea9729/3/ru/656x340?api-version=2.0" alt="Маникюр La Manicur" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div></section>
+<section class="band" id="services"><div class="wrap">
+ <p class="kick">Услуги</p><h2>Что мы делаем</h2>
+ <p class="lead">Точную стоимость подскажем в WhatsApp. На первую запись скидка 10%.</p>
+ <div class="svgrid"><div class="sv reveal"><h3>Маникюр</h3><ul><li><span>Маникюр с покрытием</span><b>от 6 000 ₸</b></li><li><span>Дизайн</span></li><li><span>Укрепление и уход</span></li></ul><button class="go" type="button" data-s="Маникюр">Записаться →</button></div><div class="sv reveal"><h3>Педикюр</h3><ul><li><span>Педикюр с покрытием</span></li><li><span>Уход за стопами</span></li></ul><button class="go" type="button" data-s="Педикюр">Записаться →</button></div><div class="sv reveal"><h3>Подология</h3><ul><li><span>Консультация подолога</span></li><li><span>Уход за проблемными стопами</span></li></ul><button class="go" type="button" data-s="Подология">Записаться →</button></div><div class="sv reveal"><h3>Для мужчин</h3><ul><li><span>Мужской маникюр</span></li><li><span>Мужской педикюр</span></li></ul><button class="go" type="button" data-s="Для мужчин">Записаться →</button></div></div>
+</div></section>
+
+<section class="band" id="reviews"><div class="wrap">
+ <p class="kick">Отзывы из 2ГИС</p><h2>Гости о нас</h2>
+ <div class="grid g2 rv" style="margin-top:30px"><div class="card reveal"><span class="stars">★★★★★</span><blockquote style="font-size:44px;font-family:var(--hf)">4.8</blockquote><p class="who"><b>400 отзывов</b> в 2ГИС</p></div><div class="card reveal"><blockquote>Здесь будут лучшие отзывы ваших гостей из 2ГИС и Instagram с фото работ.</blockquote><p class="who">Блок заполним при запуске сайта</p></div></div>
+</div></section>
+<section class="band alt" id="book"><div class="wrap grid g2" style="gap:34px;align-items:start">
+ <div><p class="kick">Запись</p><h2>Запишитесь за минуту</h2><p class="lead">Выберите услугу и день, и администратор подтвердит время в WhatsApp.</p>
+  <div class="acts"></div>
+  <div id="contacts" style="margin-top:26px"><div class="contact"><a href="https://2gis.kz/almaty/firm/70000001061382206" target="_blank" rel="noopener"><svg><use href="#pin"/></svg><span>Алматы, ЖК Берекет, ул. Мустай Карим, 13а (мкр Таугуль)</span></a><div><svg><use href="#clock"/></svg><span>Ежедневно с 09:00 до 20:00</span></div><a href="tel:+77750782222"><svg><use href="#phone"/></svg><span>+7 775 078 22 22</span></a><a href="https://instagram.com/la_manicur_almaty" target="_blank" rel="noopener"><svg><use href="#ig"/></svg><span>@la_manicur_almaty</span></a></div></div></div>
+ <form class="form card" id="f">
+  <label>Услуга<select id="s"><option>Маникюр</option><option>Педикюр</option><option>Подология</option><option>Для мужчин</option></select></label>
+  <div><p style="font-size:13.5px;font-weight:700;margin:0 0 8px">День</p><div class="days" id="days"></div></div>
+  <div class="two"><label>Время<select id="t"><option>Утро</option><option>День</option><option>Вечер</option><option>Любое</option></select></label><label>Имя<input id="n" placeholder="Ваше имя"></label></div>
+  <button class="btn b-acc" type="submit"><svg><use href="#wa"/></svg>Записаться в WhatsApp</button>
+ </form></div></section>
+</main>
+<a class="fab" href="https://wa.me/77750782222?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20La%20Manicur." target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#wa"/></svg></a>
+<footer class="foot">
+  <div>© 2026 La Manicur · Алматы</div>
+  <small>Демо-версия сайта. Хотите такой сайт для своего бизнеса? <a href="https://wa.me/77476128411">+7 747 612 84 11</a> · <a href="https://sitemakerkz.com" target="_blank" rel="noopener">sitemakerkz.com</a></small>
+</footer>
+<script>var WA="77750782222";
+(function(){
+var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12}):null;
+document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('on')});
+window.wa=function(text){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(text),'_blank','noopener')};
+})();
+var D='',days=document.getElementById('days'),W=['вс','пн','вт','ср','чт','пт','сб'];for(var i=0;i<14;i++){(function(i){var dt=new Date();dt.setDate(dt.getDate()+i);var b=document.createElement('button');b.type='button';b.innerHTML=dt.getDate()+'<small>'+W[dt.getDay()]+'</small>';b.onclick=function(){[].forEach.call(days.children,function(x){x.classList.remove('on')});b.classList.add('on');D=('0'+dt.getDate()).slice(-2)+'.'+('0'+(dt.getMonth()+1)).slice(-2)};days.appendChild(b)})(i)}
+document.querySelectorAll('.go').forEach(function(b){b.onclick=function(){document.getElementById('s').value=b.dataset.s;document.getElementById('book').scrollIntoView()}});
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var v=function(i){return document.getElementById(i).value};wa('Здравствуйте! Хочу записаться в La Manicur.\nУслуга: '+v('s')+(D?'\nДень: '+D:'')+'\nВремя: '+v('t')+(v('n')?'\nИмя: '+v('n'):''))};</script>
+</body>
+</html>
