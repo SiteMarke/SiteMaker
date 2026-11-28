@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Saadyan studio — мастерская красоты в Петропавловске</title>
+<meta name="description" content="Маникюр, брови и ресницы, макияж и укладки. Два филиала: ул. Астана, 48 и ЖК 8 квартал. Запись в WhatsApp.">
+<meta name="theme-color" content="#f6efe9">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font:16px/1.6 var(--bf);color:var(--ink);background:var(--bg);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--hf);margin:0;line-height:1.1;text-wrap:balance;font-weight:var(--hw,700)}
+h2{font-size:clamp(28px,4.4vw,46px)}
+h3{font-size:19px}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto}
+.band{padding:clamp(56px,8vw,104px) max(5vw,18px)}
+.kick{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--acc);margin:0 0 12px}
+.lead{color:var(--mute);font-size:17px;max-width:620px;margin-top:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 26px;border-radius:var(--br,999px);font:700 15px/1 var(--bf);text-decoration:none;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn svg{width:19px;height:19px;flex:none}
+.b-acc{background:var(--acc);color:var(--on-acc,#fff);box-shadow:0 10px 26px -10px var(--acc)}
+.b-line{border:1.5px solid currentColor;background:transparent}
+.hdr{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px max(5vw,18px);background:var(--hdr-bg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--hf);font-weight:700;font-size:19px;text-decoration:none;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+.logo i{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--acc);color:var(--on-acc,#fff);font-style:normal;font-size:15px}
+.nav{display:none;gap:26px;font-size:14.5px;font-weight:600}
+.nav a{text-decoration:none;opacity:.8}.nav a:hover{opacity:1}
+.hdr .btn{min-height:42px;padding:0 18px;font-size:14px}
+@media(min-width:900px){.nav{display:flex}}
+.grid{display:grid;gap:16px}
+@media(min-width:720px){.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rc,20px);padding:24px}
+.ph{position:relative;overflow:hidden;background:var(--ph,#ddd)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.noimg img{display:none}
+.stars{color:#f5b301;letter-spacing:2px}
+.rv blockquote{margin:12px 0 0;font-size:16.5px;line-height:1.6}
+.rv .who{margin-top:14px;font-size:14px;color:var(--mute)}
+.rv .who b{color:var(--ink)}
+.form{display:grid;gap:12px}
+.form label{display:grid;gap:6px;font-size:13.5px;font-weight:700}
+.form input,.form select,.form textarea{width:100%;min-height:50px;border-radius:14px;border:1px solid var(--line);background:var(--field,#fff);color:var(--ink);padding:12px 14px;font:16px var(--bf)}
+.form textarea{min-height:90px;resize:vertical}
+.two{display:grid;gap:12px}@media(min-width:560px){.two{grid-template-columns:1fr 1fr}}
+.contact{display:grid;gap:14px;margin-top:8px}
+.contact a,.contact div{display:flex;gap:12px;align-items:flex-start;text-decoration:none;font-size:16px}
+.contact svg{width:22px;height:22px;flex:none;color:var(--acc);margin-top:2px}
+.fab{position:fixed;right:16px;bottom:16px;z-index:40;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;box-shadow:0 12px 28px -8px rgba(0,0,0,.45)}
+.fab svg{width:30px;height:30px}
+.foot{padding:34px max(5vw,18px) 90px;font-size:13.5px;color:var(--mute);border-top:1px solid var(--line);text-align:center}
+.foot small{display:block;margin-top:8px}
+.foot a{text-underline-offset:3px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+:root{--bg:#f7f1ec;--card:#fffaf6;--ink:#2b2220;--mute:#7c6c66;--acc:#b0716a;--line:rgba(60,30,20,.1);--hdr-bg:rgba(247,241,236,.85);--hf:'Cormorant Garamond',serif;--hw:600;--bf:'Manrope',system-ui,sans-serif;--rc:24px;--ph:#ead9cf}
+h2{font-size:clamp(34px,5vw,56px)}
+.hero{display:grid;gap:30px;align-items:center;padding:clamp(28px,5vw,60px) max(5vw,18px) clamp(56px,7vw,90px)}
+@media(min-width:880px){.hero{grid-template-columns:1.05fr .95fr}}
+.hero h1{font-size:clamp(48px,8vw,96px);line-height:.98}
+.hero h1 em{color:var(--acc)}
+.hero .ph{aspect-ratio:4/5;border-radius:200px 200px 28px 28px;box-shadow:0 30px 60px -30px rgba(90,40,30,.45)}
+.award{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px 8px 8px;font-size:14px;font-weight:600;margin-bottom:22px}
+.award i{width:30px;height:30px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font-style:normal}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.stats{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap}
+.stats b{font-family:var(--hf);font-size:40px;display:block;line-height:1}
+.stats span{font-size:13.5px;color:var(--mute)}
+.svc .card{display:flex;flex-direction:column;gap:10px;transition:transform .2s,box-shadow .2s}
+.svc .card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(90,40,30,.5)}
+.svc h3{font-family:var(--hf);font-size:28px;font-weight:600}
+.svc ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:6px;color:var(--mute);font-size:15px}
+.svc li::before{content:"✦ ";color:var(--acc)}
+.svc .go{margin-top:auto;padding-top:10px;font-weight:700;color:var(--acc);text-decoration:none;cursor:pointer;background:none;border:0;font:700 15px var(--bf);text-align:left;padding-left:0}
+.rv .card{background:#fff}
+.rv blockquote{font-family:var(--hf);font-size:24px;font-style:italic;line-height:1.35}
+.br{display:grid;gap:12px}
+.br label{display:flex;gap:10px;align-items:center;border:1px solid var(--line);background:#fff;border-radius:14px;padding:14px;font-weight:600;cursor:pointer}
+.br input{accent-color:var(--acc);width:18px;height:18px;min-height:0}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.98L2 22l5.16-1.5A9.93 9.93 0 1 0 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.06.89.9-2.98-.2-.31a8.22 8.22 0 1 1 6.86 3.73Zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.17.25-.64.8-.78.96-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22a7.4 7.4 0 0 1-1.37-1.7c-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.66.31 2.76 2.76 0 0 0-.86 2.05 4.8 4.8 0 0 0 1 2.55c.13.17 1.73 2.64 4.2 3.7.58.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.15-1.17-.06-.1-.22-.17-.47-.29Z"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+<symbol id="phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z"/></symbol>
+<symbol id="ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></g></symbol>
+<symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></symbol>
+</svg>
+<header class="hdr"><a class="logo" href="#top">Saadyan studio</a><nav class="nav"><a href="#services">Услуги</a><a href="#reviews">Отзывы</a><a href="#contacts">Филиалы</a></nav><a class="btn b-acc" href="#book">Записаться</a></header>
+<main id="top">
+<section class="hero"><div>
+  <div class="award"><i>★</i>Лучший салон красоты 2026 · 2ГИС</div>
+  <h1>Saadyan<br><em>studio</em></h1>
+  <p class="lead">Мастерская красоты в Петропавловске. Маникюр, брови и ресницы, макияж и укладки в одном месте. Два филиала, работаем каждый день.</p>
+  <div class="acts"><a class="btn b-acc" href="#book"><svg><use href="#wa"/></svg>Записаться</a><a class="btn b-line" href="#services">Услуги</a></div>
+  <div class="stats"><div><b>4.9</b><span>рейтинг в 2ГИС</span></div><div><b>357</b><span>оценок гостей</span></div><div><b>2</b><span>филиала</span></div></div>
+ </div>
+ <div class="ph reveal"><img src="https://i1.photo.2gis.com/photo-gallery/428cd7a0-b14a-45cd-928d-a2c1a8a8e86d_800x.jpg" alt="Образ от Saadyan studio" class="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.ph')&&this.closest('.ph').classList.add('noimg')"></div>
+</section>
+
+<section class="band" id="services" style="background:#fff8f3"><div class="wrap">
+ <p class="kick">Услуги</p><h2>Всё для вашего образа</h2>
+ <p class="lead">Стоимость зависит от мастера и сложности работы. Точную цену подскажем в WhatsApp.</p>
+ <div class="grid g2 svc" style="margin-top:34px"><div class="card reveal"><h3>Ногтевой сервис</h3><ul><li>Маникюр с покрытием</li><li>Педикюр</li><li>Дизайн и ровное покрытие</li></ul><button class="go" type="button" data-s="Ногтевой сервис">Записаться →</button></div><div class="card reveal"><h3>Брови и ресницы</h3><ul><li>Коррекция и окрашивание бровей</li><li>Ламинирование бровей и ресниц</li><li>Наращивание ресниц</li></ul><button class="go" type="button" data-s="Брови и ресницы">Записаться →</button></div><div class="card reveal"><h3>Макияж</h3><ul><li>Вечерний и праздничный</li><li>Выпускной: держится весь вечер</li><li>Сборы на мероприятие</li></ul><button class="go" type="button" data-s="Макияж">Записаться →</button></div><div class="card reveal"><h3>Волосы</h3><ul><li>Стрижки</li><li>Укладки</li><li>Образ под событие</li></ul><button class="go" type="button" data-s="Волосы">Записаться →</button></div></div>
+</div></section>
+
+<section class="band" id="reviews"><div class="wrap">
+ <p class="kick">Отзывы из 2ГИС</p><h2>Нам доверяют</h2>
+ <div class="grid g2 rv" style="margin-top:30px">
+  <div class="card reveal"><span class="stars">★★★★★</span><blockquote>«Спасибо салону: феечки Алина и Диана быстро собрали меня на мероприятие»</blockquote><p class="who"><b>Динара О.</b> · ноябрь 2026</p></div>
+  <div class="card reveal"><span class="stars">★★★★★</span><blockquote>«Макияж очень стойкий, выдержал 15 часов выпускного»</blockquote><p class="who"><b>Rauana U.</b> · октябрь 2026</p></div>
+ </div></div></section>
+
+<section class="band" id="book" style="background:#fff8f3"><div class="wrap grid g2" style="gap:34px;align-items:start">
+ <div><p class="kick">Запись</p><h2>Записаться к мастеру</h2><p class="lead">Оставьте заявку, администратор ответит в WhatsApp и подберёт удобное время.</p>
+  <div id="contacts" style="margin-top:30px"><div class="contact"><a href="https://2gis.kz/petropavlovsk/firm/70000001080865212" target="_blank" rel="noopener"><svg><use href="#pin"/></svg><span>Петропавловск, ул. Астана, 48</span></a><a href="https://2gis.kz/petropavlovsk/firm/70000001080865212" target="_blank" rel="noopener"><svg><use href="#pin"/></svg><span>Петропавловск, ЖК 8 квартал, ул. Жамбыла, 106</span></a><div><svg><use href="#clock"/></svg><span>Ежедневно с 09:00 до 19:00, по предварительной записи</span></div><a href="tel:+77052543527"><svg><use href="#phone"/></svg><span>+7 705 254 35 27</span></a><a href="https://instagram.com/saadyan_studio" target="_blank" rel="noopener"><svg><use href="#ig"/></svg><span>@saadyan_studio</span></a></div></div></div>
+ <form class="form card" id="f" style="background:#fff">
+  <label>Услуга<select id="s"><option>Ногтевой сервис</option><option>Брови и ресницы</option><option>Макияж</option><option>Волосы</option></select></label>
+  <div><p style="font-size:13.5px;font-weight:700;margin:0 0 8px">Филиал</p><div class="br">
+   <label><input type="radio" name="b" value="ул. Астана, 48" checked>ул. Астана, 48</label>
+   <label><input type="radio" name="b" value="ЖК 8 квартал, ул. Жамбыла, 106">ЖК 8 квартал, ул. Жамбыла, 106</label></div></div>
+  <div class="two"><label>Дата<input id="d" type="date"></label><label>Ваше имя<input id="n" placeholder="Имя"></label></div>
+  <button class="btn b-acc" type="submit"><svg><use href="#wa"/></svg>Отправить заявку</button>
+ </form></div></section>
+</main>
+<a class="fab" href="https://wa.me/77052543527?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20Saadyan%20studio." target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#wa"/></svg></a>
+<footer class="foot">
+  <div>© 2026 Saadyan studio · Петропавловск</div>
+  <small>Демо-версия сайта. Хотите такой сайт для своего бизнеса? <a href="https://wa.me/77476128411">+7 747 612 84 11</a> · <a href="https://sitemakerkz.com" target="_blank" rel="noopener">sitemakerkz.com</a></small>
+</footer>
+<script>var WA="77052543527";
+(function(){
+var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12}):null;
+document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('on')});
+window.wa=function(text){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(text),'_blank','noopener')};
+})();
+document.getElementById('d').min=new Date().toISOString().slice(0,10);
+document.querySelectorAll('.go').forEach(function(b){b.onclick=function(){document.getElementById('s').value=b.dataset.s;document.getElementById('book').scrollIntoView()}});
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var d=document.getElementById('d').value,n=document.getElementById('n').value;wa('Здравствуйте! Хочу записаться в Saadyan studio.\nУслуга: '+document.getElementById('s').value+'\nФилиал: '+document.querySelector('input[name=b]:checked').value+(d?'\nДата: '+d.split('-').reverse().join('.'):'')+(n?'\nИмя: '+n:''))};</script>
+</body>
+</html>
